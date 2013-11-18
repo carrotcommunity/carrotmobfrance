@@ -40,9 +40,10 @@
 
 			function onLocationFound(e) {
 				var radius = e.accuracy / 2;
+				var link = '<a href="#">Je veux Carrotmobber un commerçant ici !</a>';
 
 				L.marker(e.latlng).addTo(map)
-					.bindPopup("Vous êtes à " + radius + " mètres de ce point").openPopup();
+					.bindPopup(link + "<br>(vous êtes à " + radius + " mètres de ce point).").openPopup();
 
 				L.circle(e.latlng, radius).addTo(map);
 			}
