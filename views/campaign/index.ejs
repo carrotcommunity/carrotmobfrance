@@ -16,7 +16,7 @@
               <ul class="nav navbar-nav">
                 <li><a href="/#pourquoi">Pourquoi Carrotmob ?</a></li>
                 <li><a href="/#comment">Comment ça marche ?</a></li>
-                <li class="active"><a href="/campaign">Les campagnes !</a></li>
+                <li class="active"><a href="/campaign#en-ce-moment">Les campagnes !</a></li>
                 <li><a href="/campaign/create#un-carrotmob-ici">Carrotmobber un commerçant !</a></li>
                 <li><a href="/campaign/request#me-faire-carrotmobber">Me faire Carrotmobber !</a></li>
               </ul>
@@ -32,34 +32,42 @@
     <div id="en-ce-moment" class="container marketing">
 
       <div id="pourquoi" class="row featurette">
-        <div class="col-md-5">
-          <img class="featurette-image img-responsive" src="/images/carrotwoman.png" alt="Carrotwoman">
-        </div>
         <div class="col-md-7">
-          <h2 class="featurette-heading">En ce moment&nbsp;!<br><span class="text-muted">Près de chez vous&nbsp;!</span></h2>
+          <h2 class="featurette-heading">En ce moment&nbsp;!<br><span class="text-muted">Près de là où vous êtes&nbsp;!</span></h2>
           <p class="lead"></p>
+          <div id="map" class="featurette-image img-responsive" style="width: 500px; height: 300px;"></div>
+
+          <script>
+            var map = L.map('map');
+
+            L.tileLayer('http://{s}.tile.cloudmade.com/BC9A493B41014CAABB98F0471D759707/997/256/{z}/{x}/{y}.png', {
+              maxZoom: 18,
+              attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://cloudmade.com">CloudMade</a>'
+            }).addTo(map);
+
+            function onLocationFound(e) {
+              var radius = e.accuracy / 2;
+
+              L.marker(e.latlng).addTo(map)
+                .bindPopup("Ma position approximative dans un rayon de " + radius + " mètres !").openPopup();
+
+              L.circle(e.latlng, radius).addTo(map);
+            }
+
+            function onLocationError(e) {
+              alert(e.message);
+            }
+
+            map.on('locationfound', onLocationFound);
+            map.on('locationerror', onLocationError);
+
+            map.locate({setView: true, maxZoom: 16});
+          </script>
+        </div>
+        <div class="col-md-5">
+          <img class="featurette-image img-responsive" src="/images/carrotmob.png" alt="Carrotmob">
         </div>
       </div>
-
-      <hr class="featurette-divider">
-
-      <div class="row">
-        <div class="col-lg-4">
-          <img class="img-circle" data-src="holder.js/140x140" alt="Generic placeholder image">
-          <h2>?</h2>
-          <p></p>
-        </div><!-- /.col-lg-4 -->
-        <div class="col-lg-4">
-          <img class="img-circle" data-src="holder.js/140x140" alt="Generic placeholder image">
-          <h2>?</h2>
-          <p></p>
-        </div><!-- /.col-lg-4 -->
-        <div class="col-lg-4">
-          <img class="img-circle" data-src="holder.js/140x140" alt="Generic placeholder image">
-          <h2>?</h2>
-          <p></p>
-        </div><!-- /.col-lg-4 -->
-      </div><!-- /.row -->
 
       <hr class="featurette-divider">
 
@@ -68,7 +76,7 @@
           <img class="featurette-image img-responsive" src="/images/places/nouveau.png" alt="Nouveau Carrotmob">
         </div>
         <div class="col-md-5">
-          <h2 class="featurette-heading">Ciel ! <span class="text-muted">Le prochain ?</span></h2>
+          <h2 class="featurette-heading">Ciel&nbsp;! <span class="text-muted">Le prochain&nbsp;?</span></h2>
           <p><a class="btn btn-danger" href="/campaign/create#un-carrotmob-ici" role="button">Carrotmobber un commerçant&nbsp;! &raquo;</a></p>
           <p><a class="btn btn-danger" href="/campaign/request#me-faire-carrotmobber" role="button">Me faire Carrotmobber&nbsp;! &raquo;</a></p>
         </div>
@@ -76,9 +84,9 @@
 
       <hr class="featurette-divider">
 
-      <div class="row featurette">
+      <div id="campagnes" class="row featurette">
         <div class="col-md-7">
-          <h2 class="featurette-heading">Rochefort Sur Mer <span class="text-muted">Le premier !</span></h2>
+          <h2 class="featurette-heading">Rochefort Sur Mer <span class="text-muted">Le premier&nbsp;!</span></h2>
           <p class="lead">La Vuelta Café</p>
           <p><a class="btn btn-warning" href="http://www.carrotcommunity.org/#!rochefort/c4lm" target="_blank" role="button">Revivre le premier Carrotmob de France ! &raquo;</a></p>
         </div>
@@ -90,26 +98,26 @@
       <hr class="featurette-divider">
 
       <div class="row featurette">
+        <div class="col-md-5">
+          <img class="featurette-image img-responsive" src="/images/places/paris.png" alt="Carrotmobs à Paris">
+        </div>
         <div class="col-md-7">
           <h2 class="featurette-heading">Paris <span class="text-muted">Ile-de-France</span></h2>
           <p class="lead">Intermarché, Bea'shka, Monsieur Poulet, La Bellevilloise</p>
           <p><a class="btn btn-primary" href="http://www.carrotcommunity.org/#!paris/c14o7" target="_blank" role="button">Revivre les Carrotmobs de Paris &raquo;</a></p>
-        </div>
-        <div class="col-md-5">
-          <img class="featurette-image img-responsive" src="/images/places/paris.png" alt="Carrotmobs à Paris">
         </div>
       </div>
 
       <hr class="featurette-divider">
 
       <div class="row featurette">
-        <div class="col-md-5">
-          <img class="featurette-image img-responsive" src="/images/places/rennes.png" alt="Carrotmobs à Rennes">
-        </div>
         <div class="col-md-7">
           <h2 class="featurette-heading">Rennes <span class="text-muted">Bretagne</span></h2>
           <p class="lead">Ecoffee, La Cave Délices, Le Chantier, Le Café Cortina, La Vie Enchantée, Le Café Laverie</p>
           <p><a class="btn btn-primary" href="http://www.carrotcommunity.org/#!rennes/csob" target="_blank" role="button">Revivre les Carrotmobs de Rennes &raquo;</a></p>
+        </div>
+        <div class="col-md-5">
+          <img class="featurette-image img-responsive" src="/images/places/rennes.png" alt="Carrotmobs à Rennes">
         </div>
       </div>
 
@@ -188,6 +196,19 @@
         </div>
         <div class="col-md-5">
           <img class="featurette-image img-responsive" src="/images/places/strasbourg.png" alt="Carrotmob à Strasbourg">
+        </div>
+      </div>
+
+      <hr class="featurette-divider">
+
+      <div class="row featurette">
+        <div class="col-md-5">
+          <img class="featurette-image img-responsive" src="/images/carrotmob.png" alt="Carrotmob">
+        </div>
+        <div class="col-md-7">
+          <h2 class="featurette-heading">Tout sauf ma ville&nbsp;!<br><span class="text-muted">La prochaine&nbsp;?</span></h2>
+          <p><a class="btn btn-danger" href="/campaign/create#un-carrotmob-ici" role="button">Carrotmobber un commerçant&nbsp;! &raquo;</a></p>
+          <p><a class="btn btn-danger" href="/campaign/request#me-faire-carrotmobber" role="button">Me faire Carrotmobber&nbsp;! &raquo;</a></p>
         </div>
       </div>
 
