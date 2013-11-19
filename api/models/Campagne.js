@@ -9,24 +9,26 @@
 module.exports = {
 
   attributes: {
-	start_date : 'DATE',
-	end_date: 'DATE',
-	type: 'STRING', //type de campagne (classique, voucher)
-	title: {
-		type: 'STRING', 
-		required: true
-	},
-	description: 'TEXT', //Description 
-	if: 'TEXT', //Si le commerce s'engage à
-	then: 'TEXT',  //Alors ...
-	merchant: '', //identifiant du commerce
-	created_by: 'TEXT', //admin, commercant
-	status: 'TEXT', //terminé, en cours, proposé, annulé
-	
+	start_date : 'DATE',    //date de debut de la campagne
+	end_date: 'DATE',       //date de fin de la campagne
+	type: 'STRING',         //type de campagne (classique, voucher)
+	title: 'STRING',        //titre de la campagne     
+	description: 'TEXT',    //description 
+	if: 'TEXT',             //si le commerce s'engage à
+	then: 'TEXT',           //alors ...
+	merchant: 'INTEGER',    //identifiant du commerce
+	created_by: 'TEXT',     //admin, commercant, visiteur
+	status: 'TEXT',         //non-validé, terminé, en cours, proposé, annulé
 	
 	
   
     
+  },
+  afterCreate: function(obj, next){
+      /**
+       * @todo: envoyer un email 
+      **/
+      next();
   }
 
 };
