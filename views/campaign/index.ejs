@@ -1,0 +1,89 @@
+<!-- NAVBAR
+================================================== -->
+    <div class="navbar-wrapper">
+      <div class="container">
+
+        <div class="navbar navbar-inverse" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="/">Carrotmob France</a>
+            </div>
+            <div class="navbar-collapse collapse">
+              <ul class="nav navbar-nav">
+                <li><a href="/#pourquoi">Pourquoi Carrotmob ?</a></li>
+                <li><a href="/#comment">Comment ça marche ?</a></li>
+                <li class="active"><a href="/campaign">Les campagnes !</a></li>
+                <li><a href="/campaign/create">Carrotmobber un commerçant !</a></li>
+                <li><a href="/campaign/request">Me faire Carrotmobber !</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <%- partial('../partials/carousel')%>
+
+    <div id="campagnes" class="container marketing">
+
+      <div class="row featurette">
+        <div class="col-md-7">
+          <h2 class="featurette-heading">Paris <span class="text-muted">Ile-de-France</span></h2>
+          <p class="lead">Intermarché, Bea'shka, Monsieur Poulet, La Bellevilloise</p>
+          <p><a class="btn btn-primary" href="http://www.carrotcommunity.org/#!paris/c14o7" target="_blank" role="button">Revivre les Carrotmobs de Paris &raquo;</a></p>
+        </div>
+        <div class="col-md-5">
+          <img class="featurette-image img-responsive" src="/images/places/paris.png" alt="Carrotmobs à Paris">
+        </div>
+      </div>
+
+      <hr class="featurette-divider">
+
+      <div class="row featurette">
+        <div class="col-md-5">
+          <img class="featurette-image img-responsive" src="/images/places/rennes.png" alt="Carrotmobs à Rennes">
+        </div>
+        <div class="col-md-7">
+          <h2 class="featurette-heading">Rennes <span class="text-muted">Bretagne</span></h2>
+          <p class="lead">Ecoffee, La Cave Délices, Le Chantier, Le Café Cortina, La Vie Enchantée, Le Café Laverie</p>
+          <p><a class="btn btn-primary" href="http://www.carrotcommunity.org/#!rennes/csob" target="_blank" role="button">Revivre les Carrotmobs de Rennes &raquo;</a></p>
+        </div>
+      </div>
+
+      <hr class="featurette-divider">
+
+      <div class="row featurette">
+        <div class="col-md-7">
+          <h2 class="featurette-heading">Rochefort Sur Mer <span class="text-muted">Le premier !</span></h2>
+          <p class="lead">La Vuelta Café</p>
+          <p><a class="btn btn-warning" href="http://www.carrotcommunity.org/#!rochefort/c4lm" target="_blank" role="button">Revivre le premier Carrotmob de France ! &raquo;</a></p>
+        </div>
+        <div class="col-md-5">
+          <img class="featurette-image img-responsive" src="/images/places/rochefort-sur-mer.png" alt="Carrotmob à Rochefort Sur Mer">
+        </div>
+      </div>
+
+      <hr class="featurette-divider">
+
+      <div class="row featurette">
+        <div class="col-md-7">
+          <img class="featurette-image img-responsive" src="/images/places/nouveau.png" alt="Carrotmob à Rochefort Sur Mer">
+        </div>
+        <div class="col-md-5">
+          <h2 class="featurette-heading">Ciel ! <span class="text-muted">Le prochain ?</span></h2>
+          <p><a class="btn btn-danger" href="/campaign/create" role="button">Organiser le prochain Carrotmob ! &raquo;</a></p>
+        </div>
+      </div>
+
+      <hr class="featurette-divider">
+
+      <%- partial('../partials/footer')%>
+
+    </div><!-- /.container -->

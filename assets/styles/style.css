@@ -12,19 +12,19 @@
 
 
 body {
-    background: #f8f8f8 url(../images/pattern.jpg);
+    background: #a8b0b3 url(../images/pattern.jpg);
     text-align: left;
     font-family: 'Roboto', Arial, sans-serif;
     color: #555;
     font-weight: 400;
-    border-top: 2px solid #cf4711;
+    border-top: 2px solid #f07f33;
 }
 
 strong { font-weight: 700; }
 a:hover { text-decoration: none; }
 
-::-moz-selection { background: #cf4711; color: #fff; text-shadow: none; }
-::selection { background: #cf4711; color: #fff; text-shadow: none; }
+::-moz-selection { background: #f07f33; color: #fff; text-shadow: none; }
+::selection { background: #f07f33; color: #fff; text-shadow: none; }
 
 .logo h1 {
     margin-top: 7px;
@@ -36,7 +36,7 @@ a:hover { text-decoration: none; }
     color: #555;
 }
 
-.logo h1 span { color: #cf4711; }
+.logo h1 span { color: #f07f33; }
 
 .logo a {
     color: #555;
@@ -46,7 +46,7 @@ a:hover { text-decoration: none; }
     -webkit-transition: all .2s;
     -ms-transition: all .2s;
 }
-.logo a:hover { color: #cf4711; }
+.logo a:hover { color: #f07f33; }
 
 .call-us {
     font-size: 18px;
@@ -58,7 +58,7 @@ a:hover { text-decoration: none; }
     padding-right: 50px;
 }
 
-.call-us p span { color: #888; }
+.call-us p span { color: #a8b0b3; }
 
 
 /***** Coming Soon *****/
@@ -117,7 +117,7 @@ a:hover { text-decoration: none; }
 .timer .hours-wrapper:hover,
 .timer .minutes-wrapper:hover,
 .timer .seconds-wrapper:hover {
-    background: #cf4711 url(../images/pattern-2.png);
+    background: #f07f33 url(../images/pattern-2.png);
     text-shadow: none;
 }
 
@@ -190,7 +190,7 @@ a:hover { text-decoration: none; }
     height: 46px;
     margin: 0;
     padding: 0;
-    background: #cf4711;
+    background: #f07f33;
     border: 0;
     font-family: 'Lato', Arial, sans-serif;
     font-size: 18px;
@@ -211,12 +211,12 @@ a:hover { text-decoration: none; }
 }
 
 .subscribe form button:hover {
-    background: #cf4711;
+    background: #f07f33;
     color: #fff;
 }
 
 .subscribe form button:active {
-    background: #cf4711;
+    background: #f07f33;
     color: #fff;
 }
 
@@ -225,7 +225,7 @@ a:hover { text-decoration: none; }
 }
 
 .error-message {
-    color: #cf4711;
+    color: #f07f33;
 }
 
 .social {
