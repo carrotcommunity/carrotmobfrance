@@ -1,5 +1,3 @@
-<!-- NAVBAR
-================================================== -->
     <div class="navbar-wrapper">
       <div class="container">
 
@@ -19,8 +17,8 @@
                 <li><a href="/#pourquoi">Pourquoi Carrotmob ?</a></li>
                 <li><a href="/#comment">Comment ça marche ?</a></li>
                 <li class="active"><a href="/campaign">Les campagnes !</a></li>
-                <li><a href="/campaign/create">Carrotmobber un commerçant !</a></li>
-                <li><a href="/campaign/request">Me faire Carrotmobber !</a></li>
+                <li><a href="/campaign/create#un-carrotmob-ici">Carrotmobber un commerçant !</a></li>
+                <li><a href="/campaign/request#me-faire-carrotmobber">Me faire Carrotmobber !</a></li>
               </ul>
             </div>
           </div>
@@ -31,7 +29,65 @@
 
     <%- partial('../partials/carousel')%>
 
-    <div id="campagnes" class="container marketing">
+    <div id="en-ce-moment" class="container marketing">
+
+      <div id="pourquoi" class="row featurette">
+        <div class="col-md-5">
+          <img class="featurette-image img-responsive" src="/images/carrotwoman.png" alt="Carrotwoman">
+        </div>
+        <div class="col-md-7">
+          <h2 class="featurette-heading">En ce moment&nbsp;!<br><span class="text-muted">Près de chez vous&nbsp;!</span></h2>
+          <p class="lead"></p>
+        </div>
+      </div>
+
+      <hr class="featurette-divider">
+
+      <div class="row">
+        <div class="col-lg-4">
+          <img class="img-circle" data-src="holder.js/140x140" alt="Generic placeholder image">
+          <h2>?</h2>
+          <p></p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+          <img class="img-circle" data-src="holder.js/140x140" alt="Generic placeholder image">
+          <h2>?</h2>
+          <p></p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+          <img class="img-circle" data-src="holder.js/140x140" alt="Generic placeholder image">
+          <h2>?</h2>
+          <p></p>
+        </div><!-- /.col-lg-4 -->
+      </div><!-- /.row -->
+
+      <hr class="featurette-divider">
+
+      <div class="row featurette">
+        <div class="col-md-7">
+          <img class="featurette-image img-responsive" src="/images/places/nouveau.png" alt="Nouveau Carrotmob">
+        </div>
+        <div class="col-md-5">
+          <h2 class="featurette-heading">Ciel ! <span class="text-muted">Le prochain ?</span></h2>
+          <p><a class="btn btn-danger" href="/campaign/create#un-carrotmob-ici" role="button">Carrotmobber un commerçant&nbsp;! &raquo;</a></p>
+          <p><a class="btn btn-danger" href="/campaign/request#me-faire-carrotmobber" role="button">Me faire Carrotmobber&nbsp;! &raquo;</a></p>
+        </div>
+      </div>
+
+      <hr class="featurette-divider">
+
+      <div class="row featurette">
+        <div class="col-md-7">
+          <h2 class="featurette-heading">Rochefort Sur Mer <span class="text-muted">Le premier !</span></h2>
+          <p class="lead">La Vuelta Café</p>
+          <p><a class="btn btn-warning" href="http://www.carrotcommunity.org/#!rochefort/c4lm" target="_blank" role="button">Revivre le premier Carrotmob de France ! &raquo;</a></p>
+        </div>
+        <div class="col-md-5">
+          <img class="featurette-image img-responsive" src="/images/places/rochefort-sur-mer.png" alt="Carrotmob à Rochefort Sur Mer">
+        </div>
+      </div>
+
+      <hr class="featurette-divider">
 
       <div class="row featurette">
         <div class="col-md-7">
@@ -60,13 +116,13 @@
       <hr class="featurette-divider">
 
       <div class="row featurette">
-        <div class="col-md-7">
-          <h2 class="featurette-heading">Rochefort Sur Mer <span class="text-muted">Le premier !</span></h2>
-          <p class="lead">La Vuelta Café</p>
-          <p><a class="btn btn-warning" href="http://www.carrotcommunity.org/#!rochefort/c4lm" target="_blank" role="button">Revivre le premier Carrotmob de France ! &raquo;</a></p>
-        </div>
         <div class="col-md-5">
-          <img class="featurette-image img-responsive" src="/images/places/rochefort-sur-mer.png" alt="Carrotmob à Rochefort Sur Mer">
+          <img class="featurette-image img-responsive" src="/images/places/troyes.png" alt="Carrotmobs à Troyes">
+        </div>
+        <div class="col-md-7">
+          <h2 class="featurette-heading">Troyes <span class="text-muted">Champagne-Ardenne</span></h2>
+          <p class="lead">Rive Gauche</p>
+          <p><a class="btn btn-primary" href="http://www.carrotcommunity.org/#!troyes/cjog" target="_blank" role="button">Revivre le Carrotmob de Troyes &raquo;</a></p>
         </div>
       </div>
 
@@ -74,11 +130,64 @@
 
       <div class="row featurette">
         <div class="col-md-7">
-          <img class="featurette-image img-responsive" src="/images/places/nouveau.png" alt="Carrotmob à Rochefort Sur Mer">
+          <h2 class="featurette-heading">Grenoble <span class="text-muted">Rhône-Alpes</span></h2>
+          <p class="lead">Tea Time</p>
+          <p><a class="btn btn-primary" href="http://www.carrotcommunity.org/#!grenoble/c14aa" target="_blank" role="button">Revivre le Carrotmob de Grenoble &raquo;</a></p>
         </div>
         <div class="col-md-5">
-          <h2 class="featurette-heading">Ciel ! <span class="text-muted">Le prochain ?</span></h2>
-          <p><a class="btn btn-danger" href="/campaign/create" role="button">Organiser le prochain Carrotmob ! &raquo;</a></p>
+          <img class="featurette-image img-responsive" src="/images/places/grenoble.png" alt="Carrotmob à Grenoble">
+        </div>
+      </div>
+
+      <hr class="featurette-divider">
+
+      <div class="row featurette">
+        <div class="col-md-5">
+          <img class="featurette-image img-responsive" src="/images/places/lille.png" alt="Carrotmob à Lille">
+        </div>
+        <div class="col-md-7">
+          <h2 class="featurette-heading">Lille <span class="text-muted">Nord-Pas-de-Calais</span></h2>
+          <p class="lead">Be Yourself !</p>
+          <p><a class="btn btn-primary" href="http://www.carrotcommunity.org/#!lille/c1jlp" target="_blank" role="button">Revivre le Carrotmob de Lille &raquo;</a></p>
+        </div>
+      </div>
+
+      <hr class="featurette-divider">
+
+      <div class="row featurette">
+        <div class="col-md-7">
+          <h2 class="featurette-heading">Toulouse <span class="text-muted">Midi-Pyrénées</span></h2>
+          <p class="lead"></p>
+          <p><a class="btn btn-primary" href="http://www.carrotcommunity.org/#!toulouse/c16tw" target="_blank" role="button">Revivre le Carrotmob de Toulouse &raquo;</a></p>
+        </div>
+        <div class="col-md-5">
+          <img class="featurette-image img-responsive" src="/images/places/toulouse.png" alt="Carrotmob à Toulouse">
+        </div>
+      </div>
+
+      <hr class="featurette-divider">
+
+      <div class="row featurette">
+        <div class="col-md-5">
+          <img class="featurette-image img-responsive" src="/images/places/ile-de-la-reunion.png" alt="Carrotmob sur l'Ile de la Réunion">
+        </div>
+        <div class="col-md-7">
+          <h2 class="featurette-heading">Ile de la Réunion <span class="text-muted">DROM</span></h2>
+          <p class="lead"></p>
+          <p><a class="btn btn-primary" href="http://www.carrotcommunity.org/#!reunion/c22sk" target="_blank" role="button">Revivre le Carrotmob sur l'Ile de la Réunion &raquo;</a></p>
+        </div>
+      </div>
+
+      <hr class="featurette-divider">
+
+      <div class="row featurette">
+        <div class="col-md-7">
+          <h2 class="featurette-heading">Strasbourg <span class="text-muted">Alsace</span></h2>
+          <p class="lead"></p>
+          <p><a class="btn btn-primary" href="http://www.carrotcommunity.org/#!strasbourg/cemj" target="_blank" role="button">Revivre le Carrotmob de Strasbourg &raquo;</a></p>
+        </div>
+        <div class="col-md-5">
+          <img class="featurette-image img-responsive" src="/images/places/strasbourg.png" alt="Carrotmob à Strasbourg">
         </div>
       </div>
 

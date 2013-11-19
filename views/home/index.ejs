@@ -1,6 +1,4 @@
 
-<!-- NAVBAR
-================================================== -->
     <div class="navbar-wrapper">
       <div class="container">
 
@@ -13,15 +11,15 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="/">Carrotmob France</a>
+              <a class="navbar-brand active" href="/">Carrotmob France</a>
             </div>
             <div class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
-                <li class="active"><a href="/#pourquoi">Pourquoi Carrotmob ?</a></li>
+                <li><a href="/#pourquoi">Pourquoi Carrotmob ?</a></li>
                 <li><a href="/#comment">Comment ça marche ?</a></li>
                 <li><a href="/campaign">Les campagnes !</a></li>
-                <li><a href="/campaign/create">Carrotmobber un commerçant !</a></li>
-                <li><a href="/campaign/request">Me faire Carrotmobber !</a></li>
+                <li><a href="/campaign/create#un-carrotmob-ici">Carrotmobber un commerçant !</a></li>
+                <li><a href="/campaign/request#me-faire-carrotmobber">Me faire Carrotmobber !</a></li>
               </ul>
             </div>
           </div>
@@ -34,12 +32,23 @@
 
     <div class="container marketing">
 
-      <!-- Three columns of text below the carousel -->
-      <div id="pourquoi" class="row">
+      <div id="pourquoi" class="row featurette">
+        <div class="col-md-5">
+          <img class="featurette-image img-responsive" src="/images/carrotwoman.png" alt="Carrotwoman">
+        </div>
+        <div class="col-md-7">
+          <h2 class="featurette-heading">Pourquoi Carrotmob&nbsp;?<br><span class="text-muted">C'est très simple&nbsp;!</span></h2>
+          <p class="lead">Plutôt que de boycotter les commerçants ou les entreprises non vertueuses, pourquoi ne pas les récompenser pour leurs bons gestes&nbsp;?</p>
+        </div>
+      </div>
+
+      <hr class="featurette-divider">
+
+      <div class="row">
         <div class="col-lg-4">
           <img class="img-circle" data-src="holder.js/140x140" alt="Generic placeholder image">
           <h2>L'inverse d'un boycott</h2>
-          <p>Plutôt que de boycotter les commerçants ou les entreprises non vertueuses, pourquoi ne pas les récompenser pour leurs bons gestes ? Carrotmob est l'inverse d'un boycott ! C'est une méthode d'activisme qui accroit le pouvoir du consommateur en récompensant les commerces les plus socialement et écologiquement responsables.</p>
+          <p>Carrotmob est l'inverse d'un boycott ! C'est une méthode d'activisme qui accroit le pouvoir du consommateur en récompensant les commerces les plus socialement et écologiquement responsables.</p>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
           <img class="img-circle" data-src="holder.js/140x140" alt="Generic placeholder image">
@@ -60,11 +69,36 @@
           <img class="featurette-image img-responsive" src="/images/carrotman.png" alt="Carrotman">
         </div>
         <div class="col-md-7">
-          <h2 class="featurette-heading">Comment ça marche ? <span class="text-muted">C'est très simple !</span></h2>
-          <p class="lead">Il suffit de le vouloir !</p>
-          <p><a class="btn btn-warning" href="/campaign#campagnes" role="button">Revivre les derniers Carrotmobs &raquo;</a></p>
+          <h2 class="featurette-heading">Comment ça marche&nbsp;?<br><span class="text-muted">C'est tout aussi simple&nbsp;!</span></h2>
+          <p class="lead">Une sélection par la foule de consom'acteurs, des commerçants envahits, un impact mesuré... Et tout ça recommence&nbsp;!</p>
         </div>
       </div>
+
+      <hr class="featurette-divider">
+
+      <div class="row">
+        <div class="col-lg-4">
+          <img class="img-circle" data-src="holder.js/140x140" alt="Generic placeholder image">
+          <h2>1. La sélection par la foule</h2>
+          <p>Les consom'acteurs soumettent les commerces qu'ils veulent Carrotmobber. Les commerçants sont challengés par tous ceux qui sont ou veulent devenir organisateurs de Carrotmobs ! Les sélections se déroulent via un vote ouvert à tous et aussi simple qu'un "J'aime" sur Facebook !</p>
+          <p><a class="btn btn-primary" href="/campaign/create#un-carrotmob-ici" role="button">Carrotmobber un commerçant ! &raquo;</a></p>
+          <p><a class="btn btn-primary" href="/campaign/request#me-faire-carrotmobber" role="button">Me faire Carrotmobber ! &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+          <img class="img-circle" data-src="holder.js/140x140" alt="Generic placeholder image">
+          <h2>2. Le Carrotmob&nbsp;!</h2>
+          <p>Le commerce est envahit par les consom'acteurs et autres consommateurs ! C'est d'ailleurs l'occasion de sensibiliser les consommateurs aux enjeux de la consommation collaborative et responsable, et les informer des autres mouvements collaboratifs comme Disco Soupe qui lutte contre le gaspillage alimentaire...</p>
+          <p><a class="btn btn-warning" href="/campaign#en-ce-moment" role="button">Des Carrotmobs en ce moment ? &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+          <img class="img-circle" data-src="holder.js/140x140" alt="Generic placeholder image">
+          <h2>3. La mesure d'impact</h2>
+          <p>Les mesureurs viennent évaluer le résultat et l'impact du Carrotmob sur le commerçant et son environnement. Les consom'acteurs peuvent aussi évaluer l'engagement des commerçants aussi longtemps que nécessaire après le Carrotmob, et même demander un nouveau Carrotmob !</p>
+          <p><a class="btn btn-success" href="/campaign#campagnes" role="button">Suivre l'impact des Carrotmobs &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+      </div><!-- /.row -->
+
+      <hr class="featurette-divider">
 
       <%- partial('../partials/footer')%>
 
