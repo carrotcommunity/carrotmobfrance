@@ -18,11 +18,7 @@ module.exports = {
 	then: 'TEXT',           //alors ...
 	merchant: 'INTEGER',    //identifiant du commerce
 	created_by: 'TEXT',     //admin, commercant, visiteur
-	status: 'TEXT',         //non-validé, terminé, en cours, proposé, annulé
-	
-	
-  
-    
+	status: 'TEXT',         //non-validé, terminé, en cours, proposé, annulé    
   },
   afterCreate: function(obj, next){
       /**
