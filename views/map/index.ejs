@@ -9,10 +9,10 @@
         <meta name="description" content="">
         <meta name="author" content="">
 
-		<link rel="stylesheet" href="styles/leaflet.css" />
-		<!--[if lte IE 8]><link rel="stylesheet" href="../dist/leaflet.ie.css" /><![endif]-->
+		<link rel="stylesheet" href="/styles/leaflet.css" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="/leaflet.ie.css" /><![endif]-->
 
-		<script src="js/leaflet.js"></script>
+		<script src="/js/leaflet.js"></script>
 
 		<style>
 			body {
@@ -40,7 +40,7 @@
 
 			function onLocationFound(e) {
 				var radius = e.accuracy / 2;
-				var link = '<a href="#">Je veux Carrotmobber un commerçant ici !</a>';
+				var link = '<a href="/campaign/create">Je veux Carrotmobber un commerçant ici !</a>';
 
 				L.marker(e.latlng).addTo(map)
 					.bindPopup(link + "<br>(vous êtes à " + radius + " mètres de ce point).").openPopup();
