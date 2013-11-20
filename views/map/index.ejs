@@ -44,7 +44,7 @@
 
 			function onLocationFound(e) {
 				var radius = e.accuracy / 2;
-				var link = '<a href="/campaign/create">Je veux Carrotmobber un commerçant ici !</a>';
+				var link = '<a href="/campagne/jeveuxlecarrotmobber">Je veux Carrotmobber un commerçant ici !</a>';
 
 				L.marker(e.latlng).addTo(map)
 					.bindPopup(link + "<br>(vous êtes à " + radius + " mètres de ce point).").openPopup();

@@ -16,9 +16,9 @@
               <ul class="nav navbar-nav">
                 <li><a href="/#pourquoi">Pourquoi Carrotmob ?</a></li>
                 <li><a href="/#comment">Comment ça marche ?</a></li>
-                <li><a href="/campaign#en-ce-moment">Les campagnes !</a></li>
-                <li class="active"><a href="/campaign/create#un-carrotmob-ici">Carrotmobber un commerçant !</a></li>
-                <li><a href="/campaign/request#me-faire-carrotmobber">Me faire Carrotmobber !</a></li>
+                <li><a href="/campagne#en-ce-moment">Les campagnes !</a></li>
+                <li class="active"><a href="/campagne/jeveuxlecarrotmobber#jeveuxlecarrotmobber">Carrotmobber un commerçant !</a></li>
+                <li><a href="/campagne/mefairecarrotmobber#mefairecarrotmobber">Me faire Carrotmobber !</a></li>
               </ul>
             </div>
           </div>
@@ -29,7 +29,7 @@
 
     <%- partial('../partials/carousel')%>
 
-    <div id="un-carrotmob-ici" class="container marketing">
+    <div id="jeveuxlecarrotmobber" class="container marketing">
 
       <div id="comment" class="row featurette">
         <div class="col-md-5">
@@ -48,13 +48,24 @@
           <img class="img-circle" data-src="holder.js/140x140" alt="Generic placeholder image">
           <h2>Un post sur Facebook ?</h2>
           <p>Postes publiquement le contenu de ton choix en utilisant le hashtag #JeVeuxLeCarrotmobber. Tu peux aussi poster sur la page Facebook de Carrotmob France ! De préférence, géolocalises-toi, et, surtout : envoie le nom du commerçant !</p>
-          <p><a href="https://www.facebook.com/carrotmobfrance" target="_blank"><img class="img-circle" src="/images/social-icons/facebook.png" alt="Facebook"></a></p>
+          <p><a class="btn btn-danger" href="https://www.facebook.com/sharer.php?app_id=344184582366865&sdk=joey&u=http%3A%2F%2Fwww.carrotmob.fr%2Fcampagne%2Fjeveuxlecarrotmobber&display=popup" target="_blank" role="button">Partager sur Facebook&nbsp;! &raquo;</a></p>
+          <div id="fb-root"></div>
+          <script>(function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/fr_FR/all.js#xfbml=1&appId=344184582366865";
+            fjs.parentNode.insertBefore(js, fjs);
+          }(document, 'script', 'facebook-jssdk'));</script>
+          <div class="fb-like-box" data-href="http://www.facebook.com/carrotmobfrance" data-height="600" data-colorscheme="light" data-show-faces="true" data-header="false" data-stream="true" data-show-border="true"></div>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
           <img class="img-circle" data-src="holder.js/140x140" alt="Generic placeholder image">
           <h2>Un tweet sur Twitter ?</h2>
           <p>Envoies un tweet de ton choix en utilisant le hashtag #JeVeuxLeCarrotmobber. Tu peux aussi citer la @CarrotCommunity ! De préférence, géolocalises-toi, et, surtout : envoie le nom du commerçant !</p>
-          <p><a href="https://twitter.com/carrotcommunity" target="_blank"><img class="img-circle" src="/images/social-icons/twitter.png" alt="Twitter"></a></p>
+          <p><a class="btn btn-danger" href="http://twitter.com/share?url=http%3A%2F%2Fwww.carrotmob.fr%2Fcampagne%2Fjeveuxlecarrotmobber&related=carrotcommunity&via=carrotcommunity&lang=fr&hashtags=JeVeuxLeCarrotmobber" target="_blank" role="button">Tweeter #JeVeuxLeCarrotmobber&nbsp;! &raquo;</a></p>
+          <a class="twitter-timeline" href="https://twitter.com/CarrotCommunity" data-widget-id="403289773894156288">Tweets de @CarrotCommunity</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
           <img class="img-circle" data-src="holder.js/140x140" alt="Generic placeholder image">
