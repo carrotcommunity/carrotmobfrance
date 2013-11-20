@@ -44,6 +44,10 @@ body {
     margin-bottom: 60px;
 }
 
+.fill {
+  height: 100%;
+}
+
 .carousel-inner > .item > img {
   margin: 0 auto;
   max-width: 100%;
