@@ -1,7 +1,7 @@
     <div id="infographies" class="navbar-wrapper">
       <div class="container">
 
-        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div id="navbar-carrotmob" class="navbar navbar-default navbar-fixed-top" role="navigation">
           <div class="container">
             <div class="navbar-header">
               <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -10,14 +10,14 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand active" href="/">Carrotmob France</a>
+              <a class="navbar-brand" href="/"><img height="18px" src="/images/carrotmob-60x60.png"> Carrotmob France</a>
             </div>
             <div class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
-                <li><a href="/#pourquoi">Pourquoi Carrotmob</a></li>
-                <li><a href="/#comment">Comment ça marche</a></li>
-                <li><a href="/#carrotmobber">Carrotmobber un commerçant</a></li>
-                <li><a href="/campagne#en-ce-moment">Les campagnes</a></li>
+                <li class="active"><a href="#pourquoi">Pourquoi Carrotmob</a></li>
+                <li><a href="#comment">Comment ça marche</a></li>
+                <li><a href="#carrotmobber">Carrotmobber un commerçant</a></li>
+                <li><a href="/campagne">Les campagnes</a></li>
               </ul>
             </div>
           </div>
@@ -26,7 +26,7 @@
       </div>
     </div>
 
-    <!--%- partial('../partials/carousel')%-->
+    <%- partial('../partials/carousel')%>
 
     <div class="container marketing">
 
@@ -52,7 +52,7 @@
         <div class="col-lg-4">
           <img class="img-circle" data-src="holder.js/140x140" alt="Generic placeholder image">
           <h2>C’est pour moi</h2>
-          <p>Oui toi ! Nous avons plus d'influence sur les entreprises en leur donnant une bonne raison de changer : notre argent.</p>
+          <p>Oui <a href="http://www.facebook.com/me" target="_blank">toi</a> ! Nous avons plus d'influence sur les entreprises en leur donnant une bonne raison de changer : notre argent.</p>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
           <img class="img-circle" data-src="holder.js/140x140" alt="Generic placeholder image">
