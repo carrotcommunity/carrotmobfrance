@@ -5,6 +5,7 @@ jQuery(document).ready(function() {
         Background slideshow
     */
     $('.coming-soon').backstretch([
+<<<<<<< HEAD
       "assets/img/backgrounds/1.jpg"
     , "assets/img/backgrounds/2.jpg"
     , "assets/img/backgrounds/3.jpg"
@@ -33,6 +34,14 @@ jQuery(document).ready(function() {
     });
 
     /*
+=======
+      "images/backgrounds/1.jpg"
+    , "images/backgrounds/2.jpg"
+    , "images/backgrounds/3.jpg"
+    ], {duration: 3000, fade: 750});
+
+    /*
+>>>>>>> test
         Tooltips
     */
     $('.social a.facebook').tooltip();
