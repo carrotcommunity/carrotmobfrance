@@ -1,5 +1,5 @@
 /**
- * CampagneController
+ * CampagnesController
  *
  * @module		:: Controller
  * @description	:: Contains logic for handling requests.
@@ -14,36 +14,36 @@ module.exports = {
   */
   
   /**
-   * /campagne/index
+   * /campagnes/index
    */ 
   index: function (req,res) {
 
     // This will render the view: 
-    // /Users/cyrildotcc/Sites/carrotmobfrance/views/campagne/index.ejs
+    // /Users/cyrildotcc/Sites/carrotmobfrance/views/campagnes/index.ejs
     res.view();
 
   },
 
 
   /**
-   * /campagne/jeveuxlecarrotmobber
+   * /campagnes/jeveuxlecarrotmobber
    */ 
   jeveuxlecarrotmobber: function (req,res) {
 
     // This will render the view: 
-    // /Users/cyrildotcc/Sites/carrotmobfrance/views/campagne/jeveuxlecarrotmobber.ejs
+    // /Users/cyrildotcc/Sites/carrotmobfrance/views/campagnes/jeveuxlecarrotmobber.ejs
     res.view();
 
   },
 
 
   /**
-   * /campagne/mefairecarrotmobber
+   * /campagnes/mefairecarrotmobber
    */ 
   mefairecarrotmobber: function (req,res) {
 
     // This will render the view: 
-    // /Users/cyrildotcc/Sites/carrotmobfrance/views/campagne/mefairecarrotmobber.ejs
+    // /Users/cyrildotcc/Sites/carrotmobfrance/views/campagnes/mefairecarrotmobber.ejs
     res.view();
 
   },
