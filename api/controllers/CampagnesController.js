@@ -23,29 +23,4 @@ module.exports = {
     res.view();
 
   },
-
-
-  /**
-   * /campagnes/jeveuxlecarrotmobber
-   */ 
-  jeveuxlecarrotmobber: function (req,res) {
-
-    // This will render the view: 
-    // /Users/cyrildotcc/Sites/carrotmobfrance/views/campagnes/jeveuxlecarrotmobber.ejs
-    res.view();
-
-  },
-
-
-  /**
-   * /campagnes/mefairecarrotmobber
-   */ 
-  mefairecarrotmobber: function (req,res) {
-
-    // This will render the view: 
-    // /Users/cyrildotcc/Sites/carrotmobfrance/views/campagnes/mefairecarrotmobber.ejs
-    res.view();
-
-  },
-
 };
