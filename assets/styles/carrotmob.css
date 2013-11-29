@@ -178,3 +178,15 @@ body {
   width: 100%;
   height: 100%;
 }
+
+/* Medias */
+
+.media > div {
+  height: 140px;
+  line-height: 140px;
+  text-align: center;
+}
+
+.media > div > img { 
+  vertical-align: middle;
+}
