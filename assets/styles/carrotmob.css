@@ -80,6 +80,21 @@ body {
   letter-spacing: -1px;
 }
 
+.rennes-la-novosphere-gris, .rennes-la-novosphere, .le-mouv-gris, .le-mouv, .les-inrockuptibles-gris, 
+.les-inrockuptibles, .marcel-green-gris, .marcel-green, .la-nouvelle-edition, .la-nouvelle-edition-gris, 
+.liberation-gris, .liberation, .ecoplus-tv-gris, .ecoplus-tv, .tracks, 
+.tracks-gris
+{ display: inline-block; background: url('/images/presse.png') no-repeat; }
+
+.rennes-la-novosphere { background-position: -0px -140px; width: 94px; height: 140px; }
+.le-mouv { background-position: -0px -419px; width: 140px; height: 139px; }
+.les-inrockuptibles { background-position: -0px -637px; width: 140px; height: 79px; }
+.marcel-green { background-position: -0px -786px; width: 140px; height: 70px; }
+.la-nouvelle-edition { background-position: -0px -856px; width: 140px; height: 69px; }
+.liberation { background-position: -0px -1045px; width: 140px; height: 51px; }
+.ecoplus-tv { background-position: -0px -1140px; width: 140px; height: 44px; }
+.tracks { background-position: -0px -1184px; width: 140px; height: 34px; }
+
 
 /* RESPONSIVE CSS
 -------------------------------------------------- */
@@ -125,6 +140,22 @@ body {
     font-size: 50px;
   }
 
+  .rennes-la-novosphere { background-position: -0px -0px; width: 94px; height: 140px; }
+  .rennes-la-novosphere:hover { background-position: -0px -140px; width: 94px; height: 140px; }
+  .le-mouv { background-position: -0px -280px; width: 140px; height: 139px; }
+  .le-mouv:hover { background-position: -0px -419px; width: 140px; height: 139px; }
+  .les-inrockuptibles { background-position: -0px -558px; width: 140px; height: 79px; }
+  .les-inrockuptibles:hover { background-position: -0px -637px; width: 140px; height: 79px; }
+  .marcel-green { background-position: -0px -716px; width: 140px; height: 70px; }
+  .marcel-green:hover { background-position: -0px -786px; width: 140px; height: 70px; }
+  .la-nouvelle-edition { background-position: -0px -925px; width: 140px; height: 69px; }
+  .la-nouvelle-edition:hover { background-position: -0px -856px; width: 140px; height: 69px; }
+  .liberation { background-position: -0px -994px; width: 140px; height: 51px; }
+  .liberation:hover { background-position: -0px -1045px; width: 140px; height: 51px; }
+  .ecoplus-tv { background-position: -0px -1096px; width: 140px; height: 44px; }
+  .ecoplus-tv:hover { background-position: -0px -1140px; width: 140px; height: 44px; }
+  .tracks { background-position: -0px -1218px; width: 140px; height: 34px; }
+  .tracks:hover { background-position: -0px -1184px; width: 140px; height: 34px; }
 }
 
 @media (min-width: 992px) {
@@ -173,6 +204,6 @@ body {
   text-align: center;
 }
 
-.media > div > img { 
+.media > div > a { 
   vertical-align: middle;
 }
