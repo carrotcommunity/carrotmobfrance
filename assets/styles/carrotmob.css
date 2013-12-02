@@ -207,3 +207,23 @@ body {
 .media > div > a { 
   vertical-align: middle;
 }
+
+/* Buttons */
+
+.btn-danger:hover {
+  color: #ffffff;
+  background-color: #e16764;
+  border-color: #e16764;
+}
+
+.btn-primary:hover {
+  color: #ffffff;
+  background-color: #9193ce;
+  border-color: #6769bb;
+}
+
+.btn-warning:hover {
+  color: #ffffff;
+  background-color: #f07f33;
+  border-color: #f07f33;
+}
