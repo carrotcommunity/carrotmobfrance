@@ -16,7 +16,12 @@ module.exports.adapters = {
 
   // If you leave the adapter config unspecified 
   // in a model definition, 'default' will be used.
-  'default': 'mongo',
+  'default': 'mongo_test',
+
+  mongo_test: {
+    module   : 'sails-mongo',
+    url      : 'mongodb://127.0.0.1:27017/carrotmobdev'    
+  },
 
 
   mongo: {
