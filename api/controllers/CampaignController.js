@@ -16,11 +16,40 @@
  */
 
 var CampaignController = {
-	renderCampaign: function(req, res) {
+	listCampaign: function(req, res) {
 		Campaign.find().exec(function(err, campaign) {
-			res.write("test");
+			if (err)
+				return (res.send(err, 500));
+			console.log(campaign);
 		});
 		res.end();
+	},
+
+	past: function(req, res) {
+		var date = new Date();
+		Campaign.find().where({epoch : {'<' : date.getTime()}}).exec(function(err, campaign) {
+			if (err)
+				return (res.send(err, 500));
+			res.end();
+		})
+	},
+
+	current: function(req, res) {
+		var date = new Date();
+		Campaign.find().where({epoch : {'>' : date.getTime()}}).exec(function(err, campaign) {
+			if (err)
+				return (res.send(err, 500));
+			res.end();
+		})
+	},
+
+	coming: function(req, res) {
+		var date = new Date();
+		Campaign.find().where({validated : false}).exec(function(err, campaign) {
+			if (err)
+				return (res.send(err, 500));
+			res.end();
+		})
 	}
 };
 

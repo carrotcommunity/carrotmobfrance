@@ -8,6 +8,25 @@
 
 module.exports = {
 
+  beforeValidation: function(values, cb) {
+          // DD/MM/YY:HH/MM/SS FORMAT DATE
+
+          var table = values.startDateStr.split(':');
+          var date = table[0];
+          var hours = table[1];
+
+          var tableDate = date.split('/');
+          var tableHours = date.split('/');
+          values.startDate = tableDate[2] + "-" + tableDate[1] + "-" + tableDate[0];
+          values.epoch = new Date(tableDate[2], tableDate[1], tableDate[0], tableHours[0], tableHours[1], tableHours[2], 0).getTime();
+
+          date = new Date();
+          console.log(values.startDate);
+          console.log(date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate());
+
+    cb();
+  },
+
   attributes: {
 
       title: {
@@ -30,8 +49,10 @@ module.exports = {
         minLength: 1,
         required: true
       },
+      epoch: 'int',
+      startDateStr: 'string',
       startDate: {
-        type: 'datetime',
+        type: 'date',
         after: function() {
           var date = new Date();
 
