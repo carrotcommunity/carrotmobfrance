@@ -7,6 +7,7 @@
 
 var passport = require('passport'),
     FacebookStrategy = require('passport-facebook').Strategy,
+    LocalStrategy = require('passport-local').Strategy,
     bcrypt = require('bcrypt-nodejs');
 
 var AuthController = {
@@ -14,12 +15,12 @@ var AuthController = {
     index: function (req, res) {
         res.view();
     },
-    signup: function (req, res) {
-        res.view('user/signup');
+    signin: function (req, res) {
     },
     logout: function (req, res) {
         req.logout();
-        res.redirect('/');
+        var ref = req.param("next");
+        res.redirect(ref ? ref : '/');
     },
     'facebook': function (req, res, next) {
         passport.authenticate('facebook', {
@@ -31,8 +32,6 @@ var AuthController = {
                     res.view('500');
                     return;
                 }
-                console.log(user);
-                console.log(req.session);
                 res.redirect(user.registered ? '/' : '/signup');
                 return;
             });

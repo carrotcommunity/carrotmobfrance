@@ -18,10 +18,11 @@ var verifyHandler = function (accessToken, refreshToken, profile, done) {
                         password: '',
                         tokenFb: accessToken,
                         picture: 'http://graph.facebook.com/' + profile.id + '/picture?type=square',
-                        city: profile._json.location ? profile._json.location.name : '',
+                        city: profile._json.location && profile._json.location.name ? profile._json.location.name.split(",")[0] : '',
                         admin: false,
                         registered: false
                     }).done(function (err, user) {
+                        console.log(user);
                         return done(err, user);
                     });
                 }

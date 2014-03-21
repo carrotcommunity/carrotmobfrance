@@ -8,7 +8,16 @@
 			<p>Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression.</p>
 			<h4>Retrouve tes amis carrotmobbers<br/>grâce à Facebook !</h4>
 			<div class="center-text">
-				<button class="btn-facebook" type="button"></button>
+                <% if (user && user.id) { %>
+                <form method="post" action="/logout">
+                    <button class="btn-facebook" type="submit">FB signout</button>
+                    <input type="hidden" name="next" value="<%= req.originalUrl %>" />
+                </form>
+                <% } else { %>
+                <form method="post" action="/fbsignin">
+                    <button class="btn-facebook" type="submit">Large button</button>
+                </form>
+                <% } %>
 			</div>
 			<div class="separator">
 			</div>
@@ -23,47 +32,41 @@
 				</tbody>
 			</table>
 
-			<div class="center-text">
-				<form class="form-horizontal">
-			
-					<div class="control-group">
-			    		<div class="controls">
-			      			<input type="text" id="inputFirstName" placeholder="prénom">
-			    		</div>
-					</div>
-
-					<div class="control-group">
-					    <div class="controls">
-					      <input type="text" id="inputLastName" placeholder="nom">
-					    </div>
-					</div>
-
-					<div class="control-group">
-					    <div class="controls">
-					      <input type="text" id="inputTown" placeholder="ville">
-					    </div>
-					</div>
-
-					<div class="control-group">
-					    <div class="controls">
-					      <input type="text" id="inputEmail" placeholder="mail">
-					    </div>
-					</div>
-
-					<div class="control-group">  
-			    		<div class="controls">
-			      			<input type="password" id="inputPassword" placeholder="mot de passe">
-			    		</div>
-			  		</div>
-
-					<div class="control-group">
-			    		<div class="controls">
-			    			<button type="submit" class="btn-submit">Je deviens Carrotmobber !</button>
-			    			</div>
-			    	</div>
-				</form>
-			</div>
-			<br/><br/><br/>
+		<div class="center-text">
+            <form role="form" class="form-horizontal" method="post" action="/register">
+                <div class="control-group">
+                    <div class="controls <%= errors ? (errors['inputFirstName'] ? 'has-error' : 'has-success') : '' %>">
+                        <input class="form-control" type="text" id="inputFirstName" name="inputFirstName" placeholder="prénom" value="<%= user ? user.firstname : '' %>">
+                    </div>
+                </div>
+                <div class="control-group">
+                    <div class="controls <%= errors ? (errors['inputLastName'] ? 'has-error' : 'has-success') : '' %>">
+                        <input class="form-control" type="text" id="inputLastName" name="inputLastName" placeholder="nom" value="<%= user ? user.lastname : '' %>">
+                    </div>
+                </div>
+                <div class="control-group">
+                    <div class="controls <%= errors ? (errors['inputTown'] ? 'has-error' : 'has-success') : '' %>">
+                        <input class="form-control" type="text" id="inputTown" name="inputTown" placeholder="ville" value="<%= user ? user.city : '' %>">
+                    </div>
+                </div>
+                <div class="control-group">
+                    <div class="controls <%= errors ? (errors['inputEmail'] ? 'has-error' : 'has-success') : '' %>">
+                        <input class="form-control" type="text" id="inputEmail" name="inputEmail" placeholder="mail" value="<%= user ? user.email : '' %>">
+                    </div>
+                </div>
+                <% if (!user || !user.id) { %>
+                <div class="control-group">
+                    <div class="controls <%= errors && errors['inputPassword'] ? 'has-error' : '' %>">
+                        <input class="form-control" type="password" id="inputPassword" name="inputPassword" placeholder="mot de passe">
+                    </div>
+                </div>
+                <% } %>
+                <div class="control-group">
+                    <div class="controls">
+                        <button type="submit" class="btn-submit">Je deviens Carrotmobber !</button>
+                    </div>
+                </div>
+            </form>
 		</div>
 	</div>
 	

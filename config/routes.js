@@ -43,7 +43,12 @@ module.exports.routes = {
         view: 'home/connect'
     },
     
-    '/login':{
+    '/signin':{
+        controller: 'auth',
+        action: 'signin'
+    },
+    
+    '/fbsignin':{
         controller: 'auth',
         action: 'facebook'
     },
@@ -54,16 +59,18 @@ module.exports.routes = {
     },
 
     '/signup':{
-        //view: 'user/signup',
-        controller: 'auth',
-        action: 'signup'
+        controller: 'signup',
+        action: 'index'
+    },
+    
+    '/register':{
+        controller: 'signup',
+        action: 'save'
     },
 
     '/forgot_password':{
         view: 'user/forgot_password'
     },
-
-
 
     '/create_campaign':{
         view: 'campaign/create_campaign'

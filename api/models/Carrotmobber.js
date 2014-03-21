@@ -30,10 +30,7 @@ module.exports = {
       uid: 'string',
       tokenFb: 'string',
       picture: 'string',
-      city: {
-        minLength: 1,
-        required: true
-      },
+      city: 'string',
       admin: {
         type: 'boolean',
         defaultsTo: false
