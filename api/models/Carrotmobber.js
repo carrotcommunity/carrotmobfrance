@@ -10,14 +10,29 @@ module.exports = {
 
   attributes: {
 
-      firstname: 'string',
-      lastname: 'string',
-      email: 'string',
-      password: 'string',
+      firstname: {
+        type: 'string',
+        required: true
+      },
+      lastname: {
+        type: 'string',
+        required: true
+      },
+      email: {
+        type: 'email',
+        required: true
+      },
+      password: {
+        type: 'string',
+        minLength: 6,
+        required: true
+      },
       tokenFb: 'string',
       picture: 'string',
       city: 'string',
-      admin: 'boolean'
+      admin: {
+        defaultsTo: false
+      }
     
   }
 

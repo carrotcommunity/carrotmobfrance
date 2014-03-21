@@ -10,15 +10,40 @@ module.exports = {
 
   attributes: {
 
-      title: 'string',
-      desc: 'string',
-      engagement: 'string',
-      place: 'string',
-      startDate: 'date',
+      title: {
+        type: 'string',
+        minLength: 1,
+        required: true
+      },
+      desc: {
+        type: 'string',
+        minLength: 1,
+        required: true
+      },
+      engagement: {
+        type: 'string',
+        minLength: 1,
+        required: true
+      },
+      place: {
+        type: 'string',
+        minLength: 1,
+        required: true
+      },
+      startDate: {
+        type: 'date',
+        required: true
+      },
       endDate: 'date',
       image: 'string',
-      carrotmobberId: 'Carrotmobber',
-      validated: 'boolean'
+      carrotmobberId: {
+        type: 'string',
+        required: true
+      },
+      validated: {
+        type: 'boolean',
+        defaultsTo: false
+      }
     
   }
 
