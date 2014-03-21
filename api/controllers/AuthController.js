@@ -14,6 +14,9 @@ var AuthController = {
     index: function (req, res) {
         res.view();
     },
+    signup: function (req, res) {
+        res.view('user/signup');
+    },
     logout: function (req, res) {
         req.logout();
         res.redirect('/');
@@ -25,10 +28,11 @@ var AuthController = {
             req.logIn(user, function (err) {
                 if (err) {
                     console.log(err);
-                    req.view('500');
+                    res.view('500');
                     return;
                 }
                 console.log(user);
+                console.log(req.session);
                 res.redirect(user.registered ? '/' : '/signup');
                 return;
             });

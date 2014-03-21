@@ -30,12 +30,12 @@ var verifyHandler = function (accessToken, refreshToken, profile, done) {
     };
 
 passport.serializeUser(function (user, done) {
-    done(null, user.uid);
+    done(null, user.id);
 });
 
-passport.deserializeUser(function (uid, done) {
+passport.deserializeUser(function (id, done) {
     Carrotmobber.findOne({
-        uid: uid
+        id: id
     }).done(function (err, user) {
         done(err, user)
     });

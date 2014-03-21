@@ -42,10 +42,21 @@ module.exports.routes = {
     '/connect':{
         view: 'home/connect'
     },
+    
+    '/login':{
+        controller: 'auth',
+        action: 'facebook'
+    },
 
+    '/logout':{
+        controller: 'auth',
+        action: 'logout'
+    },
 
     '/signup':{
-        view: 'user/signup'
+        //view: 'user/signup',
+        controller: 'auth',
+        action: 'signup'
     },
 
 
