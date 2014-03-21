@@ -22,6 +22,15 @@
     background: url("../images/probono/shadow.png") no-repeat 0px -5px;
 }
 
+.navbar .container{
+    padding-left: 0px;
+    padding-right: 0px;
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+
+}
+
 .navbar-default .navbar-form {
     border-color:transparent;
 }
