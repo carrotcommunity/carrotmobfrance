@@ -27,13 +27,16 @@ module.exports = {
         minLength: 6,
         required: true
       },
+      uid: 'string',
       tokenFb: 'string',
       picture: 'string',
       city: 'string',
       admin: {
+        type: 'boolean',
         defaultsTo: false
-      }
-    
+      },
+      registered: 'boolean'
+
   }
 
 };
