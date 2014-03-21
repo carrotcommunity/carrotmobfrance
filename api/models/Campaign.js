@@ -32,13 +32,23 @@ module.exports = {
       },
       startDate: {
         type: 'date',
-        required: true
+        after: function() {
+          var date = new Date();
+
+          return (date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate());
+        }
       },
-      endDate: 'date',
+      endDate: {
+        type: 'date',
+        after: function() {
+          return new Date();
+        },
+        required: false
+      },
       image: 'string',
       carrotmobberId: {
         type: 'string',
-        required: true
+        required: false
       },
       validated: {
         type: 'boolean',

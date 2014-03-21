@@ -29,7 +29,10 @@ module.exports = {
       },
       tokenFb: 'string',
       picture: 'string',
-      city: 'string',
+      city: {
+        minLenth: 1,
+        required: true
+      },
       admin: {
         defaultsTo: false
       }
