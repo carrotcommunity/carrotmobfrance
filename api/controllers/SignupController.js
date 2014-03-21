@@ -41,12 +41,12 @@ module.exports = {
             };
             
             var errorStrings = new Object;
-            errorStrings["inputFirstName"] = "Vous devez insérer un prénom";
-            errorStrings["inputLastName"] = "Vous devez insérer un nom de famille";
-            errorStrings["inputTown"] = "Vous devez insérer une ville";
-            errorStrings["inputEmail"] = "Vous devez insérer un email valide";
-            errorStrings["inputEmailUsed"] = "L'email inséré est déjà utilisé";
-            errorStrings["inputPassword"] = "Vous devez insérer un mot de passe d'au moins six caractères";
+            errorStrings["inputFirstName"] = "Vous devez insÃ©rer un prÃ©nom";
+            errorStrings["inputLastName"] = "Vous devez insÃ©rer un nom de famille";
+            errorStrings["inputTown"] = "Vous devez insÃ©rer une ville";
+            errorStrings["inputEmail"] = "Vous devez insÃ©rer un email valide";
+            errorStrings["inputEmailUsed"] = "L'email insÃ©rÃ© est dÃ©jÃ  utilisÃ©";
+            errorStrings["inputPassword"] = "Vous devez insÃ©rer un mot de passe d'au moins six caractÃ¨res";
 
             var errors = new Object;
             errors["hasErrors"] = function() {

@@ -35,27 +35,42 @@
 		<div class="center-text">
             <form role="form" class="form-horizontal" method="post" action="/register">
                 <div class="control-group">
+                    <% if (errors && errors['inputFirstName']) { %>
+                    <div class="alert alert-danger"><%= errors['inputFirstName'] %></div>
+                    <% } %>
                     <div class="controls <%= errors ? (errors['inputFirstName'] ? 'has-error' : 'has-success') : '' %>">
                         <input class="form-control" type="text" id="inputFirstName" name="inputFirstName" placeholder="prénom" value="<%= user ? user.firstname : '' %>">
                     </div>
                 </div>
                 <div class="control-group">
+                    <% if (errors && errors['inputLastName']) { %>
+                    <div class="alert alert-danger"><%= errors['inputLastName'] %></div>
+                    <% } %>
                     <div class="controls <%= errors ? (errors['inputLastName'] ? 'has-error' : 'has-success') : '' %>">
                         <input class="form-control" type="text" id="inputLastName" name="inputLastName" placeholder="nom" value="<%= user ? user.lastname : '' %>">
                     </div>
                 </div>
                 <div class="control-group">
+                    <% if (errors && errors['inputTown']) { %>
+                    <div class="alert alert-danger"><%= errors['inputTown'] %></div>
+                    <% } %>
                     <div class="controls <%= errors ? (errors['inputTown'] ? 'has-error' : 'has-success') : '' %>">
                         <input class="form-control" type="text" id="inputTown" name="inputTown" placeholder="ville" value="<%= user ? user.city : '' %>">
                     </div>
                 </div>
                 <div class="control-group">
+                    <% if (errors && errors['inputEmail']) { %>
+                    <div class="alert alert-danger"><%= errors['inputEmail'] %></div>
+                    <% } %>
                     <div class="controls <%= errors ? (errors['inputEmail'] ? 'has-error' : 'has-success') : '' %>">
                         <input class="form-control" type="text" id="inputEmail" name="inputEmail" placeholder="mail" value="<%= user ? user.email : '' %>">
                     </div>
                 </div>
                 <% if (!user || !user.id) { %>
                 <div class="control-group">
+                    <% if (errors && errors['inputPassword']) { %>
+                    <div class="alert alert-danger"><%= errors['inputPassword'] %></div>
+                    <% } %>
                     <div class="controls <%= errors && errors['inputPassword'] ? 'has-error' : '' %>">
                         <input class="form-control" type="password" id="inputPassword" name="inputPassword" placeholder="mot de passe">
                     </div>
