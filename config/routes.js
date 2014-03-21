@@ -59,6 +59,11 @@ module.exports.routes = {
         action: 'signup'
     },
 
+    '/forgot_password':{
+        view: 'user/forgot_password'
+    },
+
+
 
     '/create_campaign':{
         view: 'campaign/create_campaign'
