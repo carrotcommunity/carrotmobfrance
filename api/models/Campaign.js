@@ -1,15 +1,25 @@
-var Campaign = {
-  attributes: {
-    title: 'STRING',
-    desc: 'STRING',
-    engagement: 'STRING',
-    place: 'STRING',
-    startDate: 'DATE',
-    endDate: 'DATE',
-    image: 'STRING',
-    carrotmobberId: 'Carrotmobber',
-    validated: 'BOOLEAN'
-  }
-};
+/**
+ * Campaign
+ *
+ * @module      :: Model
+ * @description :: A short summary of how this model works and what it represents.
+ * @docs		:: http://sailsjs.org/#!documentation/models
+ */
 
-module.exports = Campaign;
+module.exports = {
+
+  attributes: {
+
+      title: 'string',
+      desc: 'string',
+      engagement: 'string',
+      place: 'string',
+      startDate: 'date',
+      endDate: 'date',
+      image: 'string',
+      carrotmobberId: 'Carrotmobber',
+      validated: 'boolean'
+    
+  }
+
+};
