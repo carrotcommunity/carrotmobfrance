@@ -1,4 +1,90 @@
-div
+body
+{
+    background-color: #F3F4F4;
+    font-family: roboto;
+    color: black;
+}
+
+.page-marge
+{
+	margin-right: 30%;
+	margin-left: 30%;
+	margin-top: 1%;
+	margin-bottom: 1%;
+	background-color: white;
+}
+
+.center-text
 {
 	text-align: center;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+.separator
+{
+	margin: auto;
+	border : solid 1px #DDDEDD;
+	width: 70%;
+}
+
+.choose-profil
+{
+	margin: auto;
+	padding: 100px;
+
+}
+
+.controls
+{
+	margin-bottom: 15px;
+}
+
+.img-profil
+{
+	margin: 15px;
+}
+
+input
+{
+	border: solid 2px #EBEBEB;
+	width: 45%;
+	height: 40px;
+	padding-left: 8px;
+	border-radius: 4px;
+}
+.btn-submit
+{
+	color: white;
+	background-color: #FF9966;
+	margin-bottom: 50px;
+	border: none;
+	border-radius: 4px;
+	width: 45%;
+	height: 40px;
+}
+
+h3
+{
+	text-align: center;
+	font-weight: bold;
+	margin-bottom: 10px;
+	font-size: 18pt;
+}
+
+h4
+{
+	text-align: center;
+	font-weight: bold;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	font-size: 9pt;
+}
+
+p
+{
+	margin-left: 15%;
+	margin-right: 15%;
+	margin-top: 20px;
+	margin-bottom: 20px;
 }
