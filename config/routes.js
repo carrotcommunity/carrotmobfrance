@@ -39,24 +39,21 @@ module.exports.routes = {
 
     // But what if you want your home page to display
     // a signup form located at `views/user/signup.ejs`?
-    '/test':{
-        view: 'home/test'
+    '/connect':{
+        view: 'home/connect'
     },
 
-    
+
+    '/signup':{
+        view: 'user/signup'
+    },
+
+
+    '/create_campaign':{
+        view: 'campaign/create_campaign'
+    }
+
     /*
-=======
-
-
-    
->>>>>>> 42f1a5eea509e86dd5b6edc7b90dee0ee28cba45
-     // But what if you want your home page to display
-     // a signup form located at `views/user/signup.ejs`?
-     '/signup': {
-     view: 'user/signup'
-     }
-
-/*
      // Let's say you're building an email client, like Gmail
      // You might want your home route to serve an interface using custom logic.
      // In this scenario, you have a custom controller `MessageController`
