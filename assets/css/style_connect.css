@@ -78,6 +78,16 @@ margin: 0px;
 	padding: 2px;
 }
 
+.footer
+{
+	background-color: black;
+	text-align: center;
+	position: fixed;
+	bottom: 0;
+	width:100%;
+	vertical-align: middle;
+}
+
 input
 {
 	border: solid 2px #EBEBEB;
@@ -102,6 +112,12 @@ input
 	background: url(../img/btn_facebook.jpg);
 	height: 42px;
 	width: 177px;
+}
+
+.link-contact
+{
+	color:#FF9966;
+	text-decoration: underline;
 }
 
 h3
