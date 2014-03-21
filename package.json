@@ -9,7 +9,10 @@
         "sails-disk": "~0.9.3",
         "sails-mongo": "~0.9.7",
         "ejs": "0.8.5",
-        "optimist": "0.6.0"
+        "optimist": "0.6.0",
+        "passport": "0.2.0",
+        "passport-facebook": "1.0.3",
+        "bcrypt-nodejs": "0.0.3"
     },
     "scripts": {
         "start": "node app.js",
