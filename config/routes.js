@@ -42,11 +42,17 @@ module.exports.routes = {
     '/test':{
         view: 'home/test'
     }
+
     
     /*
+=======
+
+
+    
+>>>>>>> 42f1a5eea509e86dd5b6edc7b90dee0ee28cba45
      // But what if you want your home page to display
      // a signup form located at `views/user/signup.ejs`?
-     '/': {
+     '/signup': {
      view: 'user/signup'
      }
 
