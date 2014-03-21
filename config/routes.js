@@ -43,6 +43,11 @@ module.exports.routes = {
         view: 'home/test'
     }
 
+    // Connexion
+    '/connexion':{
+        view: 'home/connexion'
+    }
+
 
     /*
      // But what if you want your home page to display
