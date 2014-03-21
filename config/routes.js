@@ -62,6 +62,10 @@ module.exports.routes = {
 
     '/create_campaign':{
         view: 'campaign/create_campaign'
+    },
+
+    '/list_campaign':{
+        view: 'campaign/list_campaign'
     }
 
     /*
