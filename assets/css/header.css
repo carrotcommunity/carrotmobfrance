@@ -1,3 +1,8 @@
+#headerContainer{
+    margin-bottom: 60px;
+}
+
+
 .navbar-collapse , .navbar-header{
     background-color: #FFF;
 }
