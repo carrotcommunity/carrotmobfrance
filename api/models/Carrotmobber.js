@@ -25,8 +25,9 @@ module.exports = {
       password: {
         type: 'string',
         minLength: 6,
-        required: true
+        required: false
       },
+      uid: 'string',
       tokenFb: 'string',
       picture: 'string',
       city: {
@@ -34,9 +35,14 @@ module.exports = {
         required: true
       },
       admin: {
+        type: 'boolean',
+        defaultsTo: false
+      },
+      registered: {
+        type: 'boolean',
         defaultsTo: false
       }
-    
+
   }
 
 };
