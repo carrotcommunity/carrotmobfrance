@@ -31,7 +31,7 @@ module.exports = {
       tokenFb: 'string',
       picture: 'string',
       city: {
-        minLenth: 1,
+        minLength: 1,
         required: true
       },
       admin: {
