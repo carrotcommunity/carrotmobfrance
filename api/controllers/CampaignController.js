@@ -15,16 +15,13 @@
  * @docs        :: http://sailsjs.org/#!documentation/controllers
  */
 
-module.exports = {
-    
-  
-
-
-  /**
-   * Overrides for the settings in `config/controllers.js`
-   * (specific to CampaignController)
-   */
-  _config: {}
-
-  
+var CampaignController = {
+	renderCampaign: function(req, res) {
+		Campaign.find().exec(function(err, campaign) {
+			res.write("test");
+		});
+		res.end();
+	}
 };
+
+module.exports = CampaignController;

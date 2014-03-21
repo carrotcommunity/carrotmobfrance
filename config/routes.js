@@ -64,8 +64,11 @@ module.exports.routes = {
         view: 'campaign/create_campaign'
     },
 
-    '/list_campaign':{
-        view: 'campaign/list_campaign'
+    //        view: 'campaign/list_campaign'
+
+    '/campaign/view': {
+        controller: 'campaign',
+        action: 'listCampaign'
     }
 
     /*

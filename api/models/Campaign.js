@@ -31,7 +31,7 @@ module.exports = {
         required: true
       },
       startDate: {
-        type: 'date',
+        type: 'datetime',
         after: function() {
           var date = new Date();
 
@@ -56,5 +56,4 @@ module.exports = {
       }
     
   }
-
 };
