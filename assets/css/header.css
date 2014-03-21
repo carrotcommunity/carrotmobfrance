@@ -1,0 +1,56 @@
+.navbar-collapse , .navbar-header{
+    background-color: #FFF;
+}
+
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover, .navbar-default .navbar-nav>.active>a:focus {
+    background-color: #FFF;
+}
+
+.navbar-nav>.active>a {
+    border-bottom: solid 5px #34b514;
+}
+
+.navbar-nav>li>a {
+    padding-bottom: 10px;
+}
+
+.topShadow
+{
+    height: 13px;
+    margin: auto;
+    width: 712px;
+    background: url("../images/probono/shadow.png") no-repeat 0px -5px;
+}
+
+.navbar-default .navbar-form {
+    border-color:transparent;
+}
+
+
+
+.navbar-default {
+    border-color:transparent;
+}
+ .navbar-default{
+    background-color: transparent;
+}
+
+
+#connect
+{
+    float: right;
+    padding-top: 20px;
+}
+#connect li {
+    list-style: none;
+    background-color: #ff9966;
+    display: inline-block;
+}
+
+#connect li a{
+    color: #FFF;
+    text-decoration: none;
+    padding: 3px 10px;
+    height: 62px;
+    font-family: 'Roboto', Arial, sans-serif;
+}
