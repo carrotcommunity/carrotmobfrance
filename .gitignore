@@ -33,10 +33,13 @@ npm-debug.log
 ########################
 *~
 *#
-.DS_STORE
+.DS_Store
 .netbeans
 nbproject
 .idea
+*.iml
+.classpath
+.project
 
 
 ########################
