@@ -7,6 +7,7 @@
         "sails": "0.9.8",
         "grunt": "0.4.2",
         "sails-disk": "~0.9.3",
+        "sails-mongo": "~0.9.7",
         "ejs": "0.8.5",
         "optimist": "0.6.0"
     },
