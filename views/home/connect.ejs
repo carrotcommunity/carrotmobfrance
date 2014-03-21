@@ -1,33 +1,51 @@
-
 <%- partial('../home/header')%>
 
-<div class="center_wrapper">
-    <div class="subscribe-button">
-        <a href="/login">Authentification avec Facebook</a>
-    </div>
-    <form class="form-horizontal">
-        <div class="control-group">
-            <label class="control-label" for="inputEmail">Email</label>
-            <div class="controls">
-                <input type="text" id="inputEmail" placeholder="Email">
-            </div>
-        </div>
-      <div class="control-group">
-        <label class="control-label" for="inputPassword">Password</label>
-        <div class="controls">
-          <input type="password" id="inputPassword" placeholder="Password">
-        </div>
-      </div>
-      <div class="control-group">
-        <div class="controls">
-          <label class="checkbox">
-            <input type="checkbox"> Remember me
-          </label>
-          <button type="submit" class="btn">Sign in</button>
-        </div>
-      </div>
-      <div class="subscribe-button">
-        <a href="/signup">Pas encore inscrit ? C'est ici !</a>
-      </div>
-    </form>
+<div class="page-marge">
+	<div class="inspiration2">
+		<div class="welcome-text">
+			<h3><br/><br/>Identification<br/></h3>
+			<h4>J'utilise mon compte Facebook<br/></h4>
+			<div class="center-text">
+				<button class="btn-facebook" type="button"></button>
+			</div>
+			<br/>
+			<div class="separator">
+			</div>
+			<h4><br/>J'utilise mon compte Carrotmobber<br/></h4>
+
+			<div class="center-text">
+				<form class="form-horizontal">
+
+					<div class="control-group">
+					    <div class="controls">
+					      <input type="text" id="inputEmail" placeholder="mail">
+					    </div>
+					</div>
+
+					<div class="control-group">  
+			    		<div class="controls">
+			      			<input type="password" id="inputPassword" placeholder="mot de passe">
+			    		</div>
+			  		</div>
+
+					<div class="control-group">
+			    		<div class="controls">
+				    		<button type="submit" class="btn-submit">OK</button>
+			    		</div>
+					</div>
+				</form>
+			</div>
+	
+			<div class="forgot-pass">
+				<a href="/signup">> J'ai oublié mon mot de passe</a>
+			</div>
+			<br/><br/><br/>
+		</div>
+	</div>
+
+	<div class="bottom-shadow">
+	</div>
+
 </div>
+
+
