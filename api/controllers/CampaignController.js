@@ -17,7 +17,7 @@
 
 var CampaignController = {
 
-	save: function(req, res) {
+	create: function(req, res) {
 		Campaign.create(req.body).done(function(err, campaign) {
 			if (err)
 				res.send(err, 500);
@@ -50,7 +50,19 @@ var CampaignController = {
 				return (res.send(err, 500));
 			res.view('campaign/list_campaign', {campaigns: campaign, context: "coming"});
 		})
+	},
+
+	getCampaign: function(req, res) {
+		var id = req.param('id');
+
+		Campaign.find({'id': id}).exec(function(err, campaign) {
+			if (err)
+				return (res.send(err, 500));
+			res.end();
+			//res.view('campaign/singleCampaign', {campaign: campaign});
+		})
 	}
+
 };
 
 module.exports = CampaignController;
