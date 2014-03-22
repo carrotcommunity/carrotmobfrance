@@ -99,7 +99,7 @@ var CampaignController = {
 	    if (err)
 		return (res.send(err, 500));
 	    res.end();
-	    //res.view('campaign/singleCampaign', {campaign: campaign});
+	    res.view('campaign/details', {campaign: campaign});
 	})
     }
 };
