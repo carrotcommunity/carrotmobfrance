@@ -64,7 +64,7 @@
 #connected li {
     list-style: none;
     background-color: #ff9966;
-    display: inline-block;
+    display: block;
     padding:6px 20px;
 }
 
@@ -78,7 +78,7 @@
     height: 62px;
     font-weight: normal;
 }
-#connected p{display:block;color:white; font-family: 'Roboto', Arial, sans-serif; font-weight: lighter;}
+#connected p{display:inline-block;color:white; font-family: 'Roboto', Arial, sans-serif; font-weight: lighter;}
 
 .navbar-brand{padding:0px;margin-right:100px;}
 
