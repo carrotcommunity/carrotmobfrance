@@ -1,5 +1,5 @@
 
-    <%- partial('../home/header')%>
+    <%- partial('../partials/header')%>
     <div class="c_campaign">
 
         <button class="new_campaign"><a href="/campaign/new">+ Créér </br>une campagne</a></button>
@@ -37,6 +37,8 @@
             <% if(campaigns.length==0){%>
                 <h2>Il n'y a aucune campagne actuellement.<h2>
             <% } %>
+
+            <%=campaigns.length %>
     </div>
 </div>
 
