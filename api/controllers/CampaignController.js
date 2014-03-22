@@ -23,6 +23,7 @@ var CampaignController = {
 
     create: function(req, res) {
 	Campaign.create(req.body).done(function(err, campaign) {
+		console.log("e");
 	    var fieldOrNull = function (p) {
 		return p ? p : '';
 	    }
@@ -33,7 +34,8 @@ var CampaignController = {
 		desc: fieldOrNull(req.param("desc")),
 		engagement: fieldOrNull(req.param("engagement")),
 		address: fieldOrNull(req.param("address")),
-		city: fieldOrNull(req.param("city"))
+		city: fieldOrNull(req.param("city")),
+		startDateStr : filedOrNull(req.param("startDateStr"))
 	    };
 	    
 	    var errorStrings = new Object;
