@@ -8,7 +8,7 @@
 
 module.exports = {
 
-  beforeValidation: function(values, cb) {
+  beforeValidation: function(values, next) {
           // DD/MM/YY:HH/MM/SS FORMAT DATE
 
           var table = values.startDateStr.split(':');
@@ -21,10 +21,7 @@ module.exports = {
           values.epoch = new Date(tableDate[2], tableDate[1], tableDate[0], tableHours[0], tableHours[1], tableHours[2], 0).getTime();
 
           date = new Date();
-          console.log(values.startDate);
-          console.log(date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate());
-
-    cb();
+    next();
   },
 
   attributes: {

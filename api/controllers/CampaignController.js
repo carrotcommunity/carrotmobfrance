@@ -16,7 +16,13 @@
  */
 
 var CampaignController = {
-	listCampaign: function(req, res) {
+
+	save: function(req, res) {
+		Campaign.create(req.body).done(function(err, campaign) {
+			if (err)
+				res.send(err, 500);
+			res.redirect('/campaign/coming');
+		});
 	},
 
 	past: function(req, res) {
