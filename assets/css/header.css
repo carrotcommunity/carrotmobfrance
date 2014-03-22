@@ -58,7 +58,7 @@
     float: right;
 }
 
-#connected {margin-bottom:0px;}
+#connected, #connect {margin-bottom:0px;}
 
 #connect li,
 #connected li {
