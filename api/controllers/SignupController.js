@@ -55,7 +55,7 @@ module.exports = {
             errorStrings["inputPassword2"] = "Confirmation de votre mot de passe invalide";
             errorStrings["inputGender"] = "Veuillez sélectionner votre sexe";
 
-            var errors = new Object;
+            var errors = {};
             errors["hasErrors"] = function() {
                 for (var p in errors)
                     if (errors.hasOwnProperty(p) && typeof errors[p] == "string" && errors[p].length > 0)
