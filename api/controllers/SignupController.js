@@ -51,7 +51,7 @@ module.exports = {
             var errors = new Object;
             errors["hasErrors"] = function() {
                 for (var p in errors)
-                    if (errors.hasOwnProperty(p) && errors[p] === true)
+                    if (errors.hasOwnProperty(p) && typeof errors[p] == "string" && errors[p].length > 0)
                         return true;
                 return false;
             };
@@ -63,37 +63,39 @@ module.exports = {
 
             if (errors.hasErrors())
             {
-                for (var p in errors)
-                    if (errors.hasOwnProperty(p) && errors[p] === true)
-                        console.log(p);
                 res.view('user/signup', { user: formUser, errors: errors });
                 return;
             }
 
             var saveCallback = function(err, user) {
-                for (var p in err)
-                    if (err.hasOwnProperty(p))
-                        for (var d in err[p])
-                        {
-                            switch (d)
+                if (err) {
+                    for (var p in err)
+                        if (err.hasOwnProperty(p))
+                            for (var d in err[p])
                             {
-                                case 'firstname':
-                                    errors["inputFirstName"] = errorStrings["inputFirstName"];
-                                    break;
-                                case 'lastname':
-                                    errors["inputLastName"] = errorStrings["inputLastName"];
-                                    break;
-                                case 'email':
-                                    errors["inputEmail"] = errorStrings["inputEmail"];
-                                    break;
-                                case 'password':
-                                    errors["inputPassword"] = errorStrings["inputPassword"];
-                                    break;
-                                default:
-                                    break;
+                                switch (d)
+                                {
+                                    case 'firstname':
+                                        errors["inputFirstName"] = errorStrings["inputFirstName"];
+                                        break;
+                                    case 'lastname':
+                                        errors["inputLastName"] = errorStrings["inputLastName"];
+                                        break;
+                                    case 'email':
+                                        errors["inputEmail"] = errorStrings["inputEmail"];
+                                        break;
+                                    case 'password':
+                                        errors["inputPassword"] = errorStrings["inputPassword"];
+                                        break;
+                                    default:
+                                        break;
+                                }
                             }
-                        }
-                res.view('user/signup', { user: formUser, errors: errors });
+                }
+                if (errors.hasErrors())
+                    res.view('user/signup', { user: formUser, errors: errors });
+                else
+                    res.redirect('/campaign/view');
                 return user;
             };
             
@@ -102,6 +104,7 @@ module.exports = {
             if (user)
             {
                 _.extend(user, formUser);
+                user.registered = true;
                 u = user.save(saveCallback);
             }
             else
