@@ -18,12 +18,11 @@
             </div>
             <div class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
-                <li class="active"><a href="/">Découvrir</a></li>
-                <li><a href="/create_campaign">Nos campagnes</a></li>
+                <li <%=req.path=='/' ? 'class=active':''%>><a href="/">Découvrir</a></li>
+                <li <%=req.path=='/campaign/current' ? 'class=active':''%>><a href="/campaign/view">Nos campagnes</a></li>
               </ul>
             <ul id="connect">
-                <li class="active"><a href="/connect"><img src="images/probono/picto-men.png">Connectez-vous</a></li>
-                <!--li class="active"><img src="images/probono/picto-women.png"><a href="/connect">Connexion</a></li>
+                <!--li><img src="images/probono/picto-women.png"><a href="/connect">Connexion</a></li>
                 <li class="active"><img src="images/probono/picto-women.png"><a href="/signup">Inscription</a></li></div-->
           </ul>
             </div>

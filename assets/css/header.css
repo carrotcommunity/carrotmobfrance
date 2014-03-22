@@ -71,3 +71,7 @@
     height: 62px;
     font-family: 'Roboto', Arial, sans-serif;
 }
+
+.navbar-brand{padding:0px;margin-right:100px;}
+
+.navbar-nav a {padding-top:28px !important;}
