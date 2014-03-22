@@ -89,6 +89,7 @@
     {
         clear:  both;
     }
+    .navbar-brand {margin:0px;}
 }
 
 @media (max-width: 767px) {
