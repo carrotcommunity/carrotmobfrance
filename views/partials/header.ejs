@@ -17,6 +17,7 @@
                             <a class="navbar-brand" href="/"><img src="/images/probono/carrotmob-255x80.png" alt="Carrotmob"></a>
                         </div>
                         <div class="navbar-collapse collapse">
+                        <div id="test">
                             <ul class="nav navbar-nav">
                                 <li class="<%= req.path == '/' ? 'active' : '' %>"><a href="/">Découvrir</a></li>
                                 <li class="<%= req.path == '/campaign/current' || req.path == '/campaign/past' || req.path == '/campaign/coming'  ? 'active' : '' %>"><a href="/campaign/current">Nos campagnes</a></li>
@@ -37,6 +38,7 @@
                                 <li class="active"><a href="/connect"><img src="/images/probono/picto-men.png">Connectez-vous</a></li>
                             </ul>
                             <% } %>
+                        </div>
                         </div>
                     </div>
 

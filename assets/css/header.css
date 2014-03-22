@@ -84,6 +84,13 @@
 
 .navbar-nav a {padding-top:28px !important;}
 
+@media (max-width: 1172px) {
+    #test
+    {
+        clear:  both;
+    }
+}
+
 @media (max-width: 767px) {
     .navbar-nav a 
     {
@@ -94,6 +101,7 @@
     {
         padding: 0;
         padding-left: 14px;
+        padding-bottom: 8px;
     }
 
     #connect
@@ -113,6 +121,7 @@
     {
         padding: 0;
         padding-left: 14px;
+         padding-bottom: 8px;
     }
 
     #connect
