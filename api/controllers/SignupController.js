@@ -45,13 +45,12 @@ module.exports = {
                 gender: fieldOrNull(req.param("inputGender"))
             };
             
-            
-                    
+
                     /*var md5er = crypto.createHash('md5');
                     md5er.update(formUser.password);
                     console.log(md5er.digest('hex'));*/
-            
-            var errorStrings = new Object;
+
+            var errorStrings = {};
             errorStrings["inputFirstName"] = "Vous devez insérer un prénom";
             errorStrings["inputLastName"] = "Vous devez insérer un nom de famille";
             errorStrings["inputTown"] = "Vous devez insérer une ville";
@@ -61,7 +60,7 @@ module.exports = {
             errorStrings["inputPassword2"] = "Confirmation de votre mot de passe invalide";
             errorStrings["inputGender"] = "Veuillez sélectionner votre sexe";
 
-            var errors = new Object;
+            var errors = {};
             errors["hasErrors"] = function() {
                 for (var p in errors)
                     if (errors.hasOwnProperty(p) && typeof errors[p] == "string" && errors[p].length > 0)
