@@ -38,6 +38,7 @@
     <!-- Custom CSS -->
     <link href="/styles/carrotmob.css" rel="stylesheet">
     <link href="/css/header.css" rel="stylesheet">
+    <link href="/css/datepicker.css" rel="stylesheet">
 
     <!-- Facebook -->
     <meta property="og:type" content="website">
@@ -64,25 +65,15 @@ Nos actions collectives permettent aux petits commerçants et aux grandes entrep
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="/js/jquery.min.js"></script>
     <script src="/js/bootstrap.min.js"></script>
-    <script type="text/javascript"
-     src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.8.3/jquery.min.js">
-    </script> 
-    <script type="text/javascript"
-     src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/js/bootstrap.min.js">
-    </script>
-    <script type="text/javascript"
-     src="http://tarruda.github.com/bootstrap-datetimepicker/assets/js/bootstrap-datetimepicker.min.js">
-    </script>
-    <script type="text/javascript"
-     src="http://tarruda.github.com/bootstrap-datetimepicker/assets/js/bootstrap-datetimepicker.pt-BR.js">
-    </script>
+    <script src="/js/moment.min.js"></script>
+    <script src="/js/bootstrap-datetimepicker.js"></script>
 
-    <script type="text/javascript">
-      $('#datetimepicker').datetimepicker({
-        format: 'dd/MM/yyyy hh:mm:ss',
-        language: 'FR'
-      });
-    </script>
+        <script type="text/javascript">
+        $( document ).ready(function() {
+            var picker =$('#datetimepicker1');
+                if(picker) picker.datetimepicker();
+            });
+        </script>
     
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

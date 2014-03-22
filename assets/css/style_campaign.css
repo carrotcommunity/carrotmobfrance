@@ -49,3 +49,10 @@ button.new_campaign  a, button.new_campaign  a:visited, button.new_campaign a:ho
     margin-bottom: 10px;
     font-size: 18pt;
 }
+
+
+.controls .row{
+    width: 40%;
+    margin: auto;
+
+}
