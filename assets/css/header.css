@@ -1,0 +1,132 @@
+#headerContainer {
+    margin-bottom: 60px;
+}
+
+#navCenter{
+    width: 80%;
+    margin: auto;
+    background-color: #FFF;
+}
+
+.navbar-collapse, .navbar-header {
+    background-color: #FFF;
+}
+
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover, .navbar-default .navbar-nav>.active>a:focus {
+    background-color: #FFF;
+}
+
+.navbar-nav>.active>a {
+    border-bottom: solid 5px #34b514;
+}
+
+.navbar-nav>li>a {
+    padding-bottom: 10px;
+}
+
+.topShadow {
+    height: 13px;
+    margin: auto;
+    width: 712px;
+    background: url("../images/probono/shadow.png") no-repeat 0px -5px;
+}
+
+.navbar .container {
+    padding-left: 0px;
+    padding-right: 0px;
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+    background-color: #FFF;
+
+}
+
+.navbar-default .navbar-form {
+    border-color: transparent;
+}
+
+.navbar-default {
+    border-color: transparent;
+}
+
+.navbar-default {
+    background-color: transparent;
+}
+
+#connect,
+#connected {
+    float: right;
+}
+
+#connected, #connect {margin-bottom:0px;}
+
+#connect li,
+#connected li {
+    list-style: none;
+    background-color: #ff9966;
+    display: inline-block;
+    padding:6px 20px;
+}
+
+#connected img{float:left;}
+
+#connect li a,
+#connected li a, #connected li a:visited, #connected li a:hover {
+    color: #FFF;
+    text-decoration: none;
+    padding: 3px 10px;
+    height: 62px;
+    font-weight: normal;
+}
+#connected p{display:inline-block;color:white; font-family: 'Roboto', Arial, sans-serif; font-weight: lighter;}
+
+.navbar-brand{padding:0px;margin-right:100px;}
+
+.navbar-nav a {padding-top:28px !important;}
+
+@media (max-width: 1172px) {
+    #test
+    {
+        clear:  both;
+    }
+}
+
+@media (max-width: 767px) {
+    .navbar-nav a 
+    {
+        padding-top: 10px !important;
+    }
+
+    .navbar-nav>li>a
+    {
+        padding: 0;
+        padding-left: 14px;
+        padding-bottom: 8px;
+    }
+
+    #connect
+    {
+        width: 100%;
+        padding: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar-nav a 
+    {
+        padding-top: 10px !important;
+    }
+
+    .nav>li>a
+    {
+        padding: 0;
+        padding-left: 14px;
+         padding-bottom: 8px;
+    }
+
+    #connect
+    {
+        width: 100%;
+        padding: 0;
+    }
+}

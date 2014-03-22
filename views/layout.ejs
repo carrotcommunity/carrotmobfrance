@@ -16,11 +16,16 @@
     <link rel="apple-touch-icon" sizes="152x152" href="/images/carrotmob-152x152.png">
 
     <!-- Fonts -->
-    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto">
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Josefin+Sans">
 
     <!-- Bootstrap core CSS -->
     <link href="/styles/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style_connect.css">
+    <link rel="stylesheet" href="/css/style_campaign.css">
+    <link rel="stylesheet" href="/css/details.css">
+
+
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -32,6 +37,8 @@
 
     <!-- Custom CSS -->
     <link href="/styles/carrotmob.css" rel="stylesheet">
+    <link href="/css/header.css" rel="stylesheet">
+    <link href="/css/datepicker.css" rel="stylesheet">
 
     <!-- Facebook -->
     <meta property="og:type" content="website">
@@ -58,7 +65,16 @@ Nos actions collectives permettent aux petits commerçants et aux grandes entrep
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="/js/jquery.min.js"></script>
     <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/moment.min.js"></script>
+    <script src="/js/bootstrap-datetimepicker.js"></script>
 
+        <script type="text/javascript">
+        $( document ).ready(function() {
+            var picker =$('#datetimepicker1');
+                if(picker) picker.datetimepicker();
+            });
+        </script>
+    
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

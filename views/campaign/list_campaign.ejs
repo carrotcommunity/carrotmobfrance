@@ -1,0 +1,45 @@
+<%- partial('../partials/header')%>
+<div class="c_campaign">
+
+    <a href="/campaign/new" class="new_campaign">+ Créér </br>une campagne</a>
+    <div class="filters">
+        <ul>
+            <li><a href="/campaign/past" <%= context == 'past' ? 'class=selected' : '' %>>passées</a></li>
+            <li><a href="/campaign/current" <%= context == 'current' ? 'class=selected' : '' %>>en cours</a></li>
+            <li><a href="/campaign/coming" <%= context == 'coming' ? 'class=selected' : '' %>>à venir</a></li>
+        </ul>
+    </div>
+    <div class="grid_c_list">
+        <% _.each(campaigns, function(c) { %>
+        <div class="bk_c_mea">
+            <a href="/campaign/details?id=<%=c.id%>">
+                <img src="<%= c.image %>" alt=""/>
+
+                <div class="e_infos">
+                    <h3><%= c.title %></h3>
+
+                    <div class="location">
+                                <span>
+                                    <span class="town"><%=c.city%></span> </br>
+                                    <% var table = c.startDateStr.split(':');
+                                    var date = table[0].split('/'); 
+                                    var hours = table[1].split('/');
+
+                                    var newDate = date[0] + "/" + date[1] + "/" + date[2] + " à " + hours[0] + ":" + hours[1];
+                                    %>
+                                    <span class="date"><%=newDate%></span>
+                                </span>
+                        <span class="people"><strong>TODO</strong></span>
+                    </div>
+                    <p><%=c.desc%></p>
+                </div>
+            </a>
+        </div>
+        <% }) %>
+        <% if(campaigns.length==0){%>
+        <h2>Il n'y a aucune campagne actuellement.<h2>
+            <% } %>
+    </div>
+</div>
+
+<%- partial('../partials/footer')%>
