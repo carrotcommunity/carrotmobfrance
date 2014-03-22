@@ -39,6 +39,7 @@ module.exports = {
                 city: fieldOrNull(req.param("inputTown")),
                 email: fieldOrNull(req.param("inputEmail")),
                 password: fieldOrNull(req.param("inputPassword")),
+                password2: fieldOrNull(req.param("inputPassword2")),
                 gender: fieldOrNull(req.param("inputGender"))
             };
             
