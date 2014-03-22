@@ -20,7 +20,7 @@
                         <div id="test">
                             <ul class="nav navbar-nav">
                                 <li class="<%= req.path == '/' ? 'active' : '' %>"><a href="/">Découvrir</a></li>
-                                <li class="<%= req.path == '/campaign/current' || req.path == '/campaign/past' || req.path == '/campaign/coming'  ? 'active' : '' %>"><a href="/campaign/current">Nos campagnes</a></li>
+                                <li class="<%= req.path == '/campaign/current' || req.path == '/campaign/past' || req.path == '/campaign/coming'  || req.path == '/campaign/new' ? 'active' : '' %>"><a href="/campaign/current">Nos campagnes</a></li>
                             </ul>
 
                             <% if(req.session && req.session.passport && req.session.passport.user) { %>
