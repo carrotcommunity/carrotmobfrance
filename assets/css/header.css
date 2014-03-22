@@ -58,21 +58,27 @@
     float: right;
 }
 
+#connected {margin-bottom:0px;}
+
 #connect li,
 #connected li {
     list-style: none;
     background-color: #ff9966;
     display: inline-block;
+    padding:6px 20px;
 }
 
+#connected img{float:left;}
+
 #connect li a,
-#connected li a {
+#connected li a, #connected li a:visited, #connected li a:hover {
     color: #FFF;
     text-decoration: none;
     padding: 3px 10px;
     height: 62px;
-    font-family: 'Roboto', Arial, sans-serif;
+    font-weight: normal;
 }
+#connected p{display:inline-block;color:white; font-family: 'Roboto', Arial, sans-serif; font-weight: lighter;}
 
 .navbar-brand{padding:0px;margin-right:100px;}
 
