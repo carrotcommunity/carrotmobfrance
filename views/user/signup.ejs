@@ -15,15 +15,20 @@
                 </form>
                 <% } else { %>
                 <form method="post" action="/fbsignin">
-                    <button class="btn-facebook" type="submit">Large button</button>
+                    <button class="btn-facebook" type="submit"></button>
                 </form>
                 <% } %>
 			</div>
+			<br/><br/>
 			<div class="separator">
 			</div>
 			<h3>Apprenons à nous connaître.</h3>
 
-			<table class="choose-profil" align="center">
+			
+		</div>
+		<div class="center-text">
+            <form role="form" class="form-horizontal" method="post" action="/register">
+            <table class="choose-profil" align="center">
 				<tbody>
 					<tr>
 						<td>
@@ -37,9 +42,7 @@
 					</tr>
 				</tbody>
 			</table>
-
-		<div class="center-text">
-            <form role="form" class="form-horizontal" method="post" action="/register">
+			<br/><br/>
                 <div class="control-group">
                     <% if (errors && errors['inputFirstName']) { %>
                     <div class = "error-msg"><span class="glyphicon glyphicon glyphicon-remove"></span>
@@ -98,6 +101,7 @@
                 </div>
             </form>
 		</div>
+		<br/><br/><br/>
 	</div>
 	
 	<div class="bottom-shadow">

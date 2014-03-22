@@ -37,7 +37,6 @@ margin: 0px;
 {
 	text-align: center;
 	margin-top: 20px;
-	margin-bottom: 20px;
 }
 
 .forgot-pass
@@ -64,20 +63,6 @@ margin: 0px;
 	margin-bottom: 20px;
 }
 
-.img-profil
-{
-	margin: 15px;
-	margin-bottom: 20px;
-	
-}
-
-.img-profil.selected
-{
-	border: solid 2px orange;
-	border-radius: 6px;
-	padding: 2px;
-}
-
 .footer
 {
 	background-color: black;
@@ -86,6 +71,7 @@ margin: 0px;
 	bottom: 0;
 	width:100%;
 	vertical-align: middle;
+    height: 60px;
 }
 
 .page-marge input
