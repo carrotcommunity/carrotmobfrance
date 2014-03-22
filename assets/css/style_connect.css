@@ -85,12 +85,10 @@ body
 	text-align: center;
 	position: fixed;
 	bottom: 0;
-	width: 80%;
+	width: 100%;
 	vertical-align: middle;
     height: 60px;
     padding-top: 1%;
-    margin-left: 10%;
-    margin-right: 10%;
 }
 
 .page-marge input
@@ -200,3 +198,70 @@ input[type=radio]:checked + label
 .error-msg{width:45%; display:inline-block;text-align:left;}
 
 .has-error .form-control{border:solid 2px #FF9966;}
+
+
+@media (max-width: 1300px) {
+
+    .page-marge
+    {
+        margin-right: 20%;
+        margin-left: 20%;
+    }
+}
+
+@media (max-width: 1000px) {
+
+    .page-marge
+    {
+        margin-right: 10%;
+        margin-left: 10%;
+    }
+
+     .page-marge input
+    {
+    	width: 50%;
+    }
+
+    .btn-submit
+    {
+    	width: 50%;
+    }
+}
+
+@media (max-width: 750px) {
+
+    .page-marge
+    {
+        margin-right: 5%;
+        margin-left: 5%;
+    }
+
+     .page-marge input
+    {
+    	width: 70%;
+    }
+
+    .btn-submit
+    {
+    	width: 70%;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .page-marge
+    {
+        margin-right: 0%;
+        margin-left: 0%;
+    }
+
+    .page-marge input
+    {
+    	width: 95%;
+    }
+
+    .btn-submit
+    {
+    	width: 95%;
+    }
+}

@@ -83,3 +83,41 @@
 .navbar-brand{padding:0px;margin-right:100px;}
 
 .navbar-nav a {padding-top:28px !important;}
+
+@media (max-width: 767px) {
+    .navbar-nav a 
+    {
+        padding-top: 10px !important;
+    }
+
+    .navbar-nav>li>a
+    {
+        padding: 0;
+        padding-left: 14px;
+    }
+
+    #connect
+    {
+        width: 100%;
+        padding: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar-nav a 
+    {
+        padding-top: 10px !important;
+    }
+
+    .nav>li>a
+    {
+        padding: 0;
+        padding-left: 14px;
+    }
+
+    #connect
+    {
+        width: 100%;
+        padding: 0;
+    }
+}

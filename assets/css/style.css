@@ -286,6 +286,12 @@ a:hover { text-decoration: none; }
 
 @media (max-width: 767px) {
 
+    .page-marge
+    {
+        margin-right: 10%;
+        margin-left: 10%;
+    }
+
     body {
         padding-left: 0;
         padding-right: 0;
@@ -351,6 +357,12 @@ a:hover { text-decoration: none; }
 }
 
 @media (max-width: 480px) {
+
+    .page-marge
+    {
+        margin-right: 0%;
+        margin-left: 0%;
+    }
 
     .subscribe form {
         padding: 0 20px;
