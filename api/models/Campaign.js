@@ -44,9 +44,12 @@ module.exports = {
         minLength: 1,
         required: true
       },
-      place: {
+      address: {
         type: 'string',
-        minLength: 1,
+        required: true
+      },
+      city: {
+        type: 'string',
         required: true
       },
       epoch: 'int',

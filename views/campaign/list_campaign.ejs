@@ -3,62 +3,34 @@
     <div class="c_campaign">
         <div class="filters">
             <ul>
-                <li><a href="#">passées</a></li>
-                <li><a href="#" class="selected">en cours</a></li>
-                <li><a href="#">à venir</a></li>
+                <li><a href="/campaign/past" <%= context == 'past' ? 'class=selected' : '' %>>passées</a></li>
+                <li><a href="/campaign/current" <%= context == 'current' ? 'class=selected' : '' %>>en cours</a></li>
+                <li><a href="/campaign/coming" <%= context == 'coming' ? 'class=selected' : '' %>>à venir</a></li>
             </ul>
         </div>
         <div class="grid_c_list">
+        <% _.each(campaigns, function(c) { %>
             <div class="bk_c_mea">
-                <a href="#">
-                    <img src="/images/asset_img_mea.jpg" alt="" />
+                <a href="/campaign/<%=c.id%>">
+                    <img src="<% c.image %>" alt="" />
                     <div class="e_infos">
-                        <h3>Titre de mon évenement super long pour checker</h3>
+                        <h3><%= c.title %></h3>
                         <div class="location">
                                 <span>
-                                    <span class="town">Paris</span> </br>
-                                    <span class="date">05/04/2014</span>
+                                    <span class="town"><%=c.city%></span> </br>
+                                    <% var table = c.startDateStr.split(':');
+                                    var date = table[0].split('/'); 
+                                    var hours = table[1].split('/');
+
+                                    var newDate = date[0] + "/" + date[1] + "/" + date[2] + " à " + hours[0] + ":" + hours[1];
+                                    %>
+                                    <span class="date"><%=newDate%></span>
                                 </span>
-                            <span class="people"><strong>452</strong></span>
+                            <span class="people"><strong>TODO</strong></span>
                         </div>
-                        <p>Actuellement, le site est développé sur une stack NodeJS + Sails.js sans interface d'administration, il demande  ...</p>
-                        <p><strong>Utiliser des ampoules basses consommations</strong></p>
+                        <p><%=c.desc%></p>
                     </div>
                 </a>
-            </div>
-            <div class="bk_c_mea">
-                        <a href="#">
-                            <img src="/images/asset_img_mea.jpg" alt="" />
-                            <div class="e_infos">
-                            <h3>Titre de mon évenement super long pour checker</h3>
-                                <div>
-                                    <span>
-                                        <span>Paris</span>
-                                        <span>05/04/2014</span>
-                                    </span>
-                                    <span>452</span>
-                                </div>
-                                <p>Actuellement, le site est développé sur une stack NodeJS + Sails.js sans interface d'administration, il demande  ...</p>
-                                <p><strong>Utiliser des ampoules basses consommations</strong></p>
-                            </div>
-                        </a>
-            </div>
-            <div class="bk_c_mea">
-                        <a href="#">
-                            <img src="/images/asset_img_mea.jpg" alt="" />
-                            <div class="e_infos">
-                            <h3>Titre de mon évenement super long pour checker</h3>
-                                <div>
-                                    <span>
-                                        <span>Paris</span>
-                                        <span>05/04/2014</span>
-                                    </span>
-                                    <span>452</span>
-                                </div>
-                                <p>Actuellement, le site est développé sur une stack NodeJS + Sails.js sans interface d'administration, il demande  ...</p>
-                                <p><strong>Utiliser des ampoules basses consommations</strong></p>
-                            </div>
-                        </a>
-              </div>
+            </div> <% }) %>
     </div>
 </div>

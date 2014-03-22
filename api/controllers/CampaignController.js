@@ -17,29 +17,23 @@
 
 var CampaignController = {
 	listCampaign: function(req, res) {
-		Campaign.find().exec(function(err, campaign) {
-			if (err)
-				return (res.send(err, 500));
-			console.log(campaign);
-		});
-		res.end();
 	},
 
 	past: function(req, res) {
 		var date = new Date();
-		Campaign.find().where({epoch : {'<' : date.getTime()}}).exec(function(err, campaign) {
+		Campaign.find().where({epoch : {'<' : date.getTime()}}).where({validated: true}).exec(function(err, campaign) {
 			if (err)
 				return (res.send(err, 500));
-			res.end();
+			res.view('campaign/list_campaign', {campaigns: campaign, context: "past"});
 		})
 	},
 
 	current: function(req, res) {
 		var date = new Date();
-		Campaign.find().where({epoch : {'>' : date.getTime()}}).exec(function(err, campaign) {
+		Campaign.find().where({epoch : {'>' : date.getTime()}}).where({validated: true}).exec(function(err, campaign) {
 			if (err)
 				return (res.send(err, 500));
-			res.end();
+			res.view('campaign/list_campaign', {campaigns: campaign, context: "current"});
 		})
 	},
 
@@ -48,7 +42,7 @@ var CampaignController = {
 		Campaign.find().where({validated : false}).exec(function(err, campaign) {
 			if (err)
 				return (res.send(err, 500));
-			res.end();
+			res.view('campaign/list_campaign', {campaigns: campaign, context: "coming"});
 		})
 	}
 };

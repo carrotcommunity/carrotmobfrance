@@ -78,9 +78,19 @@ module.exports.routes = {
 
     //        view: 'campaign/list_campaign'
 
-    '/campaign/view': {
+    '/campaign/current': {
         controller: 'campaign',
-        action: 'listCampaign'
+        action: 'current'
+    },
+
+    '/campaign/past': {
+        controller: 'campaign',
+        action: 'past'
+    },
+
+    '/campaign/coming': {
+        controller: 'campaign',
+        action: 'coming'
     }
 
     /*                                      ¬
