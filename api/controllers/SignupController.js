@@ -15,7 +15,7 @@
  * @docs        :: http://sailsjs.org/#!documentation/controllers
  */
 
-//var crypto = require('crypto');
+var crypto = require('crypto');
 
 module.exports = {
     
@@ -44,13 +44,7 @@ module.exports = {
                 password2: fieldOrNull(req.param("inputPassword2")),
                 gender: fieldOrNull(req.param("inputGender"))
             };
-            
-            
-                    
-                    /*var md5er = crypto.createHash('md5');
-                    md5er.update(formUser.password);
-                    console.log(md5er.digest('hex'));*/
-            
+
             var errorStrings = new Object;
             errorStrings["inputFirstName"] = "Vous devez insérer un prénom";
             errorStrings["inputLastName"] = "Vous devez insérer un nom de famille";
@@ -134,12 +128,16 @@ module.exports = {
                         saveCallback(true, null);
                         return;
                     }
-                    
+
+                    var md5er = crypto.createHash('md5');
+                    md5er.update(formUser.password);
+                    var passwordEncrypted = md5er.digest('hex');
+
                     Carrotmobber.create({
                         firstname: formUser.firstname,
                         lastname: formUser.lastname,
                         email: formUser.email,
-                        password: formUser.password,
+                        password: passwordEncrypted,
                         gender: formUser.gender,
                         uid: null,
                         tokenFb: null,

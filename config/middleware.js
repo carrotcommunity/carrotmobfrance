@@ -1,6 +1,7 @@
 var passport = require('passport'),
     FacebookStrategy = require('passport-facebook').Strategy,
-    LocalStrategy = require('passport-local').Strategy;
+    LocalStrategy = require('passport-local').Strategy,
+    crypto = require('crypto');
 
 var verifyFBHandler = function (accessToken, refreshToken, profile, done) {
     process.nextTick(function () {
@@ -44,10 +45,15 @@ var verifyHandler = function (username, password, done) {
             if (!user) {
                 return done(null, false, { message: 'Email inconnu.' });
             }
-            if (!user.password && user.tokenFb) {
+            if (user.tokenFb) {
                 return done(null, false, { message: 'Veuillez vous connecter avec Facebook.' });
             }
-            if (user.password != password) {
+            
+            var md5er = crypto.createHash('md5');
+            md5er.update(password);
+            var passwordEncrypted = md5er.digest('hex');
+            
+            if (user.password != passwordEncrypted) {
                 return done(null, false, { message: 'Mot de passe invalide.' });
             }
             return done(null, user);
