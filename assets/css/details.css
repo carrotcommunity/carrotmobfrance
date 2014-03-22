@@ -1,0 +1,22 @@
+#details{
+    width: 80%;
+    margin: auto;
+    background-color: #FFF;
+    text-align: justify;
+}
+
+#details .cover{
+    width: 100%;
+}
+
+
+#details .img-rounded{
+    border-radius: 60px;
+
+}
+
+
+
+#details  .contentDetails{
+    padding: 20px 50px;
+}
