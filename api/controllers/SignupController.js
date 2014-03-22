@@ -107,7 +107,6 @@ module.exports = {
             if (user)
             {
                 Carrotmobber.findOne({ email: formUser.email }).done(function(err, _user) {
-                        console.log(_user);
                     if (_user && _user.registered) {
                         errors["inputEmail"] = errorStrings["inputEmailUsed"];
                         saveCallback(true, null);
