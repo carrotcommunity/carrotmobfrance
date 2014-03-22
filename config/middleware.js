@@ -31,6 +31,7 @@ var verifyFBHandler = function (accessToken, refreshToken, profile, done) {
 };
 
 var verifyHandler = function (username, password, done) {
+    if(!username || !password) done(null, false, { message: 'Email et mot de passe obligatoires.' });
     process.nextTick(function () {
         Carrotmobber.findOne({
             email: username

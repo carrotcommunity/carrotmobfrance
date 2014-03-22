@@ -14,7 +14,6 @@ var AuthController = {
     },
     signin: function (req, res) {
         passport.authenticate('local', function (err, user, info) {
-            console.log(info);
             if ((err) || (!user)) {
                 res.view('home/connect', info);
                 return;
@@ -26,7 +25,7 @@ var AuthController = {
                     return;
                 }
 
-                res.redirect('/');
+                res.redirect('/campaign/current');
             });
         })(req, res);
     },
@@ -44,7 +43,7 @@ var AuthController = {
                     res.view('500');
                     return;
                 }
-                res.redirect(user.registered ? '/' : '/signup');
+                res.redirect(user.registered ? '/campaign/current' : '/signup');
             });
         })(req, res, next);
     },
