@@ -16,11 +16,16 @@
     <link rel="apple-touch-icon" sizes="152x152" href="/images/carrotmob-152x152.png">
 
     <!-- Fonts -->
-    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto">
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Josefin+Sans">
 
     <!-- Bootstrap core CSS -->
     <link href="/styles/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style_connect.css">
+    <link rel="stylesheet" href="/css/style_campaign.css">
+    <link rel="stylesheet" href="/css/details.css">
+
+
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -28,37 +33,32 @@
       <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
     <![endif]-->
 
+    <link href="/styles/font-awesome.min.css" rel="stylesheet">
+
     <!-- Custom CSS -->
     <link href="/styles/carrotmob.css" rel="stylesheet">
+    <link href="/css/header.css" rel="stylesheet">
+
+    <!-- Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://www.carrotmob.fr">
+    <meta property="og:image" content="http://www.carrotmob.fr/images/carrotmob.png">
+    <meta property="og:title" content="Carrotmob France">
+    <meta property="og:description" content="Donnons du sens à nos dépenses !
+Nos actions collectives permettent aux petits commerçants et aux grandes entreprises de se développer durablement.">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@CarrotCommunity">
+    <meta name="twitter:url" content="http://www.carrotmob.fr">
+    <meta name="twitter:title" content="Carrotmob France">
+    <meta name="twitter:description" content="Donnons du sens à nos dépenses !
+Nos actions collectives permettent aux petits commerçants et aux grandes entreprises de se développer durablement.">
+    <meta name="twitter:image" content="http://www.carrotmob.fr/images/carrotmob.png"> 
   </head>
   <body data-spy="scroll" data-target="#navbar-carrotmob">
-    <div id="infographies" class="navbar-wrapper">
-      <div class="container">
-
-        <div id="navbar-carrotmob" class="navbar navbar-default navbar-fixed-top" role="navigation">
-          <div class="container">
-            <div class="navbar-header">
-              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-              <a class="navbar-brand" href="/"><img src="/images/carrotmob-205x25.png" alt="Carrotmob" height="25" width="205"></a>
-            </div>
-            <div class="navbar-collapse collapse">
-              <ul class="nav navbar-nav">
-                <li><a href="/#pourquoi">Pourquoi</a></li>
-                <li><a href="/#comment">Comment</a></li>
-                <li><a href="/#communaute">Communauté</a></li>
-                <li><a href="/#presse">Presse</a></li>
-                <li><a href="/campagnes">Campagnes</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+  
+<%- partial('partials/header')%>
 
     <div class="container presentation">
 
@@ -68,21 +68,38 @@
         </div>
         <div class="col-md-7">
           <h2 class="featurette-heading">Erreur 404</h2>
+          <p class="lead">Désolé, la page que vous avez demandée est introuvable. Nous vous invitons à vérifier votre requête ou bien à contacter un administrateur si le problème persiste.</p>
         </div>
       </div>
 
       <hr class="featurette-divider">
 
-      <%- partial('partials/footer')%>
-
     </div>
 
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="/js/jquery.min.js"></script>
-    <script src="/js/bootstrap.min.js"></script>
+      <%- partial('partials/footer')%>
 
+  <script src="/js/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script type="text/javascript"
+     src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.8.3/jquery.min.js">
+    </script> 
+    <script type="text/javascript"
+     src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/js/bootstrap.min.js">
+    </script>
+    <script type="text/javascript"
+     src="http://tarruda.github.com/bootstrap-datetimepicker/assets/js/bootstrap-datetimepicker.min.js">
+    </script>
+    <script type="text/javascript"
+     src="http://tarruda.github.com/bootstrap-datetimepicker/assets/js/bootstrap-datetimepicker.pt-BR.js">
+    </script>
+
+    <script type="text/javascript">
+      $('#datetimepicker').datetimepicker({
+        format: 'dd/MM/yyyy hh:mm:ss',
+        language: 'FR'
+      });
+    </script>
+    
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
