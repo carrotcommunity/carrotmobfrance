@@ -28,7 +28,7 @@ body
 .bottom-shadow
 {
 	background: url(../img/block_shadow.png) center no-repeat;
-	height: 7px;
+	height: 15px;
     margin: 0px;
 
 }
@@ -84,9 +84,12 @@ body
 	text-align: center;
 	position: fixed;
 	bottom: 0;
-	width:100%;
+	width: 80%;
 	vertical-align: middle;
     height: 60px;
+    padding-top: 1%;
+    margin-left: 10%;
+    margin-right: 10%;
 }
 
 .page-marge input
@@ -182,7 +185,7 @@ input[type=radio]:checked + label
 	font-weight: bold;
 	margin-top: 10px;
 	margin-bottom: 10px;
-	font-size: 9pt;
+	font-size: 11pt;
 }
 
 .page-marge p
