@@ -5,4 +5,4 @@
 
     mongo
     use carrotmob[dev|test]
-    db.carrotmobber.update({email: 'admin_email'}, {admin: true});
+    db.carrotmobber.update({email: 'admin_email'}, {$set: {admin: true}});
