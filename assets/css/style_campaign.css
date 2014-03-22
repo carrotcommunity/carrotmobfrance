@@ -1,4 +1,4 @@
-.c_campaign {width:1024px; margin:0 auto;position:relative;}
+.c_campaign {max-width:1024px; margin:0 auto;position:relative;}
  a.new_campaign  {
     position:absolute;
     right:0px;
@@ -55,4 +55,10 @@ a.new_campaign, a.new_campaign:visited, a.new_campaign:hover {
     width: 40%;
     margin: auto;
 
+}
+
+
+@media (max-width: 1172px) {
+    .bk_c_mea {height:auto;width:100%;float:left;}
+    a.new_campaign {position:relative;display:block;margin:10px; text-align: center;}
 }

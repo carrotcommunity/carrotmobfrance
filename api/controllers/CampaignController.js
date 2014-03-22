@@ -2,7 +2,7 @@
  * CampaignController
  *
  * @module      :: Controller
- * @description	:: A set of functions called `actions`.
+ * @description    :: A set of functions called `actions`.
  *
  *                 Actions contain code telling Sails how to respond to a certain type of request.
  *                 (i.e. do stuff, then send some JSON, show an HTML page, or redirect to another URL)
@@ -17,126 +17,179 @@
 
 var CampaignController = {
 
-	new: function(req, res) {
+    new: function (req, res) {
         res.view('campaign/create_campaign', {campaign: null, errors: null});
-	},
-
-    create: function(req, res) {
-	Campaign.create(req.body).done(function(err, campaign) {
-		console.log("e");
-	    var fieldOrNull = function (p) {
-		return p ? p : '';
-	    }
-	    
-	    var formCampaign = {
-		id: campaign ? campaign.id : null,
-		title: fieldOrNull(req.param("title")),
-		desc: fieldOrNull(req.param("desc")),
-		engagement: fieldOrNull(req.param("engagement")),
-		address: fieldOrNull(req.param("address")),
-		city: fieldOrNull(req.param("city")),
-		startDateStr : filedOrNull(req.param("startDateStr"))
-	    };
-	    
-	    var errorStrings = new Object;
-	    errorStrings["inputTitle"] = "Vous devez choisir un titre pour votre campagne";
-	    errorStrings["inputDesc"] = "Vous devez décrire votre campagne";
-	    errorStrings["inputEngag"] = "Vous devez spécifier les engagements du commerçant";
-	    errorStrings["inputAddr"] = "Vous devez indiquer l'adresse de la campagne";
-	    errorStrings["inputCity"] = "Vous devez renseigner la ville dans laquelle à lieu cette campagne";
-	    
-	    var errors = new Object;
-	    errors["hasErrors"] = function() {
-		for (var p in errors)
-		    if (errors.hasOwnProperty(p) && typeof errors[p] == "string" && errors[p].length > 0)
-			return true;
-		return false;
-	    };
-	    errors["inputTitle"] = !formCampaign.title || formCampaign.title.length == 0 ? errorStrings["inputTitle"] : "";
-	    errors["inputDesc"] = !formCampaign.desc || formCampaign.desc.length == 0 ? errorStrings["inputDesc"] : "";
-	    errors["inputEngag"] = !formCampaign.engagement || formCampaign.engagement.length == 0 ? errorStrings["inputEngag"] : "";
-	    errors["inputAddr"] = !formCampaign.address || formCampaign.address.length == 0 ? errorStrings["inputAddr"] : "";
-	    errors["inputCity"] = !formCampaign.city || formCampaign.city.length == 0 ? errorStrings["inputCity"] : "";
-	    
-	    if (errors.hasErrors())
-	    {
-			res.view('campaign/create_campaign', { campaign: formCampaign, errors: errors });
-			return;
-	    }
-	    res.redirect('/campaign/coming');
-	})
-    },
-    
-    past: function(req, res) {
-	var date = new Date();
-	Campaign.find().where({epoch : {'<' : date.getTime()}}).where({validated: true}).exec(function(err, campaign) {
-	    if (err)
-		return (res.send(err, 500));
-	    res.view('campaign/list_campaign', {campaigns: campaign, context: "past"});
-	})
     },
 
-    current: function(req, res) {
-	var date = new Date();
-	Campaign.find().where({epoch : {'>' : date.getTime()}}).where({validated: true}).exec(function(err, campaign) {
-	    if (err)
-		return (res.send(err, 500));
-	    res.view('campaign/list_campaign', {campaigns: campaign, context: "current"});
-	})
+    create: function (req, res) {
+        var validator = function (err, campaign) {
+            var fieldOrNull = function (p) {
+                return p ? p : '';
+            };
+
+            var formCampaign = {
+                id: campaign ? campaign.id : null,
+                title: fieldOrNull(req.param("title")),
+                desc: fieldOrNull(req.param("desc")),
+                engagement: fieldOrNull(req.param("engagement")),
+                address: fieldOrNull(req.param("address")),
+                city: fieldOrNull(req.param("city")),
+                startDateStr: fieldOrNull(req.param("startDateStr"))
+            };
+
+            var errorStrings = {};
+            errorStrings["inputTitle"] = "Vous devez choisir un titre pour votre campagne";
+            errorStrings["inputDesc"] = "Vous devez décrire votre campagne";
+            errorStrings["startDateStr"] = "Vous devez choisir une date supérieure à aujourd'hui";
+            errorStrings["inputEngag"] = "Vous devez spécifier les engagements du commerçant";
+            errorStrings["inputAddr"] = "Vous devez indiquer l'adresse de la campagne";
+            errorStrings["inputCity"] = "Vous devez renseigner la ville dans laquelle à lieu cette campagne";
+
+            var errors = {};
+            errors["hasErrors"] = function () {
+                for (var p in errors)
+                    if (errors.hasOwnProperty(p) && typeof errors[p] == "string" && errors[p].length > 0)
+                        return true;
+                return false;
+            };
+            errors["inputTitle"] = !formCampaign.title || formCampaign.title.length == 0 ? errorStrings["inputTitle"] : "";
+            errors["inputDesc"] = !formCampaign.desc || formCampaign.desc.length == 0 ? errorStrings["inputDesc"] : "";
+            errors["inputEngag"] = !formCampaign.engagement || formCampaign.engagement.length == 0 ? errorStrings["inputEngag"] : "";
+            errors["inputAddr"] = !formCampaign.address || formCampaign.address.length == 0 ? errorStrings["inputAddr"] : "";
+            errors["inputCity"] = !formCampaign.city || formCampaign.city.length == 0 ? errorStrings["inputCity"] : "";
+            errors["startDateStr"] = !formCampaign.startDateStr || formCampaign.startDateStr.length == 0 ? errorStrings["startDateStr"] : "";
+
+
+            if (errors.hasErrors()) {
+                res.view('campaign/create_campaign', { campaign: formCampaign, errors: errors });
+                return;
+            }
+
+            var saveCallback = function(err, _campaign) {
+                if (err && err !== true) {
+                    for (var p in err)
+                        if (err.hasOwnProperty(p))
+                            for (var d in err[p])
+                            {
+                                switch (d)
+                                {
+                                    case 'title':
+                                        errors["inputTitle"] = errorStrings["inputTitle"];
+                                        break;
+                                    case 'desc':
+                                        errors["inputDesc"] = errorStrings["inputDesc"];
+                                        break;
+                                    case 'engagement':
+                                        errors["inputEngag"] = errorStrings["inputEngag"];
+                                        break;
+                                    case 'address':
+                                        errors["inputAddr"] = errorStrings["inputAddr"];
+                                        break;
+                                    case 'city':
+                                        errors["inputCity"] = errorStrings["inputCity"];
+                                        break;
+                                    case 'date':
+                                        errors["startDateStr"] = errorStrings["startDateStr"];
+                                        break;
+                                    default:
+                                        errors["err"] = d;
+                                        break;
+                                }
+                            }
+                }
+                if (errors.hasErrors())
+                    res.view('campaign/create_campaign', { campaign: formCampaign, errors: errors });
+                else
+                    res.redirect('/campaign/coming');
+                return _campaign;
+            };
+
+            var camp = req.body;
+            camp.carrotmobberId = req.session.passport.user.id;
+            Campaign.create(camp).done(saveCallback);
+        };
+        validator(null, null);
     },
-    
-    coming: function(req, res) {
-	var date = new Date();
-	Campaign.find().where({validated : false}).exec(function(err, campaign) {
-	    if (err)
-		return (res.send(err, 500));
-	    res.view('campaign/list_campaign', {campaigns: campaign, context: "coming"});
-	})
-    },
-    
-    details: function(req, res) {
-	var id = req.param('id');
-	Campaign.findOne({'id': id}).exec(function(err, campaign) {
-	    if (err)
-			return (res.send(err, 500));
-	    res.view('campaign/details', {c: campaign});
-	})
+
+    past: function (req, res) {
+        var date = new Date();
+        Campaign.find().where({epoch: {'<': date.getTime()}}).where({validated: true}).exec(function (err, campaign) {
+            if (err)
+                return (res.send(err, 500));
+            res.view('campaign/list_campaign', {campaigns: campaign, context: "past"});
+        })
     },
 
-    activate: function(req, res) {
-    	var id = req.param('id');
-
-    	if (!req.session.passport.user.admin) {
-    		res.send("err", 500);
-    		return ;
-    	}
-
-    	Campaign.findOne({'id': id}).exec(function(err, campaign) {
-    		if (err)
-    			return (res.send(err, 500));
-    		campaign.validated = true;
-    		campaign.save(function(err, ress) {	
-    			res.view('campaign/details', {c: campaign});
-    		});
-    	});
+    current: function (req, res) {
+        var date = new Date();
+        Campaign.find().where({epoch: {'>': date.getTime()}}).where({validated: true}).exec(function (err, campaign) {
+            if (err)
+                return (res.send(err, 500));
+            res.view('campaign/list_campaign', {campaigns: campaign, context: "current"});
+        })
     },
 
-    desactivate: function(req, res) {
-    	var id = req.param('id');
+    coming: function (req, res) {
+        var date = new Date();
+        Campaign.find().where({validated: false}).exec(function (err, campaign) {
+            if (err)
+                return (res.send(err, 500));
+            res.view('campaign/list_campaign', {campaigns: campaign, context: "coming"});
+        })
+    },
 
-    	if (!req.session.passport.user.admin) {
-    		res.send("err", 500);
-    		return ;
-    	}
+    details: function (req, res) {
+        var id = req.param('id');
+        Campaign.findOne({'id': id}).exec(function (err, campaign) {
+            if (err)
+                return (res.send(err, 500));
+            Carrotmobber.findOne({id: campaign.carrotmobberId}).done(function(err, user) {
+                campaign.carrotmobber = user;
+                res.view('campaign/details', {c: campaign});
+            });
+        })
+    },
 
-    	Campaign.findOne({'id': id}).exec(function(err, campaign) {
-    		if (err)
-    			return (res.send(err, 500));
-    		campaign.validated = false;
-    		campaign.save(function(err, ress) {
-    			res.view('campaign/details', {c: campaign});
-    		});
-    	});
+    activate: function (req, res) {
+        var id = req.param('id');
+
+        if (!req.session.passport.user.admin) {
+            res.send("err", 500);
+            return;
+        }
+
+        Campaign.findOne({'id': id}).exec(function (err, campaign) {
+            if (err)
+                return (res.send(err, 500));
+            campaign.validated = true;
+            campaign.save(function (err, ress) {
+                Carrotmobber.findOne({id: campaign.carrotmobberId}).done(function(err, user) {
+                    campaign.carrotmobber = user;
+                    res.view('campaign/details', {c: campaign});
+                });
+            });
+        });
+    },
+
+    desactivate: function (req, res) {
+        var id = req.param('id');
+
+        if (!req.session.passport.user.admin) {
+            res.send("err", 500);
+            return;
+        }
+
+        Campaign.findOne({'id': id}).exec(function (err, campaign) {
+            if (err)
+                return (res.send(err, 500));
+            campaign.validated = false;
+            campaign.save(function (err, ress) {
+                Carrotmobber.findOne({id: campaign.carrotmobberId}).done(function(err, user) {
+                    campaign.carrotmobber = user;
+                    res.view('campaign/details', {c: campaign});
+                });
+            });
+        });
     }
 
 };

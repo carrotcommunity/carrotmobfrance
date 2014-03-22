@@ -58,13 +58,13 @@
     float: right;
 }
 
-#connected, #connect {margin-bottom:0px;}
+#connected, #connect {margin-bottom:0px;padding-left:0px;}
 
 #connect li,
 #connected li {
     list-style: none;
     background-color: #ff9966;
-    display: inline-block;
+    display: block;
     padding:6px 20px;
 }
 
@@ -80,7 +80,7 @@
 }
 #connected p{display:inline-block;color:white; font-family: 'Roboto', Arial, sans-serif; font-weight: lighter;}
 
-.navbar-brand{padding:0px;margin-right:100px;}
+.navbar-brand{padding:0px;margin-right:50px;}
 
 .navbar-nav a {padding-top:28px !important;}
 
@@ -89,6 +89,7 @@
     {
         clear:  both;
     }
+    .navbar-brand {margin:0px;}
 }
 
 @media (max-width: 767px) {

@@ -1,45 +1,40 @@
 <div id="pourquoi" class="row featurette">
-        <div class="col-md-5">
-          <div class="embed-container"><iframe src="//player.vimeo.com/video/80473607?loop=false&badge=false&byline=false&portrait=false&title=false" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+        <div class="featurette-heading">
+        <img src="/images/featurette-heading.png"/>
         </div>
-        <div class="col-md-7">
-          <h2 class="featurette-heading">Donnons du sens à nos dépenses&nbsp;!</h2>
-          <p class="lead">Nos actions collectives permettent aux petits commerçants et aux grandes entreprises de se développer durablement. </p>
-          <div class="row">
-            <div class="col-lg-3">
-            <!-- Facebook -->
-            <div id="fb-root"></div>
-              <script>(function(d, s, id) {
-                var js, fjs = d.getElementsByTagName(s)[0];
-                if (d.getElementById(id)) return;
-                js = d.createElement(s); js.id = id;
-                js.src = "//connect.facebook.net/fr_FR/all.js#xfbml=1&appId=344184582366865";
-                fjs.parentNode.insertBefore(js, fjs);
-              }(document, 'script', 'facebook-jssdk'));</script>
-              <div class="fb-like" data-href="http://www.carrotmob.fr/" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
+        <div class="home-wrapper">
+        <div class="col-md-5">
+          <div class='embed-container'><iframe src='http://player.vimeo.com/video/80473607' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+        </div>
+        <div class="home-list">
+            <ul>
+                <li><a href="/signup"><span class="home-list-text">Devenir<br> Carrot<strong>mobber</strong></span></a></li>
+                <li><a href="/campaign/current"><strong class="home-list-text"><span>Découvrir<br> les campagnes</strong></span></a></li>
+                <li><a href="#map"><strong class="home-list-text"><span>Découvrir<br> les communautés</strong></span></li>
+            </ul>
+        </div>
+        </div>
+        <div class="home-subtitle">
+            <h2>Rejoindre une communauté <span class="home-light-carrot">Carrot</span>mob</h2>
+            <div id="map" class="home-map-ville">
+                <a href=""><div class="map-pin pin1"></div></a>
+                <a href="https://www.facebook.com/groups/carrotmoblille/" target="_blank"><div class="map-pin pin2"></div></a>
+                <a href="https://www.facebook.com/groups/carrotmobrouen/" target="_blank"><div class="map-pin pin3"></div></a>
+                <a href="https://www.facebook.com/groups/carrotmobparis/" target="_blank"><div class="map-pin pin4"></div></a>
+                <a href="https://www.facebook.com/groups/carrotmobquimper/" target="_blank"><div class="map-pin pin5"></div></a>
+                <a href="https://www.facebook.com/groups/carrotmobrennes/" target="_blank"><div class="map-pin pin6"></div></a>
+                <a href="https://www.facebook.com/groups/carrotmobnantes/" target="_blank"><div class="map-pin pin7"></div></a>
+                <a href=""><div class="map-pin pin8"></div></a>
+                <a href=""><div class="map-pin pin9"></div></a>
+                <a href="https://www.facebook.com/groups/carrotcommunitybordeaux/" target="_blank"><div class="map-pin pin10"></div></a>
+                <a href="https://www.facebook.com/groups/carrotmobmarseille/" target="_blank"><div class="map-pin pin11"></div></a>
+                <a href="https://www.facebook.com/groups/carrotmobgrenoble/" target="_blank"><div class="map-pin pin12"></div></a>
+                <a href="https://www.facebook.com/groups/carrotcommunitytoulouse/" target="_blank"><div class="map-pin pin13"></div></a>
             </div>
-            <!-- Twitter -->
-            <div class="col-lg-6">
-              <a href="https://twitter.com/CarrotCommunity" class="twitter-follow-button" data-show-count="true" data-lang="fr">Suivre</a>
-              <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://www.carrotmob.fr/" data-via="CarrotCommunity" data-lang="fr">Tweet</a>
-              <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-            </div>
-            <!-- Google+ -->
-            <div class="col-lg-3">
-              <div class="g-plusone" data-href="http://www.carrotmob.fr/"></div>
-              <div class="g-plus" data-action="share" data-annotation="bubble" data-href="http://www.carrotmob.fr/"></div>
-              <script type="text/javascript">
-                window.___gcfg = {lang: 'fr'};
-
-                (function() {
-                  var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
-                  po.src = 'https://apis.google.com/js/platform.js';
-                  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
-                })();
-              </script>
-            </div>
-          </div>
         </div>
       </div>
      </div>
+     <br>
+     <br>
+     <br>
       <%- partial('../partials/footer')%>

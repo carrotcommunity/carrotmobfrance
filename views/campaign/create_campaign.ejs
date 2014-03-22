@@ -1,97 +1,117 @@
 <%- partial('../partials/header')%>
 
 <div class="page-marge">
-	<div class="inspiration">
-		<div class="welcome-text">
-			<h2><br/><br/>Il est temps de passer à l'action !</h2>
+    <div class="inspiration">
+        <div class="welcome-text">
+            <h2><br/><br/>Il est temps de passer à l'action !</h2>
 
-        <p class="center-text">Après avoir téléchargé le <a href="/docs/Kit_Organisation_Carrotmob.pdf">kit organisateur</a>, tu peux proposer une campagne à la <i><b>Carrot Community.</b></i> </p>
-	<div class="title">		
-    <h3> Créer ma Carrotmob </h3>
-	</div>
+            <p>Après avoir téléchargé le <a href="/docs/Kit_Organisation_Carrotmob.pdf">kit organisateur</a>, tu peux proposer une campagne à la <i><b>Carrot
+                Community.</b></i></p>
 
-			<div class="center-text">
-				<form class="form-horizontal" action="/campaign/create" method="POST">
-			
-			<% if (errors && errors['inputTitle']) { %>
-							<div class="error-msg"><span class="glyphicon glyphicon glyphicon-remove"></span>
-							<%= errors['inputTitle'] %></div> 
-			<%}%>
-					<div class="control-group">
-			    		<div class="controls <%= errors ? (errors['inputTitle'] ? 'has-error' : 'has-success') : '' %>">
-			      			<input class="form-control" type="text" id="inputTitle" placeholder="Titre" name="title" value="<%= campaign ? campaign.title : '' %>">
-			    		</div>
-					</div>
+            <div class="title">
+                <h3> Créer ma Carrotmob </h3>
+            </div>
 
-					<div class="control-group">
-					    <div class="controls">
-    <div class="row">
-            <div class="form-group">
-                <div class='input-group date' id='datetimepicker1' data-date-format="DD/MM/YYYY hh:mm:ss">
-                    <input type='text' class="form-control" id="startDateStr" name="startDateStr" values="<%= campaign ? campaign.startDateStr : '' %>"/>
-                    <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
-                    </span>
-                </div>
+            <div class="center-text">
+
+                <% if (errors && errors['err']) { %>
+                <div class="alert alert-danger"><%= errors.toString() %></div>
+                <% } %>
+
+
+                <form class="form-horizontal" action="/campaign/create" method="POST">
+
+                    <% if (errors && errors['inputTitle']) { %>
+                    <div class="error-msg"><span class="glyphicon glyphicon glyphicon-remove"></span>
+                        <%= errors['inputTitle'] %>
+                    </div>
+                    <%}%>
+                    <div class="control-group">
+                        <div class="controls <%= errors ? (errors['inputTitle'] ? 'has-error' : 'has-success') : '' %>">
+                            <input class="form-control" type="text" id="inputTitle" placeholder="Titre" name="title"
+                                   value="<%= campaign ? campaign.title : '' %>">
+                        </div>
+                    </div>
+
+                    <% if (errors && errors['startDateStr']) { %>
+                    <div class="error-msg"><span class="glyphicon glyphicon glyphicon-remove"></span>
+                        <%= errors['startDateStr'] %>
+                    </div>
+                    <%}%>
+                    <div class="control-group">
+                        <div class="controls">
+                            <div class="row">
+                                <div class="form-group <%= errors ? (errors['startDateStr'] ? 'has-error' : 'has-success') : '' %>">
+                                    <div class='input-group date' id='datetimepicker1' data-date-format="DD/MM/YYYY hh:mm:ss">
+                                        <input type='text' class="form-control" id="startDateStr" name="startDateStr" value="<%= campaign ? campaign.startDateStr : '' %>"/>
+                                        <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <% if (errors && errors['inputAddr']) { %>
+                    <div class="error-msg"><span class="glyphicon glyphicon glyphicon-remove"></span>
+                        <%= errors['inputAddr'] %>
+                    </div>
+                    <%}%>
+                    <div class="control-group">
+                        <div class="controls <%= errors ? (errors['inputAddr'] ? 'has-error' : 'has-success') : '' %>">
+                            <input class="form-control" type="text" id="inputTown" placeholder="Adresse" name="address"
+                                   value="<%= campaign ? campaign.address : '' %>">
+                        </div>
+                    </div>
+
+                    <% if (errors && errors['inputCity']) { %>
+                    <div class="error-msg"><span class="glyphicon glyphicon glyphicon-remove"></span>
+                        <%= errors['inputCity'] %>
+                    </div>
+                    <%}%>
+                    <div class="control-group">
+                        <div class="controls <%= errors ? (errors['inputCity'] ? 'has-error' : 'has-success') : '' %>">
+                            <input class="form-control" type="text" id="inputCity" placeholder="Ville" name="city" value="<%= campaign ? campaign.city : '' %>">
+                        </div>
+                    </div>
+
+
+                    <% if (errors && errors['inputDesc']) { %>
+                    <div class="error-msg"><span class="glyphicon glyphicon glyphicon-remove"></span>
+                        <%= errors['inputDesc'] %>
+                    </div>
+                    <%}%>
+                    <div class="control-group">
+                        <div class="controls <%= errors ? (errors['inputDesc'] ? 'has-error' : 'has-success') : '' %>">
+                            <textarea class="form-control" name="desc" placeholder="Description"><%= campaign ? campaign.desc : '' %></textarea>
+                        </div>
+                    </div>
+
+
+                    <% if (errors && errors['inputEngag']) { %>
+                    <div class="error-msg"><span class="glyphicon glyphicon glyphicon-remove"></span>
+                        <%= errors['inputEngag'] %>
+                    </div>
+                    <%}%>
+                    <div class="control-group">
+                        <div class="controls <%= errors ? (errors['inputEngag'] ? 'has-error' : 'has-success') : '' %>">
+                            <textarea class="form-control" placeholder="Engagement du commercant" name="engagement"><%= campaign ? campaign.engagement :
+                                ''%></textarea>
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <div class="controls">
+                            <button type="submit" class="btn-submit">Je deviens Carrotmobber !</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <br/><br/><br/>
         </div>
-</div>
-					    </div>
-					</div>
+    </div>
 
-			<% if (errors && errors['inputAddr']) { %>
-							<div class="error-msg"><span class="glyphicon glyphicon glyphicon-remove"></span>
-							<%= errors['inputAddr'] %></div> 
-			<%}%>
-					<div class="control-group">
-					    <div class="controls <%= errors ? (errors['inputAddr'] ? 'has-error' : 'has-success') : '' %>">
-					      <input class="form-control" type="text" id="inputTown" placeholder="Adresse" name="address" value="<%= campaign ? campaign.address : '' %>">
-					    </div>
-					</div>
-
-			<% if (errors && errors['inputCity']) { %>
-							<div class="error-msg"><span class="glyphicon glyphicon glyphicon-remove"></span>
-							<%= errors['inputCity'] %></div> 
-			<%}%>
-					<div class="control-group">
-					    <div class="controls <%= errors ? (errors['inputCity'] ? 'has-error' : 'has-success') : '' %>">
-					      <input class="form-control" type="text" id="inputCity" placeholder="Ville" name="city" value="<%= campaign ? campaign.city : '' %>">
-					    </div>
-					</div>
-
-
-			<% if (errors && errors['inputDesc']) { %>
-							<div class="error-msg"><span class="glyphicon glyphicon glyphicon-remove"></span>
-							<%= errors['inputDesc'] %></div> 
-			<%}%>
-					<div class="control-group">
-					    <div class="controls <%= errors ? (errors['inputDesc'] ? 'has-error' : 'has-success') : '' %>">
-					      <textarea class="form-control" name="desc" placeholder="Description"><%= campaign ? campaign.desc : '' %></textarea>
-					    </div>
-					</div>
-
-
-			<% if (errors && errors['inputEngag']) { %>
-							<div class="error-msg"><span class="glyphicon glyphicon glyphicon-remove"></span>
-							<%= errors['inputEngag'] %></div> 
-			<%}%>
-					<div class="control-group">  
-			    		<div class="controls <%= errors ? (errors['inputEngag'] ? 'has-error' : 'has-success') : '' %>">
-			      			<textarea class="form-control" placeholder="Engagement du commercant" name="engagement"><%= campaign ? campaign.engagement : ''%></textarea>
-			    		</div>
-			  		</div>
-
-					<div class="control-group">
-			    		<div class="controls">
-			    			<button type="submit" class="btn-submit">Je deviens Carrotmobber !</button>
-			    			</div>
-			    	</div>
-				</form>
-			</div>
-			<br/><br/><br/>
-		</div>
-	</div>
-	
-	<div class="bottom-shadow">
-	</div>
+    <div class="bottom-shadow">
+    </div>
 
 </div>
 <br/><br/><br/>
