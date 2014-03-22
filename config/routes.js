@@ -73,8 +73,9 @@ module.exports.routes = {
     },
 
 
-    '/details':{
-        view: 'campaign/details'
+    '/campaign/details':{
+        controller: 'campaign',
+	action: 'details'
     },
 
     '/campaign/current': {
@@ -214,4 +215,3 @@ module.exports.routes = {
  * Finally, if nothing else matched, the default 404 handler is triggered.
  * See `config/404.js` to adjust your app's 404 logic.
  */
- 
