@@ -53,17 +53,20 @@
     background-color: transparent;
 }
 
-#connect {
+#connect,
+#connected {
     float: right;
 }
 
-#connect li {
+#connect li,
+#connected li {
     list-style: none;
     background-color: #ff9966;
     display: inline-block;
 }
 
-#connect li a {
+#connect li a,
+#connected li a {
     color: #FFF;
     text-decoration: none;
     padding: 3px 10px;

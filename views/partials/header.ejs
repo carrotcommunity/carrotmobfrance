@@ -18,14 +18,19 @@
                         </div>
                         <div class="navbar-collapse collapse">
                             <ul class="nav navbar-nav">
-                                <li <%= req.path == '/' ? 'class=active':''%>><a href="/">Découvrir</a></li>
-                                <li <%= req.path == '/campaign/current' ? 'class=active':''%>><a href="/campaign/current">Nos campagnes</a></li>
+                                <li class="<%= req.path == '/' ? 'active' : '' %>"><a href="/">Découvrir</a></li>
+                                <li class="<%= req.path == '/campaign/current' ? 'active' : '' %>"><a href="/campaign/current">Nos campagnes</a></li>
                             </ul>
+
+                            <% if(req.session && req.session.passport && req.session.passport.user) { %>
+                            <ul id="connected">
+                                <li class="active"><img src="/images/probono/picto-men.png">Bonjour <%= req.session.passport.user.firstname %><br/><a href="/logout">&gt; Se déconnecter</a></li>
+                            </ul>
+                            <% } else { %>
                             <ul id="connect">
                                 <li class="active"><a href="/connect"><img src="/images/probono/picto-men.png">Connectez-vous</a></li>
-                                <!--li><img src="images/probono/picto-women.png"><a href="/connect">Connexion</a></li>
-                                <li class="active"><img src="images/probono/picto-women.png"><a href="/signup">Inscription</a></li></div-->
                             </ul>
+                            <% } %>
                         </div>
                     </div>
 

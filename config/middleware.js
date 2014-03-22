@@ -54,12 +54,12 @@ var verifyHandler = function (username, password, done) {
 };
 
 passport.serializeUser(function (user, done) {
-    done(null, user.id);
+    done(null, user);
 });
 
-passport.deserializeUser(function (id, done) {
+passport.deserializeUser(function (user, done) {
     Carrotmobber.findOne({
-        id: id
+        id: user.id
     }).done(function (err, user) {
         done(err, user)
     });
