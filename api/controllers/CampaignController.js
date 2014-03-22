@@ -96,10 +96,10 @@ var CampaignController = {
     
     details: function(req, res) {
 	var id = req.param('id');
-	Campaign.find({'id': id}).exec(function(err, campaign) {
+	Campaign.findOne({'id': id}).exec(function(err, campaign) {
 	    if (err)
 			return (res.send(err, 500));
-	    res.view('campaign/details', {campaign: campaign});
+	    res.view('campaign/details', {c: campaign});
 	})
     },
 
@@ -113,7 +113,7 @@ var CampaignController = {
     		campaign.validated = true;
     		campaign.save(function(err, ress) {
     			//res.redirect('/campaign/detail?id='+id);		
-    			res.view('campaign/details', {campaign: campaign});
+    			res.view('campaign/details', {c: campaign});
     		});
     	});
     },
@@ -128,7 +128,7 @@ var CampaignController = {
     		campaign.validated = false;
     		campaign.save(function(err, ress) {
     			//res.redirect('/campaign/detail?id='+id);	
-    			res.view('campaign/details', {campaign: campaign});
+    			res.view('campaign/details', {c: campaign});
     		});
     	});
     }
