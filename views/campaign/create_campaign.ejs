@@ -1,16 +1,5 @@
 <%- partial('../partials/header')%>
 
-<script>
-function changeFormat() {
-	var date = $("#startDateStr").val();
-
-	date = date.replace(':', '/');
-	date = date.replace(' ', ':');
-	date += "/00";
-	$("#startDateStr").val(date);
-
-}
-</script>
 
 <div class="page-marge">
 	<div class="inspiration">
@@ -39,11 +28,8 @@ function changeFormat() {
 					    <div class="controls">
     <div class="row">
             <div class="form-group">
-                <div class='input-group date' id='datetimepicker1' data-date-format="DD/MM/YYYY hh:mm">
-                <% 
-                	//campaign.startDateStr = campaign.startDateStr.replace(':', ' ');
-                	//campaign.startDateStr = campaign.startDateStr.substr(0, campaign.startDateStr.length() - 3);
-                %>
+                <div class='input-group date' id='datetimepicker1' data-date-format="DD/MM/YYYY hh:mm:ss">
+
                     <input type='text' class="form-control" id="startDateStr" name="startDateStr" values="<%= campaign ? campaign.startDateStr : 'toto' %>"/>
                     <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
                     </span>
@@ -97,7 +83,7 @@ function changeFormat() {
 
 					<div class="control-group">
 			    		<div class="controls">
-			    			<button type="submit" class="btn-submit"onClick="changeFormat()">Je deviens Carrotmobber !</button>
+			    			<button type="submit" class="btn-submit">Je deviens Carrotmobber !</button>
 			    			</div>
 			    	</div>
 				</form>
