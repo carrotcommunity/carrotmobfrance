@@ -1,6 +1,5 @@
 <%- partial('../partials/header')%>
 
-
 <div class="page-marge">
 	<div class="inspiration">
 		<div class="welcome-text">
@@ -29,8 +28,7 @@
     <div class="row">
             <div class="form-group">
                 <div class='input-group date' id='datetimepicker1' data-date-format="DD/MM/YYYY hh:mm:ss">
-
-                    <input type='text' class="form-control" id="startDateStr" name="startDateStr" values="<%= campaign ? campaign.startDateStr : 'toto' %>"/>
+                    <input type='text' class="form-control" id="startDateStr" name="startDateStr" values="<%= campaign ? campaign.startDateStr : '' %>"/>
                     <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
                     </span>
                 </div>

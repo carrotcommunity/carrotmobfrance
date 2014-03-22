@@ -23,8 +23,25 @@
             <strong>Engagement : </strong>
 
             <p><%=c.engagement%></p>
-            <img src="<%=c.image%>" class="img-rounded"><span> Organisé par <%=c.carrotmobberId%></span>
+            <img src="<%=c.image%>" class="img-rounded">
+            <!-- <span> Organisé par <%=c.carrotmobberId%></span>--><br/>
+    <%
+    switch (c.validated) {
+    case true: %>
+        <a href="/campaign/desactivate?id=
+<%= c.id %>
+        ">Desactivate</a>
+        <%break;
+    default: %>
+        <a href="/campaign/activate?id=
+<%= c.id %>
+        ">Activate</a>
+        <%break;
+    }
+    %>
+
     <%});%>
+
 
         </div>
     </div>
