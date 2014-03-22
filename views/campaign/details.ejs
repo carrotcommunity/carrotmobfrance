@@ -3,8 +3,8 @@
 <div class="pageDetails">
     <div id="details">
 
-        <img src="images/probono/details-cover.jpg" class='cover'>
-
+        <img src="../images/probono/details-cover.jpg" class='cover'>
+	
         <div class='contentDetails'>
 
             <h2>Carrotmob <%= c.title %></h2> 
@@ -22,7 +22,7 @@
             <strong>Engagement : </strong>
 
             <p><%=c.engagement%></p>
-            <img src="<%=c.image%>" class="img-rounded">
+            <img src="../images/default.jpg" class="img-rounded">
             <!-- <span> Organisé par <%=c.carrotmobberId%></span>--><br/>
     <%
     if (req.session.passport.user.admin) {
