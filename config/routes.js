@@ -69,7 +69,13 @@ module.exports.routes = {
     },
 
     '/forgot_password':{
-        view: 'user/forgot_password'
+        controller: 'forgot',
+        action: 'index'
+    },
+    
+    '/confirm_password':{
+        controller: 'forgot',
+        action: 'confirm'
     },
 
 

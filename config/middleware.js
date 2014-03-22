@@ -20,6 +20,8 @@ var verifyFBHandler = function (accessToken, refreshToken, profile, done) {
                     tokenFb: accessToken,
                     picture: 'http://graph.facebook.com/' + profile.id + '/picture?type=square',
                     city: profile._json.location && profile._json.location.name ? profile._json.location.name.split(",")[0] : '',
+                    newPassword: null,
+                    newPasswordToken: null,
                     admin: false,
                     registered: false
                 }).done(function (err, user) {

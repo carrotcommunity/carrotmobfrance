@@ -101,7 +101,7 @@ module.exports = {
                 if (errors.hasErrors())
                     res.view('user/signup', { user: formUser, errors: errors });
                 else
-                    res.redirect('/campaign/current');
+                    res.redirect('/connect');
                 return _user;
             };
 
@@ -136,6 +136,8 @@ module.exports = {
                         tokenFb: null,
                         picture: '',
                         city: formUser.city,
+                        newPassword: null,
+                        newPasswordToken: null,
                         admin: false,
                         registered: true
                     }).done(saveCallback);
