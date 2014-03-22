@@ -1,7 +1,8 @@
 
-    <%- partial('../partials/header')%>
-    <a href="/campaign/new">>Créér une campagne</a>
+    <%- partial('../home/header')%>
     <div class="c_campaign">
+
+        <button class="new_campaign"><a href="/campaign/new">+ Créér </br>une campagne</a></button>
         <div class="filters">
             <ul>
                 <li><a href="/campaign/past" <%= context == 'past' ? 'class=selected' : '' %>>passées</a></li>
@@ -33,6 +34,9 @@
                     </div>
                 </a>
             </div> <% }) %>
+            <% if(campaigns.length==0){%>
+                <h2>Il n'y a aucune campagne actuellement.<h2>
+            <% } %>
     </div>
 </div>
 
