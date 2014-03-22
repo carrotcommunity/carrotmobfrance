@@ -25,6 +25,7 @@
             <img src="<%=c.image%>" class="img-rounded">
             <!-- <span> Organisé par <%=c.carrotmobberId%></span>--><br/>
     <%
+    if (req.session.passport.user.admin) {
     switch (c.validated) {
     case true: %>
         <a href="/campaign/desactivate?id=
@@ -36,6 +37,7 @@
 <%= c.id %>
         ">Activate</a>
         <%break;
+        }
     }
     %>
 
