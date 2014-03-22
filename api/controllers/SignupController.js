@@ -21,8 +21,8 @@ module.exports = {
         var validator = function (err, user) {
             res.view('user/signup', { user: user, errors: null });
         };
-        if (req.session && req.session.passport && req.session.passport.user)
-            Carrotmobber.findOne({ id: req.session.passport.user }).done(validator);
+        if (req.session && req.session.passport && req.session.passport.user && req.session.passport.user.id)
+            Carrotmobber.findOne({ id: req.session.passport.user.id }).done(validator);
         else
             validator(null, null);
     },
@@ -49,6 +49,7 @@ module.exports = {
             errorStrings["inputEmail"] = "Vous devez insérer un email valide";
             errorStrings["inputEmailUsed"] = "L'email inséré est déjà utilisé";
             errorStrings["inputPassword"] = "Votre mot de passe est trop court";
+            errorStrings["inputPassword2"] = "Confirmation de votre mot de passe invalide";
             errorStrings["inputGender"] = "Veuillez sélectionner votre sexe";
 
             var errors = new Object;
@@ -63,6 +64,7 @@ module.exports = {
             errors["inputTown"] = !formUser.city || formUser.city.length == 0 ? errorStrings["inputTown"] : "";
             errors["inputEmail"] = !formUser.email || formUser.email.length == 0 ? errorStrings["inputEmail"] : "";
             errors["inputPassword"] = !formUser.id && (!formUser.password || formUser.password.length == 0) ? errorStrings["inputPassword"] : "";
+            errors["inputPassword2"] = !formUser.id && formUser.password && formUser.password != formUser.password2 ? errorStrings["inputPassword2"] : "";
             errors["inputGender"] = formUser.gender != '1' && formUser.gender != '2' ? errorStrings["inputGender"] : "";
 
             if (errors.hasErrors()) {
@@ -140,8 +142,8 @@ module.exports = {
                 });
             }
         };
-        if (req.session && req.session.passport && req.session.passport.user)
-            Carrotmobber.findOne({ id: req.session.passport.user }).done(validator);
+        if (req.session && req.session.passport && req.session.passport.user && req.session.passport.user.id)
+            Carrotmobber.findOne({ id: req.session.passport.user.id }).done(validator);
         else
             validator(null, null);
     },

@@ -93,7 +93,15 @@
                     <div class="error-msg"><span class="glyphicon glyphicon glyphicon-remove"></span><%= errors['inputPassword'] %></div>
                     <% } %>
                     <div class="controls <%= errors && errors['inputPassword'] ? 'has-error' : '' %>">
-                        <input class="form-control" type="password" id="inputPassword" name="inputPassword" placeholder="mot de passe">
+                        <input class="form-control" type="password" id="inputPassword" name="inputPassword" placeholder="Mot de passe">
+                    </div>
+                </div>
+                <div class="control-group">
+                    <% if (errors && errors['inputPassword2']) { %>
+                    <div class="error-msg"><span class="glyphicon glyphicon glyphicon-remove"></span><%= errors['inputPassword2'] %></div>
+                    <% } %>
+                    <div class="controls <%= errors && errors['inputPassword2'] ? 'has-error' : '' %>">
+                        <input class="form-control" type="password" id="inputPassword2" name="inputPassword2" placeholder="Confirmer mot de passe">
                     </div>
                 </div>
                 <% } %>

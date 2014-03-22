@@ -24,7 +24,9 @@
 
                             <% if(req.session && req.session.passport && req.session.passport.user) { %>
                             <ul id="connected">
-                                <li class="active"><img src="/images/probono/picto-men.png">Bonjour <%= req.session.passport.user.firstname %><br/><a href="/logout">&gt; Se déconnecter</a></li>
+                                <li class="active"><img
+                                        src="<%= req.session.passport.user.picture ? req.session.passport.user.picture : (req.session.passport.user.gender == 2 ? '/images/probono/picto-women.png' : '/images/probono/picto-men.png') %>">
+                                    Bonjour <%= req.session.passport.user.firstname %><br/><a href="/logout">&gt; Se déconnecter</a></li>
                             </ul>
                             <% } else { %>
                             <ul id="connect">
