@@ -16,7 +16,11 @@
 			<h4><br/><br/>J'utilise mon compte Carrotmobber<br/><br/></h4>
 
 			<div class="center-text">
-                <% if (typeof message !== 'undefined') { %><div class="alert alert-danger"><%= message %></div><% } %>
+                <% if (typeof message !== 'undefined') { %>
+                <div class="error-msg"><span class="glyphicon glyphicon glyphicon-remove"></span>
+                                   <%= message %>
+                                </div>
+                <% } %>
 				<form class="form-horizontal" method="post" action="/signin">
 					<div class="control-group">
 					    <div class="controls">
