@@ -17,6 +17,10 @@
 
 var CampaignController = {
 
+	new: function(req, res) {
+        res.view('campaign/create_campaign', {campaign: null, errors: null});
+	},
+
     create: function(req, res) {
 	Campaign.create(req.body).done(function(err, campaign) {
 	    var fieldOrNull = function (p) {
@@ -25,17 +29,17 @@ var CampaignController = {
 	    
 	    var formCampaign = {
 		id: campaign ? campaign.id : null,
-		title: fieldOrNull(req.param("inputTitle")),
-		description: fieldOrNull(req.param("inputDesc")),
-		engagements: fieldOrNull(req.param("inputEngag")),
-		address: fieldOrNull(req.param("inputAddr")),
-		city: fieldOrNull(req.param("inputCity"))
+		title: fieldOrNull(req.param("title")),
+		desc: fieldOrNull(req.param("desc")),
+		engagement: fieldOrNull(req.param("engagement")),
+		address: fieldOrNull(req.param("address")),
+		city: fieldOrNull(req.param("city"))
 	    };
 	    
 	    var errorStrings = new Object;
 	    errorStrings["inputTitle"] = "Vous devez choisir un titre pour votre campagne";
 	    errorStrings["inputDesc"] = "Vous devez décrire votre campagne";
-	    errorStrings["inputEngag"] = "Vous devez spécifier les engagements de l'entreprise";
+	    errorStrings["inputEngag"] = "Vous devez spécifier les engagements du commerçant";
 	    errorStrings["inputAddr"] = "Vous devez indiquer l'adresse de la campagne";
 	    errorStrings["inputCity"] = "Vous devez renseigner la ville dans laquelle à lieu cette campagne";
 	    
@@ -47,55 +51,17 @@ var CampaignController = {
 		return false;
 	    };
 	    errors["inputTitle"] = !formCampaign.title || formCampaign.title.length == 0 ? errorStrings["inputTitle"] : "";
-	    errors["inputDesc"] = !formCampaign.description || formCampaign.description.length == 0 ? errorStrings["inputDesc"] : "";
-	    errors["inputEngag"] = !formCampaign.engagements || formCampaign.engagements.length == 0 ? errorStrings["inputEngag"] : "";
+	    errors["inputDesc"] = !formCampaign.desc || formCampaign.desc.length == 0 ? errorStrings["inputDesc"] : "";
+	    errors["inputEngag"] = !formCampaign.engagement || formCampaign.engagement.length == 0 ? errorStrings["inputEngag"] : "";
 	    errors["inputAddr"] = !formCampaign.address || formCampaign.address.length == 0 ? errorStrings["inputAddr"] : "";
 	    errors["inputCity"] = !formCampaign.city || formCampaign.city.length == 0 ? errorStrings["inputCity"] : "";
 	    
 	    if (errors.hasErrors())
 	    {
-		res.view('campaign/new', { campaign: formCampaign, errors: errors });
-		return;
+			res.view('campaign/create_campaign', { campaign: formCampaign, errors: errors });
+			return;
 	    }
-
-	    var saveCallback = function(err, user) {
-		if (err) {
-		    for (var p in err)
-		    {
-			if (err.hasOwnProperty(p))
-			{
-			    for (var d in err[p])
-			    {
-				switch (d)
-				{
-				case 'title':
-				    errors["inputTitle"] = errorStrings["inputTitle"];
-				    break;
-				case 'description':
-				    errors["inputDesc"] = errorStrings["inputDesc"];
-				    break;
-				case 'engagements':
-				    errors["inputEngag"] = errorStrings["inputEngag"];
-				    break;
-				case 'address':
-				    errors["inputAddr"] = errorStrings["inputAddr"];
-				    break;
-				case 'city':
-				    errors["inputCity"] = errorStrings["inputCity"];
-				    break;
-				default:
-				    break;
-				}
-			    }
-			}
-		    }
-		}
-		if (errors.hasErrors())
-		    res.view('/campaign/create_campaign', { campaign: formCampaign, errors: errors });
-		else
-		    res.redirect('/campaign/coming');
-		return campaign;
-	    }
+	    res.redirect('/campaign/coming');
 	})
     },
     

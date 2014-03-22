@@ -77,10 +77,6 @@ module.exports.routes = {
         view: 'user/forgot_password'
     },
 
-    '/campaign/new':{
-        view: 'campaign/create_campaign'
-    },
-
     '/campaign/current': {
         controller: 'campaign',
         action: 'current'
