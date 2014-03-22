@@ -41,9 +41,9 @@ module.exports = {
                 var password = Math.random().toString(36).slice(-8);
 
                 var smtpTransport = mailer.createTransport("SMTP", {
-                    host: "smtp.gmail.com",
+                    host: "v1.carrotmob.fr",
                     secureConnection: true,
-                    port: 465,
+                    port: 25,
                     auth: {
                         user: "",
                         pass: ""

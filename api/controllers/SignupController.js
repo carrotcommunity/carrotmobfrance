@@ -15,6 +15,8 @@
  * @docs        :: http://sailsjs.org/#!documentation/controllers
  */
 
+//var crypto = require('crypto');
+
 module.exports = {
     
     index: function (req, res) {
@@ -43,6 +45,12 @@ module.exports = {
                 gender: fieldOrNull(req.param("inputGender"))
             };
             
+            
+                    
+                    /*var md5er = crypto.createHash('md5');
+                    md5er.update(formUser.password);
+                    console.log(md5er.digest('hex'));*/
+            
             var errorStrings = new Object;
             errorStrings["inputFirstName"] = "Vous devez insérer un prénom";
             errorStrings["inputLastName"] = "Vous devez insérer un nom de famille";
@@ -64,7 +72,7 @@ module.exports = {
             errors["inputLastName"] = !formUser.lastname || formUser.lastname.length == 0 ? errorStrings["inputLastName"] : "";
             errors["inputTown"] = !formUser.city || formUser.city.length == 0 ? errorStrings["inputTown"] : "";
             errors["inputEmail"] = !formUser.email || formUser.email.length == 0 ? errorStrings["inputEmail"] : "";
-            errors["inputPassword"] = !formUser.id && (!formUser.password || formUser.password.length == 0) ? errorStrings["inputPassword"] : "";
+            errors["inputPassword"] = !formUser.id && (!formUser.password || formUser.password.length < 6) ? errorStrings["inputPassword"] : "";
             errors["inputPassword2"] = !formUser.id && formUser.password && formUser.password != formUser.password2 ? errorStrings["inputPassword2"] : "";
             errors["inputGender"] = formUser.gender != '1' && formUser.gender != '2' ? errorStrings["inputGender"] : "";
 
@@ -126,6 +134,7 @@ module.exports = {
                         saveCallback(true, null);
                         return;
                     }
+                    
                     Carrotmobber.create({
                         firstname: formUser.firstname,
                         lastname: formUser.lastname,
