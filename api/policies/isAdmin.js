@@ -1,9 +1,8 @@
 /**
- * isAuthenticated
+ * isAdmin
  *
  * @module      :: Policy
- * @description :: Simple policy to allow any authenticated user
- *                 Assumes that your login action in one of your controllers sets `req.session.passport.user`
+ * @description :: Simple policy to allow any authenticated admin
  * @docs        :: http://sailsjs.org/#!documentation/policies
  *
  */
@@ -14,12 +13,11 @@ module.exports = function(req, res, next) {
     if (req.session &&
         req.session.passport &&
         req.session.passport.user &&
-        req.session.passport.user.id) {
+        req.session.passport.user.admin) {
         return next();
     }
 
     // User is not allowed
     // (default res.forbidden() behavior can be overridden in `config/403.js`)
-    //return res.forbidden('You are not permitted to perform this action.');
-    return res.redirect('/connect');
+    return res.forbidden('You are not permitted to perform this action.');
 };

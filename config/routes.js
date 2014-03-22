@@ -68,13 +68,13 @@ module.exports.routes = {
         action: 'save'
     },
 
-
-    '/details':{
-        view: 'campaign/details',
-    },
-
     '/forgot_password':{
         view: 'user/forgot_password'
+    },
+
+
+    '/details':{
+        view: 'campaign/details'
     },
 
     '/campaign/current': {
