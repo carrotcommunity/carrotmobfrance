@@ -1,5 +1,5 @@
 .c_campaign {width:1024px; margin:0 auto;position:relative;}
- button.new_campaign  {
+ a.new_campaign  {
     position:absolute;
     right:0px;
      top:-20px;
@@ -12,7 +12,7 @@
     padding:10px;
 }
 
-button.new_campaign  a, button.new_campaign  a:visited, button.new_campaign a:hover {
+a.new_campaign, a.new_campaign:visited, a.new_campaign:hover {
     color:white;
     text-decoration: none;
 }
