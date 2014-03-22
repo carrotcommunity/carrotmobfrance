@@ -16,7 +16,7 @@ module.exports.adapters = {
 
     // If you leave the adapter config unspecified
     // in a model definition, 'default' will be used.
-    'default': 'mongo',
+    'default': 'disk',
 
     // do not use the mongo adapter while https://github.com/balderdashy/sails-mongo/issues/116 is not fixed
     mongo: {
