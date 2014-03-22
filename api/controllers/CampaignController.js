@@ -55,7 +55,7 @@ var CampaignController = {
 	getCampaign: function(req, res) {
 		var id = req.param('id');
 
-		Campaign.find(id: id).exec(function(err, campaign) {
+		Campaign.find({'id': id}).exec(function(err, campaign) {
 			if (err)
 				return (res.send(err, 500));
 			res.end();
