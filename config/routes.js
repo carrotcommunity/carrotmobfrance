@@ -81,8 +81,6 @@ module.exports.routes = {
         view: 'campaign/create_campaign'
     },
 
-    //        view: 'campaign/list_campaign'
-
     '/campaign/current': {
         controller: 'campaign',
         action: 'current'
@@ -98,7 +96,7 @@ module.exports.routes = {
         action: 'coming'
     }
 
-    /*                                      ¬
+    /*
      // Let's say you're building an email client, like Gmail
      // You might want your home route to serve an interface using custom logic.
      // In this scenario, you have a custom controller `MessageController`

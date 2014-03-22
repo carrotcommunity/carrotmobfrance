@@ -1,4 +1,4 @@
-<%- partial('../home/header')%>
+<%- partial('../partials/header')%>
 
 <div class="page-marge">
 	<div class="inspiration2">
@@ -16,17 +16,17 @@
 			<h4><br/>J'utilise mon compte Carrotmobber<br/></h4>
 
 			<div class="center-text">
-				<form class="form-horizontal">
-
+                <% if (typeof message !== 'undefined') { %><div class="alert alert-danger"><%= message %></div><% } %>
+				<form class="form-horizontal" method="post" action="/signin">
 					<div class="control-group">
 					    <div class="controls">
-					      <input type="text" id="inputEmail" placeholder="mail">
+					      <input type="text" id="username" name="username" placeholder="Adresse email">
 					    </div>
 					</div>
 
 					<div class="control-group">  
 			    		<div class="controls">
-			      			<input type="password" id="inputPassword" placeholder="mot de passe">
+			      			<input type="password" id="password" name="password" placeholder="Mot de passe">
 			    		</div>
 			  		</div>
 

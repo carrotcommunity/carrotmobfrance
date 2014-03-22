@@ -30,7 +30,7 @@ module.exports = {
         var validator = function (err, user) {
             var fieldOrNull = function (p) {
                 return p ? p : '';
-            }
+            };
 
             var formUser = {
                 id: user ? user.id : null,
