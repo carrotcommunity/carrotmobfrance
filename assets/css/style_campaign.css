@@ -56,3 +56,9 @@ a.new_campaign, a.new_campaign:visited, a.new_campaign:hover {
     margin: auto;
 
 }
+
+
+@media (max-width: 1172px) {
+    .bk_c_mea {height:auto;width:100%;float:left;}
+    a.new_campaign {position:relative;display:block;margin:10px; text-align: center;}
+}

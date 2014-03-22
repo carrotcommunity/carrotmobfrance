@@ -58,7 +58,7 @@
     float: right;
 }
 
-#connected, #connect {margin-bottom:0px;}
+#connected, #connect {margin-bottom:0px;padding-left:0px;}
 
 #connect li,
 #connected li {
@@ -80,7 +80,7 @@
 }
 #connected p{display:inline-block;color:white; font-family: 'Roboto', Arial, sans-serif; font-weight: lighter;}
 
-.navbar-brand{padding:0px;margin-right:100px;}
+.navbar-brand{padding:0px;margin-right:50px;}
 
 .navbar-nav a {padding-top:28px !important;}
 
