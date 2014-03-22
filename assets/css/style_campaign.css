@@ -1,4 +1,4 @@
-.c_campaign {width:1024px; margin:0 auto;position:relative;}
+.c_campaign {max-width:1024px; margin:0 auto;position:relative;}
  a.new_campaign  {
     position:absolute;
     right:0px;
