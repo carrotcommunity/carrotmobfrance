@@ -15,7 +15,8 @@
  * @docs        :: http://sailsjs.org/#!documentation/controllers
  */
 
-var mailer = require("nodemailer");
+var mailer = require("nodemailer"),
+    crypto = require('crypto');
 
 module.exports = {
 
@@ -545,8 +546,12 @@ module.exports = {
                 smtpTransport.sendMail(mail, function(error, response) {
                     if (error)
                         res.view('user/forgot_password', { error: displayStrings["CannotMail"], success: null });
-                    else {
-                        user.password = password;
+                    else {                    
+                        var md5er = crypto.createHash('md5');
+                        md5er.update(password);
+                        var passwordEncrypted = md5er.digest('hex');
+                    
+                        user.password = passwordEncrypted;
                         user.save(function(err, user) {});
                         res.view('user/forgot_password', { error: null, success: displayStrings["Success"] });
                     }
