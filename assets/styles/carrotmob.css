@@ -49,6 +49,8 @@ body {
 }
 
 
+/*Home*/
+
 /* Featurettes
 ------------------------- */
 
@@ -57,10 +59,77 @@ body {
 }
 
 /* Thin out the presentation headings */
-.featurette-heading {
-  font-weight: 300;
-  line-height: 1;
-  letter-spacing: -1px;
+
+.featurette-heading img{
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 70px;
+}
+
+
+
+.home-wrapper{
+    height:auto;
+    overflow: hidden;
+    top:0px;
+    left:0px;
+    width: 80%; margin:0px auto;
+    position: relative;
+}
+
+.home-wrapper .col-md-5{
+    width: 70%!important;
+}
+
+.home-list{
+    float: left;
+}
+
+.home-list ul{
+    list-style: none;
+    margin-top: -40px;
+}
+
+.home-list li{
+    background:url('/images/carrot-list.png') no-repeat left center;
+    padding-left: 50px; /* the width of your image + some space */
+    margin: 40px 0;
+    height: 90px;
+}
+
+.home-list-text{
+    display: block;
+    color: #2b2d2d;
+    font-size: 1.6rem;
+    font-size: 16px;
+    padding-top: 30px;
+}
+
+.home-subtitle{
+    clear: both;
+}
+
+.home-subtitle h2{
+    color:#ff9966;
+    font-size: 2rem;
+    font-size: 30px;
+    text-align: center;
+    letter-spacing: 1;
+    margin-top: 80px;
+    margin-bottom: 80px;
+}
+
+.home-light-carrot{
+    font-weight: lighter;
+}
+
+.home-map-ville{
+    background: url('/images/map-villes.png') no-repeat;
+    height: 450px;
+    width: 450px;
+    background-size: 100%;
+    margin: 0 auto;
+    margin-top: 40px;
 }
 
 /* Thin out the presentation headings */
@@ -69,6 +138,82 @@ body {
   line-height: 1;
   letter-spacing: -1px;
 }
+
+.map-pin{
+    background:url('/images/pin-map.png') no-repeat left center;
+    width: 100px;
+    height: 100px;
+    background-size: 100%;
+    position: absolute;
+}
+
+/**PINS**/
+.pin1{
+    margin-left: -35px;
+    padding-top: 110px;
+}
+
+.pin2{
+    margin-left: 227px;
+    margin-top: -54px;
+}
+
+.pin3{
+    margin-left: 156px;
+    margin-top: -11px;
+}
+
+.pin4{
+    margin-left: 195px;
+    padding-top: 165px;
+}
+.pin5{
+    margin-left: -25px;
+    padding-top: 159px
+}
+
+.pin6{
+    margin-left: 54px;
+    margin-top: 59px;
+}
+
+.pin7{
+    margin-left: 54px;
+    margin-top: 105px;
+}
+
+.pin8{
+    margin-left: 371px;
+    padding-top: 225px;
+}
+
+.pin9{
+    margin-left: 268px;
+    padding-top: 477px;
+}
+.pin10{
+    margin-left: 59px;
+    padding-top: 508px
+}
+
+.pin11{
+    margin-left: 278px;
+    margin-top: 323px
+}
+
+.pin12{
+    margin-left: 301px;
+    margin-top: 215px;
+
+}
+
+.pin13{
+    margin-left: 144px;
+    margin-top: 318px;
+}
+
+
+/**PINS**/
 
 .rennes-la-novosphere-gris, .rennes-la-novosphere, .le-mouv-gris, .le-mouv, .les-inrockuptibles-gris, 
 .les-inrockuptibles, .marcel-green-gris, .marcel-green, .la-nouvelle-edition, .la-nouvelle-edition-gris, 
@@ -112,9 +257,9 @@ body {
     border-radius: 4px;
   }
 
-  .featurette-heading {
+  /*.featurette-heading {
     font-size: 50px;
-  }
+  }*/
 
   .campaign-heading {
     font-size: 50px;
@@ -151,21 +296,29 @@ body {
     margin-top: 40px;
   }
 
-  .featurette-heading {
+  /*.featurette-heading {
     margin-top: 80px;
-  }
+  }*/
 }
 
 /* Embed video container */
 
-.embed-container { 
-  position: relative;
-  padding-bottom: 56.25%;
-  padding-top: 30px;
-  height: 0;
-  overflow: hidden;
-  max-width: 100%;
-  height: auto;
+.embed-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 30px;
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    height: auto;
+}
+
+.embed-container iframe, .embed-container object, .embed-container embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
 
 .embed-container iframe, .embed-container object, .embed-container embed {
