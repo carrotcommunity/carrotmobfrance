@@ -97,6 +97,10 @@ body {
     height: 90px;
 }
 
+.home-list a{
+    text-decoration: none!important;
+}
+
 .home-list-text{
     display: block;
     color: #2b2d2d;
@@ -281,6 +285,24 @@ body {
   .ecoplus-tv:hover { background-position: -0px -1140px; width: 140px; height: 44px; }
   .tracks { background-position: -0px -1218px; width: 140px; height: 34px; }
   .tracks:hover { background-position: -0px -1184px; width: 140px; height: 34px; }
+}
+
+@media(max-width:480px){
+
+    .featurette-heading img{
+        margin-top:20px;
+        width: 80%;
+    }
+
+    .featurette-heading {
+
+        margin-top:40px;
+    }
+
+    .home-list li{
+       display: inline-block;
+    }
+
 }
 
 @media (min-width: 992px) {
