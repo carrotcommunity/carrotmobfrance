@@ -23,6 +23,9 @@ module.exports.policies = {
   'signup': {
     '*': true
   },
+  'forgot': {
+    '*': true
+  },
   'campaign': {
     '*': 'isAuthenticated',
     'coming': true,

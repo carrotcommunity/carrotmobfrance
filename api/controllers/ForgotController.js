@@ -45,8 +45,8 @@ module.exports = {
                     secureConnection: true,
                     port: 465,
                     auth: {
-                        user: "louis.du.verdier@gmail.com",
-                        pass: "zAmnellLZ6B4"
+                        user: "",
+                        pass: ""
                     }
                 });
 
