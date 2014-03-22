@@ -72,7 +72,7 @@ module.exports.routes = {
         view: 'user/forgot_password'
     },
 
-    '/create_campaign':{
+    '/campaign/new':{
         view: 'campaign/create_campaign'
     },
 
