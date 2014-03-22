@@ -108,14 +108,21 @@ body
 td
 {
 	text-align: center;
+	position: relative;
 	width: 40%;
 }
 
+
 input[type=radio]
 {
+	position: absolute;
 	margin: 15px;
 	margin-bottom: 20px;
-	display: none;
+	left: 35px;
+	top:38px;
+	z-index: 500;
+	opacity: 0;
+	cursor:pointer;cursor:hand;
 }
 
 input[type=radio]:checked + label
@@ -123,8 +130,8 @@ input[type=radio]:checked + label
 	border: solid 2px orange;
 	border-radius: 6px;
 	padding: 2px;
-
 }
+
 
 .btn-submit
 {
