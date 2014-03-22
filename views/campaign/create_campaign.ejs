@@ -13,6 +13,12 @@
             </div>
 
             <div class="center-text">
+
+                <% if (errors && errors['err']) { %>
+                <div class="alert alert-danger"><%= errors.toString() %></div>
+                <% } %>
+
+
                 <form class="form-horizontal" action="/campaign/create" method="POST">
 
                     <% if (errors && errors['inputTitle']) { %>

@@ -92,6 +92,7 @@ var CampaignController = {
                                         errors["startDateStr"] = errorStrings["startDateStr"];
                                         break;
                                     default:
+                                        errors["err"] = d;
                                         break;
                                 }
                             }
@@ -103,7 +104,9 @@ var CampaignController = {
                 return _campaign;
             };
 
-            Campaign.create(req.body).done(saveCallback);
+            var camp = req.body;
+            camp.carrotmobberId = req.session.passport.user.id;
+            Campaign.create(camp).done(saveCallback);
         };
         validator(null, null);
     },
@@ -140,7 +143,10 @@ var CampaignController = {
         Campaign.findOne({'id': id}).exec(function (err, campaign) {
             if (err)
                 return (res.send(err, 500));
-            res.view('campaign/details', {c: campaign});
+            Carrotmobber.findOne({id: campaign.carrotmobberId}).done(function(err, user) {
+                campaign.carrotmobber = user;
+                res.view('campaign/details', {c: campaign});
+            });
         })
     },
 
@@ -157,7 +163,10 @@ var CampaignController = {
                 return (res.send(err, 500));
             campaign.validated = true;
             campaign.save(function (err, ress) {
-                res.view('campaign/details', {c: campaign});
+                Carrotmobber.findOne({id: campaign.carrotmobberId}).done(function(err, user) {
+                    campaign.carrotmobber = user;
+                    res.view('campaign/details', {c: campaign});
+                });
             });
         });
     },
@@ -175,7 +184,10 @@ var CampaignController = {
                 return (res.send(err, 500));
             campaign.validated = false;
             campaign.save(function (err, ress) {
-                res.view('campaign/details', {c: campaign});
+                Carrotmobber.findOne({id: campaign.carrotmobberId}).done(function(err, user) {
+                    campaign.carrotmobber = user;
+                    res.view('campaign/details', {c: campaign});
+                });
             });
         });
     }

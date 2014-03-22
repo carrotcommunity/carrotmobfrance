@@ -72,7 +72,7 @@ module.exports = {
         image: 'string',
         carrotmobberId: {
             type: 'string',
-            required: false
+            required: true
         },
         validated: {
             type: 'boolean',

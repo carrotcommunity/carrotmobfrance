@@ -13,22 +13,22 @@
         <% _.each(campaigns, function(c) { %>
         <div class="bk_c_mea">
             <a href="/campaign/details?id=<%=c.id%>">
-                <img src="<%= c.image %>" alt=""/>
+                <img src="/images/default.jpg" alt=""/>
 
                 <div class="e_infos">
                     <h3><%= c.title %></h3>
 
                     <div class="location">
-                                <span>
-                                    <span class="town"><%=c.city%></span> </br>
-                                    <% var table = c.startDateStr.split(':');
-                                    var date = table[0].split('/'); 
-                                    var hours = table[1].split('/');
+                        <span>
+                            <span class="town"><%=c.city%></span> <br/>
+                            <% var table = c.startDateStr.split(' ');
+                            var date = table[0].split('/');
+                            var hours = table[1].split(':');
 
-                                    var newDate = date[0] + "/" + date[1] + "/" + date[2] + " à " + hours[0] + ":" + hours[1];
-                                    %>
-                                    <span class="date"><%=newDate%></span>
-                                </span>
+                            var newDate = date[0] + "/" + date[1] + "/" + date[2] + " à " + hours[0] + ":" + hours[1];
+                            %>
+                            <span class="date"><%=newDate%></span>
+                        </span>
                         <span class="people"><strong>TODO</strong></span>
                     </div>
                     <p><%=c.desc%></p>
@@ -36,9 +36,7 @@
             </a>
         </div>
         <% }) %>
-        <% if(campaigns.length==0){%>
-        <h2>Il n'y a aucune campagne actuellement.<h2>
-            <% } %>
+        <% if(campaigns.length==0){%><h2>Il n'y a aucune campagne actuellement.</h2><% } %>
     </div>
 </div>
 
