@@ -97,10 +97,32 @@ input
 	border-radius: 4px;
 }
 
+
 .form-control
 {
     margin: auto;
     width: 45%;
+}
+
+td
+{
+	text-align: center;
+	width: 40%;
+}
+
+input[type=radio]
+{
+	margin: 15px;
+	margin-bottom: 20px;
+	display: none;
+}
+
+input[type=radio]:checked + label
+{
+	border: solid 2px orange;
+	border-radius: 6px;
+	padding: 2px;
+
 }
 
 .btn-submit
