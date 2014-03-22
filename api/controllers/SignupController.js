@@ -65,14 +65,13 @@ module.exports = {
             errors["inputPassword"] = !formUser.id && (!formUser.password || formUser.password.length == 0) ? errorStrings["inputPassword"] : "";
             errors["inputGender"] = formUser.gender != '1' && formUser.gender != '2' ? errorStrings["inputGender"] : "";
 
-            if (errors.hasErrors())
-            {
+            if (errors.hasErrors()) {
                 res.view('user/signup', { user: formUser, errors: errors });
                 return;
             }
 
-            var saveCallback = function(err, user) {
-                if (err) {
+            var saveCallback = function(err, _user) {
+                if (err && err !== true) {
                     for (var p in err)
                         if (err.hasOwnProperty(p))
                             for (var d in err[p])
@@ -100,47 +99,46 @@ module.exports = {
                     res.view('user/signup', { user: formUser, errors: errors });
                 else
                     res.redirect('/campaign/current');
-                return user;
+                return _user;
             };
-            
-            var u = null;
-            
+
             if (user)
             {
-                _.extend(user, formUser);
-                user.registered = true;
-                u = user.save(saveCallback);
+                Carrotmobber.findOne({ email: formUser.email }).done(function(err, _user) {
+                        console.log(_user);
+                    if (_user && _user.registered) {
+                        errors["inputEmail"] = errorStrings["inputEmailUsed"];
+                        saveCallback(true, null);
+                        return;
+                    }
+                    _.extend(user, formUser);
+                    user.registered = true;
+                    user.save(saveCallback);
+                });
             }
             else
             {
-                var hasEmail = Carrotmobber.findOne({ email: formUser.email }).done(function(err, user) {
-                    return user;
+                Carrotmobber.findOne({ email: formUser.email }).done(function(err, _user) {
+                    if (_user) {
+                        errors["inputEmail"] = errorStrings["inputEmailUsed"];
+                        saveCallback(true, null);
+                        return;
+                    }
+                    Carrotmobber.create({
+                        firstname: formUser.firstname,
+                        lastname: formUser.lastname,
+                        email: formUser.email,
+                        password: formUser.password,
+                        gender: formUser.gender,
+                        uid: null,
+                        tokenFb: null,
+                        picture: '',
+                        city: formUser.city,
+                        admin: false,
+                        registered: true
+                    }).done(saveCallback);
                 });
-                
-                if (hasEmail) {
-                    errors["inputEmail"] = errorStrings["inputEmailUsed"];
-                    saveCallback(true, null);
-                }
-                
-                u = Carrotmobber.create({
-                    firstname: formUser.firstname,
-                    lastname: formUser.lastname,
-                    email: formUser.email,
-                    password: formUser.password,
-                    gender: formUser.gender,
-                    uid: null,
-                    tokenFb: null,
-                    picture: '',
-                    city: formUser.city,
-                    admin: false,
-                    registered: true
-                }).done(saveCallback);
             }
-
-            if (!u)
-                return;
-
-            res.redirect('/');
         };
         if (req.session && req.session.passport && req.session.passport.user)
             Carrotmobber.findOne({ id: req.session.passport.user }).done(validator);
