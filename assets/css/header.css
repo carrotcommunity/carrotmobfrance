@@ -78,7 +78,7 @@
     height: 62px;
     font-weight: normal;
 }
-#connected p{display:inline-block;color:white; font-family: 'Roboto', Arial, sans-serif; font-weight: lighter;}
+#connected p{display:block;color:white; font-family: 'Roboto', Arial, sans-serif; font-weight: lighter;}
 
 .navbar-brand{padding:0px;margin-right:100px;}
 
