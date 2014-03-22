@@ -174,9 +174,6 @@ p
 	margin-bottom: 20px;
 }
 
-.control-group { text-align: center;}
-
-.alert{width:45%; display:inline-block;}
-.alert-danger{background-color:#98f177;color:#37c503; border-color:#37c503;}
+.error-msg{width:45%; display:inline-block;text-align:left;}
 
 .has-error .form-control{border:solid 2px #FF9966;}
