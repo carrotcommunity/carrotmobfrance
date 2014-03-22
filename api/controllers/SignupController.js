@@ -31,13 +31,15 @@ module.exports = {
             var fieldOrNull = function (p) {
                 return p ? p : '';
             }
+
             var formUser = {
                 id: user ? user.id : null,
                 firstname: fieldOrNull(req.param("inputFirstName")),
                 lastname: fieldOrNull(req.param("inputLastName")),
                 city: fieldOrNull(req.param("inputTown")),
                 email: fieldOrNull(req.param("inputEmail")),
-                password: fieldOrNull(req.param("inputPassword"))
+                password: fieldOrNull(req.param("inputPassword")),
+                gender: fieldOrNull(req.param("inputGender"))
             };
             
             var errorStrings = new Object;
@@ -46,7 +48,8 @@ module.exports = {
             errorStrings["inputTown"] = "Vous devez insérer une ville";
             errorStrings["inputEmail"] = "Vous devez insérer un email valide";
             errorStrings["inputEmailUsed"] = "L'email inséré est déjà utilisé";
-            errorStrings["inputPassword"] = "Vous devez insérer un mot de passe d'au moins six caractères";
+            errorStrings["inputPassword"] = "Votre mot de passe est trop court";
+            errorStrings["inputGender"] = "Veuillez sélectionner votre sexe";
 
             var errors = new Object;
             errors["hasErrors"] = function() {
@@ -60,6 +63,7 @@ module.exports = {
             errors["inputTown"] = !formUser.city || formUser.city.length == 0 ? errorStrings["inputTown"] : "";
             errors["inputEmail"] = !formUser.email || formUser.email.length == 0 ? errorStrings["inputEmail"] : "";
             errors["inputPassword"] = !formUser.id && (!formUser.password || formUser.password.length == 0) ? errorStrings["inputPassword"] : "";
+            errors["inputGender"] = formUser.gender != '1' && formUser.gender != '2' ? errorStrings["inputGender"] : "";
 
             if (errors.hasErrors())
             {
@@ -123,6 +127,7 @@ module.exports = {
                     lastname: formUser.lastname,
                     email: formUser.email,
                     password: formUser.password,
+                    gender: formUser.gender,
                     uid: null,
                     tokenFb: null,
                     picture: '',

@@ -16,13 +16,13 @@ var verifyHandler = function (accessToken, refreshToken, profile, done) {
                         lastname: profile.name.familyName,
                         email: profile._json.email,
                         password: '',
+                        gender: profile._json.gender ? (profile._json.gender == 'male' ? 2 : profile._json.gender == 'female' ? 1 : -1) : -1,
                         tokenFb: accessToken,
                         picture: 'http://graph.facebook.com/' + profile.id + '/picture?type=square',
                         city: profile._json.location && profile._json.location.name ? profile._json.location.name.split(",")[0] : '',
                         admin: false,
                         registered: false
                     }).done(function (err, user) {
-                        console.log(user);
                         return done(err, user);
                     });
                 }

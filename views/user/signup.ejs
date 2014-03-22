@@ -23,26 +23,31 @@
 			<div class="separator">
 			</div>
 			<h3>Apprenons à nous connaître.</h3>
-
 			
 		</div>
 		<div class="center-text">
             <form role="form" class="form-horizontal" method="post" action="/register">
-            <table class="choose-profil" align="center">
-				<tbody>
-					<tr>
-						<td>
-							<input type="radio" id="radio-girl" src="../img/register_girl.png" name="but" value="1">
-							<label for="radio-girl"><img src="../img/register_girl.png"/></label>
-						</td>
-						<td>
-							<input type="radio" id="radio-boy" name="but" value="2">
-							<label for="radio-boy"><img src="../img/register_boy.png"/></label>
-						</td>
-					</tr>
-				</tbody>
-			</table>
-			<br/><br/>
+                <% if (errors && errors['inputGender']) { %>
+                <div class = "error-msg"><span class="glyphicon glyphicon glyphicon-remove"></span>
+                <%= errors['inputGender'] %>
+                </div>
+                <% } %>
+                <table class="choose-profil" align="center">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <input type="radio" id="radio-girl" src="../img/register_girl.png" name="inputGender" value="1" <%= user && user.gender == 1 ? 'checked' : '' %>>
+                                <label for="radio-girl"><img src="../img/register_girl.png"/></label>
+                            </td>
+                            <td>
+                                <input type="radio" id="radio-boy" name="inputGender" value="2" <%= user && user.gender == 2 ? 'checked' : '' %>>
+                                <label for="radio-boy"><img src="../img/register_boy.png"/></label>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <br/><br/>
+
                 <div class="control-group">
                     <% if (errors && errors['inputFirstName']) { %>
                     <div class = "error-msg"><span class="glyphicon glyphicon glyphicon-remove"></span>
