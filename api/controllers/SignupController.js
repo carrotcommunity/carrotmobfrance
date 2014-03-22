@@ -99,7 +99,7 @@ module.exports = {
                 if (errors.hasErrors())
                     res.view('user/signup', { user: formUser, errors: errors });
                 else
-                    res.redirect('/campaign/view');
+                    res.redirect('/campaign/current');
                 return user;
             };
             
