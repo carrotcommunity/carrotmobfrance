@@ -3,29 +3,28 @@
 <div class="pageDetails">
     <div id="details">
 
-
         <img src="images/probono/details-cover.jpg" class='cover'>
 
         <div class='contentDetails'>
 
-            <h2>Carrotmob <%=campaign.title%></h2>
+    <% _.each(campaign, function(c) { %>
+            <h2>Carrotmob <%= c.title %></h2> 
 
-	    <% var table = c.startDateStr.split(':');
-                                    var date = table[0].split('/'); 
-                                    var hours = table[1].split('/');
+        <p><%=c.desc%></p>
 
-                                    var newDate = date[0] + "/" + date[1] + "/" + date[2] + " à " + hours[0] + ":" + hours[1];
-                                    %>
-				   <p> <%=newDate%> </p>
+        <% var table = c.startDateStr.split(':');
+            var date = table[0].split('/'); 
+            var hours = table[1].split('/');
 
-	       <p><%=campaign.desc%></p>
+            var newDate = date[0] + "/" + date[1] + "/" + date[2] + " à " + hours[0] + ":" + hours[1];
+        %>
 
-
-
+        <%= newDate %><br/>
             <strong>Engagement : </strong>
 
-            <p><%=campaign.engagement%></p>
-            <img src="<%=campaign.image%>" class="img-rounded"><span> Organisé par <%=campaign.carrotmobberId%></span>
+            <p><%=c.engagement%></p>
+            <img src="<%=c.image%>" class="img-rounded"><span> Organisé par <%=c.carrotmobberId%></span>
+    <%});%>
 
         </div>
     </div>

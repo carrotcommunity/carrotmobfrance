@@ -97,8 +97,7 @@ var CampaignController = {
 	
 	Campaign.find({'id': id}).exec(function(err, campaign) {
 	    if (err)
-		return (res.send(err, 500));
-	    res.end();
+			return (res.send(err, 500));
 	    res.view('campaign/details', {campaign: campaign});
 	})
     }
