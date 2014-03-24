@@ -1,4 +1,6 @@
-.c_campaign {max-width:1024px; margin:0 auto;position:relative;}
+.c_campaign {max-width:1024px; margin:0 auto;position:relative;
+    position: relative;
+    min-height: 700px;}
  a.new_campaign  {
     position:absolute;
     right:0px;
