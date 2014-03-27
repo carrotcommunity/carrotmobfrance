@@ -89,7 +89,7 @@ body
     padding-top: 1%;
 }
 
-.page-marge input
+.page-marge input, .page-marge input
 {
 	border: solid 2px #EBEBEB;
 	width: 45%;
@@ -215,7 +215,7 @@ input[type=radio]:checked + label
         margin-left: 10%;
     }
 
-     .page-marge input
+     .page-marge input, .page-marge input
     {
     	width: 50%;
     }
@@ -234,7 +234,7 @@ input[type=radio]:checked + label
         margin-left: 5%;
     }
 
-     .page-marge input
+     .page-marge input , .page-marge input
     {
     	width: 70%;
     }
@@ -253,7 +253,7 @@ input[type=radio]:checked + label
         margin-left: 0%;
     }
 
-    .page-marge input
+    .page-marge input, .page-marge textarea
     {
     	width: 95%;
     }

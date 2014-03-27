@@ -3,9 +3,10 @@
 }
 
 #navCenter{
-    width: 80%;
+    width: 100%;
     margin: auto;
     background-color: #FFF;
+    max-width: 1024px;
 }
 
 .navbar-collapse, .navbar-header {
@@ -25,10 +26,9 @@
 }
 
 .topShadow {
-    height: 13px;
+    height: 7px;
     margin: auto;
-    width: 712px;
-    background: url("../images/probono/shadow.png") no-repeat 0px -5px;
+    background: url("../images/probono/shadow.png") no-repeat center bottom;
 }
 
 .navbar .container {
@@ -40,7 +40,7 @@
     background-color: #FFF;
 
 }
-
+.navbar-toggle {margin :14px 14px 14px 0;}
 .navbar-default .navbar-form {
     border-color: transparent;
 }
