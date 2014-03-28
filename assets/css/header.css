@@ -93,6 +93,11 @@
     .navbar-brand {margin:0px;}
 }
 
+@media (max-width: 1024px) {
+
+    .navbar-nav {margin:0px;}
+}
+
 @media (max-width: 767px) {
     .navbar-nav a 
     {

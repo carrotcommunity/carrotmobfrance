@@ -1,0 +1,769 @@
+/* GLOBAL STYLES
+-------------------------------------------------- */
+/* Padding below the footer and lighter body text */
+
+html, body {
+    height: 100%;
+}
+
+body {
+    padding-top: 80px;
+    color: #5a5a5a;
+}
+
+
+/* CUSTOMIZE THE NAVBAR
+-------------------------------------------------- */
+
+/* Special class on .container surrounding .navbar, used for positioning it into place. */
+.navbar-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 80;
+}
+
+
+/* PRESENTATION CONTENT
+-------------------------------------------------- */
+
+/* Pad the edges of the mobile views a bit */
+.presentation {
+    margin-top: 20px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Center align the text within the three columns below the carousel */
+.presentation .col-lg-4 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.presentation h2 {
+    font-weight: normal;
+}
+.presentation .col-lg-4 p {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+
+/*Home*/
+
+/* Featurettes
+------------------------- */
+
+.featurette-divider {
+    margin: 80px 0; /* Space out the Bootstrap <hr> more */
+}
+
+/* Thin out the presentation headings */
+
+.featurette-heading img{
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 70px;
+}
+
+
+
+.home-wrapper{
+    height:auto;
+    overflow: hidden;
+    top:0px;
+    left:0px;
+    width: 80%; margin:0px auto;
+    position: relative;
+}
+
+.home-wrapper .col-md-5{
+    width: 70%!important;
+}
+
+.home-list{
+    float: left;
+}
+
+.home-list ul{
+    list-style: none;
+    margin-top: -40px;
+}
+
+.home-list li{
+    background:url('/images/carrot-list.png') no-repeat left center;
+    padding-left: 50px; /* the width of your image + some space */
+    margin: 40px 0;
+    height: 90px;
+}
+
+.home-list a{
+    text-decoration: none!important;
+}
+
+.home-list-text{
+    display: block;
+    color: #2b2d2d;
+    font-size: 1.6rem;
+    font-size: 16px;
+    padding-top: 30px;
+}
+
+.home-subtitle{
+    clear: both;
+}
+
+.home-subtitle h2{
+    color:#ff9966;
+    font-size: 2rem;
+    font-size: 30px;
+    text-align: center;
+    letter-spacing: 1;
+    margin-top: 80px;
+    margin-bottom: 80px;
+}
+
+.home-light-carrot{
+    font-weight: lighter;
+}
+
+.home-map-ville{
+    background: url('/images/map-villes.png') no-repeat;
+    height: 450px;
+    width: 450px;
+    background-size: 100%;
+    margin: 0 auto;
+    margin-top: 40px;
+}
+
+/* Thin out the presentation headings */
+.campaign-heading {
+    font-weight: 300;
+    line-height: 1;
+    letter-spacing: -1px;
+}
+
+.map-pin{
+    background:url('/images/pin-map.png') no-repeat left center;
+    width: 100px;
+    height: 100px;
+    background-size: 100%;
+    position: absolute;
+}
+
+/**PINS**/
+.pin1{
+    margin-left: -35px;
+    padding-top: 110px;
+}
+
+.pin2{
+    margin-left: 227px;
+    margin-top: -54px;
+}
+
+.pin3{
+    margin-left: 156px;
+    margin-top: -11px;
+}
+
+.pin4{
+    margin-left: 195px;
+    padding-top: 165px;
+}
+.pin5{
+    margin-left: -25px;
+    padding-top: 159px
+}
+
+.pin6{
+    margin-left: 54px;
+    margin-top: 59px;
+}
+
+.pin7{
+    margin-left: 54px;
+    margin-top: 105px;
+}
+
+.pin8{
+    margin-left: 371px;
+    padding-top: 225px;
+}
+
+.pin9{
+    margin-left: 268px;
+    padding-top: 477px;
+}
+.pin10{
+    margin-left: 59px;
+    padding-top: 508px
+}
+
+.pin11{
+    margin-left: 278px;
+    margin-top: 323px
+}
+
+.pin12{
+    margin-left: 301px;
+    margin-top: 215px;
+
+}
+
+.pin13{
+    margin-left: 144px;
+    margin-top: 318px;
+}
+
+
+/**PINS**/
+
+.rennes-la-novosphere-gris, .rennes-la-novosphere, .le-mouv-gris, .le-mouv, .les-inrockuptibles-gris,
+.les-inrockuptibles, .marcel-green-gris, .marcel-green, .la-nouvelle-edition, .la-nouvelle-edition-gris,
+.liberation-gris, .liberation, .ecoplus-tv-gris, .ecoplus-tv, .tracks,
+.tracks-gris
+{ display: inline-block; background: url('/images/presse.png') no-repeat; }
+
+.rennes-la-novosphere { background-position: -0px -140px; width: 94px; height: 140px; }
+.le-mouv { background-position: -0px -419px; width: 140px; height: 139px; }
+.les-inrockuptibles { background-position: -0px -637px; width: 140px; height: 79px; }
+.marcel-green { background-position: -0px -786px; width: 140px; height: 70px; }
+.la-nouvelle-edition { background-position: -0px -856px; width: 140px; height: 69px; }
+.liberation { background-position: -0px -1045px; width: 140px; height: 51px; }
+.ecoplus-tv { background-position: -0px -1140px; width: 140px; height: 44px; }
+.tracks { background-position: -0px -1184px; width: 140px; height: 34px; }
+
+
+/* RESPONSIVE CSS
+-------------------------------------------------- */
+
+@media (min-width: 768px) {
+
+    /* Remove the edge padding needed for mobile */
+    .presentation {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    /* Navbar positioning foo */
+    .navbar-wrapper {
+        margin-top: 20px;
+    }
+
+    .navbar-wrapper .navbar {
+        padding-left:  0;
+        padding-right: 0;
+    }
+
+    /* The navbar becomes detached from the top, so we round the corners */
+    .navbar-wrapper .navbar {
+        border-radius: 4px;
+    }
+
+    /*.featurette-heading {
+      font-size: 50px;
+    }*/
+
+    .campaign-heading {
+        font-size: 50px;
+    }
+
+    .rennes-la-novosphere { background-position: -0px -0px; width: 94px; height: 140px; }
+    .rennes-la-novosphere:hover { background-position: -0px -140px; width: 94px; height: 140px; }
+    .le-mouv { background-position: -0px -280px; width: 140px; height: 139px; }
+    .le-mouv:hover { background-position: -0px -419px; width: 140px; height: 139px; }
+    .les-inrockuptibles { background-position: -0px -558px; width: 140px; height: 79px; }
+    .les-inrockuptibles:hover { background-position: -0px -637px; width: 140px; height: 79px; }
+    .marcel-green { background-position: -0px -716px; width: 140px; height: 70px; }
+    .marcel-green:hover { background-position: -0px -786px; width: 140px; height: 70px; }
+    .la-nouvelle-edition { background-position: -0px -925px; width: 140px; height: 69px; }
+    .la-nouvelle-edition:hover { background-position: -0px -856px; width: 140px; height: 69px; }
+    .liberation { background-position: -0px -994px; width: 140px; height: 51px; }
+    .liberation:hover { background-position: -0px -1045px; width: 140px; height: 51px; }
+    .ecoplus-tv { background-position: -0px -1096px; width: 140px; height: 44px; }
+    .ecoplus-tv:hover { background-position: -0px -1140px; width: 140px; height: 44px; }
+    .tracks { background-position: -0px -1218px; width: 140px; height: 34px; }
+    .tracks:hover { background-position: -0px -1184px; width: 140px; height: 34px; }
+}
+
+@media(max-width:480px){
+
+    .featurette-heading img{
+        margin-top:20px;
+        width: 80%;
+    }
+
+    .featurette-heading {
+
+        margin-top:40px;
+    }
+
+    .home-list li{
+        display: inline-block;
+    }
+
+}
+
+@media (min-width: 992px) {
+    .presentation {
+        margin-top: 40px;
+    }
+
+    .featurette {
+        margin-bottom: 40px;
+    }
+
+    .campaign-heading {
+        margin-top: 40px;
+    }
+
+    /*.featurette-heading {
+      margin-top: 80px;
+    }*/
+}
+
+/* Embed video container */
+
+.embed-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 30px;
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    height: auto;
+}
+
+.embed-container iframe, .embed-container object, .embed-container embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.embed-container iframe, .embed-container object, .embed-container embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Medias */
+
+.media > div {
+    height: 140px;
+    line-height: 140px;
+    text-align: center;
+}
+
+.media > div > a {
+    vertical-align: middle;
+}
+
+/* Buttons */
+
+.btn-danger:hover {
+    color: #ffffff;
+    background-color: #e16764;
+    border-color: #e16764;
+}
+
+.btn-primary:hover {
+    color: #ffffff;
+    background-color: #9193ce;
+    border-color: #6769bb;
+}
+
+.btn-warning:hover {
+    color: #ffffff;
+    background-color: #f07f33;
+    border-color: #f07f33;
+}
+
+body
+{
+    background-color: #F3F4F4;
+    font-family: roboto;
+    color: black;
+}
+
+.page-marge
+{
+    margin-right: 20%;
+    margin-left: 20%;
+    margin-top: 3%;
+    margin-bottom: 1%;
+}
+
+.inspiration
+{
+    background: url(../img/r_carottbg.png) white no-repeat bottom;
+    margin: 0px;
+
+}
+
+.inspiration2
+{
+    background-color: white;
+}
+
+.bottom-shadow
+{
+    background: url(../img/block_shadow.png) center no-repeat;
+    height: 15px;
+    margin: 0px;
+    background-size:100%;
+
+}
+
+.center-text
+{
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.forgot-pass
+{
+    margin-left: 28%;
+}
+
+.page-marge .separator
+{
+    margin: auto;
+    border : solid 1px #DDDEDD;
+    width: 70%;
+}
+
+.choose-profil
+{
+    margin: auto;
+    padding: 100px;
+
+}
+
+.controls
+{
+    margin-bottom: 20px;
+}
+
+.img-profil
+{
+    margin: 15px;
+    margin-bottom: 20px;
+
+}
+
+.img-profil.selected
+{
+    border: solid 2px orange;
+    border-radius: 6px;
+    padding: 2px;
+}
+
+.page-marge input, .page-marge input
+{
+    border: solid 2px #EBEBEB;
+    width: 45%;
+    height: 45px;
+    padding-left: 8px;
+    border-radius: 4px;
+}
+
+
+.form-control
+{
+    margin: auto;
+    width: 45%;
+}
+
+td
+{
+    text-align: center;
+    position: relative;
+    width: 40%;
+}
+
+
+input[type=radio]
+{
+    position: absolute;
+    margin: 15px;
+    margin-bottom: 20px;
+    left: 35px;
+    top:38px;
+    z-index: 500;
+    opacity: 0;
+    cursor:pointer;cursor:hand;
+}
+
+input[type=radio]:checked + label
+{
+    border: solid 2px orange;
+    border-radius: 6px;
+    padding: 2px;
+}
+
+
+.btn-submit
+{
+    color: white;
+    background-color: #FF9966;
+    border: none;
+    border-radius: 4px;
+    width: 45%;
+    height: 40px;
+}
+
+
+.btn-facebook
+{
+    background: url(../img/btn_facebook.jpg);
+    height: 39px;
+    width: 174px;
+    border:none;
+}
+
+.link-contact
+{
+    color:#FF9966;
+    text-decoration: underline;
+}
+
+.page-marge h3
+{
+    text-align: center;
+    font-weight: lighter;
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 25pt;
+}
+
+.page-marge h2
+{
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-size: 18pt;
+}
+
+
+.page-marge h4
+{
+    text-align: center;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 11pt;
+}
+
+.page-marge p
+{
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.error-msg{width:45%; display:inline-block;text-align:left;}
+
+.has-error .form-control{border:solid 2px #FF9966;}
+
+.c_campaign {max-width:1024px; margin:0 auto;position:relative;
+    position: relative;
+    min-height: 700px;}
+a.new_campaign  {
+    position:absolute;
+    right:0px;
+    top:-20px;
+    font-size:18px;
+    font-weight:lighter;
+    background-color:#ff9966;
+    border:2px solid #ff9966;
+    border-radius:8px;
+    text-align: left;
+    padding:10px;
+}
+
+a.new_campaign, a.new_campaign:visited, a.new_campaign:hover {
+    color:white;
+    text-decoration: none;
+}
+.filters{text-align:center;margin-top:60px;}
+.filters ul{display:inline-block;list-style:none;overflow:hidden;padding:0px;}
+.filters li{float:left; margin-right:20px;}
+.filters a, .filters a:hover {
+    color:#a2a3a3;
+    text-decoration: none;
+    font-size: 1.4em;
+    font-family: 'Roboto', sans-serif;
+    display:block;
+}
+.filters .selected {border-bottom:solid 3px #ff9966;}
+.grid_c_list {
+    padding:42px 2.0507812% 0px 2.0507812%;
+    overflow:hidden;
+}
+.bk_c_mea {height:473px;width:46.875%;float:left; background-color:white;margin:0px 2.4414062% 20px 0px;}
+.bk_c_mea a {display:block;overflow: hidden;}
+.grid_c_list, .grid_c_list a:hover,.grid_c_list a:visited{color:black;font-family: 'Roboto', sans-serif;text-decoration:none;}
+.grid_c_list h3{color: #34b514;font-size: 1.4em;}
+.bk_c_mea p, .bk_c_mea h3 {margin-left:0px;margin-right:0px; text-align:left;}
+
+.e_infos{margin:33px 37px;}
+.e_infos .location{}
+.e_infos .location .town {font-size: 1.4em;font-weight:bold;}
+.e_infos .location {position:relative;}
+.e_infos .location .people {font-size: 1.8em;position:absolute;right:0px;}
+.c_campaign h2
+{
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-size: 18pt;
+}
+
+
+.controls .row{
+    width: 40%;
+    margin: auto;
+
+}
+
+
+#details{
+    width: 80%;
+    margin: auto;
+    background-color: #FFF;
+    text-align: justify;
+}
+
+#details .cover{
+    width: 100%;
+}
+
+
+#details .img-rounded{
+    border-radius: 60px;
+
+}
+
+
+
+#details  .contentDetails{
+    padding: 20px 50px;
+}
+
+#details .part
+{
+    float:left;
+    border-bottom:solid 3px orange;
+}
+
+#details .friend
+{
+    margin-left: 190px;
+    float:left;
+    border-radius: 3px;
+    border-bottom:solid 3px orange;
+}
+
+#details .sout
+{
+    margin-left: 310px;
+    padding-top: -230px;
+    border-bottom:solid 3px orange;
+    float:left;
+
+}
+
+#details .paris
+{
+    clear:both;
+    padding-top: 50px;
+}
+
+#details .number
+{
+    margin-top: -45px;
+    margin-left: 300px;
+}
+
+
+/*###################################
+        MEDIA QUERIES
+####################################*/
+
+@media (max-width: 1300px) {
+
+    .page-marge
+    {
+        margin-right: 20%;
+        margin-left: 20%;
+    }
+}
+
+@media (max-width: 1172px) {
+    .bk_c_mea {height:auto;width:100%;float:left;}
+    a.new_campaign {position:relative;display:block;margin:10px; text-align: center;}
+}
+
+@media (max-width: 1000px) {
+
+    .page-marge
+    {
+        margin-right: 10%;
+        margin-left: 10%;
+    }
+
+    .page-marge input, .page-marge input
+    {
+        width: 50%;
+    }
+
+    .btn-submit
+    {
+        width: 50%;
+    }
+}
+
+@media (max-width: 750px) {
+
+    .page-marge
+    {
+        margin-right: 5%;
+        margin-left: 5%;
+    }
+
+    .page-marge input , .page-marge input
+    {
+        width: 70%;
+    }
+
+    .btn-submit
+    {
+        width: 70%;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .page-marge
+    {
+        margin-right: 0%;
+        margin-left: 0%;
+    }
+
+    .page-marge input, .page-marge textarea
+    {
+        width: 95%;
+    }
+
+    .btn-submit
+    {
+        width: 95%;
+    }
+}

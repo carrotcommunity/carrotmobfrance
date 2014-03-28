@@ -23,22 +23,22 @@
                                 <li class="<%= req.path == '/campaign/current' || req.path == '/campaign/past' || req.path == '/campaign/coming'  || req.path == '/campaign/new' ? 'active' : '' %>"><a href="/campaign/current">Nos campagnes</a></li>
                             </ul>
 
-                            <% if(req.session && req.session.passport && req.session.passport.user) { %>
-                            <ul id="connected">
+                            <!% if(req.session && req.session.passport && req.session.passport.user) { %>
+                            <!--ul id="connected">
                                 <li class="active">
                                     <img
-                                            src="<%= req.session.passport.user.picture ? req.session.passport.user.picture : (req.session.passport.user.gender == 1 ? '/images/probono/picto-women.png' : '/images/probono/picto-men.png') %>">
+                                            src="<!%= req.session.passport.user.picture ? req.session.passport.user.picture : (req.session.passport.user.gender == 1 ? '/images/probono/picto-women.png' : '/images/probono/picto-men.png') %>">
                                         <p>
-                                            Bonjour <%= req.session.passport.user.firstname %><br/>
+                                            Bonjour <!%= req.session.passport.user.firstname %><br/>
                                             <a href="/logout">&gt; Se déconnecter</a>
                                          </p>
                                 </li>
-                            </ul>
-                            <% } else { %>
-                            <ul id="connect">
+                            </ul-->
+                            <!% } else { %>
+                            <!--ul id="connect">
                                 <li class="active"><a href="/connect"><img src="/images/probono/picto-men.png">Connectez-vous</a></li>
-                            </ul>
-                            <% } %>
+                            </ul-->
+                            <!% } >
                         </div>
                         </div>
                     </div>
