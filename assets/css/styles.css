@@ -15,17 +15,8 @@ input:-moz-placeholder { color:#CCCCCC; }
 
 .content {margin:80px auto 10px auto; max-width:1024px;min-height:500px;}
 .layout-form{max-width:740px;}
-.block-form {padding:60px 0;background-color:white;}
+.block-form {padding:60px 0;background-color:white; text-align: center;}
 .block-form-bg{background: white url(../img/r_carottbg.png) no-repeat bottom;}
-
-/* UTILS
--------------------------------------------------- */
-.center-text
-{
-    text-align: center;
-    margin-top: 20px;
-    margin-bottom: 20px;
-}
 
 /* PRESENTATION CONTENT
 -------------------------------------------------- */
@@ -381,7 +372,7 @@ input:-moz-placeholder { color:#CCCCCC; }
 
 .separator
 {
-    margin: auto;
+    margin: 55px auto;
     border-bottom : solid 1px #DDDEDD;
     width: 70%;
 }
@@ -419,7 +410,7 @@ td
     width: 40%;
 }
 
-input.form-control
+input.form-control, textarea.form-control
 {
     color:#CCCCCC;
     font-size:20px;
@@ -427,6 +418,9 @@ input.form-control
     height: 50px;
     padding-left: 8px;
     border-radius: 4px;
+}
+textarea.form-control{
+    height:123px;
 }
 
 input[type=radio]
@@ -451,6 +445,7 @@ input[type=radio]:checked + label
 
 .btn-submit
 {
+    font-size:20px;
     color: white;
     background-color: #FF9966;
     border: none;
@@ -477,7 +472,6 @@ input[type=radio]:checked + label
 
 h2
 {
-    text-align: center;
     font-weight: bold;
     margin-bottom: 10px;
     font-size: 18pt;
@@ -485,26 +479,21 @@ h2
 
 h3
 {
-    text-align: center;
     font-weight: lighter;
-    text-align: center;
-    margin-bottom: 27px;
+    margin: 60px 0 27px 0;
     font-size: 25pt;
 }
 
 h4
 {
-    text-align: center;
     font-weight: bold;
     margin-top: 10px;
-    margin-bottom: 10px;
+    margin-bottom: 40px;
     font-size: 11pt;
 }
 
 p
 {
-    margin-left: 15%;
-    margin-right: 15%;
     margin-top: 20px;
     margin-bottom: 20px;
 }
@@ -558,13 +547,6 @@ a.new_campaign, a.new_campaign:visited, a.new_campaign:hover {
 .e_infos .location .town {font-size: 1.4em;font-weight:bold;}
 .e_infos .location {position:relative;}
 .e_infos .location .people {font-size: 1.8em;position:absolute;right:0px;}
-.c_campaign h2
-{
-    text-align: center;
-    font-weight: bold;
-    margin-bottom: 10px;
-    font-size: 18pt;
-}
 
 
 .controls .row{

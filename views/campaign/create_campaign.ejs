@@ -1,10 +1,10 @@
 <%- partial('../partials/header')%>
 
-<div class="content layout-form">
-    <div class="form">
-        <h2><br/><br/>Il est temps de passer à l'action !</h2>
+<div class="content layout-form" xmlns="http://www.w3.org/1999/html">
+    <div class="block-form block-form-bg">
+        <h2>Il est temps de passer à l'action !</h2>
 
-        <p>Après avoir téléchargé le <a href="/docs/Kit_Organisation_Carrotmob.pdf">kit organisateur</a>, tu peux
+        <p>Après avoir téléchargé le <a href="/docs/Kit_Organisation_Carrotmob.pdf">kit organisateur</a>,</br tu peux
             proposer une campagne à la <i><b>Carrot
                 Community.</b></i></p>
 
@@ -40,17 +40,15 @@
                 <%}%>
                 <div class="control-group">
                     <div class="controls">
-                        <div class="row">
-                            <div class="form-group <%= errors ? (errors['startDateStr'] ? 'has-error' : 'has-success') : '' %>">
-                                <div class='input-group date' id='datetimepicker1'
-                                     data-date-format="DD/MM/YYYY hh:mm:ss">
-                                    <input type='text' class="form-control" id="startDateStr" name="startDateStr"
-                                           value="<%= campaign ? campaign.startDateStr : '' %>"/>
+
+                        <div class='input-group date' id='datetimepicker1'
+                             data-date-format="DD/MM/YYYY hh:mm:ss">
+                            <input type='text' class="form-control" id="startDateStr" name="startDateStr"
+                                   value="<%= campaign ? campaign.startDateStr : '' %>"/>
                                     <span class="input-group-addon"><span
                                             class="glyphicon glyphicon-calendar"></span></span>
-                                </div>
-                            </div>
                         </div>
+
                     </div>
                 </div>
 
@@ -112,7 +110,6 @@
                 </div>
             </form>
         </div>
-        <br/><br/><br/>
     </div>
 
     <div class="bottom-shadow">
