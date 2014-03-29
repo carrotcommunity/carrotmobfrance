@@ -43,6 +43,7 @@ footer .row{
 .col-md-4 p {
     font-size: 28px;
     padding : 0 10px 10px 10px;
+    margin: 0;
 }
 
 .col-md-4 .small-text {
@@ -51,25 +52,26 @@ footer .row{
     max-width: 90%;
 }
 
-p .txt_orange{
-    color: #f07f33;
-}
 
 #follow_mob {
     display: none;
 
 }
 
-/** Copyright **/
+/** contact_us **/
 
 .col-md-12{
-    margin-top: 10%;
+    margin-top: 5%;
 }
 
 .col-md-12 p {
     text-align: center;
 }
 
+#contact_us{
+    margin: 0;
+    padding-bottom: 15px;
+}
 
 /** Mobile **/
 
@@ -78,37 +80,36 @@ p .txt_orange{
         min-height: 0;
     }
 
+    footer .row{
+        margin: auto;
+        width: 100%;
+    }
+
     .col-xs-12 {
-        max-width: 80%;
-        margin-top: 10%;
         clear: left;
+        padding-left: 10%;
+
     }
 
     .icon {
-        max-width: 30%;
+        width: 15%;
         float: left;
         margin-bottom: 15px;
     }
-
-
     .text{
-        margin-top: 15px;
-        width: 120%;
+        width: 75%;
+        float: right;
     }
 
-    .icon-FB img{
-        width: 70%;
-        height: 70%;
-    }
-    .icon-TW img{
-        width: 90%;
-        height: 90%;
-
+    .text p, #follow_mob{
+        max-width: 75%;
     }
 
-    .icon-FB img, .icon-TW img {
-        margin: 0px;
+    .icon img{
+        width: 100%;
+        height: 100%;
     }
+
 
 
     .col-xs-12 p{
@@ -116,15 +117,16 @@ p .txt_orange{
         padding : 0 10px 10px 10px;
     }
 
+
     .col-xs-12 .text .small-text {
         display: none;
     }
-
-    #carrot, #ML {
+   #carrot, #contact_us {
         display: none;
     }
 
     #follow_mob{
+        max-width: 80%;
         display: block;
     }
    #follow_web{
