@@ -6,8 +6,14 @@ body
     font-family: roboto;
     color: black;
 }
+p{margin:35px 0;}
 
-.content {margin:80px auto 10px auto; max-width:740px;min-height:500px;}
+::-webkit-input-placeholder { color:#CCCCCC; }
+::-moz-placeholder { color:#CCCCCC; } /* firefox 19+ */
+:-ms-input-placeholder { color:#CCCCCC; } /* ie */
+input:-moz-placeholder { color:#CCCCCC; }
+
+.content {margin:80px auto 10px auto; max-width:1024px;min-height:500px;}
 .layout-form{max-width:740px;}
 .block-form {padding:60px 0;background-color:white;}
 .block-form-bg{background: white url(../img/r_carottbg.png) no-repeat bottom;}
@@ -415,6 +421,8 @@ td
 
 input.form-control
 {
+    color:#CCCCCC;
+    font-size:20px;
     border: 2px solid #CCCCCC;
     height: 50px;
     padding-left: 8px;
@@ -448,7 +456,7 @@ input[type=radio]:checked + label
     border: none;
     border-radius: 4px;
     width: 100%;
-    height: 40px;
+    height: 50px;
 }
 
 
@@ -505,7 +513,7 @@ form a {text-align:left;display:block;}
 
 .error-msg{display:block;text-align:left;}
 
-.has-error .form-control{border:2px solid #FF9966;}
+.has-error .form-control, .form-control:focus {border:2px solid #FF9966;}
 
 /*a.new_campaign  {
     position:absolute;
