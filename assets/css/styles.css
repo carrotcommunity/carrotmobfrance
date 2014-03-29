@@ -1,29 +1,25 @@
-/* GLOBAL STYLES
+/* GENERAL
 -------------------------------------------------- */
-/* Padding below the footer and lighter body text */
-
-html, body {
-    height: 100%;
+body
+{
+    background-color: #F3F4F4;
+    font-family: roboto;
+    color: black;
 }
 
-body {
-    padding-top: 80px;
-    color: #5a5a5a;
-}
+.content {margin:80px auto 10px auto; max-width:740px;min-height:500px;}
+.layout-form{max-width:740px;}
+.block-form {padding:60px 0;background-color:white;}
+.block-form-bg{background: white url(../img/r_carottbg.png) no-repeat bottom;}
 
-
-/* CUSTOMIZE THE NAVBAR
+/* UTILS
 -------------------------------------------------- */
-
-/* Special class on .container surrounding .navbar, used for positioning it into place. */
-.navbar-wrapper {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 80;
+.center-text
+{
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
-
 
 /* PRESENTATION CONTENT
 -------------------------------------------------- */
@@ -246,21 +242,6 @@ body {
         padding-right: 0;
     }
 
-    /* Navbar positioning foo */
-    .navbar-wrapper {
-        margin-top: 20px;
-    }
-
-    .navbar-wrapper .navbar {
-        padding-left:  0;
-        padding-right: 0;
-    }
-
-    /* The navbar becomes detached from the top, so we round the corners */
-    .navbar-wrapper .navbar {
-        border-radius: 4px;
-    }
-
     /*.featurette-heading {
       font-size: 50px;
     }*/
@@ -383,33 +364,6 @@ body {
     border-color: #f07f33;
 }
 
-body
-{
-    background-color: #F3F4F4;
-    font-family: roboto;
-    color: black;
-}
-
-.page-marge
-{
-    margin-right: 20%;
-    margin-left: 20%;
-    margin-top: 3%;
-    margin-bottom: 1%;
-}
-
-.inspiration
-{
-    background: url(../img/r_carottbg.png) white no-repeat bottom;
-    margin: 0px;
-
-}
-
-.inspiration2
-{
-    background-color: white;
-}
-
 .bottom-shadow
 {
     background: url(../img/block_shadow.png) center no-repeat;
@@ -419,22 +373,10 @@ body
 
 }
 
-.center-text
-{
-    text-align: center;
-    margin-top: 20px;
-    margin-bottom: 20px;
-}
-
-.forgot-pass
-{
-    margin-left: 28%;
-}
-
-.page-marge .separator
+.separator
 {
     margin: auto;
-    border : solid 1px #DDDEDD;
+    border-bottom : solid 1px #DDDEDD;
     width: 70%;
 }
 
@@ -464,22 +406,6 @@ body
     padding: 2px;
 }
 
-.page-marge input, .page-marge input
-{
-    border: solid 2px #EBEBEB;
-    width: 45%;
-    height: 45px;
-    padding-left: 8px;
-    border-radius: 4px;
-}
-
-
-.form-control
-{
-    margin: auto;
-    width: 45%;
-}
-
 td
 {
     text-align: center;
@@ -487,6 +413,13 @@ td
     width: 40%;
 }
 
+input.form-control
+{
+    border: 2px solid #CCCCCC;
+    height: 50px;
+    padding-left: 8px;
+    border-radius: 4px;
+}
 
 input[type=radio]
 {
@@ -514,7 +447,7 @@ input[type=radio]:checked + label
     background-color: #FF9966;
     border: none;
     border-radius: 4px;
-    width: 45%;
+    width: 100%;
     height: 40px;
 }
 
@@ -533,16 +466,8 @@ input[type=radio]:checked + label
     text-decoration: underline;
 }
 
-.page-marge h3
-{
-    text-align: center;
-    font-weight: lighter;
-    text-align: center;
-    margin-bottom: 10px;
-    font-size: 25pt;
-}
 
-.page-marge h2
+h2
 {
     text-align: center;
     font-weight: bold;
@@ -550,8 +475,16 @@ input[type=radio]:checked + label
     font-size: 18pt;
 }
 
+h3
+{
+    text-align: center;
+    font-weight: lighter;
+    text-align: center;
+    margin-bottom: 27px;
+    font-size: 25pt;
+}
 
-.page-marge h4
+h4
 {
     text-align: center;
     font-weight: bold;
@@ -560,22 +493,21 @@ input[type=radio]:checked + label
     font-size: 11pt;
 }
 
-.page-marge p
+p
 {
     margin-left: 15%;
     margin-right: 15%;
     margin-top: 20px;
     margin-bottom: 20px;
 }
+form{width:53%;margin:0 auto;}
+form a {text-align:left;display:block;}
 
-.error-msg{width:45%; display:inline-block;text-align:left;}
+.error-msg{display:block;text-align:left;}
 
-.has-error .form-control{border:solid 2px #FF9966;}
+.has-error .form-control{border:2px solid #FF9966;}
 
-.c_campaign {max-width:1024px; margin:0 auto;position:relative;
-    position: relative;
-    min-height: 700px;}
-a.new_campaign  {
+/*a.new_campaign  {
     position:absolute;
     right:0px;
     top:-20px;
@@ -586,13 +518,13 @@ a.new_campaign  {
     border-radius:8px;
     text-align: left;
     padding:10px;
-}
+}*/
 
 a.new_campaign, a.new_campaign:visited, a.new_campaign:hover {
     color:white;
     text-decoration: none;
 }
-.filters{text-align:center;margin-top:60px;}
+.filters{text-align:center;}
 .filters ul{display:inline-block;list-style:none;overflow:hidden;padding:0px;}
 .filters li{float:left; margin-right:20px;}
 .filters a, .filters a:hover {
@@ -697,73 +629,11 @@ a.new_campaign, a.new_campaign:visited, a.new_campaign:hover {
         MEDIA QUERIES
 ####################################*/
 
-@media (max-width: 1300px) {
-
-    .page-marge
-    {
-        margin-right: 20%;
-        margin-left: 20%;
-    }
-}
-
 @media (max-width: 1172px) {
     .bk_c_mea {height:auto;width:100%;float:left;}
-    a.new_campaign {position:relative;display:block;margin:10px; text-align: center;}
+    /*a.new_campaign {position:relative;display:block;margin:10px; text-align: center;}*/
 }
 
-@media (max-width: 1000px) {
-
-    .page-marge
-    {
-        margin-right: 10%;
-        margin-left: 10%;
-    }
-
-    .page-marge input, .page-marge input
-    {
-        width: 50%;
-    }
-
-    .btn-submit
-    {
-        width: 50%;
-    }
-}
-
-@media (max-width: 750px) {
-
-    .page-marge
-    {
-        margin-right: 5%;
-        margin-left: 5%;
-    }
-
-    .page-marge input , .page-marge input
-    {
-        width: 70%;
-    }
-
-    .btn-submit
-    {
-        width: 70%;
-    }
-}
-
-@media (max-width: 480px) {
-
-    .page-marge
-    {
-        margin-right: 0%;
-        margin-left: 0%;
-    }
-
-    .page-marge input, .page-marge textarea
-    {
-        width: 95%;
-    }
-
-    .btn-submit
-    {
-        width: 95%;
-    }
+@media (max-width: 767px) {
+    form{width:90%;}
 }
