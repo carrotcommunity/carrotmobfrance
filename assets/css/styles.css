@@ -6,6 +6,7 @@ body
     font-family: roboto;
     color: black;
 }
+a, a:hover, a:visited {text-decoration: none; color:#f07f33;}
 p{margin:35px 0;}
 
 ::-webkit-input-placeholder { color:#CCCCCC; }
