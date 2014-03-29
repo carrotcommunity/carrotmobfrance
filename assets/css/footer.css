@@ -1,9 +1,135 @@
-.footer
-{
-    background-color: black;
-    text-align: center;
+.container-fluid {
+    margin: auto;
     width: 100%;
-    vertical-align: middle;
-    height: 60px;
-    padding-top: 1%;
+    background-color: black;
+    min-height: 400px;
+    color: #fff;
 }
+
+footer .row{
+    margin: auto;
+    width: 80%;
+}
+
+.col-md-4{
+    margin-top: 35px;
+    vertical-align: middle;
+}
+
+.icon {
+    width: 50%;
+    margin: auto;
+}
+
+.text {
+    margin-top: 25px;
+}
+
+
+.icon .icon-Carrot img{
+    margin-top: -10px;
+
+}
+
+.icon-FB img, .icon-TW img,.icon-Carrot img {
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.icon-Carrot img {
+    margin-bottom: 25px;
+}
+
+.col-md-4 p {
+    font-size: 28px;
+    padding : 0 10px 10px 10px;
+}
+
+.col-md-4 .small-text {
+    font-size: 12px;
+    padding : 0 10px 10px 10px;
+    max-width: 90%;
+}
+
+p .txt_orange{
+    color: #f07f33;
+}
+
+#follow_mob {
+    display: none;
+
+}
+
+/** Copyright **/
+
+.col-md-12{
+    margin-top: 10%;
+}
+
+.col-md-12 p {
+    text-align: center;
+}
+
+
+/** Mobile **/
+
+@media (max-width: 767px) {
+    .container-fluid {
+        min-height: 0;
+    }
+
+    .col-xs-12 {
+        max-width: 80%;
+        margin-top: 10%;
+        clear: left;
+    }
+
+    .icon {
+        max-width: 30%;
+        float: left;
+        margin-bottom: 15px;
+    }
+
+
+    .text{
+        margin-top: 15px;
+        width: 120%;
+    }
+
+    .icon-FB img{
+        width: 70%;
+        height: 70%;
+    }
+    .icon-TW img{
+        width: 90%;
+        height: 90%;
+
+    }
+
+    .icon-FB img, .icon-TW img {
+        margin: 0px;
+    }
+
+
+    .col-xs-12 p{
+        font-size: 20px;
+        padding : 0 10px 10px 10px;
+    }
+
+    .col-xs-12 .text .small-text {
+        display: none;
+    }
+
+    #carrot, #ML {
+        display: none;
+    }
+
+    #follow_mob{
+        display: block;
+    }
+   #follow_web{
+        display: none;
+    }
+
+}
+
