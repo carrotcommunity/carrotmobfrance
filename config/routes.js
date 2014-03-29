@@ -39,49 +39,49 @@ module.exports.routes = {
 
     // But what if you want your home page to display
     // a signup form located at `views/user/signup.ejs`?
-    '/connect':{
+    '/connect': {
         view: 'home/connect'
     },
-    
-    '/signin':{
+
+    '/signin': {
         controller: 'auth',
         action: 'signin'
     },
-    
-    '/fbsignin':{
+
+    '/fbsignin': {
         controller: 'auth',
         action: 'facebook'
     },
 
-    '/logout':{
+    '/logout': {
         controller: 'auth',
         action: 'logout'
     },
 
-    '/signup':{
+    '/signup': {
         controller: 'signup',
         action: 'index'
     },
-    
-    '/register':{
+
+    '/register': {
         controller: 'signup',
         action: 'save'
     },
 
-    '/forgot_password':{
+    '/forgot_password': {
         controller: 'forgot',
         action: 'index'
     },
-    
-    '/confirm_password':{
+
+    '/confirm_password': {
         controller: 'forgot',
         action: 'confirm'
     },
 
 
-    '/campaign/details':{
+    '/campaign/details': {
         controller: 'campaign',
-	action: 'details'
+        action: 'details'
     },
 
     '/campaign/current': {
@@ -97,6 +97,11 @@ module.exports.routes = {
     '/campaign/coming': {
         controller: 'campaign',
         action: 'coming'
+    },
+
+    'get /upload/images/*': {
+        controller: 'file',
+        action: 'get'
     }
 
     /*

@@ -9,17 +9,15 @@
                 Community.</b></i></p>
 
         <div class="title">
-            <h3> Créer ma Carrotmob </h3>
+            <h3>Créer ma Carrotmob</h3>
         </div>
 
         <div class="center-text">
-
             <% if (errors && errors['err']) { %>
             <div class="alert alert-danger"><%= errors.toString() %></div>
             <% } %>
 
-
-            <form class="form-horizontal" action="/campaign/create" method="POST">
+            <form class="form-horizontal" action="/campaign/create" method="POST" enctype="multipart/form-data">
 
                 <% if (errors && errors['inputTitle']) { %>
                 <div class="error-msg"><span class="glyphicon glyphicon glyphicon-remove"></span>
@@ -28,8 +26,7 @@
                 <%}%>
                 <div class="control-group">
                     <div class="controls <%= errors ? (errors['inputTitle'] ? 'has-error' : 'has-success') : '' %>">
-                        <input class="form-control" type="text" id="inputTitle" placeholder="Titre" name="title"
-                               value="<%= campaign ? campaign.title : '' %>">
+                        <input class="form-control" type="text" id="inputTitle" placeholder="Titre" name="title" value="<%= campaign ? campaign.title : '' %>">
                     </div>
                 </div>
 
@@ -39,8 +36,7 @@
                 </div>
                 <%}%>
                 <div class="control-group">
-                    <div class="controls">
-
+                    <div class="controls <%= errors ? (errors['startDateStr'] ? 'has-error' : 'has-success') : '' %>">
                         <div class='input-group date' id='datetimepicker1'
                              data-date-format="DD/MM/YYYY hh:mm:ss">
                             <input type='text' class="form-control" id="startDateStr" name="startDateStr"
@@ -48,7 +44,17 @@
                                     <span class="input-group-addon"><span
                                             class="glyphicon glyphicon-calendar"></span></span>
                         </div>
+                    </div>
+                </div>
 
+                <% if (errors && errors['inputImg']) { %>
+                <div class="error-msg"><span class="glyphicon glyphicon glyphicon-remove"></span>
+                    <%= errors['inputImg'] %>
+                </div>
+                <%}%>
+                <div class="control-group">
+                    <div class="controls <%= errors ? (errors['inputImg'] ? 'has-error' : 'has-success') : '' %>">
+                        <input class="form-control" type="file" id="inputImg" placeholder="Image" name="banner" value="<%= campaign ? campaign.image : '' %>">
                     </div>
                 </div>
 
@@ -59,8 +65,7 @@
                 <%}%>
                 <div class="control-group">
                     <div class="controls <%= errors ? (errors['inputAddr'] ? 'has-error' : 'has-success') : '' %>">
-                        <input class="form-control" type="text" id="inputTown" placeholder="Adresse" name="address"
-                               value="<%= campaign ? campaign.address : '' %>">
+                        <input class="form-control" type="text" id="inputAddr" placeholder="Adresse" name="address" value="<%= campaign ? campaign.address : '' %>">
                     </div>
                 </div>
 
@@ -71,8 +76,7 @@
                 <%}%>
                 <div class="control-group">
                     <div class="controls <%= errors ? (errors['inputCity'] ? 'has-error' : 'has-success') : '' %>">
-                        <input class="form-control" type="text" id="inputCity" placeholder="Ville" name="city"
-                               value="<%= campaign ? campaign.city : '' %>">
+                        <input class="form-control" type="text" id="inputCity" placeholder="Ville" name="city" value="<%= campaign ? campaign.city : '' %>">
                     </div>
                 </div>
 
@@ -84,11 +88,9 @@
                 <%}%>
                 <div class="control-group">
                     <div class="controls <%= errors ? (errors['inputDesc'] ? 'has-error' : 'has-success') : '' %>">
-                        <textarea class="form-control" name="desc" placeholder="Description"><%= campaign ?
-                            campaign.desc : '' %></textarea>
+                        <textarea class="form-control" name="desc" placeholder="Description"><%= campaign ? campaign.desc : '' %></textarea>
                     </div>
                 </div>
-
 
                 <% if (errors && errors['inputEngag']) { %>
                 <div class="error-msg"><span class="glyphicon glyphicon glyphicon-remove"></span>
@@ -97,9 +99,7 @@
                 <%}%>
                 <div class="control-group">
                     <div class="controls <%= errors ? (errors['inputEngag'] ? 'has-error' : 'has-success') : '' %>">
-                        <textarea class="form-control" placeholder="Engagement du commercant" name="engagement"><%=
-                            campaign ? campaign.engagement :
-                            ''%></textarea>
+                        <textarea class="form-control" placeholder="Engagement du commercant" name="engagement"><%= campaign ? campaign.engagement : ''%></textarea>
                     </div>
                 </div>
 

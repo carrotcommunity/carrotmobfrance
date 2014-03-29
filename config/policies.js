@@ -26,6 +26,9 @@ module.exports.policies = {
   'forgot': {
     '*': true
   },
+  'file': {
+    '*': true
+  },
   'campaign': {
     '*': 'isAuthenticated',
     'coming': true,

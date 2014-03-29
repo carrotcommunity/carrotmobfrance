@@ -10,24 +10,24 @@
         </ul>
     </div>
     <div class="grid_c_list">
+        <% if(campaigns.length==0){%><h2>Il n'y a aucune campagne actuellement.</h2><% } %>
+
         <% _.each(campaigns, function(c) { %>
         <div class="bk_mea">
-            <a href="/campaign/details?id=<%=c.id%>">
+            <a href="/campaign/details?id=<%= c.id %>">
                 <div class="bk_mea_bg">
-                    <img src="/images/default.jpg" alt="" width="100%" />
+                    <img src="<%= c.image ? c.image : '/images/default.jpg' %>" alt="" width="100%" />
 
                     <div class="e_infos">
-                        <h3><%= c.title %></h3>
+                        <h3>Carrotmob@ <%= c.title %></h3>
 
                         <div class="location">
                             <span class="pin">
-                                <div class="town"><%=c.city%>
+                                <div class="town"><%= c.city %>
                                     <% var table = c.startDateStr.split(' ');
                                     var date = table[0].split('/');
                                     var hours = table[1].split(':');
-
-                                    var newDate = date[0] + "/" + date[1] + "/" + date[2] + " à " + hours[0] + ":" +
-                                    hours[1];
+                                    var newDate = date[0] + "/" + date[1] + "/" + date[2] + " à " + hours[0] + ":" + hours[1];
                                     %>
                                 </div>
                                 <div class="date"><%=newDate%></div>
@@ -41,9 +41,8 @@
                 </div>
             </a>
         </div>
-
         <% }) %>
-        <% if(campaigns.length==0){%><h2>Il n'y a aucune campagne actuellement.</h2><% } %>
+
     </div>
 </div>
 

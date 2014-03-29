@@ -46,6 +46,7 @@ module.exports = {
             };
 
             var errorStrings = new Object;
+            errorStrings["inputGender"] = "Veuillez sélectionner votre genre";
             errorStrings["inputFirstName"] = "Vous devez insérer un prénom";
             errorStrings["inputLastName"] = "Vous devez insérer un nom de famille";
             errorStrings["inputTown"] = "Vous devez insérer une ville";
@@ -53,7 +54,6 @@ module.exports = {
             errorStrings["inputEmailUsed"] = "L'email inséré est déjà utilisé";
             errorStrings["inputPassword"] = "Votre mot de passe est trop court";
             errorStrings["inputPassword2"] = "Confirmation de votre mot de passe invalide";
-            errorStrings["inputGender"] = "Veuillez sélectionner votre sexe";
 
             var errors = {};
             errors["hasErrors"] = function() {
@@ -62,13 +62,13 @@ module.exports = {
                         return true;
                 return false;
             };
+            errors["inputGender"] = formUser.gender != '1' && formUser.gender != '2' ? errorStrings["inputGender"] : "";
             errors["inputFirstName"] = !formUser.firstname || formUser.firstname.length == 0 ? errorStrings["inputFirstName"] : "";
             errors["inputLastName"] = !formUser.lastname || formUser.lastname.length == 0 ? errorStrings["inputLastName"] : "";
             errors["inputTown"] = !formUser.city || formUser.city.length == 0 ? errorStrings["inputTown"] : "";
             errors["inputEmail"] = !formUser.email || formUser.email.length == 0 ? errorStrings["inputEmail"] : "";
             errors["inputPassword"] = !formUser.id && (!formUser.password || formUser.password.length < 6) ? errorStrings["inputPassword"] : "";
             errors["inputPassword2"] = !formUser.id && formUser.password && formUser.password != formUser.password2 ? errorStrings["inputPassword2"] : "";
-            errors["inputGender"] = formUser.gender != '1' && formUser.gender != '2' ? errorStrings["inputGender"] : "";
 
             if (errors.hasErrors()) {
                 res.view('user/signup', { user: formUser, errors: errors });
