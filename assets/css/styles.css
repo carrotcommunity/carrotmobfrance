@@ -370,6 +370,14 @@ input:-moz-placeholder { color:#CCCCCC; }
     background-size:100%;
 
 }
+.bottom-shadow2
+{
+    background: url(../img/block_shadow2.png) center bottom no-repeat;
+    height: 4px;
+    margin: 0px;
+    background-size:100%;
+
+}
 
 .separator
 {
@@ -522,7 +530,9 @@ a.new_campaign, a.new_campaign:visited, a.new_campaign:hover {
     color:white;
     text-decoration: none;
 }
-.filters{text-align:center;}
+
+/* LISTE DES FILTRES */
+.filters{text-align:center;padding:42px 0px;}
 .filters ul{display:inline-block;list-style:none;overflow:hidden;padding:0px;}
 .filters li{float:left; margin-right:20px;}
 .filters a, .filters a:hover {
@@ -533,21 +543,25 @@ a.new_campaign, a.new_campaign:visited, a.new_campaign:hover {
     display:block;
 }
 .filters .selected {border-bottom:solid 3px #ff9966;}
+
+/* LISTE DES CAMPAGNES */
 .grid_c_list {
-    padding:42px 2.0507812% 0px 2.0507812%;
+    padding:0px 2.0507812%;
     overflow:hidden;
 }
-.bk_c_mea {height:473px;width:46.875%;float:left; background-color:white;margin:0px 2.4414062% 20px 0px;}
-.bk_c_mea a {display:block;overflow: hidden;}
-.grid_c_list, .grid_c_list a:hover,.grid_c_list a:visited{color:black;font-family: 'Roboto', sans-serif;text-decoration:none;}
-.grid_c_list h3{color: #34b514;font-size: 1.4em;}
-.bk_c_mea p, .bk_c_mea h3 {margin-left:0px;margin-right:0px; text-align:left;}
+.grid_c_list a, .grid_c_list a:hover,.grid_c_list a:visited{color:black;}
 
-.e_infos{margin:33px 37px;}
-.e_infos .location{}
+.bk_mea {width:46.6796875%;float:left; margin:10px 1.66015625%;}
+.bk_mea_bg{background-color:white;}
+
+.bk_mea h3{color: #34b514;font-size: 1.4em;margin:0px;font-weight:normal;}
+
+.e_infos{padding:33px 37px;}
+
+.e_infos .location{margin:27px 0;overflow: hidden;}
+.e_infos .location .pin {float:left;background: url('../img/pin.png') no-repeat;text-indent:40px;}
 .e_infos .location .town {font-size: 1.4em;font-weight:bold;}
-.e_infos .location {position:relative;}
-.e_infos .location .people {font-size: 1.8em;position:absolute;right:0px;}
+.e_infos .location .people {font-size: 1.8em;float:right;background:url('../img/participants.png') no-repeat;text-indent: 51px;height:38px;}
 
 
 .controls .row{
@@ -627,4 +641,5 @@ a.new_campaign, a.new_campaign:visited, a.new_campaign:hover {
 
 @media (max-width: 767px) {
     form{width:90%;}
+    .bk_mea {width:95.56714472%;}
 }
