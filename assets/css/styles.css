@@ -45,80 +45,53 @@ input:-moz-placeholder { color:#CCCCCC; }
 
 /*Home*/
 
-/* Featurettes
-------------------------- */
-
-.featurette-divider {
-    margin: 80px 0; /* Space out the Bootstrap <hr> more */
-}
-
 /* Thin out the presentation headings */
 
-.featurette-heading img{
-    display: block;
-    margin: 0 auto;
-    margin-bottom: 70px;
-}
+.video-mea{overflow: hidden;}
+.video-mea img{float:left; width:68.26171875%;}
 
 
+.home {margin-top:60px;}
+.home h2{font-weight:100;font-size:2.5em;text-align:center;margin:0px;padding:70px 0 40px;}
+.home h3{font-weight:bold;font-size:1.3em;text-align:center;margin:0px;padding:30px 0;}
+.home .bottom-shadow2{height:6px;}
 
-.home-wrapper{
-    height:auto;
-    overflow: hidden;
-    top:0px;
-    left:0px;
-    width: 80%; margin:0px auto;
-    position: relative;
-}
-
-.home-wrapper .col-md-5{
-    width: 70%!important;
-}
-
-.home-list{
-    float: left;
-}
-
-.home-list ul{
+ul.mea-btn{
     list-style: none;
-    margin-top: -40px;
+    padding:0px;
+    float:right;
+    margin:0px;
+    width:31.73828125%;
 }
 
-.home-list li{
-    background:url('/images/carrot-list.png') no-repeat left center;
-    padding-left: 50px; /* the width of your image + some space */
-    margin: 40px 0;
-    height: 90px;
+.mea-btn li{
+    background:url('/images/carrot-list.png') no-repeat 50px center;
+    padding: 16px 10px 7% 100px;
+    height: 110px;
 }
 
-.home-list a{
+.mea-btn a{
     text-decoration: none!important;
 }
 
 .home-list-text{
     display: block;
     color: #2b2d2d;
-    font-size: 1.6rem;
     font-size: 16px;
     padding-top: 30px;
 }
 
-.home-subtitle{
+
+.list-article{background-color:white;overflow: hidden;}
+.list-article ul{padding:0 4.58984375%; overflow: hidden; margin:0px 0 100px 0;}
+.list-article li{display:inline-block;width:29.892473118%;float:left;margin:0 1.7204301075%;}
+.list-article h3 {color:#ff9966;font-weight:bold;font-size:2.5rem; text-align:left;}
+.list-article p{color:#585858;margin:0px;}
+
+.carrot-community{
+    background-color:#fdfdfd;
     clear: both;
-}
-
-.home-subtitle h2{
-    color:#ff9966;
-    font-size: 2rem;
-    font-size: 30px;
-    text-align: center;
-    letter-spacing: 1;
-    margin-top: 80px;
-    margin-bottom: 80px;
-}
-
-.home-light-carrot{
-    font-weight: lighter;
+    padding-bottom:47px;
 }
 
 .home-map-ville{
@@ -642,4 +615,12 @@ a.new_campaign, a.new_campaign:visited, a.new_campaign:hover {
 @media (max-width: 767px) {
     form{width:90%;}
     .bk_mea {width:95.56714472%;}
+
+    /*HOME*/
+    .list-article li{width:100%;}
+    .video-mea img{width:100%;}
+
+    .home ul.mea-btn {width:100%;float:left;}
+    .home .mea-btn li{float:left; width:100%;border-bottom:solid 1px #bababa;}
+    .carrot-community {display:none;}
 }
