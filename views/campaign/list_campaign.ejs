@@ -1,5 +1,6 @@
 <div class="content">
     <!--a href="/campaign/new" class="new_campaign">+ Créér une campagne</a-->
+
     <div class="filters">
         <ul>
             <li><a href="/campaign/past" <%= context == 'past' ? 'class=selected' : '' %>>passées</a></li>
@@ -7,6 +8,7 @@
             <li><a href="/campaign/coming" <%= context == 'coming' ? 'class=selected' : '' %>>à venir</a></li>
         </ul>
     </div>
+    
     <div class="grid_c_list">
         <% if(campaigns.length==0){%><h2>Il n'y a aucune campagne actuellement.</h2><% } %>
 
