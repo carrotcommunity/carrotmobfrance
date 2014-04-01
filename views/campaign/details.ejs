@@ -1,29 +1,40 @@
 <%- partial('../partials/header')%>
 
 <div class="content">
-    <div id="details">
+    <div class="event">
 
-        <img src="<%= c.image ? c.image : '/images/default.jpg' %>" class='cover'>
+        <img src="<%= c.image ? c.image : '/images/default.jpg' %>" width="100%">
 
-        <div class='contentDetails'>
+        <div class='e_infos'>
 
             <h2>Carrotmob@ <%= c.title %></h2>
-            <%
-            var table = c.startDateStr.split(' ');
-            var date = table[0].split('/');
-            var hours = table[1].split(':');
-
-            var newDate = date[0] + "/" + date[1] + "/" + date[2] + " à " + hours[0] + ":" + hours[1];
-            %>
-            <%= newDate %><br/>
+            <div class="location">
+                            <span class="pin">
+                                <div class="town"><%=c.address %> <%= c.city %>
+                                    <% var table = c.startDateStr.split(' ');
+                                    var date = table[0].split('/');
+                                    var hours = table[1].split(':');
+                                    var newDate = date[0] + "/" + date[1] + "/" + date[2] + " à " + hours[0] + ":" + hours[1];
+                                    %>
+                                </div>
+                                <div class="date"><%=newDate%></div>
+                            </span>
+            </div>
             <p><%=c.desc%></p>
-            <strong>Engagement : </strong>
-            <p><%=c.engagement%></p>
-            <% if (c.carrotmobber.picture) { %><img src="<%= c.carrotmobber.picture %>" class="img-rounded"><% } %>
-            <span> Organisé par <%= c.carrotmobber.firstname %> <%= c.carrotmobber.lastname %></span><br/>
-            <% if (req.session && req.session.passport && req.session.passport.user && req.session.passport.user.admin) { %>
+
+            <p><strong>Engagement : </strong><br/>
+                <%=c.engagement%>
+            </p>
+            <div class="contributor">
+                <% if (c.carrotmobber.picture) { %><img src="<%= c.carrotmobber.picture %>" class="img-rounded"><% } %>
+                <span> Organisé par <%= c.carrotmobber.firstname %> <%= c.carrotmobber.lastname %></span>
+                <% if (req.session && req.session.passport && req.session.passport.user && req.session.passport.user.admin) { %>
                 <a href="/campaign/<%= c.validated ? 'des' : '' %>activate?id=<%= c.id %>"><%= c.validated ? 'Désa' : 'A' %>ctiver</a>
-            <% } %>
+                <% } %>
+            </div>
+
+        </div>
+        <div class="bottom-shadow2">
         </div>
     </div>
 </div>

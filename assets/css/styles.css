@@ -52,7 +52,7 @@ input:-moz-placeholder { color:#CCCCCC; }
 
 
 .home {margin-top:60px;}
-.home h2{font-weight:100;font-size:2.5em;text-align:center;margin:0px;padding:70px 0 40px;}
+.home h2, .grid_c_list h2{font-weight:100;font-size:2.5em;text-align:center;margin:0px;padding:70px 0 40px;}
 .home h3{font-weight:bold;font-size:1.3em;text-align:center;margin:0px;padding:30px 0;}
 .home .bottom-shadow2{height:6px;}
 
@@ -527,7 +527,7 @@ a.new_campaign, a.new_campaign:visited, a.new_campaign:hover {
 .bk_mea {width:46.6796875%;float:left; margin:10px 1.66015625%;}
 .bk_mea_bg{background-color:white;}
 
-.bk_mea h3{color: #34b514;font-size: 1.4em;margin:0px;font-weight:normal;}
+.bk_mea h3, .event h2 {color: #34b514;font-size: 1.4em;margin:0px;font-weight:normal;}
 
 .e_infos{padding:33px 37px;}
 
@@ -544,36 +544,22 @@ a.new_campaign, a.new_campaign:visited, a.new_campaign:hover {
 }
 
 
-#details{
-    width: 80%;
-    margin: auto;
+.event{
     background-color: #FFF;
-    text-align: justify;
 }
 
-#details .cover{
-    width: 100%;
-}
-
-
-#details .img-rounded{
+.event .img-rounded{
     border-radius: 60px;
 
 }
 
-
-
-#details  .contentDetails{
-    padding: 20px 50px;
-}
-
-#details .part
+.event .part
 {
     float:left;
     border-bottom:solid 3px orange;
 }
 
-#details .friend
+.event .friend
 {
     margin-left: 190px;
     float:left;
@@ -581,7 +567,7 @@ a.new_campaign, a.new_campaign:visited, a.new_campaign:hover {
     border-bottom:solid 3px orange;
 }
 
-#details .sout
+.event .sout
 {
     margin-left: 310px;
     padding-top: -230px;
@@ -590,13 +576,13 @@ a.new_campaign, a.new_campaign:visited, a.new_campaign:hover {
 
 }
 
-#details .paris
+.event .paris
 {
     clear:both;
     padding-top: 50px;
 }
 
-#details .number
+.event .number
 {
     margin-top: -45px;
     margin-left: 300px;
@@ -614,7 +600,14 @@ a.new_campaign, a.new_campaign:visited, a.new_campaign:hover {
 
 @media (max-width: 767px) {
     form{width:90%;}
-    .bk_mea {width:95.56714472%;}
+
+    /*adaptation liste article*/
+
+    .grid_c_list{padding:0px;}
+    .bk_mea {width:100%;margin:0px 0px 5px 0px;}
+
+    /*adaptation article */
+     .event{width:100%;}
 
     /*HOME*/
     .list-article li{width:100%;}
