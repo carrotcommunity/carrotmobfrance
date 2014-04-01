@@ -1,14 +1,9 @@
-<%- partial('../partials/header')%>
-
 <div class="content layout-form">
     <div class="block-form block-form-bg">
         <h2>Rejoins la communauté !</h2>
 
-        <p class="center-text">La <i><b>Carrot Community</i></b> est une aventure <b>collaborative</b>.</br>Tu
-            souhaites devenir organisateur, monter un groupe local ou simplement participer à un Carrotmob ?
-            <br/>C’est ici que ça se passe !
-            
-        </p>
+        <p class="center-text">La <i><b>Carrot Community</i></b> est une aventure <b>collaborative</b>.<br>Tu souhaites devenir organisateur, monter un groupe local ou simplement participer à un Carrotmob ?<br>C’est ici que ça se passe !</p>
+
         <h4>En 1 clic avec Facebook</h4>
 
         <div class="center-text">
@@ -19,14 +14,13 @@
                 <button class="btn-facebook" type="submit"></button>
             </form>
             <% } %>
+        </div>
 
-        </div>
-        <div class="separator">
-        </div>
+        <div class="separator"></div>
+
         <h3>Apprenons à nous connaître.</h3>
 
         <h2>Tu es :</h2>
-
 
         <form role="form" class="form-horizontal" method="post" action="/register">
             <% if (errors && errors['inputGender']) { %>
@@ -34,27 +28,23 @@
                 <%= errors['inputGender'] %>
             </div>
             <% } %>
+
             <table class="choose-profil" align="center">
                 <tbody>
-
-                <tr>
-                    <td><input type="radio" id="radio-girl" src="../img/register_girl.png" name="inputGender"
-                               value="1"
-                        <%= user && user.gender == 1 ? 'checked' : '' %>>
-
-                        <label for="radio-girl">
-                            <img src="/img/register_girl.png"/>
-                        </label>
-                    </td>
-                    <td>
-                        <input type="radio" id="radio-boy" name="inputGender" value="2" <%= user && user.gender == 2
-                        ?
-                        'checked' : '' %>>
-                        <label for="radio-boy">
-                            <img src="/img/register_boy.png"/>
-                        </label>
-                    </td>
-                </tr>
+                    <tr>
+                        <td>
+                            <input type="radio" id="radio-girl" src="../img/register_girl.png" name="inputGender" value="1" <%= user && user.gender == 1 ? 'checked' : '' %>>
+                            <label for="radio-girl">
+                                <img src="/img/register_girl.png"/>
+                            </label>
+                        </td>
+                        <td>
+                            <input type="radio" id="radio-boy" name="inputGender" value="2" <%= user && user.gender == 2 ? 'checked' : '' %>>
+                            <label for="radio-boy">
+                                <img src="/img/register_boy.png"/>
+                            </label>
+                        </td>
+                    </tr>
                 </tbody>
             </table>
 
@@ -65,11 +55,10 @@
                 </div>
                 <% } %>
                 <div class="controls <%= errors ? (errors['inputFirstName'] ? 'has-error' : 'has-success') : '' %>">
-                    <input class="form-control" type="text" id="inputFirstName" name="inputFirstName"
-                           placeholder="prénom"
-                           value="<%= user ? user.firstname : '' %>">
+                    <input class="form-control" type="text" id="inputFirstName" name="inputFirstName" placeholder="prénom" value="<%= user ? user.firstname : '' %>">
                 </div>
             </div>
+
             <div class="control-group">
                 <% if (errors && errors['inputLastName']) { %>
                 <div class="error-msg"><span class="glyphicon glyphicon glyphicon-remove"></span><%=
@@ -77,11 +66,10 @@
                 </div>
                 <% } %>
                 <div class="controls <%= errors ? (errors['inputLastName'] ? 'has-error' : 'has-success') : '' %>">
-                    <input class="form-control" type="text" id="inputLastName" name="inputLastName"
-                           placeholder="nom"
-                           value="<%= user ? user.lastname : '' %>">
+                    <input class="form-control" type="text" id="inputLastName" name="inputLastName" placeholder="nom" value="<%= user ? user.lastname : '' %>">
                 </div>
             </div>
+
             <div class="control-group">
                 <% if (errors && errors['inputTown']) { %>
                 <div class="error-msg"><span class="glyphicon glyphicon glyphicon-remove"></span><%=
@@ -90,10 +78,10 @@
                 </div>
                 <% } %>
                 <div class="controls <%= errors ? (errors['inputTown'] ? 'has-error' : 'has-success') : '' %>">
-                    <input class="form-control" type="text" id="inputTown" name="inputTown" placeholder="ville"
-                           value="<%= user ? user.city : '' %>">
+                    <input class="form-control" type="text" id="inputTown" name="inputTown" placeholder="ville" value="<%= user ? user.city : '' %>">
                 </div>
             </div>
+
             <div class="control-group">
                 <% if (errors && errors['inputEmail']) { %>
                 <div class="error-msg"><span class="glyphicon glyphicon glyphicon-remove"></span><%=
@@ -101,10 +89,10 @@
                 </div>
                 <% } %>
                 <div class="controls <%= errors ? (errors['inputEmail'] ? 'has-error' : 'has-success') : '' %>">
-                    <input class="form-control" type="text" id="inputEmail" name="inputEmail" placeholder="email"
-                           value="<%= user ? user.email : '' %>">
+                    <input class="form-control" type="text" id="inputEmail" name="inputEmail" placeholder="email" value="<%= user ? user.email : '' %>">
                 </div>
             </div>
+
             <% if (!user || !user.id) { %>
             <div class="control-group">
                 <% if (errors && errors['inputPassword']) { %>
@@ -117,6 +105,7 @@
                            placeholder="mot de passe">
                 </div>
             </div>
+
             <div class="control-group">
                 <% if (errors && errors['inputPassword2']) { %>
                 <div class="error-msg"><span class="glyphicon glyphicon glyphicon-remove"></span><%=
@@ -129,6 +118,7 @@
                 </div>
             </div>
             <% } %>
+
             <div class="control-group">
                 <div class="controls">
                     <button type="submit" class="btn-submit">Je deviens Carrotmobber !</button>
@@ -138,9 +128,5 @@
 
     </div>
 
-    <div class="bottom-shadow">
-    </div>
-
+    <div class="bottom-shadow"></div>
 </div>
-
-<%- partial('../partials/footer')%>

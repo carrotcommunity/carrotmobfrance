@@ -54,33 +54,13 @@ Nos actions collectives permettent aux petits commerçants et aux grandes entrep
     <meta name="twitter:image" content="http://www.carrotmob.fr/images/carrotmob.png"> 
   </head>
 
-  <body data-spy="scroll" data-target="#navbar-carrotmob">
+  <body>
+    <%- partial('partials/header')%>
+
     <%- body %>
 
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="/js/jquery.min.js"></script>
-    <script src="/js/bootstrap.min.js"></script>
-    <script src="/js/moment.min.js"></script>
-    <script src="/js/bootstrap-datetimepicker.js"></script>
+    <%- partial('partials/footer')%>
 
-        <script type="text/javascript">
-        $( document ).ready(function() {
-            var picker =$('#datetimepicker1');
-                if(picker) picker.datetimepicker();
-            });
-        </script>
-    
-    <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-      ga('create', 'UA-45945109-1', 'carrotmob.fr');
-      ga('send', 'pageview');
-
-    </script>
+    <%- partial('partials/javascripts')%>
   </body>
 </html>

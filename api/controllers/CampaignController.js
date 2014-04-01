@@ -71,12 +71,12 @@ var CampaignController = {
             };
 
             var errorStrings = {};
-            errorStrings["inputTitle"] = "Vous devez choisir un titre pour votre campagne";
-            errorStrings["inputDesc"] = "Vous devez décrire votre campagne";
-            errorStrings["startDateStr"] = "Vous devez choisir une date supérieure à aujourd'hui";
-            errorStrings["inputEngag"] = "Vous devez spécifier les engagements du commerçant";
-            errorStrings["inputAddr"] = "Vous devez indiquer l'adresse de la campagne";
-            errorStrings["inputCity"] = "Vous devez renseigner la ville dans laquelle à lieu cette campagne";
+            errorStrings["inputTitle"] = "Choisis un titre pour ta campagne";
+            errorStrings["inputDesc"] = "Décris ta campagne";
+            errorStrings["startDateStr"] = "Choisis une date supérieure à aujourd'hui";
+            errorStrings["inputEngag"] = "Spécifie les engagements du commerçant";
+            errorStrings["inputAddr"] = "Indique l'adresse de la campagne";
+            errorStrings["inputCity"] = "Renseigne la ville dans laquelle a lieu cette campagne";
 
             var errors = {};
             errors["hasErrors"] = function () {

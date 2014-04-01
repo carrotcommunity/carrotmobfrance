@@ -28,8 +28,8 @@ module.exports = {
         
         var displayStrings = new Object;
         displayStrings["InvalidEmail"] = "L'email renseigné n'est pas valide.";
-        displayStrings["CannotMail"] = "Le serveur n'a pas été en mesure de vous renvoyer un mot de passe. Veuillez réessayer ultérieurement.";
-        displayStrings["Success"] = "Un nouveau mot de passe vous a été envoyé par mail.";
+        displayStrings["CannotMail"] = "Le serveur n'a pas été en mesure de te renvoyer un mot de passe. Réessaie ultérieurement.";
+        displayStrings["Success"] = "Un nouveau mot de passe t'a été envoyé par mail.";
 
         if (email && email.length > 1)
         {
@@ -47,9 +47,9 @@ module.exports = {
                 });
 
                 var mail = {
-                    from: "Carrotmob <noreply@carrotmob.fr>",
+                    from: "Carrotmob <support@carrotmob.fr>",
                     to: email,
-                    subject: "Vos identifiants Carrotmob",
+                    subject: "Tes identifiants Carrotmob",
                     html: "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\"> \
 <html xmlns=\"http://www.w3.org/1999/xhtml\"> \
     <head> \
@@ -502,7 +502,7 @@ module.exports = {
                                                         <td valign=\"top\" class=\"bodyContent\" mc:edit=\"body_content\"><div style=\"text-align: justify; \"><br> \
 &nbsp;</div> \
  \
-<div style=\"text-align: justify;\"><span style=\"font-size:12px\"><span style=\"color:rgb(51, 51, 51); font-family:lucida grande,tahoma,verdana,arial,sans-serif; line-height:18px\"><strong>Bonjour,<br><br>Vous avez oubli&eacute; votre mot de passe. Voici vos nouveaux identifiants;</strong></span><br style=\"color: rgb(51, 51, 51); font-family: 'lucida grande', tahoma, verdana, arial, sans-serif; line-height: 18px;\"> \
+<div style=\"text-align: justify;\"><span style=\"font-size:12px\"><span style=\"color:rgb(51, 51, 51); font-family:lucida grande,tahoma,verdana,arial,sans-serif; line-height:18px\"><strong>Bonjour,<br><br>Tu as oubli&eacute; ton mot de passe. Voici tes nouveaux identifiants;</strong></span><br style=\"color: rgb(51, 51, 51); font-family: 'lucida grande', tahoma, verdana, arial, sans-serif; line-height: 18px;\"> \
 <span style=\"color:rgb(51, 51, 51); font-family:lucida grande,tahoma,verdana,arial,sans-serif; line-height:18px\"><br>Email : " + email + "<br> Mot de passe : " + password + "</span><br><br><span style=\"color:rgb(51, 51, 51); font-family:lucida grande,tahoma,verdana,arial,sans-serif; line-height:18px; text-align:justify\"><strong>Durablement,</strong></span><span style=\"color:rgb(51, 51, 51); font-family:lucida grande,tahoma,verdana,arial,sans-serif; line-height:18px\"><br><strong>L&#39;Equipe Carrotmob</strong></span></span></div>                                    <!-- END BODY \\ --> \
                                 </td> \
                             </tr> \
