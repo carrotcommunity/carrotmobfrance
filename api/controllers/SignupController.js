@@ -46,14 +46,14 @@ module.exports = {
             };
 
             var errorStrings = new Object;
-            errorStrings["inputGender"] = "Veuillez sélectionner votre genre";
-            errorStrings["inputFirstName"] = "Vous devez insérer un prénom";
-            errorStrings["inputLastName"] = "Vous devez insérer un nom de famille";
-            errorStrings["inputTown"] = "Vous devez insérer une ville";
-            errorStrings["inputEmail"] = "Vous devez insérer un email valide";
-            errorStrings["inputEmailUsed"] = "L'email inséré est déjà utilisé";
-            errorStrings["inputPassword"] = "Votre mot de passe est trop court";
-            errorStrings["inputPassword2"] = "Confirmation de votre mot de passe invalide";
+            errorStrings["inputGender"] = "Sélectionne ton genre";
+            errorStrings["inputFirstName"] = "Renseigne ton prénom";
+            errorStrings["inputLastName"] = "Renseigne ton nom de famille";
+            errorStrings["inputTown"] = "Renseigne ta ville";
+            errorStrings["inputEmail"] = "Renseigne un email valide";
+            errorStrings["inputEmailUsed"] = "L'email renseigné est déjà utilisé";
+            errorStrings["inputPassword"] = "Ton mot de passe est trop court";
+            errorStrings["inputPassword2"] = "La confirmation de ton mot de passee est invalide";
 
             var errors = {};
             errors["hasErrors"] = function() {

@@ -8,30 +8,13 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="/"><img src="/images/probono/carrotmob-255x80.png" alt="Carrotmob"></a>
+                <a class="navbar-brand" href="/"><img class="img-responsive" src="/images/probono/carrotmob-255x80.png" alt="Carrotmob"></a>
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav navbar-right">
                     <li class="<%= req.path == '/' ? 'active' : '' %>"><a href="/">Découvrir</a></li>
                     <li class="<%= req.path.indexOf('campaign') != -1? 'active' : '' %>"><a href="/campaign/current">Nos campagnes</a></li>
                 </ul>
-
-                <!% if(req.session && req.session.passport && req.session.passport.user) { %>
-                <!--ul id="connected">
-                    <li class="active">
-                        <img
-                                src="<!%= req.session.passport.user.picture ? req.session.passport.user.picture : (req.session.passport.user.gender == 1 ? '/images/probono/picto-women.png' : '/images/probono/picto-men.png') %>">
-                            <p>
-                                Bonjour <!%= req.session.passport.user.firstname %><br/>
-                                <a href="/logout">&gt; Se déconnecter</a>
-                             </p>
-                    </li>
-                </ul-->
-                <!% } else { %>
-                <!--ul id="connect">
-                    <li class="active"><a href="/connect"><img src="/images/probono/picto-men.png">Connectez-vous</a></li>
-                </ul-->
-                <!% } >
             </div>
         </div>
     </div>
