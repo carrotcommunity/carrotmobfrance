@@ -105,26 +105,25 @@ footer .row{
         height: 100%;
     }
 
-
-
     .col-xs-12 p{
         font-size: 20px;
         padding : 0 10px 10px 10px;
     }
 
-
     .col-xs-12 .text .small-text {
         display: none;
     }
-   #carrot, #contact_us {
+
+    .hidden_mob {
         display: none;
     }
 
-    #follow_mob{
+    #follow_mob {
         max-width: 80%;
         display: block;
     }
-   #follow_web{
+
+    #follow_web {
         display: none;
     }
 
