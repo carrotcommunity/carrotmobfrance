@@ -1,62 +1,51 @@
-<%- partial('../partials/header')%>
+<div class="content layout-form">
+    <div class="block-form">
+        <h2>Identification</h2>
 
-<div class="page-marge">
-	<div class="inspiration2">
-		<div class="welcome-text">
-			<h2><br/><br/>Identification<br/><br/><br/></h2>
-			<h4>J'utilise mon compte Facebook<br/><br/></h4>
-			<div class="center-text">
-                <form method="post" action="/fbsignin">
-                    <button class="btn-facebook" type="submit"></button>
-                </form>
-			</div>
-			<br/>
-			<div class="separator">
-			</div>
-			<h4><br/><br/>J'utilise mon compte Carrotmobber<br/><br/></h4>
+        <h4>J'utilise mon compte Facebook</h4>
 
-			<div class="center-text">
-                <% if (typeof message !== 'undefined') { %>
-                <div class="error-msg"><span class="glyphicon glyphicon glyphicon-remove"></span>
-                                   <%= message %>
-                                </div>
-                <% } %>
-				<form class="form-horizontal" method="post" action="/signin">
-					<div class="control-group">
-					    <div class="controls">
-					      <input type="text" id="username" name="username" placeholder="Adresse email">
-					    </div>
-					</div>
+        <div class="center-text">
+            <form method="post" action="/fbsignin">
+                <button class="btn-facebook" type="submit"></button>
+            </form>
+        </div>
 
-					<div class="control-group">  
-			    		<div class="controls">
-			      			<input type="password" id="password" name="password" placeholder="Mot de passe">
-			    		</div>
-			  		</div>
+        <div class="separator"></div>
+        
+        <h4>J'utilise mon compte Carrotmobber</h4>
 
-					<div class="control-group">
-			    		<div class="controls">
-				    		<button type="submit" class="btn-submit">OK</button>
-			    		</div>
-					</div>
-				</form>
-			</div>
-	
-			<div class="forgot-pass">
-				<a href="/forgot_password">> J'ai oublié mon mot de passe</a>
-			</div>
+        <form class="form-horizontal" method="post" action="/signin">
+            <% if (typeof message !== 'undefined') { %>
+            <div class="error-msg"><span class="glyphicon glyphicon glyphicon-remove"></span>
+                <%= message %>
+            </div>
+            <% } %>
 
-			<div class="forgot-pass">
-				<a href="/signup">> Pas encore inscrit ?</a>
-			</div>
+            <div class="control-group">
+                <div class="controls">
+                    <input class="form-control" type="text" id="username" name="username"
+                           placeholder="adresse email">
+                </div>
+            </div>
 
-			<br/><br/><br/>
-		</div>
-	</div>
+            <div class="control-group">
+                <div class="controls">
+                    <input class="form-control" type="password" id="password" name="password"
+                           placeholder="mot de passe">
+                </div>
+            </div>
 
-	<div class="bottom-shadow">
-	</div>
+            <div class="control-group">
+                <div class="controls">
+                    <button type="submit" class="btn-submit">OK</button>
+                </div>
+            </div>
 
+            <p><a href="/forgot_password">> J'ai oublié mon mot de passe</a></p>
+
+            <p><a href="/signup">> Pas encore inscrit ?</a></p>
+        </form>
+    </div>
+
+    <div class="bottom-shadow"></div>
 </div>
-<br/><br/><br/>
-<%- partial('../partials/footer')%>

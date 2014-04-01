@@ -18,7 +18,7 @@ module.exports = {
         var tableDate = date.split('/');
         var tableHours = hours.split(':');
         values.startDate = tableDate[2] + "-" + tableDate[1] + "-" + tableDate[0];
-        values.epoch = new Date(tableDate[2], tableDate[1], tableDate[0], tableHours[0], tableHours[1], tableHours[2], 0).getTime();
+        values.epoch = new Date(tableDate[2], tableDate[1], tableDate[0], tableHours[0], tableHours[1], 0, 0).getTime();
 
         next();
     },
@@ -78,6 +78,5 @@ module.exports = {
             type: 'boolean',
             defaultsTo: false
         }
-
     }
 };

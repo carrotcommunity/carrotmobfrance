@@ -14,6 +14,39 @@
  *
  * @docs        :: http://sailsjs.org/#!documentation/controllers
  */
+var sid = require('shortid');
+var fs = require('fs');
+var mkdirp = require('mkdirp');
+
+var UPLOAD_PATH = 'upload/images';
+
+// Setup id generator
+sid.characters('0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ$@');
+sid.seed(42);
+
+function safeFilename(name) {
+    name = name.replace(/ /g, '-');
+    name = name.replace(/[^A-Za-z0-9-_\.]/g, '');
+    name = name.replace(/\.+/g, '.');
+    name = name.replace(/-+/g, '-');
+    name = name.replace(/_+/g, '_');
+    return name;
+}
+
+function fileExtension(fileName) {
+    return fileName.split('.').slice(-1);
+}
+
+// Where you would do your processing, etc
+// Stubbed out for now
+function processImage(id, name, path, cb) {
+    cb(null, {
+        'result': 'success',
+        'id': id,
+        'name': name,
+        'path': '/' + path
+    });
+}
 
 var CampaignController = {
 
@@ -106,7 +139,40 @@ var CampaignController = {
 
             var camp = req.body;
             camp.carrotmobberId = req.session.passport.user.id;
-            Campaign.create(camp).done(saveCallback);
+
+
+            var file = req.files.banner,
+                id = sid.generate(),
+                fileName = id + "." + fileExtension(safeFilename(file.name)),
+                dirPath = UPLOAD_PATH + '/' + id,
+                filePath = dirPath + '/' + fileName;
+
+            try {
+                mkdirp.sync(dirPath, 0755);
+            } catch (e) {
+                console.log(e);
+            }
+
+            fs.readFile(file.path, function (err, data) {
+                if (err) {
+                    res.json({'error': 'could not read file'});
+                } else {
+                    fs.writeFile(filePath, data, function (err) {
+                        if (err) {
+                            res.json({'error': 'could not write file to storage'});
+                        } else {
+                            processImage(id, fileName, filePath, function (err, data) {
+                                if (err) {
+                                    res.json(err);
+                                } else {
+                                    camp.image = data.path;
+                                    Campaign.create(camp).done(saveCallback);
+                                }
+                            });
+                        }
+                    })
+                }
+            });
         };
         validator(null, null);
     },

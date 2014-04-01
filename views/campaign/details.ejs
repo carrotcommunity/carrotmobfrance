@@ -1,43 +1,32 @@
-<%- partial('../partials/header')%>
-
-<div class="pageDetails">
+<div class="content">
     <div id="details">
-
-        <img src="/images/probono/details-cover.jpg" class='cover'>
+        <img src="<%= c.image ? c.image : '/images/default.jpg' %>" class='cover'>
 
         <div class='contentDetails'>
+            <h2>Carrotmob @ <%= c.title %></h2>
+            <%
+                var table = c.startDateStr.split(' ');
+                var date = table[0].split('/');
+                var hours = table[1].split(':');
 
-            <h2>Carrotmob <%= c.title %></h2>
+                var newDate = date[0] + "/" + date[1] + "/" + date[2] + " à " + hours[0] + ":" + hours[1];
+            %>
+            <%= newDate %><br>
 
             <p><%=c.desc%></p>
-
-            <%
-            var table = c.startDateStr.split(' ');
-            var date = table[0].split('/');
-            var hours = table[1].split(':');
-
-            var newDate = date[0] + "/" + date[1] + "/" + date[2] + " à " + hours[0] + ":" + hours[1];
-            %>
-
-            <%= newDate %><br/>
+            
             <strong>Engagement : </strong>
-
             <p><%=c.engagement%></p>
-            <img src="/images/default.jpg" class="img-rounded">
-            <span> Organisé par <%= c.carrotmobber.firstname %> <%= c.carrotmobber.lastname %></span><br/>
-            <%
-            if (req.session && req.session.passport && req.session.passport.user && req.session.passport.user.admin) {
-            switch (c.validated) {
-            case true: %>
-            <a href="/campaign/desactivate?id=<%= c.id %>">Désactiver</a>
-            <%break;
-            default: %>
-            <a href="/campaign/activate?id=<%= c.id %>">Activer</a>
-            <%break;
-            }
-            }
-            %>
 
+            <% if (c.carrotmobber.picture) { %>
+            <img src="<%= c.carrotmobber.picture %>" class="img-rounded">
+            <% } %>
+
+            <span>Organisé par <%= c.carrotmobber.firstname %> <%= c.carrotmobber.lastname %></span><br>
+
+            <% if (req.session && req.session.passport && req.session.passport.user && req.session.passport.user.admin) { %>
+            <a href="/campaign/<%= c.validated ? 'des' : '' %>activate?id=<%= c.id %>"><%= c.validated ? 'Désa' : 'A' %>ctiver</a>
+            <% } %>
         </div>
     </div>
 </div>

@@ -1,19 +1,10 @@
-#headerContainer {
-    margin-bottom: 60px;
-}
+.navbar-default {background-color:white;margin-bottom:0px;}
+.navbar{min-height:0;background:transparent;border:none;}
+.bg-head{background-color:white;}
 
-#navCenter{
-    width: 80%;
-    margin: auto;
-    background-color: #FFF;
-}
-
-.navbar-collapse, .navbar-header {
-    background-color: #FFF;
-}
-
-.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover, .navbar-default .navbar-nav>.active>a:focus {
-    background-color: #FFF;
+.navCenter{
+    margin: 0 auto;
+    max-width: 1024px;
 }
 
 .navbar-nav>.active>a {
@@ -21,41 +12,21 @@
 }
 
 .navbar-nav>li>a {
-    padding-bottom: 10px;
+    padding: 28px 0px 10px 0px;
+    margin:0 20px 0 20px;
 }
 
-.topShadow {
-    height: 13px;
-    margin: auto;
-    width: 712px;
-    background: url("../images/probono/shadow.png") no-repeat 0px -5px;
+.navbar-toggle {margin :14px 14px 14px 0;}
+
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover, .navbar-default .navbar-nav>.active>a:focus{
+    background-color:transparent;
 }
 
-.navbar .container {
-    padding-left: 0px;
-    padding-right: 0px;
-    margin-left: 0;
-    margin-right: 0;
-    width: 100%;
-    background-color: #FFF;
-
-}
-
-.navbar-default .navbar-form {
-    border-color: transparent;
-}
-
-.navbar-default {
-    border-color: transparent;
-}
-
-.navbar-default {
-    background-color: transparent;
-}
-
+/*  TODO BLOCK CONNECTED
 #connect,
 #connected {
     float: right;
+    margin-right: 10px;
 }
 
 #connected, #connect {margin-bottom:0px;padding-left:0px;}
@@ -65,7 +36,7 @@
     list-style: none;
     background-color: #ff9966;
     display: block;
-    padding:6px 20px;
+    padding:6px 10px;
 }
 
 #connected img{float:left;}
@@ -78,56 +49,48 @@
     height: 62px;
     font-weight: normal;
 }
-#connected p{display:inline-block;color:white; font-family: 'Roboto', Arial, sans-serif; font-weight: lighter;}
+#connected p{display:inline-block;color:white; font-family: 'Roboto', Arial, sans-serif; font-weight: lighter;} */
 
-.navbar-brand{padding:0px;margin-right:50px;}
+.navbar-brand{padding:0px;margin:0px 50px 0px 0px!important;}
 
-.navbar-nav a {padding-top:28px !important;}
-
-@media (max-width: 1172px) {
-    #test
-    {
-        clear:  both;
-    }
-    .navbar-brand {margin:0px;}
+.topShadow {
+    height: 7px;
+    margin: auto;
+    background: url("../images/probono/shadow.png") no-repeat center bottom;
 }
 
+/*TABLET */
+@media (max-width: 1024px) {
+
+    .navbar-nav {margin:0px;}
+}
+/*MOBILE/PHABLET */
 @media (max-width: 767px) {
-    .navbar-nav a 
+    .navbar-collapse {
+        padding:0px;
+    }
+    .navbar-nav{
+        display:block;
+        width:100%;
+        background-color: #fcfcfc;
+    }
+    .navbar-nav li
     {
-        padding-top: 10px !important;
+        width: 50%;
+        float:left;
+        display:inline-block;
     }
 
     .navbar-nav>li>a
     {
-        padding: 0;
-        padding-left: 14px;
-        padding-bottom: 8px;
+        padding: 15px 7px 8px 7px;
+        margin:0px;
     }
 
+    /*TODO
     #connect
     {
         width: 100%;
         padding: 0;
-    }
-}
-
-@media (max-width: 480px) {
-    .navbar-nav a 
-    {
-        padding-top: 10px !important;
-    }
-
-    .nav>li>a
-    {
-        padding: 0;
-        padding-left: 14px;
-         padding-bottom: 8px;
-    }
-
-    #connect
-    {
-        width: 100%;
-        padding: 0;
-    }
+    }*/
 }

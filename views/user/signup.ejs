@@ -1,127 +1,132 @@
-<%- partial('../partials/header')%>
+<div class="content layout-form">
+    <div class="block-form block-form-bg">
+        <h2>Rejoins la communauté !</h2>
 
-<div class="page-marge">
-    <div class="inspiration">
-        <div class="welcome-text">
-            <h2><br/><br/>Rejoins la communauté !</h2>
+        <p class="center-text">La <i><b>Carrot Community</i></b> est une aventure <b>collaborative</b>.<br>Tu souhaites devenir organisateur, monter un groupe local ou simplement participer à un Carrotmob ?<br>C’est ici que ça se passe !</p>
 
-            <p class="center-text">La <i><b>Carrot Community</i></b> est une aventure <b>collaborative</b>.</br>Tu souhaites devenir organisateur, monter un groupe local ou simplement participer à un Carrotmob ?
-            </br>C’est ici que ça se passe !
-               
-</p>
-            <h4><br/><br/>Retrouve tes amis carrotmobbers<br/>grâce à Facebook !</h4>
+        <h4>En 1 clic avec Facebook</h4>
 
-            <div class="center-text">
-                <% if (user && user.id) { %>
-                <div class='alert alert-success'>Veuillez compléter et valider votre profil.</div>
-                <% } else { %>
-                <form method="post" action="/fbsignin">
-                    <button class="btn-facebook" type="submit"></button>
-                </form>
-                <% } %>
-
-			</div>
-			<br/><br/>
-			<div class="separator">
-			</div>
-			<h3><br/>Apprenons à nous connaître.</h3>
-			<h2><br/>Vous êtes ?</h2>
-			
-		</div>
-		<div class="center-text">
-            <form role="form" class="form-horizontal" method="post" action="/register">
-                <% if (errors && errors['inputGender']) { %>
-                <div class="error-msg"><span class="glyphicon glyphicon glyphicon-remove"></span>
-                    <%= errors['inputGender'] %>
-                </div>
-                <% } %>
-                <table class="choose-profil" align="center">
-                    <tbody>
-
-                        <tr>
-                            <td><input type="radio" id="radio-girl" src="../img/register_girl.png" name="inputGender" value="1" <%= user && user.gender == 1 ? 'checked' : '' %>>
-                                	
-                                <label for="radio-girl">
-                                	<img src="/img/register_girl.png"/>
-                                </label>
-                            </td>
-                            <td>
-                                <input type="radio" id="radio-boy" name="inputGender" value="2" <%= user && user.gender == 2 ? 'checked' : '' %>>
-                                <label for="radio-boy">
-                                	<img src="/img/register_boy.png"/>
-                                </label>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-                <br/><br/>
-
-                <div class="control-group">
-                    <% if (errors && errors['inputFirstName']) { %>
-                    <div class="error-msg"><span class="glyphicon glyphicon glyphicon-remove"></span><%= errors['inputFirstName'] %></div>
-                    <% } %>
-                    <div class="controls <%= errors ? (errors['inputFirstName'] ? 'has-error' : 'has-success') : '' %>">
-                        <input class="form-control" type="text" id="inputFirstName" name="inputFirstName" placeholder="Prénom"
-                               value="<%= user ? user.firstname : '' %>">
-                    </div>
-                </div>
-                <div class="control-group">
-                    <% if (errors && errors['inputLastName']) { %>
-                    <div class="error-msg"><span class="glyphicon glyphicon glyphicon-remove"></span><%= errors['inputLastName'] %></div>
-                    <% } %>
-                    <div class="controls <%= errors ? (errors['inputLastName'] ? 'has-error' : 'has-success') : '' %>">
-                        <input class="form-control" type="text" id="inputLastName" name="inputLastName" placeholder="Nom"
-                               value="<%= user ? user.lastname : '' %>">
-                    </div>
-                </div>
-                <div class="control-group">
-                    <% if (errors && errors['inputTown']) { %>
-                    <div class="error-msg"><span class="glyphicon glyphicon glyphicon-remove"></span><%= errors['inputTown'] %></div>
-                    <% } %>
-                    <div class="controls <%= errors ? (errors['inputTown'] ? 'has-error' : 'has-success') : '' %>">
-                        <input class="form-control" type="text" id="inputTown" name="inputTown" placeholder="Ville" value="<%= user ? user.city : '' %>">
-                    </div>
-                </div>
-                <div class="control-group">
-                    <% if (errors && errors['inputEmail']) { %>
-                    <div class="error-msg"><span class="glyphicon glyphicon glyphicon-remove"></span><%= errors['inputEmail'] %></div>
-                    <% } %>
-                    <div class="controls <%= errors ? (errors['inputEmail'] ? 'has-error' : 'has-success') : '' %>">
-                        <input class="form-control" type="text" id="inputEmail" name="inputEmail" placeholder="Email" value="<%= user ? user.email : '' %>">
-                    </div>
-                </div>
-                <% if (!user || !user.id) { %>
-                <div class="control-group">
-                    <% if (errors && errors['inputPassword']) { %>
-                    <div class="error-msg"><span class="glyphicon glyphicon glyphicon-remove"></span><%= errors['inputPassword'] %></div>
-                    <% } %>
-                    <div class="controls <%= errors && errors['inputPassword'] ? 'has-error' : '' %>">
-                        <input class="form-control" type="password" id="inputPassword" name="inputPassword" placeholder="Mot de passe">
-                    </div>
-                </div>
-                <div class="control-group">
-                    <% if (errors && errors['inputPassword2']) { %>
-                    <div class="error-msg"><span class="glyphicon glyphicon glyphicon-remove"></span><%= errors['inputPassword2'] %></div>
-                    <% } %>
-                    <div class="controls <%= errors && errors['inputPassword2'] ? 'has-error' : '' %>">
-                        <input class="form-control" type="password" id="inputPassword2" name="inputPassword2" placeholder="Confirmer mot de passe">
-                    </div>
-                </div>
-                <% } %>
-                <div class="control-group">
-                    <div class="controls">
-                        <button type="submit" class="btn-submit">Je deviens Carrotmobber !</button>
-                    </div>
-                </div>
+        <div class="center-text">
+            <% if (user && user.id) { %>
+            <div class='alert alert-success'>Veuillez compléter et valider votre profil.</div>
+            <% } else { %>
+            <form method="post" action="/fbsignin">
+                <button class="btn-facebook" type="submit"></button>
             </form>
+            <% } %>
         </div>
-        <br/><br/><br/><br/>
+
+        <div class="separator"></div>
+
+        <h3>Apprenons à nous connaître.</h3>
+
+        <h2>Tu es :</h2>
+
+        <form role="form" class="form-horizontal" method="post" action="/register">
+            <% if (errors && errors['inputGender']) { %>
+            <div class="error-msg"><span class="glyphicon glyphicon glyphicon-remove"></span>
+                <%= errors['inputGender'] %>
+            </div>
+            <% } %>
+
+            <table class="choose-profil" align="center">
+                <tbody>
+                    <tr>
+                        <td>
+                            <input type="radio" id="radio-girl" src="../img/register_girl.png" name="inputGender" value="1" <%= user && user.gender == 1 ? 'checked' : '' %>>
+                            <label for="radio-girl">
+                                <img src="/img/register_girl.png"/>
+                            </label>
+                        </td>
+                        <td>
+                            <input type="radio" id="radio-boy" name="inputGender" value="2" <%= user && user.gender == 2 ? 'checked' : '' %>>
+                            <label for="radio-boy">
+                                <img src="/img/register_boy.png"/>
+                            </label>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="control-group">
+                <% if (errors && errors['inputFirstName']) { %>
+                <div class="error-msg"><span class="glyphicon glyphicon glyphicon-remove"></span><%=
+                    errors['inputFirstName'] %>
+                </div>
+                <% } %>
+                <div class="controls <%= errors ? (errors['inputFirstName'] ? 'has-error' : 'has-success') : '' %>">
+                    <input class="form-control" type="text" id="inputFirstName" name="inputFirstName" placeholder="prénom" value="<%= user ? user.firstname : '' %>">
+                </div>
+            </div>
+
+            <div class="control-group">
+                <% if (errors && errors['inputLastName']) { %>
+                <div class="error-msg"><span class="glyphicon glyphicon glyphicon-remove"></span><%=
+                    errors['inputLastName'] %>
+                </div>
+                <% } %>
+                <div class="controls <%= errors ? (errors['inputLastName'] ? 'has-error' : 'has-success') : '' %>">
+                    <input class="form-control" type="text" id="inputLastName" name="inputLastName" placeholder="nom" value="<%= user ? user.lastname : '' %>">
+                </div>
+            </div>
+
+            <div class="control-group">
+                <% if (errors && errors['inputTown']) { %>
+                <div class="error-msg"><span class="glyphicon glyphicon glyphicon-remove"></span><%=
+                    errors['inputTown']
+                    %>
+                </div>
+                <% } %>
+                <div class="controls <%= errors ? (errors['inputTown'] ? 'has-error' : 'has-success') : '' %>">
+                    <input class="form-control" type="text" id="inputTown" name="inputTown" placeholder="ville" value="<%= user ? user.city : '' %>">
+                </div>
+            </div>
+
+            <div class="control-group">
+                <% if (errors && errors['inputEmail']) { %>
+                <div class="error-msg"><span class="glyphicon glyphicon glyphicon-remove"></span><%=
+                    errors['inputEmail'] %>
+                </div>
+                <% } %>
+                <div class="controls <%= errors ? (errors['inputEmail'] ? 'has-error' : 'has-success') : '' %>">
+                    <input class="form-control" type="text" id="inputEmail" name="inputEmail" placeholder="email" value="<%= user ? user.email : '' %>">
+                </div>
+            </div>
+
+            <% if (!user || !user.id) { %>
+            <div class="control-group">
+                <% if (errors && errors['inputPassword']) { %>
+                <div class="error-msg"><span class="glyphicon glyphicon glyphicon-remove"></span><%=
+                    errors['inputPassword'] %>
+                </div>
+                <% } %>
+                <div class="controls <%= errors && errors['inputPassword'] ? 'has-error' : '' %>">
+                    <input class="form-control" type="password" id="inputPassword" name="inputPassword"
+                           placeholder="mot de passe">
+                </div>
+            </div>
+
+            <div class="control-group">
+                <% if (errors && errors['inputPassword2']) { %>
+                <div class="error-msg"><span class="glyphicon glyphicon glyphicon-remove"></span><%=
+                    errors['inputPassword2'] %>
+                </div>
+                <% } %>
+                <div class="controls <%= errors && errors['inputPassword2'] ? 'has-error' : '' %>">
+                    <input class="form-control" type="password" id="inputPassword2" name="inputPassword2"
+                           placeholder="confirmer mot de passe">
+                </div>
+            </div>
+            <% } %>
+
+            <div class="control-group">
+                <div class="controls">
+                    <button type="submit" class="btn-submit">Je deviens Carrotmobber !</button>
+                </div>
+            </div>
+        </form>
+
     </div>
 
-    <div class="bottom-shadow">
-    </div>
-
+    <div class="bottom-shadow"></div>
 </div>
-<br/><br/><br/>
-
-<%- partial('../partials/footer')%>

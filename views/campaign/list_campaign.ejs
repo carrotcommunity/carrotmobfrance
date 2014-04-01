@@ -1,7 +1,6 @@
-<%- partial('../partials/header')%>
-<div class="c_campaign">
+<div class="content">
+    <!--a href="/campaign/new" class="new_campaign">+ Créér une campagne</a-->
 
-    <a href="/campaign/new" class="new_campaign">+ Créér une campagne</a>
     <div class="filters">
         <ul>
             <li><a href="/campaign/past" <%= context == 'past' ? 'class=selected' : '' %>>passées</a></li>
@@ -9,35 +8,40 @@
             <li><a href="/campaign/coming" <%= context == 'coming' ? 'class=selected' : '' %>>à venir</a></li>
         </ul>
     </div>
+    
     <div class="grid_c_list">
+        <% if(campaigns.length==0){%><h2>Il n'y a aucune campagne actuellement.</h2><% } %>
+
         <% _.each(campaigns, function(c) { %>
-        <div class="bk_c_mea">
-            <a href="/campaign/details?id=<%=c.id%>">
-                <img src="/images/default.jpg" alt=""/>
+        <div class="bk_mea">
+            <a href="/campaign/details?id=<%= c.id %>">
+                <div class="bk_mea_bg">
+                    <img src="<%= c.image ? c.image : '/images/default.jpg' %>" alt="" width="100%" />
 
-                <div class="e_infos">
-                    <h3><%= c.title %></h3>
+                    <div class="e_infos">
+                        <h3>Carrotmob@ <%= c.title %></h3>
 
-                    <div class="location">
-                        <span>
-                            <span class="town"><%=c.city%></span> <br/>
-                            <% var table = c.startDateStr.split(' ');
-                            var date = table[0].split('/');
-                            var hours = table[1].split(':');
-
-                            var newDate = date[0] + "/" + date[1] + "/" + date[2] + " à " + hours[0] + ":" + hours[1];
-                            %>
-                            <span class="date"><%=newDate%></span>
-                        </span>
-                        <span class="people"><strong>TODO</strong></span>
+                        <div class="location">
+                            <span class="pin">
+                                <div class="town"><%= c.city %>
+                                    <% var table = c.startDateStr.split(' ');
+                                    var date = table[0].split('/');
+                                    var hours = table[1].split(':');
+                                    var newDate = date[0] + "/" + date[1] + "/" + date[2] + " à " + hours[0] + ":" + hours[1];
+                                    %>
+                                </div>
+                                <div class="date"><%=newDate%></div>
+                            </span>
+                            <span class="people"><strong>548</strong></span>
+                        </div>
+                        <p><%=c.desc.substr(0,111) %>...</p>
                     </div>
-                    <p><%=c.desc%></p>
+                </div>
+                <div class="bottom-shadow2">
                 </div>
             </a>
         </div>
         <% }) %>
-        <% if(campaigns.length==0){%><h2>Il n'y a aucune campagne actuellement.</h2><% } %>
+
     </div>
 </div>
-
-<%- partial('../partials/footer')%>
