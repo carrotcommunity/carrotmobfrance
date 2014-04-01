@@ -63,20 +63,21 @@ var CampaignController = {
             var formCampaign = {
                 id: campaign ? campaign.id : null,
                 title: fieldOrNull(req.param("title")),
-                desc: fieldOrNull(req.param("desc")),
-                engagement: fieldOrNull(req.param("engagement")),
+                startDateStr: fieldOrNull(req.param("startDateStr")),
+                inputImg: fieldOrNull(req.param("inputImg")),
                 address: fieldOrNull(req.param("address")),
                 city: fieldOrNull(req.param("city")),
-                startDateStr: fieldOrNull(req.param("startDateStr"))
+                desc: fieldOrNull(req.param("desc")),
+                engagement: fieldOrNull(req.param("engagement"))
             };
 
             var errorStrings = {};
             errorStrings["inputTitle"] = "Choisis un titre pour ta campagne";
-            errorStrings["inputDesc"] = "Décris ta campagne";
             errorStrings["startDateStr"] = "Choisis une date supérieure à aujourd'hui";
-            errorStrings["inputEngag"] = "Spécifie les engagements du commerçant";
             errorStrings["inputAddr"] = "Indique l'adresse de la campagne";
             errorStrings["inputCity"] = "Renseigne la ville dans laquelle a lieu cette campagne";
+            errorStrings["inputDesc"] = "Décris ta campagne";
+            errorStrings["inputEngag"] = "Spécifie les engagements du commerçant";
 
             var errors = {};
             errors["hasErrors"] = function () {
@@ -86,12 +87,11 @@ var CampaignController = {
                 return false;
             };
             errors["inputTitle"] = !formCampaign.title || formCampaign.title.length == 0 ? errorStrings["inputTitle"] : "";
-            errors["inputDesc"] = !formCampaign.desc || formCampaign.desc.length == 0 ? errorStrings["inputDesc"] : "";
-            errors["inputEngag"] = !formCampaign.engagement || formCampaign.engagement.length == 0 ? errorStrings["inputEngag"] : "";
+            errors["startDateStr"] = !formCampaign.startDateStr || formCampaign.startDateStr.length == 0 ? errorStrings["startDateStr"] : "";
             errors["inputAddr"] = !formCampaign.address || formCampaign.address.length == 0 ? errorStrings["inputAddr"] : "";
             errors["inputCity"] = !formCampaign.city || formCampaign.city.length == 0 ? errorStrings["inputCity"] : "";
-            errors["startDateStr"] = !formCampaign.startDateStr || formCampaign.startDateStr.length == 0 ? errorStrings["startDateStr"] : "";
-
+            errors["inputDesc"] = !formCampaign.desc || formCampaign.desc.length == 0 ? errorStrings["inputDesc"] : "";
+            errors["inputEngag"] = !formCampaign.engagement || formCampaign.engagement.length == 0 ? errorStrings["inputEngag"] : "";
 
             if (errors.hasErrors()) {
                 res.view('campaign/create_campaign', { campaign: formCampaign, errors: errors });
@@ -109,11 +109,8 @@ var CampaignController = {
                                     case 'title':
                                         errors["inputTitle"] = errorStrings["inputTitle"];
                                         break;
-                                    case 'desc':
-                                        errors["inputDesc"] = errorStrings["inputDesc"];
-                                        break;
-                                    case 'engagement':
-                                        errors["inputEngag"] = errorStrings["inputEngag"];
+                                    case 'date':
+                                        errors["startDateStr"] = errorStrings["startDateStr"];
                                         break;
                                     case 'address':
                                         errors["inputAddr"] = errorStrings["inputAddr"];
@@ -121,9 +118,13 @@ var CampaignController = {
                                     case 'city':
                                         errors["inputCity"] = errorStrings["inputCity"];
                                         break;
-                                    case 'date':
-                                        errors["startDateStr"] = errorStrings["startDateStr"];
+                                    case 'desc':
+                                        errors["inputDesc"] = errorStrings["inputDesc"];
                                         break;
+                                    case 'engagement':
+                                        errors["inputEngag"] = errorStrings["inputEngag"];
+                                        break;
+
                                     default:
                                         errors["err"] = d;
                                         break;
@@ -139,7 +140,6 @@ var CampaignController = {
 
             var camp = req.body;
             camp.carrotmobberId = req.session.passport.user.id;
-
 
             var file = req.files.banner,
                 id = sid.generate(),
