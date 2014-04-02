@@ -23,3 +23,12 @@ $( document ).ready(function() {
   ga('create', 'UA-45945109-1', 'carrotmob.fr');
   ga('send', 'pageview');
 </script>
+
+<!-- Video on home page -->
+<script type="text/javascript">
+    $('#img-video').click(function(){
+       $('#img-video').remove();
+       $('#video').append('<iframe src="http://player.vimeo.com/video/80473607?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=1" width="100%" height="434px" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>');
+       $('#video').show();
+    });
+</script>

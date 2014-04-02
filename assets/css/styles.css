@@ -49,6 +49,7 @@ input:-moz-placeholder { color:#CCCCCC; }
 
 .video-mea{overflow: hidden;}
 .video-mea img{float:left; width:68.26171875%;}
+#video {float:left; width:68.26171875%;}
 
 
 .home {margin-top:60px;}
@@ -612,6 +613,7 @@ a.new_campaign, a.new_campaign:visited, a.new_campaign:hover {
     /*HOME*/
     .list-article li{width:100%;}
     .video-mea img{width:100%;}
+    #video {width:100%;}
 
     .home ul.mea-btn {width:100%;float:left;}
     .home .mea-btn li{float:left; width:100%;border-bottom:solid 1px #bababa;}
