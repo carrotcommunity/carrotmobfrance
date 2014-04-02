@@ -1,9 +1,8 @@
 .container-fluid {
     margin: auto;
     width: 100%;
-    background-color: black;
+    background-color: #eee;
     min-height: 400px;
-    color: #fff;
 }
 
 footer .row{
@@ -26,17 +25,17 @@ footer .row{
 }
 
 
-.icon .icon-Carrot img{
-    margin-top: -10px;
+.icon .icon-Github img{
+    margin-top: 25px;
 
 }
 
-.icon-FB img, .icon-TW img,.icon-Carrot img {
+.icon-FB img, .icon-TW img,.icon-Github img {
     margin-top: 25px;
 }
 
 .col-md-4 p {
-    font-size: 28px;
+    font-size: 20px;
     padding : 0 10px 10px 10px;
     margin: 0;
 }
