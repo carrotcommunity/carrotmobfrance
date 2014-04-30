@@ -14,10 +14,63 @@ p{margin:35px 0;}
 :-ms-input-placeholder { color:#CCCCCC; } /* ie */
 input:-moz-placeholder { color:#CCCCCC; }
 
-.content {margin:80px auto 10px auto; max-width:1024px;min-height:500px;}
-.layout-form{max-width:740px;}
-.block-form {padding:60px 0;background-color:white; text-align: center;}
-.block-form-bg{background: white url(../img/r_carottbg.png) no-repeat bottom;}
+.content {
+    margin: 80px auto 10px auto;
+    max-width: 1024px;
+    min-height: 500px;
+}
+
+/* SIGNUP & CONNECT
+-------------------------------------------------- */
+
+.hawai {
+    margin-top: 60px;
+    background: white url("../images/hawai.jpg") no-repeat center fixed;
+    -webkit-background-size: cover; /* pour Chrome et Safari */
+    -moz-background-size: cover; /* pour Firefox */
+    -o-background-size: cover; /* pour Opera */
+    background-size: cover;
+}
+
+.layout-form{
+    margin: 120px auto;
+    max-width: 700px;
+}
+
+.block-form {
+    background-color: white;
+    text-align: center;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+}
+
+.block-header {
+    background-color: #f7f7f7;
+    padding: 5px 0;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+}
+
+.block-header h2 {
+    font-size: 2.2em;
+    vertical-align: text-bottom;
+}
+
+.block-header img {
+    width: 60px;
+    height: 60px;
+    vertical-align: middle;
+}
+
+.block-content {
+    padding: 40px 0;
+}
+
+.block-form-bg {
+    background: white url("../images/carrotmob-grey-transparent.png") no-repeat bottom;
+}
 
 /* PRESENTATION CONTENT
 -------------------------------------------------- */
@@ -441,10 +494,10 @@ input[type=radio]:checked + label
 
 .btn-facebook
 {
-    background: url(../img/btn_facebook.jpg);
-    height: 39px;
-    width: 174px;
-    border:none;
+    background: url(../img/btn_facebook.png);
+    height: 55px;
+    width: 245px;
+    border: none;
 }
 
 .link-contact
