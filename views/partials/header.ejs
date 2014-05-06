@@ -14,6 +14,13 @@
                 <ul class="nav navbar-nav navbar-right">
                     <li class="<%= req.path == '/' ? 'active' : '' %>"><a href="/">Découvrir</a></li>
                     <li class="<%= req.path.indexOf('campaign') != -1? 'active' : '' %>"><a href="/campaign/current">Nos campagnes</a></li>
+                    <li id="navbar-orange">
+                        <% if(req.session && req.session.passport && req.session.passport.user) { %>
+                        <a href="/logout"><img src="<%= req.session.passport.user.picture ? req.session.passport.user.picture : (req.session.passport.user.gender == 1 ? '/images/probono/picto-women.png' : '/images/probono/picto-men.png') %>">Me déconnecter</a>
+                        <% } else { %>
+                        <a href="/connect"><img src="/images/probono/picto-men.png"> Me connecter</a>
+                        <% } %>
+                    </li>
                 </ul>
             </div>
         </div>
