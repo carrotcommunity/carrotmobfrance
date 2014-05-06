@@ -1,0 +1,45 @@
+<div class="hawai">
+    <div class="container">
+        <div class="layout-form">
+            <div class="block-form block-form-bg">
+                <div class="block-header">
+                    <h2><img src="/images/carrotmob-60x60.png" alt="Carrotmob"> Se connecter</h2>
+                </div>
+                <div class="block-content">
+                    <h3>J'utilise mon compte Facebook</h4>
+                    <div class="center-text">
+                        <form method="post" action="/fbsignin">
+                            <button class="btn-facebook" type="submit"></button>
+                        </form>
+                    </div>
+                    <div class="separator"></div>
+                    <h3>J'utilise mon compte Carrotmobber</h4>
+                    <form class="form-horizontal" method="post" action="/login/carrotmob">
+                        <% if (typeof message !== 'undefined') { %>
+                        <div class="error-msg"><span class="glyphicon glyphicon glyphicon-remove"></span>
+                            <%= message %>
+                        </div>
+                        <% } %>
+                        <div class="control-group">
+                            <div class="controls">
+                                <input class="form-control" type="text" id="username" name="username" placeholder="E-mail">
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <div class="controls">
+                                <input class="form-control" type="password" id="password" name="password" placeholder="Mot de passe">
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <div class="controls">
+                                <button type="submit" class="btn-submit btn-embossed">Me connecter</button>
+                            </div>
+                        </div>
+                        <p><a href="/forgot_password">> J'ai oublié mon mot de passe</a></p>
+                        <p><a href="/signup">> Pas encore inscrit ?</a></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

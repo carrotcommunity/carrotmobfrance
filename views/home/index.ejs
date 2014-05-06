@@ -3,17 +3,18 @@
         <img id="img-video" src="/images/image_video.jpg" alt="Vidéo donnons du sens à nos dépenses">
         <div id="video" style="display:none;"></div>
         <ul class="mea-btn">
+            <% if(req.session && req.session.passport && req.session.passport.user) { %>
+            <li><a href="/campaign/new"><span class="home-list-text">Créer ma <strong>campagne</strong></span></a></li>
+            <% } else { %>
             <li><a href="/signup"><span class="home-list-text">Devenir Carrot<strong>mobber</strong></span></a></li>
-            <li><a href="/campaign/current"><strong class="home-list-text"><span>Découvrir les campagnes</strong></span></a></li>
-            <li class="hidden_mob"><a href="#map"><strong class="home-list-text"><span>Découvrir les communautés</strong></span></a></li>
+            <% } %>
+            <li><a href="/campaign/current"><span class="home-list-text"><span>Découvrir les <strong>campagnes</strong></span></a></li>
+            <li class="hidden_mob"><a href="#map"><span class="home-list-text"><span>Découvrir les <strong>communautés</strong></span></a></li>
         </ul>
     </div>
-
     <div class="carrot-community">
         <div class="bottom-shadow2"></div>
-        
         <h3>Rejoindre une communauté <span class="home-light-carrot">Carrot</span>mob</h2>
-
         <div id="map" class="home-map-ville">
             <a href="">
                 <div class="map-pin pin1"></div>
