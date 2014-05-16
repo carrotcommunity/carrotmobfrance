@@ -17,11 +17,15 @@
         <% } %>
         <% _.each(campaigns, function(c) { %>
         <div class="bk_mea">
-            <a href="/campaign/details?id=<%= c.id %>">
                 <div class="bk_mea_bg">
-                    <img src="<%= c.image ? c.image : '/images/default.jpg' %>" alt="" width="100%" />
+                    <a href="/campaign/details?id=<%= c.id %>">
+                        <img src="<%= c.image ? c.image : '/images/default.jpg' %>" alt="" width="100%" />
+                    </a>
                     <div class="e_infos">
-                        <h3><%= c.title %></h3>
+                        <h3><%= c.title %> <span class="pull-right">
+                            <button type="button" class="btn btn-warning" disabled="disabled">Participer</button>
+                            <a href="/campaign/details?id=<%= c.id %>" class="btn btn-warning">+ d'informations</a>
+                        </span></h3>
                         <div class="location">
                             <span class="pin">
                                 <div class="town"><%= c.city %>
