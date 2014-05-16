@@ -3,7 +3,11 @@
 
         <img src="<%= c.image ? c.image : '/images/default.jpg' %>" width="100%">
         <div class='e_infos'>
-            <h2>Carrotmob@ <%= c.title %></h2>
+            <h2>Carrotmob@ <%= c.title %> <span class="pull-right">
+                <button type="button" class="btn btn-primary" disabled="disabled">Participer</button>
+                <button type="button" class="btn btn-primary" disabled="disabled">Soutenir</button>
+                <button type="button" class="btn btn-primary" disabled="disabled">Inviter mes amis</button>
+            </span></h2>
             <div class="location">
                             <span class="pin">
                                 <div class="town"><%=c.address %> <%= c.city %>
