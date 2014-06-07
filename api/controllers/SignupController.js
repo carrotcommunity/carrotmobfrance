@@ -24,7 +24,7 @@ module.exports = {
             res.view('user/signup', { user: user, errors: null });
         };
         if (req.session && req.session.passport && req.session.passport.user && req.session.passport.user.id)
-            Carrotmobber.findOne({ id: req.session.passport.user.id }).done(validator);
+            Carrotmobber.findOne({ id: req.session.passport.user.id }).exec(validator);
         else
             validator(null, null);
     },
@@ -109,7 +109,7 @@ module.exports = {
 
             if (user)
             {
-                Carrotmobber.findOne({ email: formUser.email }).done(function(err, _user) {
+                Carrotmobber.findOne({ email: formUser.email }).exec(function(err, _user) {
                     if (_user && _user.registered) {
                         errors["inputEmail"] = errorStrings["inputEmailUsed"];
                         saveCallback(true, null);
@@ -122,7 +122,7 @@ module.exports = {
             }
             else
             {
-                Carrotmobber.findOne({ email: formUser.email }).done(function(err, _user) {
+                Carrotmobber.findOne({ email: formUser.email }).exec(function(err, _user) {
                     if (_user) {
                         errors["inputEmail"] = errorStrings["inputEmailUsed"];
                         saveCallback(true, null);
@@ -147,12 +147,12 @@ module.exports = {
                         newPasswordToken: null,
                         admin: false,
                         registered: true
-                    }).done(saveCallback);
+                    }).exec(saveCallback);
                 });
             }
         };
         if (req.session && req.session.passport && req.session.passport.user && req.session.passport.user.id)
-            Carrotmobber.findOne({ id: req.session.passport.user.id }).done(validator);
+            Carrotmobber.findOne({ id: req.session.passport.user.id }).exec(validator);
         else
             validator(null, null);
     },

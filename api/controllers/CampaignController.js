@@ -166,7 +166,7 @@ var CampaignController = {
                                     res.json(err);
                                 } else {
                                     camp.image = data.path;
-                                    Campaign.create(camp).done(saveCallback);
+                                    Campaign.create(camp).exec(saveCallback);
                                 }
                             });
                         }
@@ -209,7 +209,7 @@ var CampaignController = {
         Campaign.findOne({'id': id}).exec(function (err, campaign) {
             if (err)
                 return (res.send(err, 500));
-            Carrotmobber.findOne({id: campaign.carrotmobberId}).done(function(err, user) {
+            Carrotmobber.findOne({id: campaign.carrotmobberId}).exec(function(err, user) {
                 campaign.carrotmobber = user;
                 res.view('campaign/details', {c: campaign});
             });
@@ -229,7 +229,7 @@ var CampaignController = {
                 return (res.send(err, 500));
             campaign.validated = true;
             campaign.save(function (err, ress) {
-                Carrotmobber.findOne({id: campaign.carrotmobberId}).done(function(err, user) {
+                Carrotmobber.findOne({id: campaign.carrotmobberId}).exec(function(err, user) {
                     campaign.carrotmobber = user;
                     res.view('campaign/details', {c: campaign});
                 });
@@ -250,7 +250,7 @@ var CampaignController = {
                 return (res.send(err, 500));
             campaign.validated = false;
             campaign.save(function (err, ress) {
-                Carrotmobber.findOne({id: campaign.carrotmobberId}).done(function(err, user) {
+                Carrotmobber.findOne({id: campaign.carrotmobberId}).exec(function(err, user) {
                     campaign.carrotmobber = user;
                     res.view('campaign/details', {c: campaign});
                 });

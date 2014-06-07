@@ -33,7 +33,7 @@ module.exports = {
 
         if (email && email.length > 1)
         {
-            Carrotmobber.findOne({ email: email }).done(function(err, user) {
+            Carrotmobber.findOne({ email: email }).exec(function(err, user) {
                 if (!user || !user.registered) {
                     res.view('user/forgot_password', { error: displayStrings["InvalidEmail"], success: null });
                     return;
