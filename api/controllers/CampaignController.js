@@ -22,6 +22,15 @@ var Writable = require('stream').Writable;
 
 var UPLOAD_PATH = 'upload/images';
 
+function safeFilename(name) {
+    name = name.replace(/ /g, '-');
+    name = name.replace(/[^A-Za-z0-9-_\.]/g, '');
+    name = name.replace(/\.+/g, '.');
+    name = name.replace(/-+/g, '-');
+    name = name.replace(/_+/g, '_');
+    return name;
+}
+
 // Setup id generator
 sid.characters('0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ$@');
 sid.seed(42);
@@ -130,7 +139,7 @@ var CampaignController = {
                 streamOptions = {
                     dirname: UPLOAD_PATH+'/',
                     saveAs: function(file) {
-                        return sid.generate() + path.extname(file.filename);
+                        return sid.generate() + safeFilename(file.filename);
                     },
                     completed: function(fileData, next) {
                         results.push({
