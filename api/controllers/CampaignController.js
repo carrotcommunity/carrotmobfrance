@@ -139,7 +139,7 @@ var CampaignController = {
                 streamOptions = {
                     dirname: UPLOAD_PATH+'/',
                     saveAs: function(file) {
-                        return sid.generate() + safeFilename(file.filename);
+                        return sid.generate() + '-' + safeFilename(file.filename);
                     },
                     completed: function(fileData, next) {
                         results.push({
