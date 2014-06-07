@@ -26,15 +26,6 @@ var UPLOAD_PATH = 'upload/images';
 sid.characters('0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ$@');
 sid.seed(42);
 
-// Where you would do your processing, etc
-// Stubbed out for now
-function processImage(id, path, cb) {
-    cb(null, {
-        'result': 'success',
-        'id': id,
-        'path': '/' + path
-    });
-}
 
 var CampaignController = {
 
@@ -156,7 +147,7 @@ var CampaignController = {
                     console.log(err);
                     res.json({'error': 'could not write file to storage'});
                 } else {
-                    processImage(results[0].id, results[0].url, function (err, data) {
+                    ProcessImage.generateThumb(results[0].id, results[0].url, function (err, data) {
                         if (err) {
                             res.json(err);
                         } else {
