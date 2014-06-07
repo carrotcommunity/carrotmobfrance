@@ -27,15 +27,18 @@ module.exports.routes = {
   // default view engine) your home page.
   //
   // (Alternatively, remove this and add an `index.html` file in your `assets` directory)
+  '/*': function(req, res, next) {console.log(req.method, req.url); next();},
+
   '/': {
-      view: 'home/index'
+    view: 'home/index'
   },
 
 
   // But what if you want your home page to display
   // a signup form located at `views/user/signup.ejs`?
+
   '/connect': {
-      view: 'home/connect'
+    view: 'home/connect'
   },
 
   '/signin': {
