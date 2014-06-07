@@ -100,7 +100,7 @@ module.exports.routes = {
   'get /upload/images/*': {
       controller: 'file',
       action: 'get'
-  }
+  },
 
 
   // Custom routes here...
