@@ -16,7 +16,9 @@
  */
 var sid = require('shortid');
 var fs = require('fs');
+var path = require('path');
 var mkdirp = require('mkdirp');
+var Writable = require('stream').Writable;
 
 var UPLOAD_PATH = 'upload/images';
 
@@ -24,26 +26,12 @@ var UPLOAD_PATH = 'upload/images';
 sid.characters('0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ$@');
 sid.seed(42);
 
-function safeFilename(name) {
-    name = name.replace(/ /g, '-');
-    name = name.replace(/[^A-Za-z0-9-_\.]/g, '');
-    name = name.replace(/\.+/g, '.');
-    name = name.replace(/-+/g, '-');
-    name = name.replace(/_+/g, '_');
-    return name;
-}
-
-function fileExtension(fileName) {
-    return fileName.split('.').slice(-1);
-}
-
 // Where you would do your processing, etc
 // Stubbed out for now
-function processImage(id, name, path, cb) {
+function processImage(id, path, cb) {
     cb(null, {
         'result': 'success',
         'id': id,
-        'name': name,
         'path': '/' + path
     });
 }
@@ -141,36 +129,41 @@ var CampaignController = {
             var camp = req.body;
             camp.carrotmobberId = req.session.passport.user.id;
 
-            var file = req.files.banner,
-                id = sid.generate(),
-                fileName = id + "." + fileExtension(safeFilename(file.name)),
-                dirPath = UPLOAD_PATH + '/' + id,
-                filePath = dirPath + '/' + fileName;
-
             try {
-                mkdirp.sync(dirPath, 0755);
+                mkdirp.sync(UPLOAD_PATH, 0755);
             } catch (e) {
                 console.log(e);
             }
 
-            fs.readFile(file.path, function (err, data) {
+            var results = [],
+                streamOptions = {
+                    dirname: UPLOAD_PATH+'/',
+                    saveAs: function(file) {
+                        return sid.generate() + path.extname(file.filename);
+                    },
+                    completed: function(fileData, next) {
+                        results.push({
+                            id: fileData.id,
+                            url: UPLOAD_PATH + '/' + fileData.localName
+                        });
+                        next();
+                    }
+                };
+
+
+            req.file('banner').upload(Uploader.documentReceiverStream(streamOptions),function(err,files){
                 if (err) {
-                    res.json({'error': 'could not read file'});
+                    console.log(err);
+                    res.json({'error': 'could not write file to storage'});
                 } else {
-                    fs.writeFile(filePath, data, function (err) {
+                    processImage(results[0].id, results[0].url, function (err, data) {
                         if (err) {
-                            res.json({'error': 'could not write file to storage'});
+                            res.json(err);
                         } else {
-                            processImage(id, fileName, filePath, function (err, data) {
-                                if (err) {
-                                    res.json(err);
-                                } else {
-                                    camp.image = data.path;
-                                    Campaign.create(camp).exec(saveCallback);
-                                }
-                            });
+                            camp.image = data.path;
+                            Campaign.create(camp).exec(saveCallback);
                         }
-                    })
+                    });
                 }
             });
         };
