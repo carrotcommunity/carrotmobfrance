@@ -28,8 +28,76 @@ module.exports.routes = {
   //
   // (Alternatively, remove this and add an `index.html` file in your `assets` directory)
   '/': {
-    view: 'homepage'
+      view: 'home/index'
   },
+
+
+  // But what if you want your home page to display
+  // a signup form located at `views/user/signup.ejs`?
+  '/connect': {
+      view: 'home/connect'
+  },
+
+  '/signin': {
+      controller: 'auth',
+      action: 'signin'
+  },
+
+  '/fbsignin': {
+      controller: 'auth',
+      action: 'facebook'
+  },
+
+  '/logout': {
+      controller: 'auth',
+      action: 'logout'
+  },
+
+  '/signup': {
+      controller: 'signup',
+      action: 'index'
+  },
+
+  '/register': {
+      controller: 'signup',
+      action: 'save'
+  },
+
+  '/forgot_password': {
+      controller: 'forgot',
+      action: 'index'
+  },
+
+  '/confirm_password': {
+      controller: 'forgot',
+      action: 'confirm'
+  },
+
+
+  '/campaign/details': {
+      controller: 'campaign',
+      action: 'details'
+  },
+
+  '/campaign/current': {
+      controller: 'campaign',
+      action: 'current'
+  },
+
+  '/campaign/past': {
+      controller: 'campaign',
+      action: 'past'
+  },
+
+  '/campaign/coming': {
+      controller: 'campaign',
+      action: 'coming'
+  },
+
+  'get /upload/images/*': {
+      controller: 'file',
+      action: 'get'
+  }
 
 
   // Custom routes here...
