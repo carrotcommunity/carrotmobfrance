@@ -44,17 +44,6 @@
                                 </div>
                             </div>
 
-                            <% if (errors && errors['inputImg']) { %>
-                            <div class="error-msg"><span class="glyphicon glyphicon glyphicon-remove"></span>
-                                <%= errors['inputImg'] %>
-                            </div>
-                            <%}%>
-                            <div class="control-group">
-                                <div class="controls <%= errors ? (errors['inputImg'] ? 'has-error' : 'has-success') : '' %>">
-                                    <input class="form-control" type="file" id="inputImg" placeholder="Image" name="banner" value="<%= campaign ? campaign.image : '' %>">
-                                </div>
-                            </div>
-
                             <% if (errors && errors['inputAddr']) { %>
                             <div class="error-msg"><span class="glyphicon glyphicon glyphicon-remove"></span>
                                 <%= errors['inputAddr'] %>
@@ -96,6 +85,17 @@
                             <div class="control-group">
                                 <div class="controls <%= errors ? (errors['inputEngag'] ? 'has-error' : 'has-success') : '' %>">
                                     <textarea class="form-control" placeholder="Engagement du commercant" name="engagement"><%= campaign ? campaign.engagement : ''%></textarea>
+                                </div>
+                            </div>
+
+                            <% if (errors && errors['inputImg']) { %>
+                            <div class="error-msg"><span class="glyphicon glyphicon glyphicon-remove"></span>
+                                <%= errors['inputImg'] %>
+                            </div>
+                            <%}%>
+                            <div class="control-group">
+                                <div class="controls <%= errors ? (errors['inputImg'] ? 'has-error' : 'has-success') : '' %>">
+                                    <input class="form-control" type="file" id="inputImg" placeholder="Image" name="banner" value="<%= campaign ? campaign.image : '' %>">
                                 </div>
                             </div>
 
