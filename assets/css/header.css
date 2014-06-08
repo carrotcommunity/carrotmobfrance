@@ -1,0 +1,115 @@
+.container {
+    margin: 0 auto;
+    max-width: 1024px;
+}
+
+/* NAVBAR */
+
+.navbar-default {
+    background-color: white;
+    margin-bottom: 0px;
+}
+
+.navbar {
+    min-height: 0;
+    background: transparent;
+    border: none;
+}
+
+.navbar-brand {
+    padding: 0px;
+    margin: 0px 50px 0px 0px;
+}
+
+.navbar-white {
+    background-color: white;
+}
+
+.navbar-shadow {
+    height: 7px;
+    margin: auto;
+    background: url("../images/navbar-shadow.png") no-repeat center bottom;
+}
+
+.navbar-nav>.active>a {
+    border-bottom: solid 5px #34b514;
+}
+
+.navbar-nav>li>a {
+    padding: 28px 0px 10px 0px;
+    margin: 0 20px 0 20px;
+}
+
+.navbar-toggle {
+    margin : 14px 14px 14px 0;
+}
+
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover, .navbar-default .navbar-nav>.active>a:focus{
+    background-color: transparent;
+}
+
+/*  TODO BLOCK CONNECTED */
+
+#navbar-orange {
+    float: right;
+    list-style: none;
+    background-color: #ff9966;
+    display: block;
+    padding: 0 0 6px 0;
+}
+
+#navbar-orange a, .navbar-orange a:visited, .navbar-orange a:hover {
+    color: #fff;
+    text-decoration: none;
+    padding: 3px 10px;
+    font-weight: normal;
+
+    line-height: normal;
+    font-family: 'Roboto', Arial, sans-serif;
+    text-transform: none;
+    font-size: 14px;
+}
+
+/*TABLET */
+@media (max-width: 1024px) {
+    .navbar-nav {
+        margin: 0px;
+    }
+}
+
+/*MOBILE/PHABLET */
+@media (max-width: 767px) {
+    .navbar-collapse {
+        padding: 0px;
+    }
+
+    .navbar-nav {
+        display: block;
+        width: 100%;
+        background-color: #fcfcfc;
+    }
+
+    .navbar-nav li {
+        width: 50%;
+        float: left;
+        display: inline-block;
+        text-align: center;
+    }
+
+    .navbar-nav>li>a {
+        padding: 15px 7px 8px 7px;
+        margin: 0px;
+        font-size: 17px;
+        padding: 15px 5px 8px 5px;
+    }
+
+    .navbar-brand {
+        padding: 0px;
+        margin: 0px;
+    }
+
+    #connect {
+        width: 100%;
+        padding: 0;
+    }
+}

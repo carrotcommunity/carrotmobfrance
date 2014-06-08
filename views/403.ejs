@@ -1,0 +1,17 @@
+<div class="content">
+  <div class="row">
+    <div class="col-md-5">
+      <img class="img-responsive" src="/images/carrotmob.png" alt="Carrotmob">
+    </div>
+    <div class="col-md-7">
+      <h2>Forbidden</h2>
+      <p class="lead">
+        <% if (typeof error !== 'undefined') { %>
+        <%= error %>
+        <% } else { %>
+        You don't have permission to see the page you're trying to reach.
+        <% } %>
+      </p>
+    </div>
+  </div>
+</div>

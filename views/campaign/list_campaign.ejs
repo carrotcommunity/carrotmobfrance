@@ -1,0 +1,50 @@
+<div class="content">
+    <div class="container">
+        <% if (req.session && req.session.passport && req.session.passport.user) { %>
+        <a href="/campaign/new" class="btn btn-warning">+ Créér une campagne</a>
+        <% } %>
+    </div>
+    <div class="filters">
+        <ul>
+            <li><a href="/campaign/past" <%= context == 'past' ? 'class=selected' : '' %>>passées</a></li>
+            <li><a href="/campaign/current" <%= context == 'current' ? 'class=selected' : '' %>>en cours</a></li>
+            <li><a href="/campaign/coming" <%= context == 'coming' ? 'class=selected' : '' %>>à venir</a></li>
+        </ul>
+    </div>
+    <div class="grid_c_list">
+        <% if(campaigns.length==0){%>
+        <h2>Il n'y a aucune campagne actuellement.</h2>
+        <% } %>
+        <% _.each(campaigns, function(c) { %>
+        <div class="bk_mea">
+                <div class="bk_mea_bg">
+                    <a href="/campaign/details?id=<%= c.id %>">
+                        <img src="<%= c.image ? c.image : '/images/default.jpg' %>" alt="" width="100%" />
+                    </a>
+                    <div class="e_infos">
+                        <h3><%= c.title %> <span class="pull-right">
+                            <button type="button" class="btn btn-warning" disabled="disabled">Participer</button>
+                            <a href="/campaign/details?id=<%= c.id %>" class="btn btn-warning">+ d'informations</a>
+                        </span></h3>
+                        <div class="location">
+                            <span class="pin">
+                                <div class="town"><%= c.city %>
+                                    <% var table = c.startDateStr.split(' ');
+                                    var date = table[0].split('/');
+                                    var hours = table[1].split(':');
+                                    var newDate = date[0] + "/" + date[1] + "/" + date[2] + " à " + hours[0] + ":" + hours[1];
+                                    %>
+                                </div>
+                                <div class="date"><%=newDate%></div>
+                            </span>
+                            <span class="people"><strong>+++</strong></span>
+                        </div>
+                        <p><%=c.desc.substr(0,111) %>...</p>
+                    </div>
+                </div>
+                <div class="bottom-shadow2"></div>
+            </a>
+        </div>
+        <% }) %>
+    </div>
+</div>
