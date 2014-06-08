@@ -23,11 +23,18 @@ var cssFilesToInject = [
 // Client-side javascript files to inject in order
 // (uses Grunt-style wildcard/glob/splat expressions)
 var jsFilesToInject = [
-  'vendor/**/*.js',
-
-  // Dependencies like sails.io.js, jQuery, or Angular
+  // Dependencies like sails.io.js
   // are brought in here
-  'js/dependencies/**/*.js',
+  'js/dependencies/**/socket.io.js',
+  'js/dependencies/**/sails.io.js',
+
+  // Libraries
+  'vendor/**/holder.js',
+  'vendor/**/moment.js',
+  'vendor/**/leaflet.js',
+  'vendor/**/jquery.js',
+  'vendor/**/bootstrap.js',
+  'vendor/**/*.js',
 
   // All of the rest of your client-side js files
   // will be injected here in no particular order.
