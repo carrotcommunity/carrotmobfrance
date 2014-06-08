@@ -7,7 +7,7 @@ var verifyFBHandler = function (accessToken, refreshToken, profile, done) {
     process.nextTick(function () {
         Carrotmobber.findOne({
             uid: profile.id
-        }).done(function (err, user) {
+        }).exec(function (err, user) {
             if (user) {
                 return done(null, user);
             } else {
@@ -25,7 +25,7 @@ var verifyFBHandler = function (accessToken, refreshToken, profile, done) {
                     newPasswordToken: null,
                     admin: false,
                     registered: false
-                }).done(function (err, user) {
+                }).exec(function (err, user) {
                     return done(err, user);
                 });
             }
@@ -38,7 +38,7 @@ var verifyHandler = function (username, password, done) {
     process.nextTick(function () {
         Carrotmobber.findOne({
             email: username
-        }).done(function (err, user) {
+        }).exec(function (err, user) {
             if (err) {
                 return done(err, false, { message: err });
             }
@@ -48,11 +48,11 @@ var verifyHandler = function (username, password, done) {
             if (user.tokenFb) {
                 return done(null, false, { message: 'Veuillez vous connecter avec Facebook.' });
             }
-            
+
             var md5er = crypto.createHash('md5');
             md5er.update(password);
             var passwordEncrypted = md5er.digest('hex');
-            
+
             if (user.password != passwordEncrypted) {
                 return done(null, false, { message: 'Mot de passe invalide.' });
             }
@@ -68,7 +68,7 @@ passport.serializeUser(function (user, done) {
 passport.deserializeUser(function (user, done) {
     Carrotmobber.findOne({
         id: user.id
-    }).done(function (err, user) {
+    }).exec(function (err, user) {
         done(err, user)
     });
 });

@@ -16,13 +16,11 @@
  */
 var sid = require('shortid');
 var fs = require('fs');
+var path = require('path');
 var mkdirp = require('mkdirp');
+var Writable = require('stream').Writable;
 
 var UPLOAD_PATH = 'upload/images';
-
-// Setup id generator
-sid.characters('0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ$@');
-sid.seed(42);
 
 function safeFilename(name) {
     name = name.replace(/ /g, '-');
@@ -33,20 +31,10 @@ function safeFilename(name) {
     return name;
 }
 
-function fileExtension(fileName) {
-    return fileName.split('.').slice(-1);
-}
+// Setup id generator
+sid.characters('0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ$@');
+sid.seed(42);
 
-// Where you would do your processing, etc
-// Stubbed out for now
-function processImage(id, name, path, cb) {
-    cb(null, {
-        'result': 'success',
-        'id': id,
-        'name': name,
-        'path': '/' + path
-    });
-}
 
 var CampaignController = {
 
@@ -141,36 +129,41 @@ var CampaignController = {
             var camp = req.body;
             camp.carrotmobberId = req.session.passport.user.id;
 
-            var file = req.files.banner,
-                id = sid.generate(),
-                fileName = id + "." + fileExtension(safeFilename(file.name)),
-                dirPath = UPLOAD_PATH + '/' + id,
-                filePath = dirPath + '/' + fileName;
-
             try {
-                mkdirp.sync(dirPath, 0755);
+                mkdirp.sync(UPLOAD_PATH, 0755);
             } catch (e) {
                 console.log(e);
             }
 
-            fs.readFile(file.path, function (err, data) {
+            var results = [],
+                streamOptions = {
+                    dirname: UPLOAD_PATH+'/',
+                    saveAs: function(file) {
+                        return sid.generate() + '-' + safeFilename(file.filename);
+                    },
+                    completed: function(fileData, next) {
+                        results.push({
+                            id: fileData.id,
+                            url: UPLOAD_PATH + '/' + fileData.localName
+                        });
+                        next();
+                    }
+                };
+
+
+            req.file('banner').upload(Uploader.documentReceiverStream(streamOptions),function(err,files){
                 if (err) {
-                    res.json({'error': 'could not read file'});
+                    console.log(err);
+                    res.json({'error': 'could not write file to storage'});
                 } else {
-                    fs.writeFile(filePath, data, function (err) {
+                    ProcessImage.generateThumb(results[0].id, results[0].url, function (err, data) {
                         if (err) {
-                            res.json({'error': 'could not write file to storage'});
+                            res.json(err);
                         } else {
-                            processImage(id, fileName, filePath, function (err, data) {
-                                if (err) {
-                                    res.json(err);
-                                } else {
-                                    camp.image = data.path;
-                                    Campaign.create(camp).done(saveCallback);
-                                }
-                            });
+                            camp.image = data.path;
+                            Campaign.create(camp).exec(saveCallback);
                         }
-                    })
+                    });
                 }
             });
         };
@@ -209,7 +202,7 @@ var CampaignController = {
         Campaign.findOne({'id': id}).exec(function (err, campaign) {
             if (err)
                 return (res.send(err, 500));
-            Carrotmobber.findOne({id: campaign.carrotmobberId}).done(function(err, user) {
+            Carrotmobber.findOne({id: campaign.carrotmobberId}).exec(function(err, user) {
                 campaign.carrotmobber = user;
                 res.view('campaign/details', {c: campaign});
             });
@@ -229,7 +222,7 @@ var CampaignController = {
                 return (res.send(err, 500));
             campaign.validated = true;
             campaign.save(function (err, ress) {
-                Carrotmobber.findOne({id: campaign.carrotmobberId}).done(function(err, user) {
+                Carrotmobber.findOne({id: campaign.carrotmobberId}).exec(function(err, user) {
                     campaign.carrotmobber = user;
                     res.view('campaign/details', {c: campaign});
                 });
@@ -250,7 +243,7 @@ var CampaignController = {
                 return (res.send(err, 500));
             campaign.validated = false;
             campaign.save(function (err, ress) {
-                Carrotmobber.findOne({id: campaign.carrotmobberId}).done(function(err, user) {
+                Carrotmobber.findOne({id: campaign.carrotmobberId}).exec(function(err, user) {
                     campaign.carrotmobber = user;
                     res.view('campaign/details', {c: campaign});
                 });
