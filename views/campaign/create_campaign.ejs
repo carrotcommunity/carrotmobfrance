@@ -38,7 +38,7 @@
                             <div class="control-group">
                                 <div class="controls <%= errors ? (errors['startDateStr'] ? 'has-error' : 'has-success') : '' %>">
                                     <div class='input-group date' id='datetimepicker1' data-date-format="DD/MM/YYYY HH:mm">
-                                        <input type='text' class="form-control" id="startDateStr" name="startDateStr" value="<%= campaign ? campaign.startDateStr : '' %>"/>
+                                        <input type='text' class="form-control" id="startDateStr" placeholder="Date et heure" name="startDateStr" value="<%= campaign ? campaign.startDateStr : '' %>"/>
                                         <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
                                     </div>
                                 </div>
