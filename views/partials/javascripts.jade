@@ -1,0 +1,27 @@
+// Placed at the end of the document so the pages load faster
+script(src="/js/jquery.min.js")
+script(src="/js/bootstrap.min.js")
+script(src="/js/moment.min.js")
+script(src="/js/bootstrap-datetimepicker.js")
+script(type='text/javascript').
+    $(document).ready(function() {
+        var picker =$('#datetimepicker1');
+        if(picker) picker.datetimepicker();
+    });
+
+// Google Analytics
+script(type='text/javascript').
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-45945109-1', 'carrotmob.fr');
+    ga('send', 'pageview');
+
+script(type='text/javascript').
+    $('#img-video').click(function(){
+       $('#img-video').remove();
+       $('#video').append('<iframe src="http://player.vimeo.com/video/92597405?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=1" width="100%" height="434px" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>');
+       $('#video').show();
+    });
