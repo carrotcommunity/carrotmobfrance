@@ -1,0 +1,39 @@
+extends ../layout
+
+block body
+    .content
+        .container
+            if session && session.passport && session.passport.user
+                a.btn.btn-warning(href='campaign/new') + Créér une campagne
+        .filters
+            ul
+                li
+                    a(href='/campaign/past', class = (context == 'past' ? 'selected' : '')) passées
+                li
+                    a(href='/campaign/current' class=(context == 'current' ? 'selected' : '')) en cours
+                li
+                    a(href='/campaign/coming', class=(context == 'coming' ? 'selected' : '')) à venir
+        .grid_c_list
+            if campaigns.length==0
+                h2 Il n'y a aucune campagne actuellement
+            each c in campaigns
+                .bk_mea
+                    .bk_mea_bg
+                        a(href='/campaign/details?id='+c.id)
+                            img(src=c.image, alt=c.name,width='100%')
+                        .e_infos
+                            h3= c.title
+                                span.pull-right
+                                    button.btn.btn-warning(type='button', disabled='disabled') Participer
+                                    a.btn.btn-warning(href="/campaign/details?id="+ c.id) + d'informations
+                            .location
+                                span.pin
+                                    .town= c.city
+                                    - var table = c.startDateStr.split(' ')
+                                    - var date = table[0].split('/')
+                                    - var hours =  table[1].split(':')
+                                    - var newDate = date[0] + "/" + date[1] + "/" + date[2] + " à " + hours[0] + ":" + hours[1]
+                                    .date= newDate
+                                    span.people <strong>+++</strong>
+                            p= c.desc.substr(0,111)+'...'
+                    .bottom-shadow2
