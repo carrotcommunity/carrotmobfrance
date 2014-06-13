@@ -38,7 +38,7 @@ module.exports.routes = {
   // a signup form located at `views/user/signup.ejs`?
 
   '/connect': {
-    view: 'home/connect'
+    view: 'user/connect'
   },
 
   '/signin': {

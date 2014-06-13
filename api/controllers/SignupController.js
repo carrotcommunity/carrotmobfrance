@@ -29,6 +29,7 @@ module.exports = {
             validator(null, null);
     },
     save: function (req, res) {
+
         var validator = function (err, user) {
             var fieldOrNull = function (p) {
                 return p ? p : '';

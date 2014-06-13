@@ -1,0 +1,58 @@
+extends ../layout
+
+block body
+    .hawai
+        .container
+            .layout-form
+                .block-form.block-form-bg
+                    .block-header
+                        h2 <img src="/images/carrotmob-60x60.png" alt="Carrotmob" /> Il est temps de passer à l'action !
+                    .block-content
+                        p Après avoir téléchargé le <a href="/docs/Kit_Organisation_Carrotmob.pdf">kit organisateur</a>,<br/> tu peux proposer une campagne à la <i><b>Carrot Community.</b></i>
+                        .title
+                            h3 Créér mon Carrotmob
+                        .center-text
+                        if errors && errors['err']
+                            .alert.alert-danger= errors.toString()
+                        form.form-horizontal(action='/campaign/create', method='POST', enctype='multipart/form-data')
+                            if errors && errors['inputTitle']
+                                .error-msg!= '<span class="glyphicon glyphicon glyphicon-remove"></span>' + errors['inputTitle']
+                            .control-group
+                                .controls(class= (errors ? (errors['inputTitle'] ? 'has-error' : 'has-success') : ''))
+                                    input.form-control(type='text', id='inputTitle', placeholder='Titre', name='title', value= (campaign ? campaign.title : ''))
+                            if errors && errors['startDateStr']
+                                .error-msg!= '<span class="glyphicon glyphicon glyphicon-remove"></span>' + errors['startDateStr']
+                            .control-group
+                                .controls(class= (errors ? (errors['startDateStr'] ? 'has-error' : 'has-success') : ''))
+                                    .input-group.date(id='datetimepicker1', data-date-format="DD/MM/YYYY HH:mm")
+                                        input.form-control(type='text', id='startDateStr',name='startDateStr', value= (campaign ? campaign.startDateStr : ''))
+                                        span.input-group-addon
+                                            span.glyphicon.glyphicon-calendar
+                            if errors && errors['inputAddr']
+                                .error-msg!= '<span class="glyphicon glyphicon glyphicon-remove"></span>' + errors['inputAddr']
+                            .control-group
+                                .controls(class= (errors ? (errors['inputAddr'] ? 'has-error' : 'has-success') : ''))
+                                    input.form-control(type='text', id='inputAddr', placeholder='Adresse', name='address', value= (campaign ? campaign.address : ''))
+                            if errors && errors['inputCity']
+                                .error-msg!= '<span class="glyphicon glyphicon glyphicon-remove"></span>' + errors['inputCity']
+                            .control-group
+                                .controls(class= (errors ? (errors['inputCity'] ? 'has-error' : 'has-success') : ''))
+                                    input.form-control(type='text', id='inputCity', placeholder='Ville', name='city', value= (campaign ? campaign.city : ''))
+                            if errors && errors['inputDesc']
+                                .error-msg!= '<span class="glyphicon glyphicon glyphicon-remove"></span>' + errors['inputDesc']
+                            .control-group
+                                .controls(class= (errors ? (errors['inputDesc'] ? 'has-error' : 'has-success') : ''))
+                                    textarea.form-control(placeholder='Description', name='desc')= (campaign ? campaign.desc : '')
+                            if errors && errors['inputEngag']
+                                .error-msg!= '<span class="glyphicon glyphicon glyphicon-remove"></span>' + errors['inputEngag']
+                            .control-group
+                                .controls(class= (errors ? (errors['inputEngag'] ? 'has-error' : 'has-success') : ''))
+                                    textarea.form-control(placeholder='Engagement du commercant', name='engagement')= (campaign ? campaign.engagement : '')
+                            if errors && errors['inputImg']
+                                .error-msg!= '<span class="glyphicon glyphicon glyphicon-remove"></span>'+ errors['inputImg']
+                            .control-group
+                                .controls(class=(errors ? (errors['inputImg'] ? 'has-error' : 'has-success') : ''))
+                                    input.form-control(type='file',id='inputImg', placeholder='Image', name='banner', value=(campaign ? campaign.image : ''))
+                            .control-group
+                                .controls
+                                    button(type='submit', class='btn-submit') Je créé mon évènement

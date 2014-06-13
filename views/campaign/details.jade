@@ -1,0 +1,29 @@
+extends ../layout
+
+block body
+    .content
+        .event
+            img(src=c.image?c.image:'/images.default.jpg', width='100%')
+            .e_infos
+                h2= 'Carrotmob ' + c.title
+                    span.pull-right
+                        button.btn.btn-warning(type='button', disabled='disabled') Participer
+                        button.btn.btn-warning(type='button', disabled='disabled') Soutenir
+                        button.btn.btn-warning(type='button', disabled='disabled') Inviter mes amis
+                - var table = c.startDateStr.split(' ')
+                - var date = table[0].split('/')
+                - var hours =  table[1].split(':')
+                - var newDate =  date[0] + "/" + date[1] + "/" + date[2] + " à " + hours[0] + ":" + hours[1]
+                .location
+                    span.pin
+                        .town= c.address+' '+c.city
+                        .date= newDate
+                p= c.desc
+                p!= '<strong>Engagement : </strong><br/>'+ c.engagement
+                .contributor
+                if c.carrotmobber.picture
+                    img.img-rounded(src=c.carrotmobber.picture)
+                span= 'Organisé par '+ c.carrotmobber.firstname + ' '+ c.carrotmobber.lastname
+                if session && session.passport && session.passport.user && session.passport.user.admin
+                    a(href='/campaign/'+(c.validated?'desc':'')+'activate?id='+c.id+(c.validated?'Désa':'A')+'ctiver')
+        .bottom-shadow2

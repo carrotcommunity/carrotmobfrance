@@ -4,7 +4,7 @@ block body
     .content
         .container
             if session && session.passport && session.passport.user
-                a.btn.btn-warning(href='campaign/new') + Créér une campagne
+                a.btn.btn-warning(href='/campaign/new') + Créér une campagne
         .filters
             ul
                 li
@@ -34,6 +34,6 @@ block body
                                     - var hours =  table[1].split(':')
                                     - var newDate = date[0] + "/" + date[1] + "/" + date[2] + " à " + hours[0] + ":" + hours[1]
                                     .date= newDate
-                                    span.people <strong>+++</strong>
+                                span.people <strong>+++</strong>
                             p= c.desc.substr(0,111)+'...'
                     .bottom-shadow2
