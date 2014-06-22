@@ -20,9 +20,9 @@ nav.navbar.navbar-default.navbar-fixed-top(role='navigation')
                             if session && session.passport && session.passport.user
                                 a(href='/logout')
                                     img(src=session.passport.user.picture ? session.passport.user.picture : (session.passport.user.gender == 1 ? ' /images/probono/picto-women.png' : '/images/probono/picto-men.png'))
-                                    Me déconnecter
+                                    span  Me déconnecter
                             else
                                 a(href='/connect')
                                     img(src='/images/probono/picto-men.png')
-                                    Me connecter
+                                    span  Me connecter
         .navbar-shadow
