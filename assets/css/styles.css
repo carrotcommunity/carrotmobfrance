@@ -443,6 +443,13 @@ ul.mea-btn{
     background-color: #f07f33;
     border-color: #f07f33;
 }
+.btn-warning.two-cols {
+    width: 48%;
+    display:inline-block;
+}
+.btn-warning.two-cols:last-child{
+    margin-left:4%;
+}
 
 .bottom-shadow
 {

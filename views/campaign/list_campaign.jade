@@ -23,9 +23,6 @@ block body
                             img(src=c.image, alt=c.name,width='100%')
                         .e_infos
                             h3= c.title
-                                span.pull-right
-                                    button.btn.btn-warning(type='button', disabled='disabled') Participer
-                                    a.btn.btn-warning(href="/campaign/details?id="+ c.id) + d'informations
                             .location
                                 span.pin
                                     .town= c.city
@@ -36,4 +33,7 @@ block body
                                     .date= newDate
                                 span.people <strong>+++</strong>
                             p= c.desc.substr(0,111)+'...'
+                            div
+                                a.btn.btn-warning.two-cols(type='button', disabled='disabled') Participer
+                                a.btn.btn-warning.two-cols(href="/campaign/details?id="+ c.id) + d'informations
                     .bottom-shadow2
