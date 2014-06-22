@@ -6,15 +6,14 @@ block body
             img#img-video(src='/images/image_video.jpg', alt='Vidéo donnons du sens à nos dépenses')
             #video(style='display:none')
             ul.mea-btn
-                // if(req.session && req.session.passport && req.session.passport.user) {
-                li
-                    a(href='/campaign/new')
-                        span.home-list-text Créer ma <strong>campagne</strong>
-                //else
-                li
-                    a(href='/signup')
-                        span.home-list-text Devenir Carrot<strong>mobber</strong></span>
-                //fin else
+                if session && session.passport && session.passport.user
+                    li
+                        a(href='/campaign/new')
+                            span.home-list-text Créer ma <strong>campagne</strong>
+                else
+                    li
+                        a(href='/signup')
+                            span.home-list-text Devenir Carrot<strong>mobber</strong></span>
                 li
                     a(href='/campaign/current')
                         span.home-list-text <span>Découvrir les <strong>campagnes</strong>
@@ -43,3 +42,11 @@ block body
                     .map-pin.pin8
                 a(href='#', target='_blank')
                     .map-pin.pin9
+                a(href='https://www.facebook.com/groups/carrotcommunitybordeaux/', target='_blank')
+                    .map-pin.pin10
+                a(href='https://www.facebook.com/groups/carrotmobmarseille/', target='_blank')
+                    .map-pin.pin11
+                a(href='https://www.facebook.com/groups/carrotmobgrenoble/', target='_blank')
+                    .map-pin.pin12
+                a(href='https://www.facebook.com/groups/carrotcommunitytoulouse/', target='_blank')
+                    .map-pin.pin13
