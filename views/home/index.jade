@@ -7,17 +7,17 @@ block body
             #video(style='display:none')
             ul.mea-btn
                 if session && session.passport && session.passport.user
-                    li
+                    li.community
                         a(href='/campaign/new')
                             span.home-list-text Créer ma <strong>campagne</strong>
                 else
-                    li
+                    li.community
                         a(href='/signup')
                             span.home-list-text Devenir Carrot<strong>mobber</strong></span>
                 li
                     a(href='/campaign/current')
                         span.home-list-text <span>Découvrir les <strong>campagnes</strong>
-                li.hidden_mob
+                li.search.hidden_mob
                     a(href='#map')
                         span.home-list-text <span>Découvrir les <strong>communautés</strong>
         .carrot-community

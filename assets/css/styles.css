@@ -173,11 +173,12 @@ ul.mea-btn{
 }
 
 .mea-btn li{
-    background:url('/images/carrot-list.png') no-repeat 50px center;
+    background:url('/img/carrot-list.png') no-repeat 30px center;
     padding: 16px 10px 7% 100px;
     height: 110px;
 }
-
+.mea-btn li.community{background:url('/img/picto_community.png') no-repeat 20px center}
+.mea-btn li.search{background:url('/img/picto_search.png') no-repeat 20px center}
 .mea-btn a{
     text-decoration: none!important;
 }
