@@ -7,7 +7,7 @@ block body
             #video(style='display:none')
             ul.mea-btn
                 if session && session.passport && session.passport.user
-                    li.community
+                    li
                         a(href='/campaign/new')
                             span.home-list-text Créer ma <strong>campagne</strong>
                 else

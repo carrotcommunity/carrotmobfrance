@@ -97,7 +97,7 @@ module.exports.routes = {
       action: 'coming'
   },
 
-  'get /upload/images/*': {
+  'get /upload/*': {
       controller: 'file',
       action: 'get'
   },
