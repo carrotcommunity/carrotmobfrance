@@ -55,7 +55,7 @@
     list-style: none;
     background-color: #ff9966;
     display: block;
-    padding: 0 0 6px 0;
+    padding: 0 0 7px 0;
 }
 
 #navbar-orange a, .navbar-orange a:visited, .navbar-orange a:hover {
@@ -112,4 +112,11 @@
         width: 100%;
         padding: 0;
     }
+    .img-responsive{
+        padding-left:10px;
+    }
+}
+/*MOBILE/PHABLET */
+@media (max-width: 460px) {
+    #navbar-orange {padding:0px; width:100%;}
 }
