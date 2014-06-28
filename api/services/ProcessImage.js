@@ -2,6 +2,7 @@
 
 var fs = require('fs'),
     gm = require('gm').subClass({ imageMagick: true }),
+    mkdirp = require('mkdirp'),
     exec = require('child_process').exec;
 
 exports.generateThumb = function (originalPath, cb) {
