@@ -156,12 +156,14 @@ var CampaignController = {
                     console.log(err);
                     res.json({'error': 'could not write file to storage'});
                 } else {
-                    ProcessImage.generateThumb(results[0].id, results[0].url, function (err, data) {
+                    ProcessImage.generateThumb(results[0].url, function (err, data) {
                         if (err) {
                             res.json(err);
                         } else {
-                            camp.image = data.path;
+                            console.log('data', data);
+                            camp.image = data.originalFileName;
                             Campaign.create(camp).exec(saveCallback);
+
                         }
                     });
                 }

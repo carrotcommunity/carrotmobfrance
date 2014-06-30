@@ -24,6 +24,7 @@ module.exports = {
         res.view('user/forgot_password', { error: null, success: null });
     },
     confirm: function (req, res) {
+
         var email = req.param("inputEmail");
         
         var displayStrings = new Object;

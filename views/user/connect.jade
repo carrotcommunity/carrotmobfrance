@@ -1,0 +1,33 @@
+extends ../layout
+
+block body
+    .hawai
+        .container
+            .layout-form
+                .block-form.block-form-bg
+                    .block-header
+                        h2 <img src="/images/carrotmob-60x60.png" alt="Carrotmob"> Se Connecter</h2>
+                    .block-content
+                        h3 J'utilise mon compte Facebook
+                        .content-text
+                            form(method='post', action='/fbsignin')
+                                button.btn-facebook(type='submit')
+                        .separator
+                        h3 J'utilise mon compte Carrotmobber
+                        form.form-horizontal(method='post', action='signin')
+                            if info
+                                .error-msg = '<span class="glyphicon glyphicon glyphicon-remove"></span>' + info
+                            .control-groupe
+                                .controls
+                                    input.form-control(type='text',id='username',name='username',placeholder='adresse email')
+                            .control-group
+                                .controls
+                                    input.form-control(type='password',id='password',name='password',placeholder='mot de passe')
+                            .control-group
+                                .controls
+                                    button.btn-submit(type='submit') OK
+                            p
+                                a(href="/forgot_password")> J'ai oublié mon mot de passe
+                            p
+                                a(href="/signup")> Pas encore inscrit ?
+        .bottom-shadow

@@ -29,6 +29,7 @@ module.exports = {
             validator(null, null);
     },
     save: function (req, res) {
+
         var validator = function (err, user) {
             var fieldOrNull = function (p) {
                 return p ? p : '';
@@ -52,7 +53,7 @@ module.exports = {
             errorStrings["inputTown"] = "Renseigne ta ville";
             errorStrings["inputEmail"] = "Renseigne un email valide";
             errorStrings["inputEmailUsed"] = "L'email renseigné est déjà utilisé";
-            errorStrings["inputPassword"] = "Ton mot de passe est trop court";
+            errorStrings["inputPassword"] = "Ton mot de passe doit faire plus de 5 caractères";
             errorStrings["inputPassword2"] = "La confirmation de ton mot de passee est invalide";
 
             var errors = {};
