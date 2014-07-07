@@ -12,7 +12,7 @@ block body
                         h4 En 1 clic avec Facebook
                         .center-text
                         if user && user.id
-                            .alert.alert-success Vuillez compléter et valider votre profil
+                            .alert.alert-success Veuillez compléter et valider votre profil
                         else
                             form(method='post', action='/fbsignin')
                                 button.btn-facebook(type='submit')
