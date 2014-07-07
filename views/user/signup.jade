@@ -20,6 +20,7 @@ block body
                         h3 Apprenons à nous connaître
                         h2 Tu es :
                         form.form-horizontal(role='form', method='post', action="/register")= errors && errors['inputGender']?errors['inputGender']:''
+                            input(type='hidden', name='_csrf' value=_csrf)
                             if errors && errors['inputGender']
                                 div.error-msg!=  '<span class="glyphicon glyphicon glyphicon-remove"></span>' +  errors && errors['inputGender']?errors['inputGender']:''
                             table.choose-profil(align='center')

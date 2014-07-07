@@ -15,6 +15,7 @@ block body
                         if errors && errors['err']
                             .alert.alert-danger= errors.toString()
                         form.form-horizontal(action='/campaign/create', method='POST', enctype='multipart/form-data')
+                            input(type='hidden', name='_csrf' value=_csrf)
                             if errors && errors['inputTitle']
                                 .error-msg!= '<span class="glyphicon glyphicon glyphicon-remove"></span>' + errors['inputTitle']
                             .control-group

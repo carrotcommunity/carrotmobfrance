@@ -11,10 +11,12 @@ block body
                         h3 J'utilise mon compte Facebook
                         .content-text
                             form(method='post', action='/fbsignin')
+                                input(type='hidden', name='_csrf' value=_csrf)
                                 button.btn-facebook(type='submit')
                         .separator
                         h3 J'utilise mon compte Carrotmobber
                         form.form-horizontal(method='post', action='signin')
+                            input(type='hidden', name='_csrf' value=_csrf)
                             if info
                                 .error-msg = '<span class="glyphicon glyphicon glyphicon-remove"></span>' + info
                             .control-groupe
