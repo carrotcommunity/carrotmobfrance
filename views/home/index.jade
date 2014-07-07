@@ -1,25 +1,25 @@
 extends ../layout
 
 block body
+    .home-video
+        img#img-video(src='/images/image_video.jpg', alt='Vidéo donnons du sens à nos dépenses',width='100%')
+        #video(style='display:none')
     .content.home
-        .video-mea
-            img#img-video(src='/images/image_video.jpg', alt='Vidéo donnons du sens à nos dépenses',width='100%')
-            #video(style='display:none')
-            ul.mea-btn
-                if session && session.passport && session.passport.user
-                    li
-                        a(href='/campaign/new')
-                            span.home-list-text Créer ma <strong>campagne</strong>
-                else
-                    li
-                        a(href='/signup')
-                            span.home-list-text Devenir Carrot<strong>mobber</strong></span>
-                li.search
-                    a(href='/campaign/current')
-                        span.home-list-text <span>Découvrir les <strong>campagnes</strong>
-                li.community.hidden_mob
-                    a(href='#map')
-                        span.home-list-text <span>Découvrir les <strong>communautés</strong>
+        ul.mea-btn
+            if session && session.passport && session.passport.user
+                li
+                    a(href='/campaign/new')
+                        span.home-list-text Créer ma <strong>campagne</strong>
+            else
+                li
+                    a(href='/signup')
+                        span.home-list-text Devenir Carrot<strong>mobber</strong></span>
+            li.search
+                a(href='/campaign/current')
+                    span.home-list-text <span>Découvrir les <strong>campagnes</strong>
+            li.community.hidden_mob
+                a(href='#map')
+                    span.home-list-text <span>Découvrir les <strong>communautés</strong>
         .carrot-community
             .bottom-shadow2
             h3 Rejoindre une communauté <span class="home-light-carrot">Carrot</span>mob

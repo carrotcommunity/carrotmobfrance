@@ -125,14 +125,16 @@ input:-moz-placeholder {
 
 /* Thin out the presentation headings */
 
+.home-video {
+    margin-top: 60px;
+}
+
 .video-mea {
     overflow: hidden;
 }
 
-
-
 .home {
-    margin-top:60px;
+    margin-top:0;
 }
 
 .home h2, .grid_c_list h2 {
