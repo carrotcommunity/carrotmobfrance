@@ -37,7 +37,6 @@ module.exports.policies = {
 
     'campaign': {
         '*': 'isAuthenticated',
-        'historic': true,
         'coming': true,
         'current': true,
         'past': true,

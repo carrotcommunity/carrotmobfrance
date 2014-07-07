@@ -72,11 +72,6 @@ module.exports.routes = {
         action: 'current'
     },
 
-    '/campaign/historic': {
-        controller: 'campaign',
-        action: 'historic'
-    },
-
     '/campaign/past': {
         controller: 'campaign',
         action: 'past'
