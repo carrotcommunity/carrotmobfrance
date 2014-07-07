@@ -15,14 +15,16 @@ nav.navbar.navbar-default.navbar-fixed-top(role='navigation')
                         li(class=(req.path == '/' ? 'active' : ''))
                             a(href='/') Découvrir
                         li(class=(req.path.indexOf('campaign') != -1 ? 'active' : ''))
-                            a(href='/campaign/current') Nos campagnes
+                            a(href='/campaign/current') Campagnes
+                        li(class=(req.path.indexOf('manifesto') != -1 ? 'active' : ''))
+                            a(href='/manifesto') Manifeste
                         li#navbar-orange
                             if session && session.passport && session.passport.user
                                 a(href='/logout')
-                                    img(src=session.passport.user.picture ? session.passport.user.picture : (session.passport.user.gender == 1 ? ' /images/probono/picto-women.png' : '/images/probono/picto-men.png'))
+                                    img(src=session.passport.user.picture ? session.passport.user.picture : (session.passport.user.gender == 1 ? ' /images/icon-login-carrotmobber-woman.png' : '/images/icon-login-carrotmobber-man.png'))
                                     span  Me déconnecter
                             else
                                 a(href='/connect')
-                                    img(src='/images/probono/picto-men.png')
+                                    img(src='/images/icon-login-carrotmobber-man.png')
                                     span  Me connecter
         .navbar-shadow

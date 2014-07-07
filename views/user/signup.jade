@@ -1,7 +1,7 @@
 extends ../layout
 
 block body
-    .hawai
+    .background-hawai
         .container
             .layout-form
                 .block-form.block-form-bg
@@ -27,11 +27,11 @@ block body
                                 tbody
                                     tr
                                         td
-                                            input(type='radio', id='radio-girl', src='../img/register_girl.png', name='inputGender', value='1', checked=(user && user.gender == 1 ? 'true' : 'false'))
+                                            input(type='radio', id='radio-girl', src='/images/icon-carrotmobber-woman.png', name='inputGender', value='1', checked=(user && user.gender == 1 ? 'true' : 'false'))
                                             label(for='radio-girl')
                                                 img(src='/img/register_girl.png')
                                         td
-                                            input(type='radio', id='radio-boy', src='../img/boy.png', name='inputGender', value='2', checked=(user && user.gender == 2 ? 'true' : 'false'))
+                                            input(type='radio', id='radio-boy', src='/images/icon-carrotmobber-man.png', name='inputGender', value='2', checked=(user && user.gender == 2 ? 'true' : 'false'))
                                             label(for='radio-boy')
                                                 img(src='/img/register_boy.png')
                             .control-group

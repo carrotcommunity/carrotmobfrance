@@ -1,10 +1,10 @@
 extends ../layout
 
 block body
-    .home-video
+    .cover
         h2.text-hide Donnons du sens à nos dépenses !
-        img#img-video(src='/images/image_video.jpg', alt='Vidéo donnons du sens à nos dépenses',width='100%')
-        #video(style='display:none')
+        img#cover-movie(src='/images/cover-movie.jpg', alt='Vidéo donnons du sens à nos dépenses',width='100%')
+        #movie(style='display:none')
     .content.home
         ul.mea-btn
             if session && session.passport && session.passport.user
@@ -21,7 +21,7 @@ block body
             li.community.hidden_mob
                 a(href='#map')
                     span.home-list-text <span>Découvrir les <strong>communautés</strong>
-        .carrot-community
+        .carrot-community.hidden-xs
             .bottom-shadow2
             h3 Rejoindre une communauté <span class="home-light-carrot">Carrot</span>mob
             #map.home-map-ville
@@ -51,3 +51,24 @@ block body
                     .map-pin.pin12
                 a(href='https://www.facebook.com/groups/carrotcommunitytoulouse/', target='_blank')
                     .map-pin.pin13
+        .carrot-community.media
+            .bottom-shadow2
+            h3 Espace presse
+            .col-lg-3
+                a(class="la-nouvelle-edition", href="https://vimeo.com/51735316", target="_blank")
+            .col-lg-3
+                a(class="liberation", href="http://www.liberation.fr/economie/2013/11/10/carrotmob-la-carotte-plutot-que-le-baton_945919", target="_blank")
+            .col-lg-3
+                a(class="les-inrockuptibles", href="http://www.lesinrocks.com/2012/06/08/actualite/carrotmob-chantre-ecolo-de-lanti-boycott-11267382/", target="_blank")
+            .col-lg-3
+                a(class="le-mouv", href="http://www.franceinfo.fr/societe/initiative-france-info/les-carrot-mob-pouvoir-aux-consommateurs-686153-2012-07-25", target="_blank")
+            .col-lg-3
+                a(class="marcel-green", href="http://www.marcelgreen.com/article/le-carrotmob-a-paris-cest-demain-2872#.Uph7yxaPsW4", target="_blank")
+            .col-lg-3
+                a(class="ecoplus-tv", href="http://www.youtube.com/watch?v=MQ5oXNZYg24", target="_blank")
+            .col-lg-3
+                a(class="rennes-la-novosphere", href="http://www.rennes-novosphere.com/fr/projet/detail/carrotmob-linverse-du-boycott", target="_blank")
+            .col-lg-3
+                a(class="tracks", href="http://www.arte.tv/fr/carrotmob/2982414,CmC=2980570.html", target="_blank")
+            .col-lg-6.col-lg-offset-3
+                a.btn.btn-warning(href="mailto:presse@carrotmob.fr") Nous contacter
