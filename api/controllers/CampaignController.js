@@ -201,7 +201,7 @@ var CampaignController = {
 
     participate: function(req, res) {
         var id = req.param('id');
-        Campaign.findOne({'id': id}).populate('carrotmobber').exec(function (err, campaign) {
+        Campaign.findOne({'id': id}).exec(function (err, campaign) {
             if (err)
                 return (res.send(err, 500));
             Carrotmobber.findOne({id: campaign.carrotmobberId}).exec(function(err, user) {
