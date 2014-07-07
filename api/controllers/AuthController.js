@@ -9,6 +9,7 @@ var AuthController = {
     index: function (req, res) {
         res.view();
     },
+
     signin: function (req, res) {
         passport.authenticate('local', function (err, user, info) {
             if ((err) || (!user)) {
@@ -26,11 +27,13 @@ var AuthController = {
             });
         })(req, res);
     },
+
     logout: function (req, res) {
         req.logout();
         var ref = req.param("next");
         res.redirect(ref ? ref : '/');
     },
+
     facebook: function (req, res, next) {
         passport.authenticate('facebook', {
             scope: ['email', 'basic_info', 'user_location', 'user_friends']
@@ -44,11 +47,13 @@ var AuthController = {
             });
         })(req, res, next);
     },
+
     'facebook/callback': function (req, res, next) {
         passport.authenticate('facebook', function (req, res) {
             res.redirect('/');
         })(req, res, next);
     }
+
 };
 
 module.exports = AuthController;

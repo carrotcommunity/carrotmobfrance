@@ -5,7 +5,7 @@
 var mailer = require("nodemailer"),
     crypto = require('crypto');
 
-module.exports = {
+var ForgotController = {
 
     index: function (req, res) {
         res.view('user/forgot_password', { error: null, success: null });
@@ -558,5 +558,7 @@ module.exports = {
     * (specific to ForgotController)
     */
     _config: {}
-  
+
 };
+
+module.exports = ForgotController;

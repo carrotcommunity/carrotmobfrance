@@ -2,7 +2,7 @@
  * CarrotmobberController
  */
 
-module.exports = {
+var CarrotmobberController = {
 
   /**
    * Overrides for the settings in `config/controllers.js`
@@ -11,3 +11,5 @@ module.exports = {
   _config: {}
 
 };
+
+module.exports = CarrotmobberController;

@@ -4,7 +4,7 @@
 
 var crypto = require('crypto');
 
-module.exports = {
+var SignupController = {
     
     index: function (req, res) {
         var validator = function (err, user) {
@@ -15,6 +15,7 @@ module.exports = {
         else
             validator(null, null);
     },
+
     save: function (req, res) {
 
         var validator = function (err, user) {
@@ -151,5 +152,6 @@ module.exports = {
    */
   _config: {}
 
-  
 };
+
+module.exports = SignupController;

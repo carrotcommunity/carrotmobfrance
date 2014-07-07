@@ -10,7 +10,7 @@ exports.generateThumb = function (originalPath, cb) {
     var UPLOAD_THUMB_PATH = 'upload/thumb';
     var UPLOAD_DETAIL_PATH = 'upload/detail';
 
-    //create repositories
+    // Create repositories
     try {
         mkdirp.sync(UPLOAD_THUMB_PATH, 0755);
     } catch (e) {
@@ -23,7 +23,7 @@ exports.generateThumb = function (originalPath, cb) {
         console.log(e);
     }
 
-    //settings size and path
+    // Settings size and path
     var originalFileName = originalPath.replace(/^.*[\\\/]/, ''),
         thumbSize = ['460', '286'],
         detailSize = ['1024', '580'];

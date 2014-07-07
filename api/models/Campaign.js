@@ -2,7 +2,7 @@
  * Campaign
  */
 
-module.exports = {
+var Campaign = {
 
     beforeValidation: function (values, next) {
         // DD/MM/YYYY HH:MM:SS FORMAT DATE
@@ -26,29 +26,36 @@ module.exports = {
             minLength: 1,
             required: true
         },
+
         desc: {
             type: 'string',
             minLength: 1,
             required: true
         },
+
         engagement: {
             type: 'string',
             minLength: 1,
             required: true
         },
+
         address: {
             type: 'string',
             required: true
         },
+
         city: {
             type: 'string',
             required: true
         },
+
         epoch: 'int',
+
         startDateStr: {
             type: 'string',
             required: true
         },
+
         startDate: {
             type: 'date',
             after: function () {
@@ -58,6 +65,7 @@ module.exports = {
             },
             required: true
         },
+
         endDate: {
             type: 'date',
             after: function () {
@@ -65,18 +73,24 @@ module.exports = {
             },
             required: false
         },
+
         image: 'string',
+
         carrotmobberId: {
             type: 'string',
             required: true
         },
+
         carrotmobbers: {
             collection: 'carrotmobber',
             via: 'campaigns'
         },
+        
         validated: {
             type: 'boolean',
             defaultsTo: false
         }
     }
 };
+
+module.exports = Campaign;
