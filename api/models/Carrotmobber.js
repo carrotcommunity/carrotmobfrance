@@ -28,6 +28,11 @@ module.exports = {
         tokenFb: 'string',
         picture: 'string',
         city: 'string',
+        campaigns: {
+            collection: 'campaign',
+            via: 'carrotmobbers',
+            dominant: true
+        },
         admin: {
             type: 'boolean',
             defaultsTo: false

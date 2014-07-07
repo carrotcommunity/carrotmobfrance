@@ -199,6 +199,20 @@ var CampaignController = {
         })
     },
 
+    participate: function(req, res) {
+        var id = req.param('id');
+        Campaign.findOne({'id': id}).exec(function (err, campaign) {
+            if (err)
+                return (res.send(err, 500));
+            Carrotmobber.findOne({id: campaign.carrotmobberId}).exec(function(err, user) {
+                campaign.carrotmobber = user;
+                campaign.carrotmobbers.add(req.session.passport.user.id);
+                campaign.save(function (err) {});
+                res.view('campaign/details', {c: campaign, context: "participate"});
+            });
+        })
+    },
+
     activate: function (req, res) {
         var id = req.param('id');
 

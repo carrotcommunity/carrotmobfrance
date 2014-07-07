@@ -5,9 +5,10 @@
   "description": "Carrotmob",
   "dependencies": {
     "sails": "0.10",
-    "grunt": "0.4.5",
+    "waterline": "0.10",
     "sails-disk": "0.10",
     "sails-mongo": "0.10",
+    "grunt": "0.4.5",
     "ejs": "0.8.5",
     "gm": "1.15.0",
     "optimist": "0.6.0",

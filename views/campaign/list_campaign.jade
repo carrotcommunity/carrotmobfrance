@@ -34,6 +34,6 @@ block body
                                 span.people <strong>+++</strong>
                             p= c.desc.substr(0,111)+'...'
                             div
-                                a.btn.btn-warning.two-cols(type='button', disabled='disabled') Participer
+                                a.btn.btn-warning.two-cols(href="/campaign/participate?id="+ c.id) Participer
                                 a.btn.btn-warning.two-cols(href="/campaign/details?id="+ c.id) + d'informations
                     .bottom-shadow2

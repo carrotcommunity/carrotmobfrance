@@ -70,6 +70,10 @@ module.exports = {
             type: 'string',
             required: true
         },
+        carrotmobbers: {
+            collection: 'carrotmobber',
+            via: 'campaigns'
+        },
         validated: {
             type: 'boolean',
             defaultsTo: false
