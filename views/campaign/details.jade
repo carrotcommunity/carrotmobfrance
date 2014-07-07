@@ -6,10 +6,6 @@ block body
             img(src=c.image?'/upload/detail/'+c.image:'/images.default.jpg', width='100%')
             .e_infos
                 h2= 'Carrotmob ' + c.title
-                    span.pull-right
-                        button.btn.btn-warning(type='button', disabled='disabled') Participer
-                        button.btn.btn-warning(type='button', disabled='disabled') Soutenir
-                        button.btn.btn-warning(type='button', disabled='disabled') Inviter mes amis
                 - var table = c.startDateStr.split(' ')
                 - var date = table[0].split('/')
                 - var hours =  table[1].split(':')
@@ -23,7 +19,7 @@ block body
                 .contributor
                 if c.carrotmobber.picture
                     img.img-rounded(src=c.carrotmobber.picture)
-                span= 'Organisé par '+ c.carrotmobber.firstname + ' '+ c.carrotmobber.lastname
+                span= '&nbsp;Organisé par '+ c.carrotmobber.firstname + ' '+ c.carrotmobber.lastname
                 if session && session.passport && session.passport.user && session.passport.user.admin
                     a(href='/campaign/'+(c.validated?'desc':'')+'activate?id='+c.id+(c.validated?'Désa':'A')+'ctiver')
         .bottom-shadow2
