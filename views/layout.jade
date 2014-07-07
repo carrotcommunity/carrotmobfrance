@@ -1,0 +1,52 @@
+doctype html
+html
+        head
+            meta(charset='utf-8')
+            meta(http-equiv='X-UA-Compatible', content='IE=edge')
+            meta(name='viewport', content='width=device-width, initial-scale=1')
+            meta(name='description', content='')
+            meta(name='author', content='')
+
+            title Carrotmob - Donnons du sens à nos dépenses !
+
+            link(rel='icon', type='image/png', href='/images/carrotmob-32x32.png')
+
+            link(rel='apple-touch-icon', href='/images/carrotmob-60x60.png')
+
+            link(rel='apple-touch-icon', sizes='76x76', href='/images/carrotmob-72x72.png')
+            link(rel='apple-touch-icon', sizes='76x76', href='/images/carrotmob-120x120.png')
+            link(rel='apple-touch-icon', sizes='76x76', href='/images/carrotmob-152x152.png')
+
+            link(rel='stylesheet', type='text/css', href='http://fonts.googleapis.com/css?family=Roboto:400,100,700')
+            link(rel='stylesheet', type='text/css', href='http://fonts.googleapis.com/css?family=Josefin+Sans')
+
+            link(rel='stylesheet', type='text/css', href='/styles/bootstrap.min.css')
+
+            //if lt IE 8
+                script(src='https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js')
+                script(src='https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js')
+
+            link(rel='stylesheet', type='text/css', href='/styles/font-awesome.min.css')
+
+            link(rel='stylesheet', type='text/css', href='/css/datepicker.css')
+            link(rel='stylesheet', type='text/css', href='/css/styles.css')
+            link(rel='stylesheet', type='text/css', href='/css/header.css')
+            link(rel='stylesheet', type='text/css', href='/css/footer.css')
+
+            meta(property='og:type', content='website')
+            meta(property='og:url', content='http://www.carrotmob.fr')
+            meta(property='og:image', content='http://www.carrotmob.fr/images/carrotmob.png')
+            meta(property='og:title', content='Carrotmob France')
+            meta(property='og:description', content='Donnons du sens à nos dépenses ! Nos actions collectives permettent aux petits commerçants et aux grandes entreprises de se développer durablement.')
+            meta(name='twitter:card',content='summary')
+            meta(name='twitter:site',content='@CarrotCommunity')
+            meta(name='twitter:url',content='http://www.carrotmob.fr')
+            meta(name='twitter:title',content='Carrotmob France')
+            meta(name='twitter:description',content='Donnons du sens à nos dépenses ! Nos actions collectives permettent aux petits commerçants et aux grandes entreprises de se développer durablement.')
+            meta(name='twitter:image',content='http://www.carrotmob.fr/images/carrotmob.png')
+
+    body
+        include partials/header
+        block body
+        include partials/footer
+        include partials/javascripts

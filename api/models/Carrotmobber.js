@@ -1,9 +1,5 @@
 /**
  * Carrotmobber
- *
- * @module      :: Model
- * @description :: A short summary of how this model works and what it represents.
- * @docs		:: http://sailsjs.org/#!documentation/models
  */
 
 module.exports = {
@@ -32,6 +28,11 @@ module.exports = {
         tokenFb: 'string',
         picture: 'string',
         city: 'string',
+        campaigns: {
+            collection: 'campaign',
+            via: 'carrotmobbers',
+            dominant: true
+        },
         admin: {
             type: 'boolean',
             defaultsTo: false

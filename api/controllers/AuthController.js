@@ -1,8 +1,5 @@
 /**
  * AuthController
- *
- * @module      :: Model
- * @description :: Module d'authentification Facebook
  */
 
 var passport = require('passport');
@@ -15,7 +12,7 @@ var AuthController = {
     signin: function (req, res) {
         passport.authenticate('local', function (err, user, info) {
             if ((err) || (!user)) {
-                res.view('home/connect', info);
+                res.view('user/connect', info);
                 return;
             }
 

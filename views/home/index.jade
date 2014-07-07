@@ -1,0 +1,52 @@
+extends ../layout
+
+block body
+    .home-video
+        img#img-video(src='/images/image_video.jpg', alt='Vidéo donnons du sens à nos dépenses',width='100%')
+        #video(style='display:none')
+    .content.home
+        ul.mea-btn
+            if session && session.passport && session.passport.user
+                li
+                    a(href='/campaign/new')
+                        span.home-list-text Créer ma <strong>campagne</strong>
+            else
+                li
+                    a(href='/signup')
+                        span.home-list-text Devenir Carrot<strong>mobber</strong></span>
+            li.search
+                a(href='/campaign/current')
+                    span.home-list-text <span>Découvrir les <strong>campagnes</strong>
+            li.community.hidden_mob
+                a(href='#map')
+                    span.home-list-text <span>Découvrir les <strong>communautés</strong>
+        .carrot-community
+            .bottom-shadow2
+            h3 Rejoindre une communauté <span class="home-light-carrot">Carrot</span>mob
+            #map.home-map-ville
+                a(href='#')
+                    .map-pin.pin1
+                a(href='https://www.facebook.com/groups/carrotmoblille/', target='_blank')
+                    .map-pin.pin2
+                a(href='https://www.facebook.com/groups/carrotmobrouen/', target='_blank')
+                    .map-pin.pin3
+                a(href='https://www.facebook.com/groups/carrotmobparis/', target='_blank')
+                    .map-pin.pin4
+                a(href='https://www.facebook.com/groups/carrotmobquimper/', target='_blank')
+                    .map-pin.pin5
+                a(href='https://www.facebook.com/groups/carrotmobrennes/', target='_blank')
+                    .map-pin.pin6
+                a(href='https://www.facebook.com/groups/carrotmobnantes/', target='_blank')
+                    .map-pin.pin7
+                a(href='#', target='_blank')
+                    .map-pin.pin8
+                a(href='#', target='_blank')
+                    .map-pin.pin9
+                a(href='https://www.facebook.com/groups/carrotcommunitybordeaux/', target='_blank')
+                    .map-pin.pin10
+                a(href='https://www.facebook.com/groups/carrotmobmarseille/', target='_blank')
+                    .map-pin.pin11
+                a(href='https://www.facebook.com/groups/carrotmobgrenoble/', target='_blank')
+                    .map-pin.pin12
+                a(href='https://www.facebook.com/groups/carrotcommunitytoulouse/', target='_blank')
+                    .map-pin.pin13

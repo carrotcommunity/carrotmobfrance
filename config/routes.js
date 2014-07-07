@@ -38,7 +38,7 @@ module.exports.routes = {
   // a signup form located at `views/user/signup.ejs`?
 
   '/connect': {
-    view: 'home/connect'
+    view: 'user/connect'
   },
 
   '/signin': {
@@ -97,7 +97,7 @@ module.exports.routes = {
       action: 'coming'
   },
 
-  'get /upload/images/*': {
+  'get /upload/*': {
       controller: 'file',
       action: 'get'
   },
