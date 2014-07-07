@@ -43,17 +43,23 @@ input:-moz-placeholder {
   box-shadow: inset 0 -4px 0 rgba(0, 0, 0, 0.15);
 }
 
-/* SIGNUP & CONNECT
--------------------------------------------------- */
+/* COVERS & BACKGROUNDS */
 
-.hawai {
+.cover {
+    margin-top: 50px;
+}
+
+.background-hawai {
     margin-top: 60px;
-    background: white url("../images/hawai.jpg") no-repeat center fixed;
+    background: white url("../images/background-hawai.jpg") no-repeat center fixed;
     -webkit-background-size: cover; /* pour Chrome et Safari */
     -moz-background-size: cover; /* pour Firefox */
     -o-background-size: cover; /* pour Opera */
     background-size: cover;
 }
+
+/* SIGNUP & CONNECT
+-------------------------------------------------- */
 
 .layout-form {
     margin: 120px auto;
@@ -121,13 +127,20 @@ input:-moz-placeholder {
 }
 
 
-/*Home*/
+/* HOME */
 
 /* Thin out the presentation headings */
 
-.home-video {
+.cover {
     margin-top: 50px;
 }
+// Movie on home page
+script(type='text/javascript').
+    $('#img-movie').click(function(){
+       $('#img-movie').remove();
+       $('#video').append('<iframe src="http://player.vimeo.com/video/92597405?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=1" width="100%" height="480px" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>');
+       $('#video').show();
+    });
 
 .video-mea {
     overflow: hidden;
@@ -164,14 +177,14 @@ ul.mea-btn{
 }
 
 .mea-btn li{
-    background:url('/img/carrot-list.png') no-repeat 30px center;
+    background:url('/images/icon-carrot.png') no-repeat 30px center;
     padding: 16px 10px 7% 100px;
     height: 110px;
     display:inline-block;
     width:33%;
 }
-.mea-btn li.community{background:url('/img/picto_community.png') no-repeat 20px center}
-.mea-btn li.search{background:url('/img/picto_search.png') no-repeat 20px center}
+.mea-btn li.community{background:url('/images/icon-carrot.png') no-repeat 20px center}
+.mea-btn li.search{background:url('/images/icon-carrot.png') no-repeat 20px center}
 .mea-btn a{
     text-decoration: none!important;
 }
@@ -197,7 +210,7 @@ ul.mea-btn{
 }
 
 .home-map-ville{
-    background: url('/images/map-villes.png') no-repeat;
+    background: url('/images/map-cities-green.png') no-repeat;
     height: 450px;
     width: 450px;
     background-size: 100%;
@@ -212,15 +225,16 @@ ul.mea-btn{
     letter-spacing: -1px;
 }
 
+/* MAP */
+
 .map-pin{
-    background:url('/images/pin-map.png') no-repeat left center;
+    background:url('/images/map-pin.png') no-repeat left center;
     width: 100px;
     height: 100px;
     background-size: 100%;
     position: absolute;
 }
 
-/**PINS**/
 .pin1{
     margin-left: -35px;
     padding-top: 110px;
@@ -286,13 +300,13 @@ ul.mea-btn{
 }
 
 
-/**PINS**/
+/** PRESS **/
 
 .rennes-la-novosphere-gris, .rennes-la-novosphere, .le-mouv-gris, .le-mouv, .les-inrockuptibles-gris,
 .les-inrockuptibles, .marcel-green-gris, .marcel-green, .la-nouvelle-edition, .la-nouvelle-edition-gris,
 .liberation-gris, .liberation, .ecoplus-tv-gris, .ecoplus-tv, .tracks,
 .tracks-gris
-{ display: inline-block; background: url('/images/presse.png') no-repeat; }
+{ display: inline-block; background: url('/images/icons-press.png') no-repeat; }
 
 .rennes-la-novosphere { background-position: -0px -140px; width: 94px; height: 140px; }
 .le-mouv { background-position: -0px -419px; width: 140px; height: 139px; }
@@ -548,7 +562,7 @@ input[type=radio]:checked + label
 
 .btn-facebook
 {
-    background: url(../img/btn_facebook.png);
+    background: url(../images/btn-facebook-become-carrotmobber.png);
     height: 55px;
     width: 245px;
     border: none;
@@ -627,6 +641,7 @@ a.new_campaign, a.new_campaign:visited, a.new_campaign:hover {
 .filters .selected {border-bottom:solid 3px #ff9966;}
 
 /* LISTE DES CAMPAGNES */
+
 .grid_c_list {
     padding:0px 2.0507812%;
     overflow:hidden;
@@ -723,33 +738,10 @@ a.new_campaign, a.new_campaign:visited, a.new_campaign:hover {
 
     .home ul.mea-btn {width:100%;float:left;margin-top:0;}
     .home .mea-btn li{float:left; width:100%;border-bottom:solid 1px #bababa;}
-    .carrot-community {display:none;}
 
     .home {margin: 60px 0px 0px 0px;}
     .content{min-height:0;}
 
     .e_infos .location .pin {background:none;text-indent:0px;}
     .contributor span {display:inline-block;}
-}
-
-/* FACEBOOK */
-
-.pluginShareButtonLink {
-    display: inline-block;
-    margin-bottom: 0px;
-    font-weight: normal;
-    text-align: center;
-    vertical-align: middle;
-    cursor: pointer;
-    background-image: none;
-    border: 1px solid transparent;
-    white-space: nowrap;
-    padding: 6px 12px;
-    font-size: 14px;
-    line-height: 1.42857;
-    border-radius: 4px;
-    -moz-user-select: none;
-    color: #F07F33;
-    background-color: #FFF;
-    border-color: #F07F33;
 }
