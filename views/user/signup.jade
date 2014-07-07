@@ -1,0 +1,71 @@
+extends ../layout
+
+block body
+    .background-hawai
+        .container
+            .layout-form
+                .block-form.block-form-bg
+                    .block-header
+                        h2 <img src="/images/carrotmob-60x60.png" alt="Carrotmob"> Rejoindre la communauté</h2>
+                    .block-content
+                        p.center-text La <i><b>Carrot Community</i></b> est une aventure <b>collaborative</b>.<br>Tu souhaites devenir organisateur, monter un groupe local ou simplement participer à un Carrotmob ?<br>C’est ici que ça se passe !
+                        h4 En 1 clic avec Facebook
+                        .center-text
+                        if user && user.id
+                            .alert.alert-success Vuillez compléter et valider votre profil
+                        else
+                            form(method='post', action='/fbsignin')
+                                button.btn-facebook(type='submit')
+                        .separator
+                        h3 Apprenons à nous connaître
+                        h2 Tu es :
+                        form.form-horizontal(role='form', method='post', action="/register")= errors && errors['inputGender']?errors['inputGender']:''
+                            input(type='hidden', name='_csrf' value=_csrf)
+                            if errors && errors['inputGender']
+                                div.error-msg!=  '<span class="glyphicon glyphicon glyphicon-remove"></span>' +  errors && errors['inputGender']?errors['inputGender']:''
+                            table.choose-profil(align='center')
+                                tbody
+                                    tr
+                                        td
+                                            input(type='radio', id='radio-girl', src='/images/icon-carrotmobber-woman.png', name='inputGender', value='1', checked=(user && user.gender == 1 ? 'true' : 'false'))
+                                            label(for='radio-girl')
+                                                img(src='/img/register_girl.png')
+                                        td
+                                            input(type='radio', id='radio-boy', src='/images/icon-carrotmobber-man.png', name='inputGender', value='2', checked=(user && user.gender == 2 ? 'true' : 'false'))
+                                            label(for='radio-boy')
+                                                img(src='/img/register_boy.png')
+                            .control-group
+                                if errors && errors['inputFirstName']
+                                    .error-msg!='<span class="glyphicon glyphicon glyphicon-remove"></span>'+ errors['inputFirstName']
+                                .controls(class=(errors ? (errors['inputFirstName'] ? 'has-error' : 'has-success') : ''))
+                                    input.form-control(type='text', id='inputFirstName', name='inputFirstName', placeholder='Prénom', value= (user ? user.firstname : ''))
+                            .control-group
+                                if errors && errors['inputLastName']
+                                    .error-msg!='<span class="glyphicon glyphicon glyphicon-remove"></span>'+ errors['inputLastName']
+                                .controls(class=(errors ? (errors['inputLastName'] ? 'has-error' : 'has-success') : ''))
+                                    input.form-control(type='text', id='inputLastName', name='inputLastName', placeholder='Nom', value= (user ? user.lastname : ''))
+                            .control-group
+                                if errors && errors['inputTown']
+                                    .error-msg!='<span class="glyphicon glyphicon glyphicon-remove"></span>'+ errors['inputTown']
+                                .controls(class=(errors ? (errors['inputTown'] ? 'has-error' : 'has-success') : ''))
+                                    input.form-control(type='text', id='inputTown', name='inputTown', placeholder='Ville', value= (user ? user.city : ''))
+                            .control-group
+                                if errors && errors['inputEmail']
+                                    .error-msg!='<span class="glyphicon glyphicon glyphicon-remove"></span>'+ errors['inputEmail']
+                                .controls(class=(errors ? (errors['inputEmail'] ? 'has-error' : 'has-success') : ''))
+                                    input.form-control(type='text', id='inputEmail', name='inputEmail', placeholder='Email', value= (user ? user.email : ''))
+                            if !user || !user.id
+                                .control-group
+                                    if errors && errors['inputPassword']
+                                        .error-msg!='<span class="glyphicon glyphicon glyphicon-remove"></span>'+ errors['inputPassword']
+                                    .controls(class=(errors ? (errors['inputPassword'] ? 'has-error' : 'has-success') : ''))
+                                        input.form-control(type='password', id='inputPassword', name='inputPassword', placeholder='Mot de passe')
+                                .control-group
+                                    if errors && errors['inputPassword2']
+                                        .error-msg!='<span class="glyphicon glyphicon glyphicon-remove"></span>'+ errors['inputPassword2']
+                                    .controls(class=(errors ? (errors['inputPassword2'] ? 'has-error' : 'has-success') : ''))
+                                        input.form-control(type='password', id='inputPassword2', name='inputPassword2', placeholder='Confirmer le mot de passe')
+                            .control-group
+                                .controls
+                                    button.btn-submit(type='submit') Je deviens Carrotmobber !
+        .bottom-shadow

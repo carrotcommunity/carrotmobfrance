@@ -1,0 +1,747 @@
+/* GENERAL
+-------------------------------------------------- */
+body
+{
+    background-color: #F3F4F4;
+    font-family: roboto;
+    color: black;
+}
+
+a, a:hover, a:visited {
+    text-decoration: none;
+    color: #f07f33;
+}
+
+p {
+    margin:35px 0;
+}
+
+::-webkit-input-placeholder {
+    color: #CCCCCC;
+}
+
+::-moz-placeholder {
+    color:#CCCCCC;
+} /* firefox 19+ */
+
+:-ms-input-placeholder {
+    color: #CCCCCC;
+} /* ie */
+
+input:-moz-placeholder {
+    color:#CCCCCC;
+}
+
+.content {
+    margin: 80px auto 10px auto;
+    max-width: 1024px;
+    min-height: 500px;
+}
+
+.btn-embossed {
+  -webkit-box-shadow: inset 0 -4px 0 rgba(0, 0, 0, 0.15);
+  box-shadow: inset 0 -4px 0 rgba(0, 0, 0, 0.15);
+}
+
+/* COVERS & BACKGROUNDS */
+
+.cover {
+    margin-top: 50px;
+}
+
+.background-hawai {
+    margin-top: 60px;
+    background: white url("../images/background-hawai.jpg") no-repeat center fixed;
+    -webkit-background-size: cover; /* pour Chrome et Safari */
+    -moz-background-size: cover; /* pour Firefox */
+    -o-background-size: cover; /* pour Opera */
+    background-size: cover;
+}
+
+/* SIGNUP & CONNECT
+-------------------------------------------------- */
+
+.layout-form {
+    margin: 120px auto;
+    max-width: 700px;
+}
+
+.block-form {
+    background-color: white;
+    text-align: center;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+}
+
+.block-header {
+    background-color: #f7f7f7;
+    padding: 5px 0;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+}
+
+.block-header h2 {
+    font-size: 2.2em;
+    vertical-align: text-bottom;
+}
+
+.block-header img {
+    width: 60px;
+    height: 60px;
+    vertical-align: middle;
+}
+
+.block-content {
+    padding: 40px 0;
+}
+
+.block-form-bg {
+    background: white url("../images/carrotmob-grey-transparent.png") no-repeat bottom;
+}
+
+/* PRESENTATION CONTENT
+-------------------------------------------------- */
+
+/* Pad the edges of the mobile views a bit */
+.presentation {
+    margin-top: 20px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Center align the text within the three columns below the carousel */
+.presentation .col-lg-4 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.presentation h2 {
+    font-weight: normal;
+}
+
+.presentation .col-lg-4 p {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+
+/* HOME */
+
+/* Thin out the presentation headings */
+
+.cover {
+    margin-top: 50px;
+}
+// Movie on home page
+script(type='text/javascript').
+    $('#img-movie').click(function(){
+       $('#img-movie').remove();
+       $('#video').append('<iframe src="http://player.vimeo.com/video/92597405?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=1" width="100%" height="480px" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>');
+       $('#video').show();
+    });
+
+.video-mea {
+    overflow: hidden;
+}
+
+.home {
+    margin-top:0;
+}
+
+.home h2, .grid_c_list h2 {
+    font-weight: 100;
+    font-size: 2.5em;
+    text-align: center;
+    margin: 0px;
+    padding: 70px 0 40px;
+}
+
+.home h3 {
+    font-weight: bold;
+    font-size: 1.3em;
+    text-align: center;
+    margin: 0px;
+    padding: 30px 0;
+}
+
+.home .bottom-shadow2 {
+    height: 6px;
+}
+
+ul.mea-btn{
+    list-style: none;
+    padding:0px;
+    margin:0px;
+}
+
+.mea-btn li{
+    background:url('/images/icon-carrot.png') no-repeat 30px center;
+    padding: 16px 10px 7% 100px;
+    height: 110px;
+    display:inline-block;
+    width:33%;
+}
+.mea-btn li.community{background:url('/images/icon-carrot.png') no-repeat 20px center}
+.mea-btn li.search{background:url('/images/icon-carrot.png') no-repeat 20px center}
+.mea-btn a{
+    text-decoration: none!important;
+}
+
+.home-list-text{
+    display: block;
+    color: #2b2d2d;
+    font-size: 16px;
+    padding-top: 30px;
+}
+
+
+.list-article {background-color:white;overflow: hidden;}
+.list-article ul{padding:0 4.58984375%; overflow: hidden; margin:0px 0 100px 0;}
+.list-article li{display:inline-block;width:29.892473118%;float:left;margin:0 1.7204301075%;}
+.list-article h3 {color:#ff9966;font-weight:bold;font-size:2.5rem; text-align:left;}
+.list-article p{color:#585858;margin:0px;}
+
+.carrot-community{
+    background-color:#fdfdfd;
+    clear: both;
+    padding-bottom:47px;
+}
+
+.home-map-ville{
+    background: url('/images/map-cities-green.png') no-repeat;
+    height: 450px;
+    width: 450px;
+    background-size: 100%;
+    margin: 0 auto;
+    margin-top: 40px;
+}
+
+/* Thin out the presentation headings */
+.campaign-heading {
+    font-weight: 300;
+    line-height: 1;
+    letter-spacing: -1px;
+}
+
+/* MAP */
+
+.map-pin{
+    background:url('/images/map-pin.png') no-repeat left center;
+    width: 100px;
+    height: 100px;
+    background-size: 100%;
+    position: absolute;
+}
+
+.pin1{
+    margin-left: -35px;
+    padding-top: 110px;
+}
+
+.pin2{
+    margin-left: 227px;
+    margin-top: -54px;
+}
+
+.pin3{
+    margin-left: 156px;
+    margin-top: -11px;
+}
+
+.pin4{
+    margin-left: 195px;
+    padding-top: 165px;
+}
+.pin5{
+    margin-left: -25px;
+    padding-top: 159px
+}
+
+.pin6{
+    margin-left: 54px;
+    margin-top: 59px;
+}
+
+.pin7{
+    margin-left: 54px;
+    margin-top: 105px;
+}
+
+.pin8{
+    margin-left: 371px;
+    padding-top: 225px;
+}
+
+.pin9{
+    margin-left: 268px;
+    padding-top: 477px;
+}
+.pin10{
+    margin-left: 59px;
+    padding-top: 508px
+}
+
+.pin11{
+    margin-left: 278px;
+    margin-top: 323px
+}
+
+.pin12{
+    margin-left: 301px;
+    margin-top: 215px;
+
+}
+
+.pin13{
+    margin-left: 144px;
+    margin-top: 318px;
+}
+
+
+/** PRESS **/
+
+.rennes-la-novosphere-gris, .rennes-la-novosphere, .le-mouv-gris, .le-mouv, .les-inrockuptibles-gris,
+.les-inrockuptibles, .marcel-green-gris, .marcel-green, .la-nouvelle-edition, .la-nouvelle-edition-gris,
+.liberation-gris, .liberation, .ecoplus-tv-gris, .ecoplus-tv, .tracks,
+.tracks-gris
+{ display: inline-block; background: url('/images/icons-press.png') no-repeat; }
+
+.rennes-la-novosphere { background-position: -0px -140px; width: 94px; height: 140px; }
+.le-mouv { background-position: -0px -419px; width: 140px; height: 139px; }
+.les-inrockuptibles { background-position: -0px -637px; width: 140px; height: 79px; }
+.marcel-green { background-position: -0px -786px; width: 140px; height: 70px; }
+.la-nouvelle-edition { background-position: -0px -856px; width: 140px; height: 69px; }
+.liberation { background-position: -0px -1045px; width: 140px; height: 51px; }
+.ecoplus-tv { background-position: -0px -1140px; width: 140px; height: 44px; }
+.tracks { background-position: -0px -1184px; width: 140px; height: 34px; }
+
+
+/* RESPONSIVE CSS
+-------------------------------------------------- */
+
+@media (min-width: 768px) {
+
+    /* Remove the edge padding needed for mobile */
+    .presentation {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    /*.featurette-heading {
+      font-size: 50px;
+    }*/
+
+    .campaign-heading {
+        font-size: 50px;
+    }
+
+    .rennes-la-novosphere { background-position: -0px -0px; width: 94px; height: 140px; }
+    .rennes-la-novosphere:hover { background-position: -0px -140px; width: 94px; height: 140px; }
+    .le-mouv { background-position: -0px -280px; width: 140px; height: 139px; }
+    .le-mouv:hover { background-position: -0px -419px; width: 140px; height: 139px; }
+    .les-inrockuptibles { background-position: -0px -558px; width: 140px; height: 79px; }
+    .les-inrockuptibles:hover { background-position: -0px -637px; width: 140px; height: 79px; }
+    .marcel-green { background-position: -0px -716px; width: 140px; height: 70px; }
+    .marcel-green:hover { background-position: -0px -786px; width: 140px; height: 70px; }
+    .la-nouvelle-edition { background-position: -0px -925px; width: 140px; height: 69px; }
+    .la-nouvelle-edition:hover { background-position: -0px -856px; width: 140px; height: 69px; }
+    .liberation { background-position: -0px -994px; width: 140px; height: 51px; }
+    .liberation:hover { background-position: -0px -1045px; width: 140px; height: 51px; }
+    .ecoplus-tv { background-position: -0px -1096px; width: 140px; height: 44px; }
+    .ecoplus-tv:hover { background-position: -0px -1140px; width: 140px; height: 44px; }
+    .tracks { background-position: -0px -1218px; width: 140px; height: 34px; }
+    .tracks:hover { background-position: -0px -1184px; width: 140px; height: 34px; }
+}
+
+@media(max-width:480px){
+
+    .featurette-heading img{
+        margin-top:20px;
+        width: 80%;
+    }
+
+    .featurette-heading {
+
+        margin-top:40px;
+    }
+
+    .home-list li{
+        display: inline-block;
+    }
+
+}
+
+@media (min-width: 992px) {
+    .presentation {
+        margin-top: 40px;
+    }
+
+    .featurette {
+        margin-bottom: 40px;
+    }
+
+    .campaign-heading {
+        margin-top: 40px;
+    }
+
+    /*.featurette-heading {
+      margin-top: 80px;
+    }*/
+}
+
+/* Embed video container */
+
+.embed-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 30px;
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    height: auto;
+}
+
+.embed-container iframe, .embed-container object, .embed-container embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.embed-container iframe, .embed-container object, .embed-container embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Medias */
+
+.media > div {
+    height: 140px;
+    line-height: 140px;
+    text-align: center;
+}
+
+.media > div > a {
+    vertical-align: middle;
+}
+
+/* Buttons */
+
+.btn-danger:hover {
+    color: #ffffff;
+    background-color: #e16764;
+    border-color: #e16764;
+}
+
+.btn-primary:hover {
+    color: #ffffff;
+    background-color: #9193ce;
+    border-color: #6769bb;
+}
+
+.btn-warning:hover {
+    color: #ffffff;
+    background-color: #f07f33;
+    border-color: #f07f33;
+}
+.btn-warning.two-cols {
+    width: 48%;
+    display:inline-block;
+}
+.btn-warning.two-cols:last-child{
+    margin-left:4%;
+}
+
+.bottom-shadow
+{
+    background: url(../img/block_shadow.png) center no-repeat;
+    height: 15px;
+    margin: 0px;
+    background-size:100%;
+
+}
+.bottom-shadow2
+{
+    background: url(../img/block_shadow2.png) center bottom no-repeat;
+    height: 4px;
+    margin: 0px;
+    background-size:100%;
+
+}
+
+.separator
+{
+    margin: 55px auto;
+    border-bottom: solid 1px #fff;
+    width: 10%;
+}
+
+.choose-profil
+{
+    margin: auto;
+    padding: 100px;
+
+}
+
+.controls
+{
+    margin-bottom: 20px;
+}
+
+.img-profil
+{
+    margin: 15px;
+    margin-bottom: 20px;
+
+}
+
+.img-profil.selected
+{
+    border: solid 2px orange;
+    border-radius: 6px;
+    padding: 2px;
+}
+
+td
+{
+    text-align: center;
+    position: relative;
+    width: 40%;
+}
+
+input.form-control, textarea.form-control
+{
+    color:#CCCCCC;
+    font-size:20px;
+    border: 2px solid #CCCCCC;
+    height: 50px;
+    padding-left: 8px;
+    border-radius: 4px;
+}
+textarea.form-control{
+    height:123px;
+}
+
+input[type=radio]
+{
+    position: absolute;
+    margin: 15px;
+    margin-bottom: 20px;
+    left: 35px;
+    top:38px;
+    z-index: 500;
+    opacity: 0;
+    cursor:pointer;cursor:hand;
+}
+
+input[type=radio]:checked + label
+{
+    border: solid 2px orange;
+    border-radius: 6px;
+    padding: 2px;
+}
+
+
+.btn-submit
+{
+    font-size:20px;
+    color: white;
+    background-color: #FF9966;
+    border: none;
+    border-radius: 4px;
+    width: 100%;
+    min-height: 50px;
+}
+
+
+.btn-facebook
+{
+    background: url(../images/btn-facebook-become-carrotmobber.png);
+    height: 55px;
+    width: 245px;
+    border: none;
+}
+
+.link-contact
+{
+    color:#FF9966;
+    text-decoration: underline;
+}
+
+
+h2
+{
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-size: 18pt;
+}
+
+h3
+{
+    font-weight: lighter;
+    margin: 60px 0 27px 0;
+    font-size: 25pt;
+}
+
+h4
+{
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 40px;
+    font-size: 11pt;
+}
+
+p
+{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+form{width:53%;margin:0 auto;}
+form a {text-align:left;display:block;}
+
+.error-msg{display:block;text-align:left;}
+
+.has-error .form-control, .form-control:focus {border:2px solid #FF9966;}
+
+/*a.new_campaign  {
+    position:absolute;
+    right:0px;
+    top:-20px;
+    font-size:18px;
+    font-weight:lighter;
+    background-color:#ff9966;
+    border:2px solid #ff9966;
+    border-radius:8px;
+    text-align: left;
+    padding:10px;
+}*/
+
+a.new_campaign, a.new_campaign:visited, a.new_campaign:hover {
+    color:white;
+    text-decoration: none;
+}
+
+/* LISTE DES FILTRES */
+.filters{text-align:center;padding:42px 0px;}
+.filters ul{display:inline-block;list-style:none;overflow:hidden;padding:0px;}
+.filters li{float:left; margin-right:20px;}
+.filters a, .filters a:hover {
+    color:#a2a3a3;
+    text-decoration: none;
+    font-size: 1.4em;
+    font-family: 'Roboto', sans-serif;
+    display:block;
+}
+.filters .selected {border-bottom:solid 3px #ff9966;}
+
+/* LISTE DES CAMPAGNES */
+
+.grid_c_list {
+    padding:0px 2.0507812%;
+    overflow:hidden;
+}
+
+.bk_mea {width:46.6796875%;float:left; margin:10px 1.66015625%;}
+.bk_mea_bg{background-color:white;}
+
+.bk_mea h3, .event h2 {color: #67cc99;font-size: 1.4em;margin:0px;font-weight:normal;}
+
+.e_infos{padding:33px 37px;}
+
+.e_infos .location{margin:27px 0;overflow: hidden;}
+.e_infos .location .pin {float:left;background: url('../img/pin.png') no-repeat;text-indent:40px;}
+.e_infos .location .town {font-size: 1.4em;font-weight:bold;}
+.e_infos .location .people {font-size: 1.8em;float:right;background:url('../img/participants.png') no-repeat;text-indent: 51px;height:38px;}
+
+
+.controls .row{
+    width: 40%;
+    margin: auto;
+
+}
+
+
+.event{
+    background-color: #FFF;
+}
+
+.event .img-rounded{
+    border-radius: 60px;
+
+}
+
+.event .part
+{
+    float:left;
+    border-bottom:solid 3px orange;
+}
+
+.event .friend
+{
+    margin-left: 190px;
+    float:left;
+    border-radius: 3px;
+    border-bottom:solid 3px orange;
+}
+
+.event .sout
+{
+    margin-left: 310px;
+    padding-top: -230px;
+    border-bottom:solid 3px orange;
+    float:left;
+
+}
+
+.event .paris
+{
+    clear:both;
+    padding-top: 50px;
+}
+
+.event .number
+{
+    margin-top: -45px;
+    margin-left: 300px;
+}
+
+
+/*###################################
+        MEDIA QUERIES
+####################################*/
+
+@media (max-width: 1172px) {
+    .bk_c_mea {height:auto;width:100%;float:left;}
+    /*a.new_campaign {position:relative;display:block;margin:10px; text-align: center;}*/
+}
+
+@media (max-width: 767px) {
+    form{width:90%;}
+
+    /*adaptation liste article*/
+
+    .grid_c_list{padding:0px;}
+    .bk_mea {width:100%;margin:0px 0px 5px 0px;}
+
+    /*adaptation article */
+     .event{width:100%;}
+
+    /*HOME*/
+    .list-article li{width:100%;}
+    #video {width:100%;}
+
+    .home ul.mea-btn {width:100%;float:left;margin-top:0;}
+    .home .mea-btn li{float:left; width:100%;border-bottom:solid 1px #bababa;}
+
+    .home {margin: 60px 0px 0px 0px;}
+    .content{min-height:0;}
+
+    .e_infos .location .pin {background:none;text-indent:0px;}
+    .contributor span {display:inline-block;}
+}
