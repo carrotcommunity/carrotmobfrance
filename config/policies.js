@@ -45,5 +45,14 @@ module.exports.policies = {
     
     'manifesto': {
         '*': true
+    },
+
+    'pad': {
+        '*': true
+    },
+
+    'calc': {
+        '*': true
     }
+
 };

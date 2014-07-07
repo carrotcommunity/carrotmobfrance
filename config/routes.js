@@ -95,5 +95,16 @@ module.exports.routes = {
     '/manifesto': {
         controller: 'manifesto',
         action: 'index'
+    },
+
+    '/pad': {
+        controller: 'pad',
+        action: 'index'
+    },
+
+    '/calc': {
+        controller: 'calc',
+        action: 'index'
     }
+
 };
