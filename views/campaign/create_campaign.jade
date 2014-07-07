@@ -53,7 +53,9 @@ block body
                                 .error-msg!= '<span class="glyphicon glyphicon glyphicon-remove"></span>'+ errors['inputImg']
                             .control-group
                                 .controls(class=(errors ? (errors['inputImg'] ? 'has-error' : 'has-success') : ''))
+                                    label(for='inputImg') Image
                                     input.form-control(type='file',id='inputImg', placeholder='Image', name='banner', value=(campaign ? campaign.image : ''))
+                                    span.help-block Taille recommandée : 1024x640px
                             .control-group
                                 .controls
                                     button(type='submit', class='btn-submit') Je créé mon évènement
