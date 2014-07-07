@@ -731,3 +731,25 @@ a.new_campaign, a.new_campaign:visited, a.new_campaign:hover {
     .e_infos .location .pin {background:none;text-indent:0px;}
     .contributor span {display:inline-block;}
 }
+
+/* FACEBOOK */
+
+.pluginShareButtonLink {
+    display: inline-block;
+    margin-bottom: 0px;
+    font-weight: normal;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    white-space: nowrap;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857;
+    border-radius: 4px;
+    -moz-user-select: none;
+    color: #F07F33;
+    background-color: #FFF;
+    border-color: #F07F33;
+}
