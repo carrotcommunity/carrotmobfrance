@@ -131,9 +131,6 @@ input:-moz-placeholder {
 
 /* Thin out the presentation headings */
 
-.cover {
-    margin-top: 50px;
-}
 // Movie on home page
 script(type='text/javascript').
     $('#img-movie').click(function(){
