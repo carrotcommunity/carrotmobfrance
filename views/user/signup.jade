@@ -29,11 +29,11 @@ block body
                                         td
                                             input(type='radio', id='radio-girl', src='/images/icon-carrotmobber-woman.png', name='inputGender', value='1', checked=(user && user.gender == 1 ? 'true' : 'false'))
                                             label(for='radio-girl')
-                                                img(src='/img/register_girl.png')
+                                                img(src='/images/icon-carrotmobber-woman.png')
                                         td
                                             input(type='radio', id='radio-boy', src='/images/icon-carrotmobber-man.png', name='inputGender', value='2', checked=(user && user.gender == 2 ? 'true' : 'false'))
                                             label(for='radio-boy')
-                                                img(src='/img/register_boy.png')
+                                                img(src='/images/icon-carrotmobber-man.png')
                             .control-group
                                 if errors && errors['inputFirstName']
                                     .error-msg!='<span class="glyphicon glyphicon glyphicon-remove"></span>'+ errors['inputFirstName']
