@@ -23,7 +23,6 @@ function safeFilename(name) {
 sid.characters('0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ$@');
 sid.seed(42);
 
-
 var CampaignController = {
 
     new: function (req, res) {
@@ -160,21 +159,25 @@ var CampaignController = {
         validator(null, null);
     },
 
-    past: function (req, res) {
-        var date = new Date();
-        Campaign.find().where({epoch: {'<': date.getTime()}}).where({validated: true}).exec(function (err, campaign) {
-            if (err)
-                return (res.send(err, 500));
-            res.view('campaign/list_campaign', {campaigns: campaign, context: "past"});
-        })
-    },
-
     current: function (req, res) {
         var date = new Date();
         Campaign.find().where({epoch: {'>': date.getTime()}}).where({validated: true}).exec(function (err, campaign) {
             if (err)
                 return (res.send(err, 500));
             res.view('campaign/list_campaign', {campaigns: campaign, context: "current"});
+        })
+    },
+
+    historic: function (req, res) {
+        res.view();
+    },
+
+    past: function (req, res) {
+        var date = new Date();
+        Campaign.find().where({epoch: {'<': date.getTime()}}).where({validated: true}).exec(function (err, campaign) {
+            if (err)
+                return (res.send(err, 500));
+            res.view('campaign/list_campaign', {campaigns: campaign, context: "past"});
         })
     },
 
