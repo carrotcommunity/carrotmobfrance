@@ -1,8 +1,5 @@
 /**
  * AuthController
- *
- * @module      :: Model
- * @description :: Module d'authentification Facebook
  */
 
 var passport = require('passport');
