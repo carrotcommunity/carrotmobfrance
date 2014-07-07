@@ -21,93 +21,84 @@
  */
 
 module.exports.routes = {
+    // For debug:
+    // '/*': function(req, res, next) {console.log(req.method, req.url); next();},
 
+    '/': {
+        view: 'home/index'
+    },
 
-  // Make the view located at `views/homepage.ejs` (or `views/homepage.jade`, etc. depending on your
-  // default view engine) your home page.
-  //
-  // (Alternatively, remove this and add an `index.html` file in your `assets` directory)
-  '/*': function(req, res, next) {console.log(req.method, req.url); next();},
+    '/connect': {
+        view: 'user/connect'
+    },
 
-  '/': {
-    view: 'home/index'
-  },
+    '/signin': {
+        controller: 'auth',
+        action: 'signin'
+    },
 
+    '/fbsignin': {
+        controller: 'auth',
+        action: 'facebook'
+    },
 
-  // But what if you want your home page to display
-  // a signup form located at `views/user/signup.ejs`?
+    '/logout': {
+        controller: 'auth',
+        action: 'logout'
+    },
 
-  '/connect': {
-    view: 'home/connect'
-  },
+    '/signup': {
+        controller: 'signup',
+        action: 'index'
+    },
 
-  '/signin': {
-      controller: 'auth',
-      action: 'signin'
-  },
+    '/register': {
+        controller: 'signup',
+        action: 'save'
+    },
 
-  '/fbsignin': {
-      controller: 'auth',
-      action: 'facebook'
-  },
+    '/forgot_password': {
+        controller: 'forgot',
+        action: 'index'
+    },
 
-  '/logout': {
-      controller: 'auth',
-      action: 'logout'
-  },
+    '/confirm_password': {
+        controller: 'forgot',
+        action: 'confirm'
+    },
 
-  '/signup': {
-      controller: 'signup',
-      action: 'index'
-  },
+    '/campaign/current': {
+        controller: 'campaign',
+        action: 'current'
+    },
 
-  '/register': {
-      controller: 'signup',
-      action: 'save'
-  },
+    '/campaign/historic': {
+        controller: 'campaign',
+        action: 'historic'
+    },
 
-  '/forgot_password': {
-      controller: 'forgot',
-      action: 'index'
-  },
+    '/campaign/past': {
+        controller: 'campaign',
+        action: 'past'
+    },
 
-  '/confirm_password': {
-      controller: 'forgot',
-      action: 'confirm'
-  },
+    '/campaign/coming': {
+        controller: 'campaign',
+        action: 'coming'
+    },
 
+    '/campaign/details': {
+        controller: 'campaign',
+        action: 'details'
+    },
 
-  '/campaign/details': {
-      controller: 'campaign',
-      action: 'details'
-  },
+    'get /upload/*': {
+        controller: 'file',
+        action: 'get'
+    },
 
-  '/campaign/current': {
-      controller: 'campaign',
-      action: 'current'
-  },
-
-  '/campaign/past': {
-      controller: 'campaign',
-      action: 'past'
-  },
-
-  '/campaign/coming': {
-      controller: 'campaign',
-      action: 'coming'
-  },
-
-  'get /upload/images/*': {
-      controller: 'file',
-      action: 'get'
-  },
-
-
-  // Custom routes here...
-
-
-  // If a request to a URL doesn't match any of the custom routes above,
-  // it is matched against Sails route blueprints.  See `config/blueprints.js`
-  // for configuration options and examples.
-
+    '/manifesto': {
+        controller: 'manifesto',
+        action: 'index'
+    }
 };

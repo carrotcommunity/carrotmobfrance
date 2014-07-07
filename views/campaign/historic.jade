@@ -1,0 +1,340 @@
+extends ../layout
+
+block body
+    .content
+        .container
+            if session && session.passport && session.passport.user
+                a.btn.btn-warning(href='/campaign/new') + Créer une campagne
+        .filters
+            ul
+                li
+                    a.selected(href='/campaign/historic') historiques
+                li
+                    a(href='/campaign/past') passées
+                li
+                    a(href='/campaign/current') en cours
+                li
+                    a(href='/campaign/coming') à venir
+        #campagnes.container.presentation
+            .row.featurette
+                .col-md-7
+                    h2.campagne-heading
+                        | Carrotmob x 
+                        a(target='_blank', href='http://www.generationscobayes.org/') Générations cobayes
+                        br
+                        span.text-muted 5 avril 2014
+                    p.lead
+                        i.fa.fa-thumbs-up
+                        |  Remplacement des verres plastiques par des verres recyclables et réutilisables
+                        br
+                        i.fa.fa-thumbs-up
+                        |  Approvisionnement avec des produits d'entretiens plus respectueux de la santé et de l'environnement
+                    p
+                        a.btn.btn-danger(role='button', target='_blank', href='https://www.facebook.com/events/755371131142749/')
+                            i.fa.fa-facebook.fa-fw
+                            | Evénement Carrotmob x Générations cobayes
+                .col-md-5
+                    img.featurette-image.img-responsive.img-thumbnail(width='411', height='236', alt='Carrotmob x Générations cobayes', src='/images/campaign-paris-2014-04-05.jpg')
+            hr.featurette-divider
+            .row.featurette
+                .col-md-5
+                    img.featurette-image.img-responsive.img-thumbnail(width='411', height='236', alt='Carrotmob chez Les Frangins', src='/images/campaign-paris-2014-03-08.jpg')
+                .col-md-7
+                    h2.campagne-heading
+                        | Les Frangins
+                        br
+                        span.text-muted 8 mars 2014
+                    p.lead
+                        i.fa.fa-thumbs-up
+                        |  Relocalisation de ses fournisseurs de bière fabriquées en Ile-de-France
+                    p
+                        a.btn.btn-danger(role='button', target='_blank', href='https://www.facebook.com/events/1409528569304528/')
+                            i.fa.fa-facebook.fa-fw
+                            |  Evénement Carrotmob @ Les Frangins
+            hr.featurette-divider
+            .row.featurette
+                .col-md-7
+                    h2.campagne-heading
+                        | L'Absurde Imposture
+                        br
+                        span.text-muted 30 janvier 2014
+                    p.lead
+                        i.fa.fa-thumbs-up
+                        |  Passage à un fournisseur électricité vert 
+                        i.fa.fa-plus-circle
+                        |  Installation d'une enseigne LED
+                    iframe(width='100%', height='166', frameborder='no', src='https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/134203668&color=ff5500&auto_play=false&hide_related=false&show_artwork=true', scrolling='no')
+                .col-md-5
+                    img.featurette-image.img-responsive.img-thumbnail(width='411', height='236', alt='Carrotmob à L"Absurde Imposture', src='/images/campaign-paris-2014-01-30.jpg')
+            hr.featurette-divider
+            .row.featurette
+                .col-md-5
+                    img.featurette-image.img-responsive.img-thumbnail(width='411', height='236', alt='Carrotmobs à Paris', src='/images/campaign-paris.png')
+                .col-md-7
+                    h2.campagne-heading
+                        | Intermarché - Pour un commerce équitable
+                        br
+                        span.text-muted 26 octobre 2013
+                    p.lead
+                        i.fa.fa-thumbs-up
+                        |  Baisse du prix des produits issus du commerce équitable de - 20 centimes en moyenne pendant 6 mois
+                        br
+                        i.fa.fa-bar-chart-o.fa-fw
+                        |  + 960% de
+                        abbr(title='Chiffre d"Affaires') CA
+                    p
+                        a.btn.btn-danger(role='button', target='_blank', href='https://www.facebook.com/events/622623657780279/')
+                            i.fa.fa-facebook.fa-fw
+                            |  Evénement Carrotmob Intermarché
+            hr.featurette-divider
+            .row.featurette
+                .col-md-7
+                    h2.campagne-heading
+                        | Be Yourself
+                        br
+                        span.text-muted 25 octobre 2013
+                    p.lead
+                        i.fa.fa-thumbs-up
+                        |  Construction d'un composteur 
+                        i.fa.fa-plus-circle
+                        |  Distribution de repas de Noël à des démunis
+                    p
+                        a.btn.btn-danger(role='button', target='_blank', href='https://www.facebook.com/pages/Carrotmob-Lille/118439758341289')
+                            i.fa.fa-facebook.fa-fw
+                            |  Page Carrotmob Lille
+                .col-md-5
+                    img.featurette-image.img-responsive.img-thumbnail(width='411', height='236', alt='Carrotmob à Lille', src='/images/campaign-lille.png')
+            hr.featurette-divider
+            .row.featurette
+                .col-md-5
+                    img.featurette-image.img-responsive.img-thumbnail(width='411', height='236', alt='Carrotmobs à Paris', src='/images/campaign-paris.png')
+                .col-md-7
+                    h2.campagne-heading
+                        | Bea'shka
+                        br
+                        span.text-muted 8 juin 2013
+                    p.lead
+                        i.fa.fa-thumbs-up
+                        |  Remplacement de radiateurs ultra-énergivores par des chauffages écologiques
+                    p
+                        a.btn.btn-danger(role='button', target='_blank', href='https://www.facebook.com/events/508588659190462/?fref=ts')
+                            i.fa.fa-facebook.fa-fw
+                            |  Evénement Carrotmob Bea'shka
+                    p
+                        a.btn.btn-danger(role='button', target='_blank', href='https://www.facebook.com/groups/327353404034008/')
+                            i.fa.fa-facebook.fa-fw
+                            |  Groupe des Carrotmobbers parisiens
+            hr.featurette-divider
+            .row.featurette
+                .col-md-7
+                    h2.campagne-heading
+                        | Ferme Attitude
+                        br
+                        span.text-muted 6 juin 2013
+                    p.lead
+                        i.fa.fa-thumbs-up
+                        |  Installation d'ampoules basse consommation à LED
+                    p
+                        a.btn.btn-danger(role='button', target='_blank', href='https://www.facebook.com/CarrotmobToulouse')
+                            i.fa.fa-facebook.fa-fw
+                            |  Page Carrotmob Toulouse
+                .col-md-5
+                    img.featurette-image.img-responsive.img-thumbnail(width='411', height='236', alt='Carrotmob à Toulouse', src='/images/campaign-toulouse.png')
+            hr.featurette-divider
+            .row.featurette
+                .col-md-5
+                    img.featurette-image.img-responsive.img-thumbnail(width='411', height='236', alt='Carrotmob à Grenoble', src='/images/campaign-grenoble.png')
+                .col-md-7
+                    h2.campagne-heading
+                        | Tea Time
+                        br
+                        span.text-muted 6 avril 2013
+                    p.lead
+                        i.fa.fa-thumbs-up
+                        |  Relocalisation de fournisseurs
+                        br
+                        i.fa.fa-bar-chart-o.fa-fw
+                        |  + 600 € de 
+                        abbr(title='Chiffre d"Affaires') CA
+                    p
+                        a.btn.btn-primary(role='button', target='_blank', href='https://vimeo.com/59765761')
+                            i.fa.fa-vimeo-square.fa-fw
+                            |  Le revivre en vidéo
+                    p
+                        a.btn.btn-danger(role='button', target='_blank', href='https://www.facebook.com/carrotmobgrenoble')
+                            i.fa.fa-facebook.fa-fw
+                            |  Page Carrotmob Grenoble
+            hr.featurette-divider
+            .row.featurette
+                .col-md-7
+                    h2.campagne-heading
+                        | Ecoffee
+                        br
+                        span.text-muted 2 mars 2013
+                    p.lead
+                        i.fa.fa-thumbs-up
+                        |  Aménagement du camion au tri sélectif
+                        br
+                        i.fa.fa-bar-chart-o.fa-fw
+                        |  + 450 € de 
+                        abbr(title='Chiffre d"Affaires') CA
+                    p
+                        a.btn.btn-danger(role='button', target='_blank', href='https://www.facebook.com/carrotmobrennes')
+                            i.fa.fa-facebook.fa-fw
+                            |  Page Carrotmob Rennes
+                .col-md-5
+                    img.featurette-image.img-responsive.img-thumbnail(width='411', height='236', alt='Carrotmobs à Rennes', src='/images/campaign-rennes.png')
+            hr.featurette-divider
+            .row.featurette
+                .col-md-5
+                    img.featurette-image.img-responsive.img-thumbnail(width='411', height='236', alt='Carrotmobs à Paris', src='/images/campaign-paris.png')
+                .col-md-7
+                    h2.campagne-heading
+                        | Monsieur Poulet
+                        br
+                        span.text-muted 13 octobre 2012
+                    p.lead
+                        i.fa.fa-thumbs-up
+                        |  Installation d'ampoules basse consommation à LED
+                    p
+                        a.btn.btn-danger(role='button', target='_blank', href='https://www.facebook.com/groups/327353404034008/')
+                            i.fa.fa-facebook.fa-fw
+                            |  Groupe des Carrotmobbers parisiens
+            hr.featurette-divider
+            .row.featurette
+                .col-md-7
+                    h2.campagne-heading
+                        | La Cave Délices, Le Chantier
+                        br
+                        span.text-muted 23 juin 2012
+                    p.lead
+                        i.fa.fa-thumbs-up
+                        |  Le Chantier : Relocalisation des fournisseurs
+                        br
+                        | La Cave Délices : Isolation du bâtiment
+                        i.fa.fa-plus-circle
+                        |  Installation d'ampoules basses consommation à LED
+                        br
+                        i.fa.fa-bar-chart-o.fa-fw
+                        |  + 800 € de 
+                        abbr(title='Chiffre d"Affaires') CA
+                    p
+                        a.btn.btn-danger(role='button', target='_blank', href='https://www.facebook.com/carrotmobrennes')
+                            i.fa.fa-facebook.fa-fw
+                            |  Page Carrotmob Rennes
+                .col-md-5
+                    img.featurette-image.img-responsive.img-thumbnail(width='411', height='236', alt='Carrotmobs à Rennes', src='/images/campaign-rennes.png')
+            hr.featurette-divider
+            .row.featurette
+                .col-md-5
+                    img.featurette-image.img-responsive.img-thumbnail(width='411', height='236', alt='Carrotmobs à Paris', src='/images/campaign-paris.png')
+                .col-md-7
+                    h2.campagne-heading
+                        | La Bellevilloise
+                        br
+                        span.text-muted 6 avril 2012
+                    p.lead
+                        i.fa.fa-thumbs-up
+                        |  Isolation du bâtiment
+                    p
+                        a.btn.btn-danger(role='button', target='_blank', href='https://www.facebook.com/groups/327353404034008/')
+                            i.fa.fa-facebook.fa-fw
+                            |  Groupe des Carrotmobbers parisiens
+            hr.featurette-divider
+            .row.featurette
+                .col-md-7
+                    h2.campagne-heading
+                        | Rive Gauche
+                        br
+                        span.text-muted 24 mars 2012
+                    p.lead
+                        i.fa.fa-thumbs-up
+                        |  Installation d'un mur végétal
+                .col-md-5
+                    img.featurette-image.img-responsive.img-thumbnail(width='411', height='236', alt='Carrotmob à Troyes', src='/images/campaign-troyes.png')
+            hr.featurette-divider
+            .row.featurette
+                .col-md-5
+                    img.featurette-image.img-responsive.img-thumbnail(width='411', height='236', alt='Carrotmobs à Rennes', src='/images/campaign-rennes.png')
+                .col-md-7
+                    h2.campagne-heading
+                        | Le Café Cortina
+                        br
+                        span.text-muted 13 mai 2011
+                    p.lead
+                        i.fa.fa-thumbs-up
+                        |  Installation d'un système calorifique de redistribution de la chaleur
+                        br
+                        i.fa.fa-bar-chart-o.fa-fw
+                        |  + 2200 € de 
+                        abbr(title='Chiffre d"Affaires') CA
+                    p
+                        a.btn.btn-primary(role='button', target='_blank', href='https://vimeo.com/25474367')
+                            i.fa.fa-vimeo-square.fa-fw
+                            |  Le revivre en vidéo
+                    p
+                        a.btn.btn-danger(role='button', target='_blank', href='https://www.facebook.com/carrotmobrennes')
+                            i.fa.fa-facebook.fa-fw
+                            |  Page Carrotmob Rennes
+            hr.featurette-divider
+            .row.featurette
+                .col-md-7
+                    h2.campagne-heading
+                        | La Vie Enchantée
+                        br
+                        span.text-muted 12 mai 2011
+                    p.lead
+                        i.fa.fa-thumbs-up
+                        |  Transition vers un fournisseur d'électricité verte
+                        br
+                        i.fa.fa-bar-chart-o.fa-fw
+                        |  + 750 € de 
+                        abbr(title='Chiffre d"Affaires') CA
+                    p
+                        a.btn.btn-primary(role='button', target='_blank', href='https://vimeo.com/25474367')
+                            i.fa.fa-vimeo-square.fa-fw
+                            |  Le revivre en vidéo
+                    p
+                        a.btn.btn-danger(role='button', target='_blank', href='https://www.facebook.com/carrotmobrennes')
+                            i.fa.fa-facebook.fa-fw
+                            |  Page Carrotmob Rennes
+                .col-md-5
+                    img.featurette-image.img-responsive.img-thumbnail(width='411', height='236', alt='Carrotmobs à Rennes', src='/images/campaign-rennes.png')
+            hr.featurette-divider
+            .row.featurette
+                .col-md-5
+                    img.featurette-image.img-responsive.img-thumbnail(width='411', height='236', alt='Carrotmobs à Rennes', src='/images/campaign-rennes.png')
+                .col-md-7
+                    h2.campagne-heading
+                        | Le Café Laverie
+                        br
+                        span.text-muted 11 mai 2011
+                    p.lead
+                        i.fa.fa-thumbs-up
+                        |  Installation d'ampoules basses consommation à LED
+                        br
+                        i.fa.fa-bar-chart-o.fa-fw
+                        |  + 800 € de 
+                        abbr(title='Chiffre d"Affaires') CA
+                    p
+                        a.btn.btn-primary(role='button', target='_blank', href='https://vimeo.com/25474367')
+                            i.fa.fa-vimeo-square.fa-fw
+                            |  Le revivre en vidéo
+                    p
+                        a.btn.btn-danger(role='button', target='_blank', href='https://www.facebook.com/carrotmobrennes')
+                            i.fa.fa-facebook.fa-fw
+                            |  Page Carrotmob Rennes
+            hr.featurette-divider
+            .row.featurette
+                .col-md-7
+                    h2.campagne-heading
+                        | La Vuelta Café
+                        br
+                        span.text-muted 30 avril 2010, le premier en France !
+                    p.lead
+                        i.fa.fa-thumbs-up
+                        |  Installation d'ampoules basses consommation à LED 
+                        i.fa.fa-plus-circle
+                        |  Achat d'un système frigorifique économe en énergie
+                .col-md-5
+                    img.featurette-image.img-responsive.img-thumbnail(width='411', height='236', alt='Carrotmob à Rochefort Sur Mer', src='/images/campaign-rochefort-sur-mer.png')

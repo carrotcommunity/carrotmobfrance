@@ -1,0 +1,28 @@
+extends ../layout
+
+block body
+    .content
+        .event
+            img(src=c.image?'/upload/detail/'+c.image:'/images.default.jpg', width='100%')
+            .e_infos
+                h2= 'Carrotmob ' + c.title
+                - var table = c.startDateStr.split(' ')
+                - var date = table[0].split('/')
+                - var hours =  table[1].split(':')
+                - var newDate =  date[0] + "/" + date[1] + "/" + date[2] + " à " + hours[0] + ":" + hours[1]
+                .location
+                    span.pin
+                        .town= c.address+' '+c.city
+                        .date= newDate
+                div.btn-group
+                    a.btn.btn-warning(href="/campaign/participate?id="+ c.id) Participer
+                    a.btn.btn-warning(href='https://www.facebook.com/sharer.php?app_id=289471504541619&sdk=joey&u=http%3A%2F%2Fwww.carrotmob.fr%2Fcampaign%2Fdetails%3Fid%3D'+c.id+'&display=popup', target='_blank') Partager sur Facebook
+                p= c.desc
+                p!= '<strong>Engagement : </strong><br/>'+ c.engagement
+                .contributor
+                if c.carrotmobber.picture
+                    img.img-rounded(src=c.carrotmobber.picture)
+                span= ' Organisé par '+ c.carrotmobber.firstname + ' '+ c.carrotmobber.lastname
+                if session && session.passport && session.passport.user && session.passport.user.admin
+                    a(href='/campaign/'+(c.validated?'desc':'')+'activate?id='+c.id+(c.validated?'Désa':'A')+'ctiver')
+        .bottom-shadow2
