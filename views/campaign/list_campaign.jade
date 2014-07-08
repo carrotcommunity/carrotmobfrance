@@ -1,5 +1,16 @@
 extends ../layout
 
+block fbmeta
+    meta(property='og:title', content='Campagnes')
+    meta(property='og:site_name', content='Carrotmob')
+    meta(property='og:url', content='http://www.carrotmob.fr/campaign/'+context)
+    meta(property='og:description', content='Nos campagnes passées, en cours et à venir. Donnons du sens à nos dépenses !')
+    meta(property='og:image', content='http://www.carrotmob.fr/upload/images/campaign/cover/default.jpg')
+    meta(property='fb:app_id', content='289471504541619')
+    meta(property='og:locale', content='fr_FR')
+    meta(property='article:publisher', content='https://www.facebook.com/carrotmobfrance')
+    meta(property='article:author', content='https://www.facebook.com/carrotmobfrance')
+
 block body
     .cover
         h2.text-hide Campagnes

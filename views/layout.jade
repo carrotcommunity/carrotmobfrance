@@ -33,17 +33,24 @@ html
             link(rel='stylesheet', type='text/css', href='/css/header.css')
             link(rel='stylesheet', type='text/css', href='/css/footer.css')
 
-            meta(property='og:type', content='website')
-            meta(property='og:url', content='http://www.carrotmob.fr')
-            meta(property='og:image', content='http://www.carrotmob.fr/images/carrotmob.png')
-            meta(property='og:title', content='Carrotmob France')
-            meta(property='og:description', content='Donnons du sens à nos dépenses ! Nos actions collectives permettent aux petits commerçants et aux grandes entreprises de se développer durablement.')
-            meta(name='twitter:card',content='summary')
-            meta(name='twitter:site',content='@CarrotCommunity')
-            meta(name='twitter:url',content='http://www.carrotmob.fr')
-            meta(name='twitter:title',content='Carrotmob France')
-            meta(name='twitter:description',content='Donnons du sens à nos dépenses ! Nos actions collectives permettent aux petits commerçants et aux grandes entreprises de se développer durablement.')
-            meta(name='twitter:image',content='http://www.carrotmob.fr/images/carrotmob.png')
+            block fbmeta
+                meta(property='og:title', content='Manifeste')
+                meta(property='og:site_name', content='Carrotmob France')
+                meta(property='og:url', content='http://www.carrotmob.fr')
+                meta(property='og:description', content='Donnons du sens à nos dépenses ! Nos actions collectives permettent aux petits commerçants et aux grandes entreprises de se développer durablement.')
+                meta(property='og:image', content='http://www.carrotmob.fr/images/carrotmob.png')
+                meta(property='fb:app_id', content='289471504541619')
+                meta(property='og:locale', content='fr_FR')
+                meta(property='article:publisher', content='https://www.facebook.com/carrotmobfrance')
+                meta(property='article:author', content='https://www.facebook.com/carrotmobfrance')
+
+            block twittercard
+                meta(name='twitter:card',content='summary')
+                meta(name='twitter:site',content='@CarrotCommunity')
+                meta(name='twitter:url',content='http://www.carrotmob.fr')
+                meta(name='twitter:title',content='Carrotmob France')
+                meta(name='twitter:description',content='Donnons du sens à nos dépenses ! Nos actions collectives permettent aux petits commerçants et aux grandes entreprises de se développer durablement.')
+                meta(name='twitter:image',content='http://www.carrotmob.fr/images/carrotmob.png')
 
     body
         include partials/header
