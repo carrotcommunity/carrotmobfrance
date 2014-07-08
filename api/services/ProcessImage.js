@@ -7,8 +7,8 @@ var fs = require('fs'),
 
 exports.generateThumb = function (originalPath, cb) {
 
-    var UPLOAD_THUMB_PATH = 'upload/thumb';
-    var UPLOAD_DETAIL_PATH = 'upload/detail';
+    var UPLOAD_THUMB_PATH = 'upload/images/campaign/thumb';
+    var UPLOAD_DETAIL_PATH = 'upload/images/campaign/cover';
 
     // Create repositories
     try {
@@ -25,8 +25,8 @@ exports.generateThumb = function (originalPath, cb) {
 
     // Settings size and path
     var originalFileName = originalPath.replace(/^.*[\\\/]/, ''),
-        thumbSize = ['460', '286'],
-        detailSize = ['1024', '580'];
+        thumbSize = ['460', '288'],
+        detailSize = ['1024', '640'];
 
 
     gm(originalPath).thumb(thumbSize[0], thumbSize[1], UPLOAD_THUMB_PATH + '/' + originalFileName, 100, function (err) {

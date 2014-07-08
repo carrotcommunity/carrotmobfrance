@@ -74,7 +74,10 @@ var Campaign = {
             required: false
         },
 
-        image: 'string',
+        image: {
+            type: 'string',
+            defaultsTo: 'default.jpg'
+        },
 
         carrotmobberId: {
             type: 'string',

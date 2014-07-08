@@ -8,7 +8,7 @@ var path = require('path');
 var mkdirp = require('mkdirp');
 var Writable = require('stream').Writable;
 
-var UPLOAD_PATH = 'upload/images';
+var UPLOAD_PATH = 'upload/images/campaign';
 
 function safeFilename(name) {
     name = name.replace(/ /g, '-');
@@ -143,16 +143,19 @@ var CampaignController = {
                     console.log(err);
                     res.json({'error': 'could not write file to storage'});
                 } else {
-                    ProcessImage.generateThumb(results[0].url, function (err, data) {
-                        if (err) {
-                            res.json(err);
-                        } else {
-                            console.log('data', data);
-                            camp.image = data.originalFileName;
-                            Campaign.create(camp).exec(saveCallback);
-
-                        }
-                    });
+                    if (typeof results[0] !== 'undefined') {
+                        ProcessImage.generateThumb(results[0].url, function (err, data) {
+                            if (err) {
+                                res.json(err);
+                            } else {
+                                console.log('data', data);
+                                camp.image = data.originalFileName;
+                                Campaign.create(camp).exec(saveCallback);
+                            }
+                        });
+                    } else {
+                        Campaign.create(camp).exec(saveCallback);
+                    }
                 }
             });
         };

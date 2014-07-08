@@ -3,7 +3,7 @@ extends ../layout
 block body
     .content
         .event
-            img(src=c.image?'/upload/detail/'+c.image:'/images.default.jpg', width='100%')
+            img(src='/upload/images/campaign/cover/'+c.image, width='100%')
             .e_infos
                 h2= 'Carrotmob ' + c.title
                 - var table = c.startDateStr.split(' ')
