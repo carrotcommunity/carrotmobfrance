@@ -20,15 +20,17 @@ block body
                 h2= c.title
                 - var table = c.startDateStr.split(' ')
                 - var date = table[0].split('/')
-                - var hours =  table[1].split(':')
-                - var newDate =  date[0] + "/" + date[1] + "/" + date[2] + " à " + hours[0] + ":" + hours[1]
+                - var hours = table[1].split(':')
+                - var newDate = date[0] + "/" + date[1] + "/" + date[2] + " à " + hours[0] + ":" + hours[1]
+                - var calDate = date[2] + date[1] + date[0] + 'T' + hours[0] + hours[1] + '00'
                 .location
                     span.pin
                         .town= c.address+' '+c.city
                         .date= newDate
                 .btn-group
-                    a.btn.btn-warning(href="/campaign/participate?id="+ c.id) Participer
+                    a.btn.btn-warning(href='/campaign/participate?id='+ c.id) Participer
                     a.btn.btn-warning(href='https://www.facebook.com/sharer.php?app_id=289471504541619&sdk=joey&u=http%3A%2F%2Fwww.carrotmob.fr%2Fcampaign%2Fdetails%3Fid%3D'+c.id+'&display=popup', target='_blank') Partager sur Facebook
+                    a.btn.btn-warning(href='http://www.google.com/calendar/event?action=TEMPLATE&text=' + c.title + '&dates=' + calDate + '/' + calDate + '&details=' + c.desc.substring(0,100) + '...&location=' + c.address + ' ' + c.city + '&trp=false&sprop=website:http://www.carrotmob.fr', target='_blank', rel='nofollow') Ajouter à mon calendrier Google
                 p= c.desc
                 p!= '<strong>Engagement : </strong><br/>'+ c.engagement
                 .contributor
