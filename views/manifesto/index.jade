@@ -1,19 +1,36 @@
 extends ../layout
 
 block body
-    .cover
-        h2.text-hide Manifesto
-        img(src='/images/cover-default.jpg', alt='Manifesto', width='100%')
-    .content
-        h3 Le manifeste en 10 points
-        ul.lead
-            li Changement
-            li Communauté, Ouverture
-            li Positif, Optimiste
-            li Collaboratif
-            li Bienveillant
-            li Ludique, Animé
-            li Ubuntu, Altruiste
-            li Libre
-            li Engagement
-            li Indépendant
+    .background-hawai
+        .container
+            .layout-form
+                .block-form.block-form-bg
+                    .block-header
+                        h2 <img src="/images/carrotmob-60x60.png" alt="Carrotmob"> Notre manifeste...</h2>
+                    .block-content
+                        h3 ...en 10 points :
+                        p.lead
+                            | Changement
+                            br
+                            | Communauté, Ouverture
+                            br
+                            | Positif, Optimiste
+                            br
+                            | Collaboratif
+                            br
+                            | Bienveillant
+                            br
+                            | Ludique, Animé
+                            br
+                            | Ubuntu, Altruiste
+                            br
+                            | Libre
+                            br
+                            | Engagement
+                            br
+                            | Indépendant
+                        p
+                            a.btn.btn-warning.disabled Signer le manifeste (bientôt)
+                        p
+                            a.btn.btn-warning(href='https://www.facebook.com/sharer.php?app_id=289471504541619&sdk=joey&u=http%3A%2F%2Fwww.carrotmob.fr%2Fmanifesto&display=popup', target='_blank') Partager sur Facebook
+    .bottom-shadow2

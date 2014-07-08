@@ -1,18 +1,22 @@
 extends ../layout
 
 block body
-    .content
-        .container
-            if session && session.passport && session.passport.user
-                a.btn.btn-warning(href='/campaign/new') + Créer une campagne
-        .filters
-            ul
+    .cover
+        h2.text-hide Campagnes
+    .container
+        .row
+            ul.mea-btn.col-xs-6.col-md-4
                 li
-                    a(href='/campaign/past', class = (context == 'past' ? 'selected' : '')) passées
-                li
-                    a(href='/campaign/current' class=(context == 'current' ? 'selected' : '')) en cours
-                li
-                    a(href='/campaign/coming', class=(context == 'coming' ? 'selected' : '')) à venir
+                    a(href='/campaign/new')
+                        span.home-list-text Créer ma <strong>campagne</strong>
+            .filters.col-xs-12.col-sm-6.col-md-8
+                ul
+                    li
+                        a(href='/campaign/past', class = (context == 'past' ? 'selected' : '')) passées
+                    li
+                        a(href='/campaign/current' class=(context == 'current' ? 'selected' : '')) en cours
+                    li
+                        a(href='/campaign/coming', class=(context == 'coming' ? 'selected' : '')) à venir
         .grid_c_list
             if campaigns.length==0
                 unless context == 'past'

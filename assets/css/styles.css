@@ -32,10 +32,8 @@ input:-moz-placeholder {
     color:#CCCCCC;
 }
 
-.content {
-    margin: 80px auto 10px auto;
-    max-width: 1024px;
-    min-height: 500px;
+.text-hide {
+    margin: 0;
 }
 
 .btn-embossed {
@@ -46,16 +44,25 @@ input:-moz-placeholder {
 /* COVERS & BACKGROUNDS */
 
 .cover {
-    margin-top: 53px;
+    margin-top: 63px;
 }
 
 .background-hawai {
-    margin-top: 60px;
+    margin-top: 63px;
     background: white url("../images/background-hawai.jpg") no-repeat center fixed;
     -webkit-background-size: cover; /* pour Chrome et Safari */
     -moz-background-size: cover; /* pour Firefox */
     -o-background-size: cover; /* pour Opera */
     background-size: cover;
+}
+
+/* CONTAINER */
+
+.container {
+    margin: 0 auto;
+    max-width: 1024px;
+    padding-left: 0;
+    padding-right: 0;
 }
 
 /* SIGNUP & CONNECT
@@ -139,12 +146,10 @@ script(type='text/javascript').
        $('#video').show();
     });
 
-.video-mea {
-    overflow: hidden;
-}
+
 
 .home {
-    margin-top:0;
+    margin-top: 0;
 }
 
 .home h2, .grid_c_list h2 {
@@ -167,6 +172,8 @@ script(type='text/javascript').
     height: 6px;
 }
 
+/* LIST */
+
 ul.mea-btn{
     list-style: none;
     padding:0px;
@@ -178,8 +185,12 @@ ul.mea-btn{
     padding: 16px 10px 7% 100px;
     height: 110px;
     display:inline-block;
+}
+
+.one-third li{
     width:33%;
 }
+
 .mea-btn li.community{background:url('/images/icon-carrot.png') no-repeat 20px center}
 .mea-btn li.search{background:url('/images/icon-carrot.png') no-repeat 20px center}
 .mea-btn a{
@@ -370,7 +381,15 @@ ul.mea-btn{
 
 }
 
+@media (max-width: 992px) {
+    .container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+
 @media (min-width: 992px) {
+
     .presentation {
         margin-top: 40px;
     }

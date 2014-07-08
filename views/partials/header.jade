@@ -12,9 +12,9 @@ nav.navbar.navbar-default.navbar-fixed-top(role='navigation')
                 .navbar-collapse.collapse
                     ul.nav.navbar-nav.navbar-right
                         - var active =
-                        li(class=(req.path == '/' ? 'active' : ''))
+                        li(class=(req.path == '/' ? 'active' : '')).hidden-md.hidden-sm
                             a(href='/') Découvrir
-                        li(class=(req.path.indexOf('campaign') != -1 ? 'active' : ''))
+                        li(class=(req.path.indexOf('campaign') != -1 ? 'active' : '')).hidden-sm
                             a(href='/campaign/current') Campagnes
                         li(class=(req.path.indexOf('manifesto') != -1 ? 'active' : ''))
                             a(href='/manifesto') Manifeste

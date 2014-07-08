@@ -2,11 +2,11 @@ extends ../layout
 
 block body
     .cover
-        h2.text-hide Donnons du sens à nos dépenses !
         img#cover-movie(src='/images/cover-movie.jpg', alt='Vidéo donnons du sens à nos dépenses',width='100%')
         #movie(style='display:none')
-    .content.home
-        ul.mea-btn
+        h2.text-hide Donnons du sens à nos dépenses !
+    .container.home
+        ul.mea-btn.one-third
             if session && session.passport && session.passport.user
                 li
                     a(href='/campaign/new')
