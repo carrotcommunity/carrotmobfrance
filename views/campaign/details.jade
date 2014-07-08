@@ -14,7 +14,7 @@ block body
                     span.pin
                         .town= c.address+' '+c.city
                         .date= newDate
-                div.btn-group
+                .btn-group
                     a.btn.btn-warning(href="/campaign/participate?id="+ c.id) Participer
                     a.btn.btn-warning(href='https://www.facebook.com/sharer.php?app_id=289471504541619&sdk=joey&u=http%3A%2F%2Fwww.carrotmob.fr%2Fcampaign%2Fdetails%3Fid%3D'+c.id+'&display=popup', target='_blank') Partager sur Facebook
                 p= c.desc
@@ -22,7 +22,15 @@ block body
                 .contributor
                 if c.carrotmobber.picture
                     img.img-rounded(src=c.carrotmobber.picture)
-                span= ' Organisé par '+ c.carrotmobber.firstname + ' '+ c.carrotmobber.lastname
-                if session && session.passport && session.passport.user && session.passport.user.admin
-                    a(href='/campaign/'+(c.validated?'desc':'')+'activate?id='+c.id+(c.validated?'Désa':'A')+'ctiver')
+                span= ' Organisé par '+ c.carrotmobber.firstname + ' '+ c.carrotmobber.lastname + '. '
+                if session && session.passport && session.passport.user
+                    a.text-warning(href='/pad/view?campaign_id='+ c.id) Pad collaboratif
+                    |  - 
+                    a.text-warning(href='/calc/view?campaign_id='+c.id) Tableur collaboratif
+                    if session && session.passport && session.passport.user && session.passport.user.admin
+                        |  - 
+                        if c.validated
+                            a.text-warning(href='/campaign/desactivate?id='+c.id) Désactiver la campagne
+                        else
+                            a.text-warning(href='/campaign/activate?id='+c.id) Activer la campagne
         .bottom-shadow2

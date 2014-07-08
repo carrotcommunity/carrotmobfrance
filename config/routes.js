@@ -102,9 +102,19 @@ module.exports.routes = {
         action: 'index'
     },
 
+    '/pad/view': {
+        controller: 'pad',
+        action: 'view'
+    },
+
     '/calc': {
         controller: 'calc',
         action: 'index'
-    }
+    },
+
+    '/calc/view': {
+        controller: 'calc',
+        action: 'view'
+    },
 
 };
