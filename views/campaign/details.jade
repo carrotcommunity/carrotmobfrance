@@ -5,7 +5,7 @@ block body
         .event
             img(src='/upload/images/campaign/cover/'+c.image, width='100%')
             .e_infos
-                h2= 'Carrotmob ' + c.title
+                h2= c.title
                 - var table = c.startDateStr.split(' ')
                 - var date = table[0].split('/')
                 - var hours =  table[1].split(':')
