@@ -171,10 +171,6 @@ var CampaignController = {
         })
     },
 
-    historic: function (req, res) {
-        res.view();
-    },
-
     past: function (req, res) {
         var date = new Date();
         Campaign.find().where({epoch: {'<': date.getTime()}}).where({validated: true}).exec(function (err, campaign) {
@@ -198,6 +194,8 @@ var CampaignController = {
         Campaign.findOne({'id': id}).exec(function (err, campaign) {
             if (err)
                 return (res.send(err, 500));
+            if (typeof campaign === 'undefined')
+                return (res.send(err, 500));
             Carrotmobber.findOne({id: campaign.carrotmobberId}).exec(function(err, user) {
                 campaign.carrotmobber = user;
                 res.view('campaign/details', {c: campaign});
@@ -210,6 +208,8 @@ var CampaignController = {
         Campaign.findOne({'id': id}).exec(function (err, campaign) {
             if (err)
                 return (res.send(err, 500));
+            if (typeof campaign === 'undefined')
+                return (res.send(err, 500));
             Carrotmobber.findOne({id: campaign.carrotmobberId}).exec(function(err, user) {
                 campaign.carrotmobber = user;
                 campaign.carrotmobbers.add(req.session.passport.user.id);
@@ -220,15 +220,15 @@ var CampaignController = {
     },
 
     activate: function (req, res) {
-        var id = req.param('id');
+        if (!req.session.passport.user.admin)
+            return (res.send("err", 500));
 
-        if (!req.session.passport.user.admin) {
-            res.send("err", 500);
-            return;
-        }
+        var id = req.param('id');
 
         Campaign.findOne({'id': id}).exec(function (err, campaign) {
             if (err)
+                return (res.send(err, 500));
+            if (typeof campaign === 'undefined')
                 return (res.send(err, 500));
             campaign.validated = true;
             campaign.save(function (err, ress) {
@@ -241,15 +241,15 @@ var CampaignController = {
     },
 
     desactivate: function (req, res) {
-        var id = req.param('id');
+        if (!req.session.passport.user.admin)
+            return (res.send("err", 500));
 
-        if (!req.session.passport.user.admin) {
-            res.send("err", 500);
-            return;
-        }
+        var id = req.param('id');
 
         Campaign.findOne({'id': id}).exec(function (err, campaign) {
             if (err)
+                return (res.send(err, 500));
+            if (typeof campaign === 'undefined')
                 return (res.send(err, 500));
             campaign.validated = false;
             campaign.save(function (err, ress) {
