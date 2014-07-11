@@ -1,0 +1,9 @@
+extends ../layout
+
+block body
+    .cover
+        h2.text-hide Calc
+    .container.text-center
+        br
+        a.text-warning(href='/campaign/details?id='+campaign_id) Revenir à la campagne
+    iframe(src='http://calc.carrotcommunity.org/'+calc_id width='100%' height='535' frameborder=0 scrolling='no')

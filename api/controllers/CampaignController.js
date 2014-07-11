@@ -1,26 +1,14 @@
 /**
  * CampaignController
- *
- * @module      :: Controller
- * @description    :: A set of functions called `actions`.
- *
- *                 Actions contain code telling Sails how to respond to a certain type of request.
- *                 (i.e. do stuff, then send some JSON, show an HTML page, or redirect to another URL)
- *
- *                 You can configure the blueprint URLs which trigger these actions (`config/controllers.js`)
- *                 and/or override them with custom routes (`config/routes.js`)
- *
- *                 NOTE: The code you write here supports both HTTP and Socket.io automatically.
- *
- * @docs        :: http://sailsjs.org/#!documentation/controllers
  */
+
 var sid = require('shortid');
 var fs = require('fs');
 var path = require('path');
 var mkdirp = require('mkdirp');
 var Writable = require('stream').Writable;
 
-var UPLOAD_PATH = 'upload/images';
+var UPLOAD_PATH = 'upload/images/campaign';
 
 function safeFilename(name) {
     name = name.replace(/ /g, '-');
@@ -34,7 +22,6 @@ function safeFilename(name) {
 // Setup id generator
 sid.characters('0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ$@');
 sid.seed(42);
-
 
 var CampaignController = {
 
@@ -156,27 +143,23 @@ var CampaignController = {
                     console.log(err);
                     res.json({'error': 'could not write file to storage'});
                 } else {
-                    ProcessImage.generateThumb(results[0].id, results[0].url, function (err, data) {
-                        if (err) {
-                            res.json(err);
-                        } else {
-                            camp.image = data.path;
-                            Campaign.create(camp).exec(saveCallback);
-                        }
-                    });
+                    if (typeof results[0] !== 'undefined') {
+                        ProcessImage.generateThumb(results[0].url, function (err, data) {
+                            if (err) {
+                                res.json(err);
+                            } else {
+                                console.log('data', data);
+                                camp.image = data.originalFileName;
+                                Campaign.create(camp).exec(saveCallback);
+                            }
+                        });
+                    } else {
+                        Campaign.create(camp).exec(saveCallback);
+                    }
                 }
             });
         };
         validator(null, null);
-    },
-
-    past: function (req, res) {
-        var date = new Date();
-        Campaign.find().where({epoch: {'<': date.getTime()}}).where({validated: true}).exec(function (err, campaign) {
-            if (err)
-                return (res.send(err, 500));
-            res.view('campaign/list_campaign', {campaigns: campaign, context: "past"});
-        })
     },
 
     current: function (req, res) {
@@ -185,6 +168,15 @@ var CampaignController = {
             if (err)
                 return (res.send(err, 500));
             res.view('campaign/list_campaign', {campaigns: campaign, context: "current"});
+        })
+    },
+
+    past: function (req, res) {
+        var date = new Date();
+        Campaign.find().where({epoch: {'<': date.getTime()}}).where({validated: true}).exec(function (err, campaign) {
+            if (err)
+                return (res.send(err, 500));
+            res.view('campaign/list_campaign', {campaigns: campaign, context: "past"});
         })
     },
 
@@ -202,6 +194,8 @@ var CampaignController = {
         Campaign.findOne({'id': id}).exec(function (err, campaign) {
             if (err)
                 return (res.send(err, 500));
+            if (typeof campaign === 'undefined')
+                return (res.send(err, 500));
             Carrotmobber.findOne({id: campaign.carrotmobberId}).exec(function(err, user) {
                 campaign.carrotmobber = user;
                 res.view('campaign/details', {c: campaign});
@@ -209,16 +203,32 @@ var CampaignController = {
         })
     },
 
-    activate: function (req, res) {
+    participate: function(req, res) {
         var id = req.param('id');
+        Campaign.findOne({'id': id}).exec(function (err, campaign) {
+            if (err)
+                return (res.send(err, 500));
+            if (typeof campaign === 'undefined')
+                return (res.send(err, 500));
+            Carrotmobber.findOne({id: campaign.carrotmobberId}).exec(function(err, user) {
+                campaign.carrotmobber = user;
+                campaign.carrotmobbers.add(req.session.passport.user.id);
+                campaign.save(function (err) {});
+                res.view('campaign/details', {c: campaign, context: "participate"});
+            });
+        })
+    },
 
-        if (!req.session.passport.user.admin) {
-            res.send("err", 500);
-            return;
-        }
+    activate: function (req, res) {
+        if (!req.session.passport.user.admin)
+            return (res.send("err", 500));
+
+        var id = req.param('id');
 
         Campaign.findOne({'id': id}).exec(function (err, campaign) {
             if (err)
+                return (res.send(err, 500));
+            if (typeof campaign === 'undefined')
                 return (res.send(err, 500));
             campaign.validated = true;
             campaign.save(function (err, ress) {
@@ -231,15 +241,15 @@ var CampaignController = {
     },
 
     desactivate: function (req, res) {
-        var id = req.param('id');
+        if (!req.session.passport.user.admin)
+            return (res.send("err", 500));
 
-        if (!req.session.passport.user.admin) {
-            res.send("err", 500);
-            return;
-        }
+        var id = req.param('id');
 
         Campaign.findOne({'id': id}).exec(function (err, campaign) {
             if (err)
+                return (res.send(err, 500));
+            if (typeof campaign === 'undefined')
                 return (res.send(err, 500));
             campaign.validated = false;
             campaign.save(function (err, ress) {

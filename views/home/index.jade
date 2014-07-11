@@ -1,0 +1,74 @@
+extends ../layout
+
+block body
+    .cover
+        img#cover-movie(src='/images/cover-movie.jpg', alt='Film donnons du sens à nos dépenses',width='100%')
+        #movie(style='display:none')
+        h2.text-hide Donnons du sens à nos dépenses !
+    .container.home
+        ul.mea-btn.one-third
+            if session && session.passport && session.passport.user
+                li
+                    a(href='/campaign/new')
+                        span.home-list-text Créer ma <strong>campagne</strong>
+            else
+                li
+                    a(href='/signup')
+                        span.home-list-text Devenir Carrot<strong>mobber</strong></span>
+            li.search
+                a(href='/campaign/current')
+                    span.home-list-text <span>Découvrir les <strong>campagnes</strong>
+            li.community.hidden_mob
+                a(href='#map')
+                    span.home-list-text <span>Découvrir les <strong>communautés</strong>
+        .carrot-community.hidden-xs
+            .bottom-shadow2
+            h3 Rejoindre une communauté <span class="home-light-carrot">Carrot</span>mob
+            #map.home-map-ville
+                a(href='#')
+                    .map-pin.pin1
+                a(href='https://www.facebook.com/groups/carrotmoblille/', target='_blank')
+                    .map-pin.pin2
+                a(href='https://www.facebook.com/groups/carrotmobrouen/', target='_blank')
+                    .map-pin.pin3
+                a(href='https://www.facebook.com/groups/carrotmobparis/', target='_blank')
+                    .map-pin.pin4
+                a(href='https://www.facebook.com/groups/carrotmobquimper/', target='_blank')
+                    .map-pin.pin5
+                a(href='https://www.facebook.com/groups/carrotmobrennes/', target='_blank')
+                    .map-pin.pin6
+                a(href='https://www.facebook.com/groups/carrotmobnantes/', target='_blank')
+                    .map-pin.pin7
+                a(href='#', target='_blank')
+                    .map-pin.pin8
+                a(href='#', target='_blank')
+                    .map-pin.pin9
+                a(href='https://www.facebook.com/groups/carrotcommunitybordeaux/', target='_blank')
+                    .map-pin.pin10
+                a(href='https://www.facebook.com/groups/carrotmobmarseille/', target='_blank')
+                    .map-pin.pin11
+                a(href='https://www.facebook.com/groups/carrotmobgrenoble/', target='_blank')
+                    .map-pin.pin12
+                a(href='https://www.facebook.com/groups/carrotcommunitytoulouse/', target='_blank')
+                    .map-pin.pin13
+        .carrot-community.media
+            .bottom-shadow2
+            h3 Espace presse
+            .col-lg-3
+                a(class="la-nouvelle-edition", href="https://vimeo.com/51735316", target="_blank")
+            .col-lg-3
+                a(class="liberation", href="http://www.liberation.fr/economie/2013/11/10/carrotmob-la-carotte-plutot-que-le-baton_945919", target="_blank")
+            .col-lg-3
+                a(class="les-inrockuptibles", href="http://www.lesinrocks.com/2012/06/08/actualite/carrotmob-chantre-ecolo-de-lanti-boycott-11267382/", target="_blank")
+            .col-lg-3
+                a(class="le-mouv", href="http://www.franceinfo.fr/societe/initiative-france-info/les-carrot-mob-pouvoir-aux-consommateurs-686153-2012-07-25", target="_blank")
+            .col-lg-3
+                a(class="marcel-green", href="http://www.marcelgreen.com/article/le-carrotmob-a-paris-cest-demain-2872#.Uph7yxaPsW4", target="_blank")
+            .col-lg-3
+                a(class="ecoplus-tv", href="http://www.youtube.com/watch?v=MQ5oXNZYg24", target="_blank")
+            .col-lg-3
+                a(class="rennes-la-novosphere", href="http://www.rennes-novosphere.com/fr/projet/detail/carrotmob-linverse-du-boycott", target="_blank")
+            .col-lg-3
+                a(class="tracks", href="http://www.arte.tv/fr/carrotmob/2982414,CmC=2980570.html", target="_blank")
+            .col-lg-6.col-lg-offset-3
+                a.btn.btn-warning(href="mailto:presse@carrotmob.fr") Nous contacter

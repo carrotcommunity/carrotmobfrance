@@ -1,0 +1,13 @@
+extends layout
+
+block body
+    .cover
+        img(src='/images/cover-default.jpg', alt='Nuages', width='100%')
+    .container
+        .row
+            .col-md-5
+                img.img-responsive(src='/images/carrotmob.png', alt='Carrotmob')
+            .col-md-7
+                h2 Forbidden
+                - var errormsg =  (typeof error!== 'undefined')? error : 'You don't have permission to see the page you're trying to reach.'
+                p.lead= errormsg

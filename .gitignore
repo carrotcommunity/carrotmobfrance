@@ -29,6 +29,13 @@ npm-debug.log
 
 
 ########################
+# front vendor
+# third party libraries
+########################
+assets/vendor
+bower_components
+
+########################
 # misc / editors
 ########################
 *~
@@ -47,9 +54,3 @@ nbproject
 # local config
 ########################
 config/local.js
-
-
-########################
-# uploaded files
-########################
-upload/
