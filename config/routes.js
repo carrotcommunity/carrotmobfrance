@@ -97,6 +97,11 @@ module.exports.routes = {
         action: 'index'
     },
 
+    '/association': {
+        controller: 'association',
+        action: 'index'
+    },
+
     '/pad': {
         controller: 'pad',
         action: 'index'
