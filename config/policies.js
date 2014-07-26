@@ -47,6 +47,10 @@ module.exports.policies = {
         '*': true
     },
 
+    'association': {
+        '*': true
+    },
+
     'pad': {
         '*': true
     },

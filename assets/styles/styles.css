@@ -727,6 +727,12 @@ a.new_campaign, a.new_campaign:visited, a.new_campaign:hover {
     margin-left: 300px;
 }
 
+/* Association */
+
+.association > img, .community > img, .group > img,
+.association > a > img, .community > a > img, .group > a > img {
+    margin-bottom: 20px;
+}
 
 /*###################################
         MEDIA QUERIES
