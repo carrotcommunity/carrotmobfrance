@@ -446,6 +446,9 @@ ul.mea-btn{
 .media > div > a {
     vertical-align: middle;
 }
+.carrot-community.media{
+    margin-top:0px;
+}
 
 /* Buttons */
 
