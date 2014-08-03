@@ -454,17 +454,27 @@ ul.mea-btn{
 }
 
 /* Buttons */
+.btn{
+    background-color:transparent;
+    border-color: #f07f33;
+    color: #f07f33;
+}
 
-.btn-danger:hover {
+.btn:hover {
     color: #ffffff;
-    background-color: #e16764;
-    border-color: #e16764;
+    background-color: #f07f33;
+    border-color: #f07f33;
 }
 
 .btn-primary:hover {
     color: #ffffff;
     background-color: #9193ce;
     border-color: #6769bb;
+}
+.btn-warning.disabled{
+    background-color:transparent;
+    border-color: #f07f33;
+    color: #f07f33;
 }
 
 .btn-warning:hover {
