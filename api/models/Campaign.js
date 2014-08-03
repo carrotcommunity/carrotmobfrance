@@ -6,7 +6,6 @@ var Campaign = {
 
     beforeValidation: function (values, next) {
         // DD/MM/YYYY HH:MM:SS FORMAT DATE
-
         var table = values.startDateStr.split(' ');
         var date = table[0];
         var hours = table[1];
@@ -14,7 +13,8 @@ var Campaign = {
         var tableDate = date.split('/');
         var tableHours = hours.split(':');
         values.startDate = tableDate[2] + "-" + tableDate[1] + "-" + tableDate[0];
-        values.epoch = new Date(tableDate[2], tableDate[1], tableDate[0], tableHours[0], tableHours[1], 0, 0).getTime();
+
+        values.epoch = new Date(tableDate[2], tableDate[1]-1, tableDate[0], tableHours[0], tableHours[1], 0, 0).getTime();
 
         next();
     },
