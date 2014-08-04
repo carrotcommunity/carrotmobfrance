@@ -13,18 +13,6 @@
     "leaflet": "~0.7.3",
     "holderjs": "~2.3.2"
   },
-  "overrides": {
-        "font-awesome": {
-            "main": [
-                "css/font-awesome.min.css",
-                "font/FontAwesome.otf",
-                "font/fontawesome-webfont.eot",
-                "font/fontawesome-webfont.svg",
-                "font/fontawesome-webfont.ttf",
-                "font/fontawesome-webfont.woff"
-            ]
-        }
-  },
   "name": "carrotmobfrance",
   "version": "0.0.1",
   "author": "",
