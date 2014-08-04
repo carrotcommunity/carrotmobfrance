@@ -235,76 +235,79 @@ ul.mea-btn{
 
 /* MAP */
 
+#map{
+    position:relative;
+}
+
 .map-pin{
-    background:url('/images/map-pin.png') no-repeat left center;
-    width: 100px;
-    height: 100px;
-    background-size: 100%;
+    background:url('/images/map-pin.png') no-repeat left top;
+    width: 33px;
+    height: 55px;
     position: absolute;
 }
 
 .pin1{
-    margin-left: -35px;
-    padding-top: 110px;
+    left: -2px;
+    top: 34px;
 }
 
 .pin2{
-    margin-left: 227px;
-    margin-top: -54px;
+    left: 259px;
+    top: -26px;
 }
 
 .pin3{
-    margin-left: 156px;
-    margin-top: -11px;
+    left: 189px;
+    top: 14px;
 }
 
 .pin4{
-    margin-left: 195px;
-    padding-top: 165px;
+    left: 228px;
+    top: 58px;
 }
 .pin5{
-    margin-left: -25px;
-    padding-top: 159px
+    left: 8px;
+    top: 59px
 }
 
 .pin6{
-    margin-left: 54px;
-    margin-top: 59px;
+    left: 84px;
+    top: 85px;
 }
 
 .pin7{
-    margin-left: 54px;
-    margin-top: 105px;
+    left: 87px;
+    top: 130px;
 }
 
 .pin8{
-    margin-left: 371px;
-    padding-top: 225px;
+    left: 406px;
+    top: 90px;
 }
 
 .pin9{
-    margin-left: 268px;
-    padding-top: 477px;
+    left: 333px;
+    top: 242px;
 }
 .pin10{
-    margin-left: 59px;
-    padding-top: 508px
+    left: 91px;
+    top: 231px
 }
 
 .pin11{
-    margin-left: 278px;
-    margin-top: 323px
+    left: 311px;
+    top: 349px
 }
 
 .pin12{
-    margin-left: 301px;
-    margin-top: 215px;
+    left: 301px;
+    top: 215px;
 
 }
 
 .pin13{
-    margin-left: 144px;
-    margin-top: 318px;
+    left: 177px;
+    top: 344px;
 }
 
 
@@ -446,19 +449,32 @@ ul.mea-btn{
 .media > div > a {
     vertical-align: middle;
 }
+.carrot-community.media{
+    margin-top:0px;
+}
 
 /* Buttons */
+.btn{
+    background-color:transparent;
+    border-color: #f07f33;
+    color: #f07f33;
+}
 
-.btn-danger:hover {
+.btn:hover {
     color: #ffffff;
-    background-color: #e16764;
-    border-color: #e16764;
+    background-color: #f07f33;
+    border-color: #f07f33;
 }
 
 .btn-primary:hover {
     color: #ffffff;
     background-color: #9193ce;
     border-color: #6769bb;
+}
+.btn-warning.disabled{
+    background-color:transparent;
+    border-color: #f07f33;
+    color: #f07f33;
 }
 
 .btn-warning:hover {

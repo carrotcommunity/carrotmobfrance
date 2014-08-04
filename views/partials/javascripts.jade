@@ -1,8 +1,18 @@
 // Placed at the end of the document so the pages load faster
-script(src="/js/jquery.min.js")
-script(src="/js/bootstrap.min.js")
-script(src="/js/moment.min.js")
-script(src="/js/bootstrap-datetimepicker.js")
+
+// SCRIPTS
+script(src="/js/dependencies/socket.io.js")
+script(src="/js/dependencies/sails.io.js")
+script(src="/vendor/holderjs/holder.js")
+script(src="/vendor/moment/moment.js")
+script(src="/vendor/leaflet/leaflet.js")
+script(src="/vendor/jquery/jquery.js")
+script(src="/vendor/bootstrap/bootstrap.js")
+script(src="/vendor/eonasdan-bootstrap-datetimepicker/bootstrap-datetimepicker.min.js")
+script(src="/vendor/leaflet/leaflet-src.js")
+script(src="/js/app.js")
+// SCRIPTS END
+
 script(type='text/javascript').
     $(document).ready(function() {
         var picker =$('#datetimepicker1');

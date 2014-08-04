@@ -1,0 +1,26 @@
+{
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "bower_components",
+        "test",
+        "tests"
+    ],
+    "dependencies": {
+        "bootstrap": "~3.1.1",
+        "font-awesome": "~4.1.0",
+        "eonasdan-bootstrap-datetimepicker": "~3.0.0",
+        "leaflet": "~0.7.3",
+        "holderjs": "~2.3.2"
+    },
+    "exportsOverride": {
+        "font-awesome": {
+            "fonts": "fonts/*",
+            "css": "css/*"
+        }
+    },
+    "name": "carrotmobfrance",
+    "version": "0.0.1",
+    "author": "",
+    "private": true
+}

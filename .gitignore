@@ -29,6 +29,13 @@ npm-debug.log
 
 
 ########################
+# front vendor
+# third party libraries
+########################
+assets/vendor
+bower_components
+
+########################
 # misc / editors
 ########################
 *~
