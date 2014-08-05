@@ -10,7 +10,7 @@ footer .row{
     width: 80%;
 }
 
-.col-md-4{
+.col-md-3{
     margin-top: 35px;
     vertical-align: middle;
 }
@@ -34,13 +34,13 @@ footer .row{
     margin-top: 25px;
 }
 
-.col-md-4 p {
+.col-md-3 p {
     font-size: 20px;
     padding : 0 10px 10px 10px;
     margin: 0;
 }
 
-.col-md-4 .small-text {
+.col-md-3 .small-text {
     font-size: 12px;
     padding : 0 10px 10px 10px;
     max-width: 90%;
