@@ -32,6 +32,10 @@ module.exports.routes = {
         view: 'user/connect'
     },
 
+    '/statistiques': {
+        view: 'stats/index'
+    },
+
     '/signin': {
         controller: 'auth',
         action: 'signin'
