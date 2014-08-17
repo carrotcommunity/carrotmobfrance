@@ -34,6 +34,7 @@ npm-debug.log
 ########################
 assets/vendor
 bower_components
+upload
 
 ########################
 # misc / editors
