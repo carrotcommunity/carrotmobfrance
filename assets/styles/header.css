@@ -45,6 +45,10 @@
     background-color: transparent;
 }
 
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+    background-color:transparent;
+}
+
 /*  TODO BLOCK CONNECTED */
 
 #navbar-orange {
@@ -84,13 +88,6 @@
         display: block;
         width: 100%;
         background-color: #fcfcfc;
-    }
-
-    .navbar-nav li {
-        width: 50%;
-        float: left;
-        display: inline-block;
-        text-align: center;
     }
 
     .navbar-nav>li>a {

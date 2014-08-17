@@ -12,21 +12,26 @@ nav.navbar.navbar-default.navbar-fixed-top(role='navigation')
                 .navbar-collapse.collapse
                     ul.nav.navbar-nav.navbar-right
                         - var active =
-                        li(class=(req.path == '/' ? 'active' : '')).hidden-md.hidden-sm
-                            a(href='/association') Découvrir
-                        li(class=(req.path.indexOf('campaign') != -1 ? 'active' : '')).hidden-sm
+                        li(class=(req.path.indexOf('campaign') != -1 ? 'active' : ''))
                             a(href='/campaign/current') Campagnes
-                        li(class=(req.path == '/statistiques' ? 'active' : '')).hidden-md.hidden-sm
-                            a(href='/statistiques') Stats et outils
-                        li(class=(req.path.indexOf('manifesto') != -1 ? 'active' : ''))
+                        li(class=(req.path == '/' ? 'active' : ''))
+                            a(href='/association') Nous rejoindre
+                        li.visible-lg.visible-xs(class=(req.path == '/manifesto' ? 'active' : ''))
                             a(href='/manifesto') Manifeste
-                        li#navbar-orange
-                            if session && session.passport && session.passport.user
-                                a(href='/logout')
-                                    img(src=session.passport.user.picture ? session.passport.user.picture : (session.passport.user.gender == 1 ? ' /images/icon-login-carrotmobber-woman.png' : '/images/icon-login-carrotmobber-man.png'))
-                                    span  Me déconnecter
-                            else
-                                a(href='/connect')
-                                    img(src='/images/icon-login-carrotmobber-man.png')
-                                    span  Me connecter
+                        li.hidden-xs
+                            a(href='#', class="dropdown-toggle", data-toggle="dropdown") more
+                                span(class='caret')
+                            ul(class='dropdown-menu', role='menu')
+                                li.visible-md
+                                    a(href='/manifesto') Manifeste
+                                li
+                                    a(href='/statistiques') Statistiques & outils
+                                li(role="presentation",class="divider")
+                                li
+                                    if session && session.passport && session.passport.user
+                                        a(href='/logout') Me déconnecter
+                                    else
+                                        a(href='/connect')
+                                            img(src='/images/icon-login-carrotmobber-man.png')
+                                            span  Me connecter
         .navbar-shadow

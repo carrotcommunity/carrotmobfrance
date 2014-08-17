@@ -47,7 +47,7 @@ input:-moz-placeholder {
 /* COVERS & BACKGROUNDS */
 
 .cover {
-    margin-top: 63px;
+    margin-top: 58px;
 }
 
 .background-hawai {
@@ -64,6 +64,7 @@ input:-moz-placeholder {
 .container {
     margin: 0 auto;
     max-width: 1024px;
+    width:100%;
     padding-left: 0;
     padding-right: 0;
 }
@@ -468,10 +469,10 @@ ul.mea-btn {
 .stats .container {
     background:url('/images/bg_stats.png') no-repeat top center;
     background-size:100%;
-    margin-top:60px;
+    margin-top:58px;
 }
 .stats .row{
-    background: url('/img/bg_stats_lines.png') no-repeat top center;
+    background: url('/img/bg_stats_lines.png') no-repeat center -500%;
 }
 
 .stats div{
